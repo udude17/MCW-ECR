@@ -16,67 +16,46 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 # Contents 
 
-[Enterprise-ready cloud hands-on lab step-by-step](#enterprise-ready-cloud-hands-on-lab-step-by-step)
+<!-- TOC -->
 
-[Abstract and learning objectives](#abstract-and-learning-objectives)
+- [Enterprise-ready cloud](#enterprise-ready-cloud)
+    - [Hands-on lab step-by-step](#hands-on-lab-step-by-step)
+    - [March 2018](#march-2018)
+- [Contents](#contents)
+    - [Enterprise-ready cloud hands-on lab step-by-step](#enterprise-ready-cloud-hands-on-lab-step-by-step)
+    - [Abstract and learning objectives](#abstract-and-learning-objectives)
+    - [Overview](#overview)
+    - [Requirements](#requirements)
+    - [Solution architecture](#solution-architecture)
+    - [Before the hands-on lab](#before-the-hands-on-lab)
+        - [Task 1: Validate global admin access to Azure AD tenant](#task-1--validate-global-admin-access-to-azure-ad-tenant)
+        - [Task 2: Setup a development environment](#task-2--setup-a-development-environment)
+    - [Exercise 1: Create the policy for Enterprise IT](#exercise-1--create-the-policy-for-enterprise-it)
+        - [Help references](#help-references)
+        - [Task 1: Create a Management Group](#task-1--create-a-management-group)
+        - [Task 2: Apply the service catalog policy](#task-2--apply-the-service-catalog-policy)
+    - [ Resource Name](#resource-name)
+        - [Task 3: Restrict the creation of ExpressRoute circuits](#task-3--restrict-the-creation-of-expressroute-circuits)
+        - [Task 4: Restrict the creation of resources in regions](#task-4--restrict-the-creation-of-resources-in-regions)
+        - [Task 5: Create and apply a naming convention](#task-5--create-and-apply-a-naming-convention)
+        - [Task 6: Test the policies](#task-6--test-the-policies)
+    - [Exercise 2: Configure delegated permissions](#exercise-2--configure-delegated-permissions)
+        - [Help references](#help-references)
+        - [Task 1: Create groups in Azure AD for delegation](#task-1--create-groups-in-azure-ad-for-delegation)
+        - [Task 2: Create user accounts in Azure AD for delegation](#task-2--create-user-accounts-in-azure-ad-for-delegation)
+        - [Task 3: Enable a business unit administrator for the subscription](#task-3--enable-a-business-unit-administrator-for-the-subscription)
+        - [Task 4: Enable project-based delegation and chargeback](#task-4--enable-project-based-delegation-and-chargeback)
+    - [Exercise 3: Create the environment for the e-commerce team](#exercise-3--create-the-environment-for-the-e-commerce-team)
+        - [Help references](#help-references)
+        - [Task 1: Create a new virtual network](#task-1--create-a-new-virtual-network)
+        - [Task 2: Configure secure VPN for connectivity](#task-2--configure-secure-vpn-for-connectivity)
+        - [Task 3: Create an Azure DevTest lab environment](#task-3--create-an-azure-devtest-lab-environment)
+        - [Task 4: Test access to the DevTest labs environment](#task-4--test-access-to-the-devtest-labs-environment)
+        - [Task 5: Finish configuring secure connectivity](#task-5--finish-configuring-secure-connectivity)
+    - [After the hands-on lab](#after-the-hands-on-lab)
+        - [Task 1: Remove resources and configuration created during this lab](#task-1--remove-resources-and-configuration-created-during-this-lab)
 
-[Overview](#overview)
-
-[Requirements](#requirements)
-
-[Solution architecture](#solution-architecture)
-
-[Before the hands-on lab](#before-the-hands-on-lab)
-
-[Task 1: Validate global admin access to Azure AD tenant](#task-1-validate-global-admin-access-to-azure-ad-tenant)
-
-[Task 2: Setup a development environment](#task-2-setup-a-development-environment)
-
-[Exercise 1: Create the policy for Enterprise IT](#exercise-1-create-the-policy-for-enterprise-it)
-
-[Help references](#help-references)
-
-[Task 1: Create a Management Group](#task-1-create-a-management-group)
-
-[Task 2: Apply the service catalog policy](#task-2-apply-the-service-catalog-policy)
-
-[Task 3: Restrict the creation of ExpressRoute circuits](#task-3-restrict-the-creation-of-expressroute-circuits)
-
-[Task 4: Restrict the creation of resources in regions](#task-4-restrict-the-creation-of-resources-in-regions)
-
-[Task 5: Create and apply a naming convention](#task-5-create-and-apply-a-naming-convention)
-
-[Task 6: Test the policies](#task-6-test-the-policies)
-
-[Exercise 2: Configure delegated permissions](#exercise-2-configure-delegated-permissions)
-
-[Help references](#help-references-1)
-
-[Task 1: Create groups in Azure AD for delegation](#task-1-create-groups-in-azure-ad-for-delegation)
-
-[Task 2: Create user accounts in Azure AD for delegation](#task-2-create-user-accounts-in-azure-ad-for-delegation)
-
-[Task 3: Enable a business unit administrator for the subscription](#task-3-enable-a-business-unit-administrator-for-the-subscription)
-
-[Task 4: Enable project-based delegation and chargeback](#task-4-enable-project-based-delegation-and-chargeback)
-
-[Exercise 3: Create the environment for the e-commerce team](#exercise-3-create-the-environment-for-the-e-commerce-team)
-
-[Help references](#help-references-2)
-
-[Task 1: Create a new virtual network](#task-1-create-a-new-virtual-network)
-
-[Task 2: Configure secure VPN for connectivity](#task-2-configure-secure-vpn-for-connectivity)
-
-[Task 3: Create an Azure DevTest lab environment](#task-3-create-an-azure-devtest-lab-environment)
-
-[Task 4: Test access to the DevTest labs environment](#task-4-test-access-to-the-devtest-labs-environment)
-
-[Task 5: Finish configuring secure connectivity](#task-5-finish-configuring-secure-connectivity)
-
-[After the hands-on lab](#_Toc510785975)
-
-[Task 1: Remove resources and configuration created during this lab](#task-1-remove-resources-and-configuration-created-during-this-lab)
+<!-- /TOC -->
 
 ## Enterprise-ready cloud hands-on lab step-by-step
 
@@ -114,7 +93,7 @@ Duration: 15 minutes
 
 To complete this lab, you must have full global admin access to the Azure AD tenant associated with your Azure subscription.
 
-#### Task 1: Validate global admin access to Azure AD tenant
+### Task 1: Validate global admin access to Azure AD tenant
 
 1.  Login to <http://portal.azure.com>, click on **All Services**, and type in **Azure Active Directory**.
 
@@ -126,7 +105,7 @@ To complete this lab, you must have full global admin access to the Azure AD ten
 
 **If you can create the user, you will enough permissions in Azure AD to complete the lab. If you cannot, you will need more permissions before proceeding.**
 
-#### Task 2: Setup a development environment
+### Task 2: Setup a development environment
 
 If you do not have a machine set up with Visual Studio complete this task, and use this VM to complete the remainder of the Lab.
 
@@ -138,14 +117,14 @@ Duration: 60 minutes
 
 In this exercise, you first create a Management Group for your Azure subscription(s). You will apply several of the built-in Azure Policy definitions to that Management Group to ensure that users stay within the scope of supported services for Enterprise IT. Finally, you will create a new policy initiative defining a multi-resource naming convention, and apply that initiative to the Management Group.
 
-#### Help references
+### Help references
 
 |    |            |
 |----------|:-------------:|
 | WAzure Policy  | <https://docs.microsoft.com/azure/azure-policy/azure-policy-introduction>|
 | Azure Management Groups | <https://docs.microsoft.com/azure/azure-resource-manager/management-groups-overview>|
 
-#### Task 1: Create a Management Group
+### Task 1: Create a Management Group
 
 In this Task, you will create a new Management Group, and move a subscription into this Management Group. We'll later assign Azure Policy using the Management Group scope, so that it applies automatically to all subscriptions under that scope.
 
@@ -163,7 +142,7 @@ Note: We'll use our own Management Group, if you have permissions you could also
 
     ![Azure portal screenshot, showing adding an existing subscription to a management group](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image6.png "Add subscription to managment group screenshot")
 
-#### Task 2: Apply the service catalog policy
+### Task 2: Apply the service catalog policy
 
 In this exercise, you will apply one of the built-in Azure Policies to restrict services to the supported list provided by Trey Research.
 
@@ -232,7 +211,7 @@ In this exercise, you will apply one of the built-in Azure Policies to restrict 
 
     When complete, click **Assign** to create the policy assignment.
 
-#### Task 3: Restrict the creation of ExpressRoute circuits
+### Task 3: Restrict the creation of ExpressRoute circuits
 
 In this exercise, you will apply another built-in Azure policy to restrict the creation of ExpressRoute circuits. For this policy, we'll use an exclusion scope for the resource group in which Enterprise IT will create the permitted ExpressRoute circuits.
 
@@ -266,7 +245,7 @@ In this exercise, you will apply another built-in Azure policy to restrict the c
 
 When complete, click **Assign** to create the policy assignment.
 
-#### Task 4: Restrict the creation of resources in regions 
+### Task 4: Restrict the creation of resources in regions 
 
 In this exercise, you will create a new Azure Policy assignment that restricts which regions resources can be created in.
 
@@ -294,7 +273,7 @@ In this exercise, you will create a new Azure Policy assignment that restricts w
 
 When complete, click **Assign** to create the policy assignment.
 
-#### Task 5: Create and apply a naming convention
+### Task 5: Create and apply a naming convention
 
 In this task, we will define a simple naming convention for Azure resources. We shall simply require that virtual machine names end with '-vm', virtual networks end with '-vnet', and so on across the various resource types. We shall implement this naming convention using custom policy definition and policy initiative, assigned at the management group scope.
 
@@ -422,7 +401,7 @@ Finally, we will apply the policy initiative across all subscriptions in the Man
 
 - When complete, click **Assign** to create the policy initiative assignment.
 
-#### Task 6: Test the policies 
+### Task 6: Test the policies 
 
 In this task, you will use the Azure management portal to validate each of the policies created so far, and to understand how to identify policy events.
 
@@ -484,7 +463,7 @@ Duration: 60 minutes
 
 In this exercise, you will configure delegated permissions for users in the Trey Research business unit. You will extend a PowerShell script to automatically provision a limited access user with the configuration of the subscription.
 
-#### Help references
+### Help references
 
 |    |            |
 |----------|:-------------:|
@@ -495,7 +474,7 @@ In this exercise, you will configure delegated permissions for users in the Trey
 | Manage RBAC with PowerShell | <https://docs.microsoft.com/azure/active-directory/role-based-access-control-manage-access-powershell> |
 
 
-#### Task 1: Create groups in Azure AD for delegation 
+### Task 1: Create groups in Azure AD for delegation 
 
 In this task, you will create two groups in Azure AD that you will use for testing delegated access control. You will add the users created in the previous task to the groups.
 
@@ -511,7 +490,7 @@ In this task, you will create two groups in Azure AD that you will use for testi
 
 4.  Repeat the process, and create another group named **BU-Electronics-Users.**
 
-#### Task 2: Create user accounts in Azure AD for delegation 
+### Task 2: Create user accounts in Azure AD for delegation 
 
 In this task, you will create two user accounts in Azure AD that you will use for testing delegated access control.
 
@@ -541,7 +520,7 @@ In this task, you will create two user accounts in Azure AD that you will use fo
 
 
 
-#### Task 3: Enable a business unit administrator for the subscription 
+### Task 3: Enable a business unit administrator for the subscription 
 
 In this task, you will update a script to automatically add a user to the contributor role of the subscription.
 
@@ -611,7 +590,7 @@ This code will add an Azure AD security group to the contributor role at the sub
 
     Users in the contributor role scoped at the subscription have full access to all resources within the subscription but cannot grant access to others or change policies on the subscription.
 
-#### Task 4: Enable project-based delegation and chargeback
+### Task 4: Enable project-based delegation and chargeback
 
 In this task, you will create a script that will create a new resource group, assign 'Owner' rights over the resource group to a given AD group, and apply a policy to enforce an 'IOCode' tag with a given value.
 
@@ -726,7 +705,7 @@ Duration: 75 minutes
 
 In this exercise, you will configure a new environment for the developers of the e-commerce team. You will configure access to a subnet where other developer resources are available and provide secure access to the network for the developers.
 
-#### Help references
+### Help references
 
 |    |            |
 |----------|:-------------:|
@@ -735,7 +714,7 @@ In this exercise, you will configure a new environment for the developers of the
 | Azure DevTest Labs    | <https://azure.microsoft.com/en-us/documentation/services/devtest-lab/> |
 | MakeCert.exe |  <https://cloudworkshop.blob.core.windows.net/enterprise-ready-cloud/makecert.exe> |
 
-#### Task 1: Create a new virtual network
+### Task 1: Create a new virtual network
 
 In this task, you will create a new virtual network for Trey Research.
 
@@ -785,7 +764,7 @@ In this task, you will create a new virtual network for Trey Research.
 
 9.  Click **OK** on the new blade that opens to create the Gateway subnet with default settings.
 
-#### Task 2: Configure secure VPN for connectivity
+### Task 2: Configure secure VPN for connectivity
 
 In this task, you will start provisioning of a VPN gateway that will be used for secure connectivity for Trey Research.
 
@@ -803,7 +782,7 @@ In this task, you will start provisioning of a VPN gateway that will be used for
 
 This step will take up to 45 minutes to complete. Continue to the next task. Gateway configuration will be continued in a later task.
 
-#### Task 3: Create an Azure DevTest lab environment 
+### Task 3: Create an Azure DevTest lab environment 
 
 In this task, you will create and configure a new development environment for Trey Research developers and contingent staff.
 
@@ -869,7 +848,7 @@ In this task, you will create and configure a new development environment for Tr
 
     ![Azure portal screenshot, showing \"Added user - BU-Electronics-Admin was added as Owner for TreyResearchDev\"](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image67.png "User added message")
 
-#### Task 4: Test access to the DevTest labs environment 
+### Task 4: Test access to the DevTest labs environment 
 
 In this task, you will use the ElectronicsAdmin user account to grant access to the developer environment. Then, you will validate as a user whether access was successfully granted.
 
@@ -922,7 +901,7 @@ In this task, you will use the ElectronicsAdmin user account to grant access to 
 
     > NOTE: If you receive a Policy Error make sure that the VM Auto Shutdown Policy is enabled in your Allowed Resources.
 
-#### Task 5: Finish configuring secure connectivity
+### Task 5: Finish configuring secure connectivity
 
 In this task, you will configure certificates for the VPN gateway and for the end users as well as complete configuration of the VPN gateway. You will then configure and test access to the development environment.
 
@@ -1040,7 +1019,7 @@ Duration: 10 minutes
 
 After completing the hands-on lab, you will remove the policies on your subscription.
 
-#### Task 1: Remove resources and configuration created during this lab
+### Task 1: Remove resources and configuration created during this lab
 
 You should follow all steps provided *after* attending the hands-on lab.
 

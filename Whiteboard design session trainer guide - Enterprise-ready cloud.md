@@ -16,45 +16,46 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 # Contents
 
-[Trainer information](#trainer-information)
+<!-- TOC -->
 
-[Enterprise-ready cloud whiteboard design session student guide](#enterprise-ready-cloud-whiteboard-design-session-student-guide)
+- [Enterprise-ready cloud](#enterprise-ready-cloud)
+    - [Whiteboard design session trainer guide](#whiteboard-design-session-trainer-guide)
+    - [March 2018](#march-2018)
+- [Contents](#contents)
+- [Trainer information](#trainer-information)
+        - [Role of the trainer](#role-of-the-trainer)
+        - [Whiteboard design session flow](#whiteboard-design-session-flow)
+        - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session--how-to-prepare)
+        - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session--tips-for-an-effective-whiteboard-design-session)
+- [Enterprise-ready cloud whiteboard design session student guide](#enterprise-ready-cloud-whiteboard-design-session-student-guide)
+    - [Abstract and learning objectives](#abstract-and-learning-objectives)
+    - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
+        - [Facilitator/subject matter expert (SME) presentation of customer case study](#facilitator-subject-matter-expert-sme-presentation-of-customer-case-study)
+        - [Customer situation](#customer-situation)
+        - [Customer needs](#customer-needs)
+        - [Customer objections](#customer-objections)
+        - [Infographic for common scenarios](#infographic-for-common-scenarios)
+    - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
+    - [Step 3: Present the solution](#step-3--present-the-solution)
+    - [Wrap-up](#wrap-up)
+    - [Additional references](#additional-references)
+- [Enterprise-ready cloud whiteboard design session trainer guide](#enterprise-ready-cloud-whiteboard-design-session-trainer-guide)
+    - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
+    - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
+    - [Step 3: Present the solution](#step-3--present-the-solution)
+    - [Wrap-up](#wrap-up)
+    - [Preferred target audience](#preferred-target-audience)
+    - [Preferred solution](#preferred-solution)
+    - [Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
+    - [Customer quote (to be read back to the attendees at the end)](#customer-quote-to-be-read-back-to-the-attendees-at-the-end)
 
-[Abstract and learning objectives](#abstract-and-learning-objectives)
-
-[Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
-
-[Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
-
-[Step 3: Present the solution](#step-3-present-the-solution)
-
-[Wrap-up](#wrap-up)
-
-[Additional references](#additional-references)
-
-[Enterprise-ready cloud whiteboard design session trainer guide](#enterprise-ready-cloud-whiteboard-design-session-trainer-guide)
-
-[Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
-
-[Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
-
-[Step 3: Present the solution](#step-3-present-the-solution-1)
-
-[Wrap-up](#wrap-up-1)
-
-[Preferred target audience](#preferred-target-audience)
-
-[Preferred solution](#preferred-solution)
-
-[Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
-
-[Customer quote (to be read back to the attendees at the end)](#customer-quote-to-be-read-back-to-the-attendees-at-the-end)
+<!-- /TOC -->
 
 # Trainer information
 
 Thank you for taking time to support the whiteboard design sessions as a trainer!
 
-#### Role of the trainer
+### Role of the trainer
 
 An amazing trainer:
 
@@ -78,7 +79,7 @@ An amazing trainer:
 
 -   Effectively leads the feedback process.
 
-#### Whiteboard design session flow 
+### Whiteboard design session flow 
 
 Each whiteboard design session uses the following flow:
 
@@ -118,7 +119,7 @@ Outcome: Present solution to your customer
 
 -   Review preferred solution
 
-#### Before the whiteboard design session: How to prepare
+### Before the whiteboard design session: How to prepare
 
 Before conducting your first whiteboard design session:
 
@@ -132,7 +133,7 @@ Before conducting your first whiteboard design session:
 
 -   Make notes for later.
 
-#### During the whiteboard design session: Tips for an effective whiteboard design session
+### During the whiteboard design session: Tips for an effective whiteboard design session
 
 **Refer to the Trainer guide** to stay on track and observe the timings.
 
@@ -178,7 +179,7 @@ Attendees will be better able to design a governance plan to showcase the securi
 
 Analyze your customer's needs.
 
-#### Facilitator/subject matter expert (SME) presentation of customer case study 
+### Facilitator/subject matter expert (SME) presentation of customer case study 
 
 Duration: 15 minutes
 
@@ -191,7 +192,7 @@ Directions: With all participants in the session, the facilitator/SME presents a
 3.  As a table team, review the following customer case study.
 
 
-#### Customer situation
+### Customer situation
 
 Trey Research is a manufacturing company that builds consumer products with 29.6 billion USD in annual revenue. Trey's headquarters are in New Jersey, but they have data centers and branch offices scattered across the United States with several major offices in the United Kingdom, France, and Japan.
 
@@ -289,7 +290,7 @@ The e-commerce team is owned by the Enterprise IT team and is responsible for bu
 
 This team has a significant percentage of developers that are contingent staff. Often these contingent staff members will come onboard for a short term to implement a new feature that the core team does not have the skills or resources to tackle. Currently, the e-commerce team is bringing resources onsite for this work, due to not having a secure remote access solution. Providing hardware resources and access to the development environment is a challenge due to the constant turnover of contingent staff. The time needed to provide an environment is disproportionally long relative to the amount of time the developer is there. This is because each developer must provision a set of services.
 
-#### Customer needs 
+### Customer needs 
 
 1.  Provide access to create and manage new workloads in Azure for various business units.
 
@@ -315,7 +316,7 @@ This team has a significant percentage of developers that are contingent staff. 
 
 12. Ensure full-time and contingent staff for e-commerce have access to what they need, but no more.
 
-#### Customer objections 
+### Customer objections 
 
 1.  We need the ability to split our Azure bill by business unit and even workload classification. Can Azure support this requirement? How can we analyze our bill for cost optimization and charge back?
 
@@ -331,7 +332,7 @@ This team has a significant percentage of developers that are contingent staff. 
 
 7.  How can Azure help control the costs associated with non-Production VMs left running out-of-hours?
 
-#### Infographic for common scenarios
+### Infographic for common scenarios
 
 ![This is a screenshot of a slide. Azure EA Portal has the following bulleted list items: Manage access to Azure EA enrollments; Organize and delegate access to subscriptions; View usage; and http://ea.azure.com. A subscription flowchart on the right starts at the top with Enterprise Enrollment, then flows down to Department, Account, and Subscriptions.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image4.png "Azure EA Portal")
 
