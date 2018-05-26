@@ -1,8 +1,16 @@
-# Enterprise-ready cloud
+![](images/HeaderPic.png "Microsoft Cloud Workshops")
 
-## Whiteboard design session trainer guide
+<div class="MCWHeader1">
+Enterprise-ready cloud
+</div>
 
-## March 2018
+<div class="MCWHeader2">
+Whiteboard design session trainer guide
+</div>
+
+<div class="MCWHeader3">
+March 2018
+</div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
 
@@ -12,38 +20,33 @@ The names of manufacturers, products, or URLs are provided for informational pur
 
 2018 Microsoft Corporation. All rights reserved.
 
-Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
+Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspxare trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
-# Contents
+**Contents**
 
 <!-- TOC -->
 
-- [Enterprise-ready cloud](#enterprise-ready-cloud)
-    - [Whiteboard design session trainer guide](#whiteboard-design-session-trainer-guide)
-    - [March 2018](#march-2018)
-- [Contents](#contents)
 - [Trainer information](#trainer-information)
-        - [Role of the trainer](#role-of-the-trainer)
-        - [Whiteboard design session flow](#whiteboard-design-session-flow)
-        - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session--how-to-prepare)
-        - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session--tips-for-an-effective-whiteboard-design-session)
+    - [Role of the trainer](#role-of-the-trainer)
+    - [Whiteboard design session flow](#whiteboard-design-session-flow)
+    - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session-how-to-prepare)
+    - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session-tips-for-an-effective-whiteboard-design-session)
 - [Enterprise-ready cloud whiteboard design session student guide](#enterprise-ready-cloud-whiteboard-design-session-student-guide)
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
-    - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
-        - [Facilitator/subject matter expert (SME) presentation of customer case study](#facilitator-subject-matter-expert-sme-presentation-of-customer-case-study)
+    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
         - [Customer situation](#customer-situation)
         - [Customer needs](#customer-needs)
         - [Customer objections](#customer-objections)
         - [Infographic for common scenarios](#infographic-for-common-scenarios)
-    - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
-    - [Step 3: Present the solution](#step-3--present-the-solution)
+    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
+    - [Step 3: Present the solution](#step-3-present-the-solution)
     - [Wrap-up](#wrap-up)
     - [Additional references](#additional-references)
 - [Enterprise-ready cloud whiteboard design session trainer guide](#enterprise-ready-cloud-whiteboard-design-session-trainer-guide)
-    - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
-    - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
-    - [Step 3: Present the solution](#step-3--present-the-solution)
-    - [Wrap-up](#wrap-up)
+    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
+    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
+    - [Step 3: Present the solution](#step-3-present-the-solution-1)
+    - [Wrap-up](#wrap-up-1)
     - [Preferred target audience](#preferred-target-audience)
     - [Preferred solution](#preferred-solution)
     - [Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
@@ -55,7 +58,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 Thank you for taking time to support the whiteboard design sessions as a trainer!
 
-### Role of the trainer
+## Role of the trainer
 
 An amazing trainer:
 
@@ -79,7 +82,7 @@ An amazing trainer:
 
 -   Effectively leads the feedback process.
 
-### Whiteboard design session flow 
+## Whiteboard design session flow 
 
 Each whiteboard design session uses the following flow:
 
@@ -119,7 +122,7 @@ Outcome: Present solution to your customer
 
 -   Review preferred solution
 
-### Before the whiteboard design session: How to prepare
+## Before the whiteboard design session: How to prepare
 
 Before conducting your first whiteboard design session:
 
@@ -133,7 +136,7 @@ Before conducting your first whiteboard design session:
 
 -   Make notes for later.
 
-### During the whiteboard design session: Tips for an effective whiteboard design session
+## During the whiteboard design session: Tips for an effective whiteboard design session
 
 **Refer to the Trainer guide** to stay on track and observe the timings.
 
@@ -175,21 +178,14 @@ Attendees will be better able to design a governance plan to showcase the securi
 
 ## Step 1: Review the customer case study 
 
-**Outcome**
+**Outcome** 
 
-Analyze your customer's needs.
-
-### Facilitator/subject matter expert (SME) presentation of customer case study 
-
-Duration: 15 minutes
-
-Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips.
-
-1.  Meet your table participants and trainer.
-
-2.  Read all the directions for Steps 1--3 in the Student guide.
-
-3.  As a table team, review the following customer case study.
+Analyze your customer’s needs.
+Time frame: 15 minutes 
+Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips. 
+1.  Meet your table participants and trainer 
+2.  Read all of the directions for steps 1–3 in the student guide 
+3.  As a table team, review the following customer case study
 
 
 ### Customer situation
@@ -344,25 +340,22 @@ This team has a significant percentage of developers that are contingent staff. 
 
 ## Step 2: Design a proof of concept solution
 
-**Outcome **
+**Outcome** 
+Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format. 
 
-Design a solution and prepare to present a solution to the target customer audience in a 15-minute chalk-talk format.
-
-Duration: 60 minutes
+Time frame: 60 minutes
 
 **Business needs**
 
-Directions: With all participants at your table, answer the following questions and list the answers on a flip chart.
-
-1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers?
-
+Directions: With all participants at your table, answer the following questions and list the answers on a flip chart. 
+1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers? 
 2.  What customer business needs do you need to address with your solution?
 
-**Design **
+**Design**
 
 Directions: With all participants at your table, respond to the following questions on a flip chart.
 
-*Subscription organization and charge back *
+*Subscription organization and charge back*
 
 1.  Diagram how you would suggest organizing the Azure EA portal for Trey Research to allow access to Azure.
 
@@ -453,41 +446,32 @@ How can we ensure our deployments meet Azure security best practices, and how ca
 
 **Prepare**
 
-Directions: With all participants at your table:
+Directions: With all participants at your table: 
 
-1.  Identify any customer needs that are not addressed with the proposed solution.
-
-2.  Identify the benefits of your solution.
-
-3.  Determine how you will respond to the customer's objections.
+1.  Identify any customer needs that are not addressed with the proposed solution. 
+2.  Identify the benefits of your solution. 
+3.  Determine how you will respond to the customer’s objections. 
 
 Prepare a 15-minute chalk-talk style presentation to the customer.
 
 ## Step 3: Present the solution
 
-**Outcome **
+**Outcome**
+ 
+Present a solution to the target customer audience in a 15-minute chalk-talk format.
 
-Prepare to present a solution to the target customer audience in a 15-minute chalk-talk format.
+Time frame: 30 minutes
 
-**Presentation **
+**Presentation** 
 
-Duration: 30 minutes
-
-**Directions**
-
+Directions:
 1.  Pair with another table.
-
 2.  One table is the Microsoft team and the other table is the customer.
-
 3.  The Microsoft team presents their proposed solution to the customer.
-
 4.  The customer makes one of the objections from the list of objections.
-
 5.  The Microsoft team responds to the objection.
-
-6.  The customer team gives feedback to the Microsoft team.
-
-7.  Tables switch roles and repeat Steps 2--6.
+6.  The customer team gives feedback to the Microsoft team. 
+7.  Tables switch roles and repeat Steps 2–6.
 
 ##  Wrap-up 
 
@@ -499,19 +483,19 @@ Duration: 15 minutes
 
 |    |            |
 |----------|:-------------:|
-|Videos on the Azure EA Portal | <https://channel9.msdn.com/blogs/EA.Azure.com> |
+|Videos on the Azure EA Portal | <https://channel9.msdn.com/blogs/EA.Azure.com|
 |EA Portal Roles  |  <http://www.redbaronofazure.com/?cat=111>|
 |Azure Policy| <https://docs.microsoft.com/azure/azure-policy/azure-policy-introduction>|
 |Azure Policy Initiatives | https://docs.microsoft.com/azure/azure-policy/azure-policy-introduction\#initiative-definition|
-|Role Based Access Control Configuration|<https://docs.microsoft.com/azure/active-directory/role-based-access-control-configure> |
+|Role Based Access Control Configuration|<https://docs.microsoft.com/azure/active-directory/role-based-access-control-configure|
 |Built in Roles for RBAC  | <https://docs.microsoft.com/azure/active-directory/role-based-access-built-in-roles>|
 |Custom Roles for RBAC| <https://docs.microsoft.com/azure/active-directory/role-based-access-control-custom-roles>|
-|Management Groups   |<https://docs.microsoft.com/azure/azure-resource-manager/management-groups-overview> |
+|Management Groups   |<https://docs.microsoft.com/azure/azure-resource-manager/management-groups-overview|
 |Virtual Networks User Defined Routes  | <https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview >|
-|Azure Traffic Manager  | <https://docs.microsoft.com/azure/traffic-manager/> |
-|ExpressRoute FAQ   | <https://azure.microsoft.com/en-us/documentation/articles/expressroute-faqshttps://docs.microsoft.com/azure/expressroute/expressroute-faqs](https://docs.microsoft.com/azure/expressroute/expressroute-faqs> |
+|Azure Traffic Manager  | <https://docs.microsoft.com/azure/traffic-manager/|
+|ExpressRoute FAQ   | <https://azure.microsoft.com/en-us/documentation/articles/expressroute-faqshttps://docs.microsoft.com/azure/expressroute/expressroute-faqs](https://docs.microsoft.com/azure/expressroute/expressroute-faqs|
 |SQL Server in Azure Virtual Machines with High Availability  | https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-sql-high-availability-dr?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json|
-|Azure Active Directory B2B collaboration | <https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b> |
+|Azure Active Directory B2B collaboration | <https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b|
 |Azure Cost Management by Cloudyn | <https://docs.microsoft.com/en-us/azure/cost-management/overview>|
 |Azure Security Center | <https://docs.microsoft.com/azure/security-center/security-center-intro>|
 |Auto-shutdown of VMs   |<https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.StartStopVMSolution?tab=Overview>|
@@ -551,8 +535,6 @@ Duration: 15 minutes
     -   Have the customer team provide one objection for the Microsoft team to respond to.
 
     -   The presentation and objections should be no longer than 10-minutes.
-
-<!-- -->
 
 -   Have participants on the customer team give feedback to the Microsoft team.
 
@@ -604,49 +586,33 @@ Duration: 15 minutes
 
 -   **Solution:** Each new project should be deployed into one or more resource groups. Create an ARM policy that applies to the resource groups, that will append the IO code tag to resources as they are created. This allows for reporting at the project-level, based on the tag (expenses can be grouped by tag).
 
-> {
->
-> \"if\": {
->
-> \"not\": {
->
-> \"anyOf\": \[
->
-> {
->
-> \"source\": \"action\",
->
-> \"like\": \"Microsoft.Resources/\[ProjectResourceGroup\]/\*\"
->
-> }
->
-> \]
->
-> }
->
-> },
->
-> \"then\": {
->
-> \"effect\": \"append\",
->
-> \"details\": \[
->
-> {
->
-> \"field\": \"tags\",
->
-> \"value\": { \"ioCode\": \"\[IOCODEVALUE\]\" }
->
-> }
->
-> \]
->
-> }
->
-> }
->
-> Alternatively, separate subscriptions could be used for each project, and the above ARM policy applied at the subscription level.
+```
+{
+    "if": {
+        "not": {
+            "anyOf": [
+                {
+                    "source": "action",
+                    "like": "Microsoft.Resources/[ProjectResourceGroup]/*"
+                }
+            ]
+        }
+    },
+    "then": {
+        "effect": "append",
+        "details": [
+            {
+                "field": "tags",
+                "value": {
+                    "ioCode": "[IOCODEVALUE]"
+                }
+            }
+        ]
+    }
+}
+```
+
+Alternatively, separate subscriptions could be used for each project, and the above ARM policy applied at the subscription level.
 
 -   **Design:** How could you enforce the cost tracking of cloud deployments within business units, according to the following taxonomies?
 
@@ -668,13 +634,13 @@ Duration: 15 minutes
 
     -   Tag Name: Environment---Value: Infrastructure
 
-> This can be done with built in policies, specifically by applying the **Apply tag and its default value** and the **Enforce tag and its value** policies. A new resource group would be created for each environment (Production, Dev, etc.) and these policies would be applied, specifying the tags to assign.
->
-> ![In the Add assignment blade, under Policy, Enforce tag and its value is selected and circled.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image12.png "Add assignment blade")
+This can be done with built in policies, specifically by applying the **Apply tag and its default value** and the **Enforce tag and its value** policies. A new resource group would be created for each environment (Production, Dev, etc.) and these policies would be applied, specifying the tags to assign.
+
+![In the Add assignment blade, under Policy, Enforce tag and its value is selected and circled.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image12.png "Add assignment blade")
 
 -   To view detailed information grouped by resource group or tags, the user would click the Download Usage link in the Azure EA portal, select the accounts and dates and request the usage data. A detailed .csv will be generated with a column for resource groups and tags.
 
-> ![the Download Usage tab has a date range set from 04/01/2016 to 6/30/2016.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image13.png "Download Usage tab")
+![the Download Usage tab has a date range set from 04/01/2016 to 6/30/2016.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image13.png "Download Usage tab")
 
 -   Azure Cost Management by Cloudyn can be used for cost management reporting and alerting.
 
@@ -688,49 +654,34 @@ Duration: 15 minutes
 
     -   Create users for business units and the finance department.
 
-> ![The Actual Cost Over Time stacked bar graph displays bar graphs of cost by service, resource type, sub type, operations, and date time.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image14.png "Actual Cost Over Time stacked bar graph")
+![The Actual Cost Over Time stacked bar graph displays bar graphs of cost by service, resource type, sub type, operations, and date time.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image14.png "Actual Cost Over Time stacked bar graph")
 
 -   **Design:** How can Enterprise IT enforce a company-wide resource naming convention?
 
 -   **Solution:** A naming convention can be implementing using Azure Policy to restrict the names of each resource created.
 
-    {
-
-    \"if\": {
-
-    \"allOf\": \[
-
-    {
-
-    \"field\": \"type\",
-
-    \"equals\": \"Microsoft.Compute/virtualMachines\"
-
+```
+{
+    "if": {
+        "allOf": [
+            {
+                "field": "type",
+                "equals": "Microsoft.Compute/virtualMachines"
+            },
+            {
+                "not": {
+                    "field": "name",
+                    "like": "*-vm"
+                }
+            }
+        ]
     },
-
-    {
-
-    \"not\": {
-
-    \"field\": \"name\",
-
-    \"like\": \"\*-vm\"
-
+    "then": {
+        "effect": "deny"
     }
+}
 
-    }
-
-    \]
-
-    },
-
-    \"then\": {
-
-    \"effect\": \"deny\"
-
-    }
-
-    }
+```
 
 -   The above example shows how to enforce a simple naming constraint on a single resource type---virtual machines. Enterprise IT need to enforce their convention across all their resource types. Implementing this in a single policy requires an impractically-large conditional logic in the policy rule.
 
@@ -750,47 +701,36 @@ Duration: 15 minutes
 
     -   In the case of the policy to enforce Environment tags, the policy discussed earlier uses different tag values for different projects, hence the policy is not applied at the root tenant management group level, but instead at the level of individual subscriptions or resource groups. A separate policy should be created to verify that the Environment tag is in place and uses one of the permitted values. This policy can be applied at the root tenant management group level. This will both enforce that all resources in all subscriptions include the Environment (even if a project-level rule is forgotten), and also provide a single compliance audit report. An example policy is given below.
 
-        {
-
-        \"if\": {
-
-        \"not\": {
-
-        \"allOf\": \[
-
-        {
-
-        \"field\": \"tags\",
-
-        \"containsKey\": \"Environment\"
-
-        },
-
-        {
-
-        \"field\": \"Environment",
-
-        \"in\": \[\"Development and Test","Production","Support Services","Infrastructure"\]
-
+```
+{
+    "if": {
+        "not": {
+            "allOf": [
+                {
+                    "field": "tags",
+                    "containsKey": "Environment"
+                },
+                {
+                    "field": "Environment",
+                    "in": [
+                        "Development and Test",
+                        "Production",
+                        "Support Services",
+                        "Infrastructure"
+                    ]
+                }
+            ]
         }
+    },
+    "then": {
+        "effect": "audit"
+    }
+}
 
-        \]
+```
 
-        }
+ A similar policy can be used to enforce and audit use of other company-wide tags, such as ioCode.
 
-        },
-
-        \"then\": {
-
-        \"effect\": \"audit\"
-
-        }
-
-        }
-
-        A similar policy can be used to enforce and audit use of other company-wide tags, such as ioCode.
-
-<!-- -->
 
 -   **Design:** How can Azure help business units minimize wasted spend on non-production VMs left running out-of-hours?
 
@@ -854,23 +794,18 @@ The second policy will be a custom policy to restrict the creation of ExpressRou
 
 **Service catalog policy to restrict ExpressRoute**
 
-> {
->
-> \"if\": {
->
-> \"source\": \"action\",
->
-> \"equals\": \"Microsoft.Network/expressRouteCircuits/write\"
->
-> },
->
-> \"then\": {
->
-> \"effect\": \"deny\"
->
-> }
-
+```
+{
+    "if": {
+        "source": "action",
+        "equals": "Microsoft.Network/expressRouteCircuits/write"
+    },
+    "then": {
+        "effect": "deny"
+    }
 }
+
+```
 
 Prior to the addition of Management Groups, it would have been necessary to apply these policies on every subscription in the organization. This is an administrative burden---it can be automated, but this still leaves scopes for non-compliance in case for some reason a subscription is created without the policy being applied.
 
@@ -900,19 +835,20 @@ Using a central policy in the Tenant root management group has another advantage
 
 -   **Solution:** For projects that require elevated permissions, the Enterprise IT team would need to be involved to create the subscription or resource group for the project and add the business unit administrator to the owner role of the new subscription or resource group.
 
-> \$rgName = \"BUProjectName\"
->
-> \$region = \"West US\"
->
-> \$userToAdd = \"\[user from AD\]\"
->
-> \$rg = New-AzureRmResourceGroup -Name \$rgName -Location \$region
->
-> New-AzureRmRoleAssignment -ResourceGroupName \$resourceGroup \`
->
-> -RoleDefinitionName \"Owner\" \`
->
-> -SignInName \$userToAdd
+```
+ $rgName = "BUProjectName"
+
+ $region = "West US"
+
+ $userToAdd = "[user from AD]"
+
+ $rg = New-AzureRmResourceGroup -Name $rgName -Location $region
+
+ New-AzureRmRoleAssignment -ResourceGroupName $resourceGroup `
+  -RoleDefinitionName "Owner" `
+  -SignInName $userToAdd
+
+```
 
 *Connectivity*
 
@@ -924,49 +860,51 @@ Using a central policy in the Tenant root management group has another advantage
 
 -   **Solution:** The Enterprise IT group that provisions the ExpressRoute circuit(s) would have to create an authorization key, and the users in the delegated subscriptions would link to that subscription using an authorization key.
 
-> \$circuit = Get-AzureRmExpressRouteCircuit -Name \"MyCircuit\" -ResourceGroupName \"MyRG\"
->
-> Add-AzureRmExpressRouteCircuitAuthorization -ExpressRouteCircuit \$circuit \`
->
-> -Name \"MyAuthorization1\"
->
-> Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit \$circuit
->
-> \$auth1 = Get-AzureRmExpressRouteCircuitAuthorization -ExpressRouteCircuit \$circuit \`
->
-> -Name \"MyAuthorization1\"
+```
+ $circuit = Get-AzureRmExpressRouteCircuit -Name "MyCircuit" -ResourceGroupName "MyRG"
+
+ Add-AzureRmExpressRouteCircuitAuthorization -ExpressRouteCircuit $circuit `
+     -Name "MyAuthorization1"
+
+ Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $circuit
+
+ $auth1 = Get-AzureRmExpressRouteCircuitAuthorization -ExpressRouteCircuit $circuit `
+     -Name "MyAuthorization1"
+
+```
 
 The output of the authorization will have the Authorization Key that can be shared by consumers of the circuit.
 
-> Name : MyAuthorization1
->
-> Id : /subscriptions/&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&/resourceGroups/ERCrossSubTestRG/providers/Microsoft.Network/expressRouteCircuits/CrossSubTest/authorizations/MyAuthorization1
->
-> Etag : &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
->
-> AuthorizationKey : \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
->
-> AuthorizationUseStatus : Available
+```
+ Name : MyAuthorization1
+
+ Id : /subscriptions/&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&/resourceGroups/ERCrossSubTestRG/providers/Microsoft.Network/expressRouteCircuits/CrossSubTest/authorizations/MyAuthorization1
+
+ Etag : &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+ AuthorizationKey : ####################################
+
+ AuthorizationUseStatus : Available
+
+```
 
 ProvisioningState : Succeeded
 
 Code a user in a subscription would use to link a new virtual network to the circuit.
 
-> \$id = \"/subscriptions/\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*/resourceGroups/ERCrossSubTestRG/providers/Microsoft.Network/expressRouteCircuits/MyCircuit\"
->
-> \$connection = New-AzureRmVirtualNetworkGatewayConnection -Name \"ERConnection\" \`
->
-> -ResourceGroupName \"RemoteResourceGroup\" \`
->
-> -Location \"East US\" \`
->
-> -VirtualNetworkGateway1 \$gw \`
->
-> -PeerId \$id \`
->
-> -ConnectionType ExpressRoute \`
->
-> -AuthorizationKey \"\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\^\"
+```
+
+ $id = "/subscriptions/********************************/resourceGroups/ERCrossSubTestRG/providers/Microsoft.Network/expressRouteCircuits/MyCircuit"
+
+ $connection = New-AzureRmVirtualNetworkGatewayConnection -Name "ERConnection" `
+     -ResourceGroupName "RemoteResourceGroup" `
+     -Location "East US" `
+     -VirtualNetworkGateway1 $gw `
+     -PeerId $id `
+     -ConnectionType ExpressRoute `
+     -AuthorizationKey "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+
+```
 
 -   **Design:** From the security perspective, how could Trey Research deploy firewalls to protect their network after ExpressRoute is deployed? What network features are required and where would the firewalls be deployed? Diagram your solution.
 
@@ -978,7 +916,7 @@ Code a user in a subscription would use to link a new virtual network to the cir
 
     ![This High-level connectivity plan diagram encompasses all of the previously mentioned solutions. ](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image17.png "High-level connectivity plan diagram")
 
-*Availability *
+*Availability*
 
 -   **Design:** Evaluate the list of proposed regions and provide guidance on what policies are in place by Microsoft to help customers design a geo-redundant solution.
 
@@ -1018,7 +956,7 @@ Code a user in a subscription would use to link a new virtual network to the cir
 
 -   **Solution:** Virtual machines that perform the same role (multiple web servers, SQL Servers, Active Directory Domain Controllers, etc.) should be grouped into an availability set. Availability sets distribute virtual machines across multiple physical racks for redundancy and allow the host machines your virtual machines execute on to be updated in a rolling manner instead of all at once.
 
-> ![This Geo-redundant solutions Availability diagram begins with Traffic Manager Priority Mode. Two arrows point from there, to West US, and East US. West US has an Availability set (Web Tier), and SQL AO Secondary. East US has an Availability set (Web Tier), and SQL AO Primary. Under these two is a banner reading \"Paired Regions.\"](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image18.png "Geo-redundant solutions Availability diagram")
+![This Geo-redundant solutions Availability diagram begins with Traffic Manager Priority Mode. Two arrows point from there, to West US, and East US. West US has an Availability set (Web Tier), and SQL AO Secondary. East US has an Availability set (Web Tier), and SQL AO Primary. Under these two is a banner reading \"Paired Regions.\"](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image18.png "Geo-redundant solutions Availability diagram")
 
 *Security and accident protection *
 
@@ -1030,7 +968,7 @@ Code a user in a subscription would use to link a new virtual network to the cir
 
     -   **ReadOnly** means authorized users can read from a resource, but they cannot delete it or perform any actions on it. The permission on the resource is restricted to the reader role. Applying ReadOnly can lead to unexpected results because some operations that seem like read operations actually require additional actions. For example, placing a ReadOnly lock on a storage account will prevent all users from listing the keys. The list keys operation is handled through a POST request because the returned keys are available for write operations. For another example, placing a ReadOnly lock on an App Service resource will prevent Visual Studio's Server Explorer from being able to display files for the resource because that interaction requires write access.
 
-> To identify who deleted the resource, look at the audit logs for the subscription.![In the Azure Resource Manager, Monitor - Activity log, query requirements and query results display.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image19.png "Azure Resource Manager")
+To identify who deleted the resource, look at the audit logs for the subscription.![In the Azure Resource Manager, Monitor - Activity log, query requirements and query results display.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image19.png "Azure Resource Manager")
 
 -   **Design:** How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even in the event that the security perimeter is compromised?
 
@@ -1040,7 +978,7 @@ Code a user in a subscription would use to link a new virtual network to the cir
 
     -   Using the Standard SKU of Azure Security Center in addition allows you to enable [adaptive application controls](https://docs.microsoft.com/azure/security-center/security-center-adaptive-application). These provide a means to block attempts to run malicious applications by maintaining whitelists of permitted executables. This feature can be applied selectively, for example only to Production and Pre-Production resource groups.
 
-> Note: Just-In-Time (JIT) is another powerful Azure Security Center feature, allowing VM remote management ports to be closed by default and opened only when needed and under appropriate RBAC permissions. However, since Trey will be using ExpressRoute to connect their on-premises network with Azure, using JIT is not required (JIT only works on Internet-facing endpoints).
+Note: Just-In-Time (JIT) is another powerful Azure Security Center feature, allowing VM remote management ports to be closed by default and opened only when needed and under appropriate RBAC permissions. However, since Trey will be using ExpressRoute to connect their on-premises network with Azure, using JIT is not required (JIT only works on Internet-facing endpoints).
 
 *E-commerce *
 
@@ -1048,7 +986,6 @@ Code a user in a subscription would use to link a new virtual network to the cir
 
 -   **Solution:**
 
-<!-- -->
 
 -   To address this issue, IT could create multiple DevTests lab environments for e-commerce developers and contingent staff brought in to use the solution. Each lab environment would be used by developers and staff in the same time zones.
 
@@ -1066,7 +1003,6 @@ Code a user in a subscription would use to link a new virtual network to the cir
 
     ![Screenshot of a DevTestLabs lab environment.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image20.png "DevTestLabs lab environment")
 
-<!-- -->
 
 -   **Design:** What cost control options would you propose to put in place to optimize this environment?
 
@@ -1084,39 +1020,39 @@ Code a user in a subscription would use to link a new virtual network to the cir
 
 ## Checklist of preferred objection handling
 
-> **Objection:** We need the ability to split our Azure bill by business unit, per project tracking, and even workload classification. Can Azure support this requirement? How can we analyze our bill for cost optimization and charge back?
->
-> **Answer:** The Azure EA Portal allows a company to split their Azure usage up by departments (business units) and view consumption information at that level.
->
-> For per-project tracking, an ARM policy can automatically append an IO code to all resources created for the project. The Azure bill can roll up costs by the IO code.
->
-> Tags can also be used to associate a resource with a workload classification (like testing, production, or however they want to classify).
->
-> **Objection:** As well as implementing our governance rules on how Azure is used, we need a way to audit that no deployments have been made that bypass those roles.
->
-> **Answer:** Implement governance rules using Azure Policy, and assign those Policies at the root tenant management group scope using the 'Standard' Azure Policy pricing tier. This ensures the policy is applied across all subscriptions within the organization, and enables an organization-wide compliance report.
->
-> **Objection:** Security is important to us. We have evaluated Network Security Groups and our security team does not feel they offer the same level of security that we use without on-premises firewall-based solutions, such as intrusion and malware detection.
->
-> **Answer:** There are many third-party advanced firewall solutions available through the Azure Marketplace. Many support a bring your own license (BYOL) model where existing customers can reuse their licenses in Azure. They also support a pay-as-you go model for customers that want to pay as they use the product.
->
-> **Objection:** Delegating control to business units is incredibly important to Trey Research. At our scale, a single team cannot possibly manage all of the needs of the business. Corporate IT requires the ability to set policy at the enterprise level and still needs a detailed level of control. How can Azure address these needs?
->
-> **Answer:** At the enterprise level, IT can set policies and add users and groups as a subscription is created so when the subscription is handed off to the teams within each business unit they are setup per IT specs.
->
-> With role-based access control, IT can allow access at varying levels for the business units, whether it is just allowing contingent developers access to a development environment, or it is allowing administrators full access to a subscription (excluding changing policy and access controls).
->
-> **Objection:** Trey Research currently monitors their on-premises workloads using SCOM. A small business unit experimented with running virtual machines in AWS and the monitoring team was not thrilled with a completely different system for monitoring for availability. Does Azure have the same problem?
->
-> **Answer:** There are multiple potential solutions to this problem. First, the virtual machines in Azure could be monitored the same way using the SCOM agent. Data would flow over the ExpressRoute connection. Another option would be to explorer Operations Management Suite (Log Analytics). This model would allow you to monitor servers on-premises and in Azure, and any VMs in another cloud (like AWS). When using OMS for Onsite VMs or VMs in other clouds, the OMS agent would need to be installed using the KEYs found on the OMS portal. It would allow for their data to be sent to the OMS portal in Azure.
->
-> **Objection:** How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even in the event that the security perimeter is compromised?
->
-> **Answer:** Azure Security Center allows you to define your VM security policy, monitor compliance, and receive actionable recommendations on how to implement Azure security best practices. Adaptive Application Controls, available in the Azure Security Center Standard pricing tier, enable you to control whitelists of which executables can run in your Production environments.
->
-> **Objection:** How can Azure help control the costs associated with non-Production VMs left running out-of-hours?
->
-> **Answer:** DevTest labs, auto-VM shutdown, and the start-stop VM marketplace solution, all offer the ability to automatically shut down VMs. Azure Cost Management (by Cloudyn) provides additional reports to identify idle VMs and to right-size underutilized VMs.
+**Objection:** We need the ability to split our Azure bill by business unit, per project tracking, and even workload classification. Can Azure support this requirement? How can we analyze our bill for cost optimization and charge back?
+
+**Answer:** The Azure EA Portal allows a company to split their Azure usage up by departments (business units) and view consumption information at that level.
+
+For per-project tracking, an ARM policy can automatically append an IO code to all resources created for the project. The Azure bill can roll up costs by the IO code.
+
+Tags can also be used to associate a resource with a workload classification (like testing, production, or however they want to classify).
+
+**Objection:** As well as implementing our governance rules on how Azure is used, we need a way to audit that no deployments have been made that bypass those roles.
+
+**Answer:** Implement governance rules using Azure Policy, and assign those Policies at the root tenant management group scope using the 'Standard' Azure Policy pricing tier. This ensures the policy is applied across all subscriptions within the organization, and enables an organization-wide compliance report.
+
+**Objection:** Security is important to us. We have evaluated Network Security Groups and our security team does not feel they offer the same level of security that we use without on-premises firewall-based solutions, such as intrusion and malware detection.
+
+**Answer:** There are many third-party advanced firewall solutions available through the Azure Marketplace. Many support a bring your own license (BYOL) model where existing customers can reuse their licenses in Azure. They also support a pay-as-you go model for customers that want to pay as they use the product.
+
+**Objection:** Delegating control to business units is incredibly important to Trey Research. At our scale, a single team cannot possibly manage all of the needs of the business. Corporate IT requires the ability to set policy at the enterprise level and still needs a detailed level of control. How can Azure address these needs?
+
+**Answer:** At the enterprise level, IT can set policies and add users and groups as a subscription is created so when the subscription is handed off to the teams within each business unit they are setup per IT specs.
+
+With role-based access control, IT can allow access at varying levels for the business units, whether it is just allowing contingent developers access to a development environment, or it is allowing administrators full access to a subscription (excluding changing policy and access controls).
+
+**Objection:** Trey Research currently monitors their on-premises workloads using SCOM. A small business unit experimented with running virtual machines in AWS and the monitoring team was not thrilled with a completely different system for monitoring for availability. Does Azure have the same problem?
+
+**Answer:** There are multiple potential solutions to this problem. First, the virtual machines in Azure could be monitored the same way using the SCOM agent. Data would flow over the ExpressRoute connection. Another option would be to explorer Operations Management Suite (Log Analytics). This model would allow you to monitor servers on-premises and in Azure, and any VMs in another cloud (like AWS). When using OMS for Onsite VMs or VMs in other clouds, the OMS agent would need to be installed using the KEYs found on the OMS portal. It would allow for their data to be sent to the OMS portal in Azure.
+
+**Objection:** How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even in the event that the security perimeter is compromised?
+
+**Answer:** Azure Security Center allows you to define your VM security policy, monitor compliance, and receive actionable recommendations on how to implement Azure security best practices. Adaptive Application Controls, available in the Azure Security Center Standard pricing tier, enable you to control whitelists of which executables can run in your Production environments.
+
+**Objection:** How can Azure help control the costs associated with non-Production VMs left running out-of-hours?
+
+**Answer:** DevTest labs, auto-VM shutdown, and the start-stop VM marketplace solution, all offer the ability to automatically shut down VMs. Azure Cost Management (by Cloudyn) provides additional reports to identify idle VMs and to right-size underutilized VMs.
 
 ## Customer quote (to be read back to the attendees at the end)
 
