@@ -32,9 +32,6 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Overview](#overview)
     - [Requirements](#requirements)
     - [Solution architecture](#solution-architecture)
-    - [Before the hands-on lab](#before-the-hands-on-lab)
-        - [Task 1: Validate global admin access to Azure AD tenant](#task-1-validate-global-admin-access-to-azure-ad-tenant)
-        - [Task 2: Setup a development environment](#task-2-setup-a-development-environment)
     - [Exercise 1: Create the policy for Enterprise IT](#exercise-1-create-the-policy-for-enterprise-it)
         - [Help references](#help-references)
         - [Task 1: Create a Management Group](#task-1-create-a-management-group)
@@ -121,29 +118,7 @@ In this hands-on lab, you are working with Trey Research to setup some best prac
 
 ![Hierarching showing Azure AD at the root, then a Management Group, then an Azure Subscription, then resource groups, then resources. It is tagged \'Policies and RBAC\'.](images/Hands-onlabunguided-Enterprise-readycloudimages/media/image2.png "Azure AD - Management Group - Subscription - Resource Group hierarchy")
 
-## Before the hands-on lab
 
-Duration: 15 minutes
-
-To complete this lab, you must have full global admin access to the Azure AD tenant associated with your Azure subscription.
-
-### Task 1: Validate global admin access to Azure AD tenant
-
-1.  Login to <http://portal.azure.com>, click on **All Services**, and type in **Azure Active Directory**.
-
-2.  Open the Azure Active Directory tenant. Click Users -\> New User.
-
-3.  Create a new user called testuser/test1. Use the tenant name on the header for the domain name of the email.
-
-    ![Create user Azure portal blade with user name and email domain name highlighted.](images/Hands-onlabunguided-Enterprise-readycloudimages/media/image3.png "Create User blade")
-
-**If you can create the user, you will enough permissions in Azure AD to complete the lab. If you cannot, you will need more permissions before proceeding.**
-
-### Task 2: Setup a development environment
-
-If you do not have a machine set up with Visual Studio complete this task, and use this VM to complete the remainder of the Lab.
-
-1.  Create a DS2\_V2 Azure Virtual Machine using the Visual Studio Community 2017 image from the Azure Marketplace.
 
 ## Exercise 1: Create the policy for Enterprise IT
 
@@ -155,6 +130,7 @@ In this exercise, you first create a Management Group for your Azure subscriptio
 
 |    |            |
 |----------|:-------------:|
+| **Description** | **Links** |
 | WAzure Policy  | <https://docs.microsoft.com/azure/azure-policy/azure-policy-introduction>|
 | Azure Management Groups | <https://docs.microsoft.com/azure/azure-resource-manager/management-groups-overview>|
 
@@ -162,13 +138,13 @@ In this exercise, you first create a Management Group for your Azure subscriptio
 
 In this Task, you will create a new Management Group, so that policies can be applied automatically to all subscriptions under that scope.
 
-##### Tasks to complete
+#### Tasks to complete
 
 Create a new Management Group, and move a subscription into this Management Group.
 
 Note: We'll use our own Management Group, if you have permissions you could also use the Tenant Root Management Group.
 
-##### Exit criteria
+#### Exit criteria
 
 Management group created with at least one subscription within it.
 
@@ -176,7 +152,7 @@ Management group created with at least one subscription within it.
 
 In this exercise, you will use Azure Policy to restrict the type of resources that can be used within Trey Research.
 
-##### Tasks to complete
+#### Tasks to complete
 
 -   Assign one of the built-in Azure policies to restrict resource types available in Trey Research to the following list. The policy should be applied at the Management Group scope.
 
@@ -200,7 +176,7 @@ In this exercise, you will use Azure Policy to restrict the type of resources th
   - Web Apps
   - SQL Database
 
-##### Exit criteria 
+#### Exit criteria 
 
 -   Policy applied as described.
 
@@ -208,11 +184,11 @@ In this exercise, you will use Azure Policy to restrict the type of resources th
 
 In this exercise, use Azure policy to restrict the creation of an ExpressRoute circuit, except as required by Enterprise IT
 
-##### Tasks to complete
+#### Tasks to complete
 
 -   Apply an existing Azure Policy to prevent the creation of ExpressRoute circuits. The policy should be applied at the Management Group scope. Use an Exception Path to define a resource group which Enterprise IT can use for their permitted ExpressRoute circuits.
 
-##### Exit criteria 
+#### Exit criteria 
 
 -   Policy applied as described.
 
@@ -220,7 +196,7 @@ In this exercise, use Azure policy to restrict the creation of an ExpressRoute c
 
 In this exercise, use Azure Policy to restrict which regions resources can be created in.
 
-##### Tasks to complete
+#### Tasks to complete
 
 -   Assign one of the built-in Azure Policies to restrict resource creation to the following regions:
 
@@ -232,7 +208,7 @@ In this exercise, use Azure Policy to restrict which regions resources can be cr
 
 -   The policy should be applied at Management Group scope.
 
-##### Exit criteria 
+#### Exit criteria 
 
 -   Policy applied as described.
 
@@ -240,7 +216,7 @@ In this exercise, use Azure Policy to restrict which regions resources can be cr
 
 In this task, we will define a simple naming convention for Azure resources. We shall simply require that virtual machine names end with '-vm', virtual networks end with '-vnet', and so on across the various resource types. We shall implement this naming convention using custom policy definition and policy initiative, assigned at the management group scope.
 
-##### Tasks to complete
+#### Tasks to complete
 
 -   Create a generic policy definition that restricts resources of a given type to have a given name suffix. The resource type and name suffix shall be specified using parameters.
 
@@ -248,7 +224,7 @@ In this task, we will define a simple naming convention for Azure resources. We 
 
 -   Apply the policy initiative at Management Group scope.
 
-##### Exit criteria
+#### Exit criteria
 
 -   Policy initiative deployed, restricting all permitted resources to have a type-specific resource name suffix.
 
@@ -256,13 +232,13 @@ In this task, we will define a simple naming convention for Azure resources. We 
 
 In this task, you will use the Azure management portal to validate the policies work and understand how to identify policy events.
 
-##### Tasks to complete
+#### Tasks to complete
 
 -   Attempt to create ARM resources in violation of each policy you have created. Observe the error messages.
 
 -   Create ARM resources that are compliant with each policy you have created.
 
-##### Exit criteria 
+#### Exit criteria 
 
 -   You should not be able to create resources of a type not permitted by the Service Catalog policy.
 
@@ -295,7 +271,7 @@ In this exercise, you will configure delegated permissions for users in the Trey
 
 In this task, you will create two user accounts in Azure AD that you will use for testing delegated access control.
 
-##### Tasks to complete
+#### Tasks to complete
 
 -   Within Azure AD create two users
 
@@ -303,7 +279,7 @@ In this task, you will create two user accounts in Azure AD that you will use fo
 
     -   ElectronicsUser@\[your tenant name\].onmicrosoft.com
 
-##### Exit criteria 
+#### Exit criteria 
 
 -   Two users that will be used to test delegated permissions using role based access control (RBAC).
 
@@ -311,7 +287,7 @@ In this task, you will create two user accounts in Azure AD that you will use fo
 
 In this task, you will create two groups in Azure AD that you will use for testing delegated access control. You will add the users created in the previous task to the groups.
 
-##### Tasks to complete
+#### Tasks to complete
 
 -   Within Azure AD create two groups
 
@@ -319,7 +295,7 @@ In this task, you will create two groups in Azure AD that you will use for testi
 
     -   BU-Electronics-Users -- add the ElectronicsUser user to this group
 
-##### Exit criteria 
+#### Exit criteria 
 
 -   Two groups with users that will be used to test delegated permissions using role based access control (RBAC).
 
@@ -327,13 +303,13 @@ In this task, you will create two groups in Azure AD that you will use for testi
 
 In this task, you will create a PowerShell script to add a user to the contributor role of the subscription automatically.
 
-##### Tasks to complete
+#### Tasks to complete
 
 -   Create a new script ConfigureSubscription.ps1 that accepts an Azure AD Group and subscription ID, and adds to the group to the subscription with the contributor role.
 
 -   Use the modified script (not the portal) to add the BU-Electronics-Admin group to your subscription in the contributor role.
 
-##### Exit criteria 
+#### Exit criteria 
 
 -   A modified script that will add the BU-Electronics-Admin group to the contributor role automatically.
 
@@ -343,7 +319,7 @@ In this task, you will create a PowerShell script to add a user to the contribut
 
 In this task, you will create a script that will create a new resource group, assign 'Owner' rights over the resource group to a given AD group, and apply a policy to enforce an 'IOCode' tag with a given value.
 
-##### Tasks to complete
+#### Tasks to complete
 
 -   Create a new PowerShell script called CreateProjectResourceGroup.ps1 that will create a new resource group with the following settings applied:
 
@@ -355,7 +331,7 @@ In this task, you will create a script that will create a new resource group, as
 
 -   Create a new storage account within the resource group and validate the new tag is applied.
 
-##### Exit criteria 
+#### Exit criteria 
 
 -   A reusable script that will accept the subscription ID, an IOCode value, and the group to add as parameters. When the script is executed, it should create the resource group and automatically add the group to the owner role and apply Azure Policy to add the IOCode tag to all resources, with a specified value.
 
@@ -379,7 +355,7 @@ In this exercise, you will configure a new environment for the developers of the
 
 In this task, you will create a new virtual network for Trey Research.
 
-##### Tasks to complete
+#### Tasks to complete
 
 -   Create a new virtual network with the following properties:
 
@@ -401,7 +377,7 @@ In this task, you will create a new virtual network for Trey Research.
 
 -   Add a gateway subnet
 
-##### Exit criteria 
+#### Exit criteria 
 
 -   A virtual network named TreyResearchVNET with the correct settings noted above.
 
@@ -409,11 +385,11 @@ In this task, you will create a new virtual network for Trey Research.
 
 In this task, you will start provisioning of a VPN gateway that will be used for secure connectivity for Trey Research.
 
-##### Tasks to complete
+#### Tasks to complete
 
 -   Configure a dynamic VPN gateway on the virtual network that will allow individual developers to connect securely and access virtual machines by their private IP address.
 
-##### Exit criteria 
+#### Exit criteria 
 
 -   A VPN gateway (dynamic) in the provisioning state.
 
@@ -421,11 +397,11 @@ In this task, you will start provisioning of a VPN gateway that will be used for
 
 In this task, you will create and configure a new development environment for Trey Research developers and contingent staff.
 
-##### Tasks to complete
+#### Tasks to complete
 
 -   Create an environment that developers can use to provision and access virtual machines.
 
-##### Exit criteria 
+#### Exit criteria 
 
 -   The environment should only allow virtual machines to deploy to the ECommerceDev subnet.
 
@@ -441,13 +417,13 @@ In this task, you will create and configure a new development environment for Tr
 
 In this task, you will use the ElectronicsAdmin user account to grant access to the developer environment and then validate as a user whether access was successfully granted.
 
-##### Tasks to complete
+#### Tasks to complete
 
 -   Login as the ElectronicsAdmin user and grant access to the environment to the ElectronicsUser user.
 
 -   Login as the ElectronicsUser user and provision a virtual machine that has Azure PowerShell and Fiddler 4 installed at provision time.
 
-##### Exit criteria 
+#### Exit criteria 
 
 -   The ElectronicsUser account should only be allowed to use the environment you assigned permissions to (nothing further).
 
@@ -457,7 +433,7 @@ In this task, you will use the ElectronicsAdmin user account to grant access to 
 
 In this task, you will configure certificates for the VPN gateway and for the end users and complete configuration of the VPN gateway. You will then configure and test access to the development environment.
 
-##### Tasks to complete
+#### Tasks to complete
 
 -   Complete the configuration of the secure VPN solution.
 
@@ -467,7 +443,7 @@ In this task, you will configure certificates for the VPN gateway and for the en
 
 -   Sign in to the Azure Management Portal using the ElectronicsUser user and connect to the previously created virtual machine using its private IP address.
 
-##### Exit criteria 
+#### Exit criteria 
 
 -   The ElectronicsUser user should be able to login to the portal, find his or her virtual machine, click **Connect** and successfully connect to its private IP address (no public IPs allowed).
 

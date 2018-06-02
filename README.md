@@ -1,3 +1,38 @@
+# Abstract
+
+## Workshop
+
+Create an Azure cloud governance plan to advise a manufacturing company of the features available in Azure. Discover features to bring governance to their Azure deployments, distributed administration, and allowance for secure remote connectivity and development work for their offshore developers. Attendees will be better able to design a governance plan to showcase the security and governance features of Azure and control costs. In addition,
+
+-   Provide for cost tracking by business unit, environment, and project
+
+-   Provide for a distributed administration model
+
+-   Put a service catalog in place to prevent deployment of unsupported Azure services
+
+-   Put controls in place to allow deployment of services only in specific regions
+
+
+
+## Whiteboard Design Session
+TBD
+
+## Hand-on Lab
+TBD
+
+
+## Azure services and related products
+- Azure VMs
+- Azure Portal
+- Azure PowerShell
+- Azure Storage
+- Azure Active Directory
+- Azure Web Apps
+- Azure Virtual Networks
+- SQL Server
+- Operations Management Suite
+- Azure Backup
+
 
 # Contributing
 
