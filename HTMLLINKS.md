@@ -3,9 +3,9 @@
 
 [WDS trainer guide - Enterprise-ready cloud.html](https://cloudworkshop.blob.core.windows.net/enterprise-ready-cloud/Whiteboard%20design%20session/WDS%20trainer%20guide%20-%20Enterprise-ready%20cloud.html)
 
+[Before the lab - Enterprise-ready cloud.html](https://cloudworkshop.blob.core.windows.net/enterprise-ready-cloud/Hands-on%20lab/Before%20the%20lab%20-%20Enterprise-ready%20cloud.html)
+
 [HOL step-by-step - Enterprise-ready cloud.html](https://cloudworkshop.blob.core.windows.net/enterprise-ready-cloud/Hands-on%20lab/HOL%20step-by-step%20-%20Enterprise-ready%20cloud.html)
 
 [HOL unguided - Enterprise-ready cloud.html](https://cloudworkshop.blob.core.windows.net/enterprise-ready-cloud/Hands-on%20lab/HOL%20unguided%20-%20Enterprise-ready%20cloud.html)
-
-[Setup.html](https://cloudworkshop.blob.core.windows.net/enterprise-ready-cloud/Hands-on%20lab/Setup.html)
 
