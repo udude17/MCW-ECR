@@ -1,5 +1,5 @@
 
-# Building a resilient IaaS architecture setup
+# Enterprise Ready Cloud setup
 
 ## Requirements
 
