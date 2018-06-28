@@ -92,7 +92,9 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 ## Abstract and learning objectives 
 
-Create an Azure cloud governance plan to advise a manufacturing company of the features available in Azure. Discover features to bring governance to their Azure deployments, distributed administration, and allowance for secure remote connectivity and development work for their offshore developers. Attendees will be better able to design a governance plan to showcase the security and governance features of Azure and control costs. In addition,
+In this hands-on lab, you are working with Trey Research to setup some best practices regarding policies, permissions, and remote access to their network. Some tasks will include creating scripts that Enterprise IT will use to automatically set policy and delegate permissions when a new subscription is created. You will also help them solve a critical problem for on-boarding new developers and controlling access to what they can access on the network.
+
+Additionally, you will know how to:
 
 -   Provide for cost tracking by business unit, environment, and project
 
@@ -106,6 +108,10 @@ Create an Azure cloud governance plan to advise a manufacturing company of the f
 
 In this hands-on lab, you are working with Trey Research to setup some best practices regarding policies, permissions, and remote access to their network. Some tasks will include creating scripts that Enterprise IT will use to automatically set policy and delegate permissions when a new subscription is created. You will also help them solve a critical problem for onboarding new developers and controlling access to what they can access on the network.
 
+## Solution architecture
+
+![Hierarching showing Azure AD at the root, then a Management Group, then an Azure Subscription, then resource groups, then resources. It is tagged \'Policies and RBAC\'.](images/Hands-onlabunguided-Enterprise-readycloudimages/media/image2.png "Azure AD - Management Group - Subscription - Resource Group hierarchy")
+
 ## Requirements
 
 -   Local machine or a virtual machine configured with:
@@ -114,17 +120,12 @@ In this hands-on lab, you are working with Trey Research to setup some best prac
 
 -   Full global admin access to the Azure AD tenant associated with your Azure subscription
 
-## Solution architecture
-
-![Hierarching showing Azure AD at the root, then a Management Group, then an Azure Subscription, then resource groups, then resources. It is tagged \'Policies and RBAC\'.](images/Hands-onlabunguided-Enterprise-readycloudimages/media/image2.png "Azure AD - Management Group - Subscription - Resource Group hierarchy")
-
-
 
 ## Exercise 1: Create the policy for Enterprise IT
 
 Duration: 60 minutes
 
-In this exercise, you first create a Management Group for your Azure subscription(s). You will apply several of the built-in Azure Policy definitions to that Management Group to ensure that users stay within the scope of supported services for Enterprise IT. Finally, you will create a new policy initiative defining a multi-resource naming convention, and apply that initiative to the Management Group.
+In this exercise, you will first create a Management Group for your Azure subscription(s). You will apply several of the built-in Azure Policy definitions to that Management Group to ensure that users stay within the scope of supported services for Enterprise IT. Finally, you will create a new policy initiative defining a multi-resource naming convention and apply that initiative to the Management Group.
 
 ### Help references
 
@@ -136,7 +137,7 @@ In this exercise, you first create a Management Group for your Azure subscriptio
 
 ### Task 1: Create a Management Group
 
-In this Task, you will create a new Management Group, so that policies can be applied automatically to all subscriptions under that scope.
+In this Task, you will create a new Management Group so that policies can be applied automatically to all subscriptions under that scope.
 
 #### Tasks to complete
 
@@ -178,7 +179,7 @@ In this exercise, you will use Azure Policy to restrict the type of resources th
 
 #### Exit criteria 
 
--   Policy applied as described.
+-   Policy applied as described
 
 ### Task 2: Restrict the creation of ExpressRoute circuits
 
@@ -186,11 +187,11 @@ In this exercise, use Azure policy to restrict the creation of an ExpressRoute c
 
 #### Tasks to complete
 
--   Apply an existing Azure Policy to prevent the creation of ExpressRoute circuits. The policy should be applied at the Management Group scope. Use an Exception Path to define a resource group which Enterprise IT can use for their permitted ExpressRoute circuits.
+-   Apply an existing Azure Policy to prevent the creation of ExpressRoute circuits. The policy should be applied at the Management Group scope. Use an Exception Path to define a resource group that Enterprise IT can use for their permitted ExpressRoute circuits.
 
 #### Exit criteria 
 
--   Policy applied as described.
+-   Policy applied as described
 
 ### Task 3: Restrict the creation of resources in regions
 
@@ -206,15 +207,15 @@ In this exercise, use Azure Policy to restrict which regions resources can be cr
 
     -   Primary: Japan West, Failover: Japan East
 
--   The policy should be applied at Management Group scope.
+-   The policy should be applied at Management Group scope
 
 #### Exit criteria 
 
--   Policy applied as described.
+-   Policy applied as described
 
 ### Task 5: Create and apply a naming convention
 
-In this task, we will define a simple naming convention for Azure resources. We shall simply require that virtual machine names end with '-vm', virtual networks end with '-vnet', and so on across the various resource types. We shall implement this naming convention using custom policy definition and policy initiative, assigned at the management group scope.
+In this task, we will define a simple naming convention for Azure resources. We shall simply require that virtual machine names end with '-vm', virtual networks end with '-vnet' and so on across the various resource types. We shall implement this naming convention using the custom policy definition and policy initiative assigned at the management group scope.
 
 #### Tasks to complete
 
@@ -222,11 +223,11 @@ In this task, we will define a simple naming convention for Azure resources. We 
 
 -   Create a policy initiative that defines the naming convention. The policy initiative should use multiple instances of the above policy definition, each with different values for the resource type and name suffix.
 
--   Apply the policy initiative at Management Group scope.
+-   Apply the policy initiative at Management Group scope
 
 #### Exit criteria
 
--   Policy initiative deployed, restricting all permitted resources to have a type-specific resource name suffix.
+-   Policy initiative deployed, restricting all permitted resources to have a type-specific resource name suffix
 
 ### Task 6: Test the policies
 
@@ -236,19 +237,19 @@ In this task, you will use the Azure management portal to validate the policies 
 
 -   Attempt to create ARM resources in violation of each policy you have created. Observe the error messages.
 
--   Create ARM resources that are compliant with each policy you have created.
+-   Create ARM resources that are compliant with each policy you have created
 
 #### Exit criteria 
 
--   You should not be able to create resources of a type not permitted by the Service Catalog policy.
+-   You should not be able to create resources of a type not permitted by the Service Catalog policy
 
 -   You should not be able to create ExpressRoute circuits, except in the exception path scope defined for Enterprise IT
 
--   You should not be able to create resources in any regions other than those permitted.
+-   You should not be able to create resources in any regions other than those permitted
 
--   You should not be able to create resources which do not conform to the naming convention.
+-   You should not be able to create resources that do not conform to the naming convention
 
--   You [can]{.underline} create resources so long as the type, location, and resource name do not infringe the respective policies.
+-   You [can]{.underline} create resources as long as the type, location, and resource name do not infringe the respective policies
 
 ## Exercise 2: Configure delegated permissions
 
@@ -281,7 +282,7 @@ In this task, you will create two user accounts in Azure AD that you will use fo
 
 #### Exit criteria 
 
--   Two users that will be used to test delegated permissions using role based access control (RBAC).
+-   Two users that will be used to test delegated permissions using role based access control (RBAC)
 
 ### Task 2: Create groups in Azure AD for delegation 
 
@@ -297,7 +298,7 @@ In this task, you will create two groups in Azure AD that you will use for testi
 
 #### Exit criteria 
 
--   Two groups with users that will be used to test delegated permissions using role based access control (RBAC).
+-   Two groups with users that will be used to test delegated permissions using role based access control (RBAC)
 
 ### Task 3: Configure delegated permissions 
 
@@ -305,35 +306,35 @@ In this task, you will create a PowerShell script to add a user to the contribut
 
 #### Tasks to complete
 
--   Create a new script ConfigureSubscription.ps1 that accepts an Azure AD Group and subscription ID, and adds to the group to the subscription with the contributor role.
+-   Create a new script ConfigureSubscription.ps1 that accepts an Azure AD Group and subscription ID and adds to the group to the subscription with the contributor role.
 
--   Use the modified script (not the portal) to add the BU-Electronics-Admin group to your subscription in the contributor role.
+-   Use the modified script (not the portal) to add the BU-Electronics-Admin group to your subscription in the contributor role
 
 #### Exit criteria 
 
--   A modified script that will add the BU-Electronics-Admin group to the contributor role automatically.
+-   A modified script that will add the BU-Electronics-Admin group to the contributor role automatically
 
--   Run the script, and verify the group assignment via the Azure portal.
+-   Run the script, and verify the group assignment via the Azure portal
 
 ### Task 4: Enable project-based delegation and chargeback
 
-In this task, you will create a script that will create a new resource group, assign 'Owner' rights over the resource group to a given AD group, and apply a policy to enforce an 'IOCode' tag with a given value.
+In this task, you will create a script that will create a new resource group, assign 'Owner' rights over the resource group to a given AD group, and then apply a policy to enforce an 'IOCode' tag with a given value.
 
 #### Tasks to complete
 
 -   Create a new PowerShell script called CreateProjectResourceGroup.ps1 that will create a new resource group with the following settings applied:
 
-    -   Accepts an Azure AD Group Name as a parameter that will be assigned to the owner role of the new resource group.
+    -   Accepts an Azure AD Group Name as a parameter that will be assigned to the owner role of the new resource group
 
-    -   Accepts a project IO code value (for example 1000150) and uses a built-in Azure policy to add the IOCode tag to all resources created within the resource group.
+    -   Accepts a project IO code value (for example 1000150) and uses a built-in Azure policy to add the IOCode tag to all resources created within the resource group
 
--   Using the new script, create a new resource group called DelegatedProjectDemo that has the BU-Electronics-Admin group be added to the subscription in the owner role and has the policy applied and has the IOCode policy applied with the ioCode parameter set to 1000150.
+-   Using the new script, create a new resource group called DelegatedProjectDemo that has the BU-Electronics-Admin group added to the subscription in the owner role, has the policy applied, and has the IOCode policy applied with the ioCode parameter set to 1000150.
 
--   Create a new storage account within the resource group and validate the new tag is applied.
+-   Create a new storage account within the resource group and validate the new tag is applied
 
 #### Exit criteria 
 
--   A reusable script that will accept the subscription ID, an IOCode value, and the group to add as parameters. When the script is executed, it should create the resource group and automatically add the group to the owner role and apply Azure Policy to add the IOCode tag to all resources, with a specified value.
+-   A reusable script that will accept the subscription ID, an IOCode value, and the group to add as parameters. When the script is executed, it should create the resource group, automatically add the group to the owner role, and apply the Azure Policy to add the IOCode tag to all resources with a specified value.
 
 ## Exercise 3: Create the environment for the e-commerce team
 
@@ -379,7 +380,7 @@ In this task, you will create a new virtual network for Trey Research.
 
 #### Exit criteria 
 
--   A virtual network named TreyResearchVNET with the correct settings noted above.
+-   A virtual network named TreyResearchVNET with the correct settings noted above
 
 ### Task 2: Configure secure VPN for connectivity
 
@@ -387,11 +388,11 @@ In this task, you will start provisioning of a VPN gateway that will be used for
 
 #### Tasks to complete
 
--   Configure a dynamic VPN gateway on the virtual network that will allow individual developers to connect securely and access virtual machines by their private IP address.
+-   Configure a dynamic VPN gateway on the virtual network that will allow individual developers to connect securely and access virtual machines by their private IP address
 
 #### Exit criteria 
 
--   A VPN gateway (dynamic) in the provisioning state.
+-   A VPN gateway (dynamic) in the provisioning state
 
 ### Task 3: Create an Azure DevTest labs environment 
 
@@ -399,53 +400,53 @@ In this task, you will create and configure a new development environment for Tr
 
 #### Tasks to complete
 
--   Create an environment that developers can use to provision and access virtual machines.
+-   Create an environment that developers can use to provision and access virtual machines
 
 #### Exit criteria 
 
--   The environment should only allow virtual machines to deploy to the ECommerceDev subnet.
+-   The environment should only allow virtual machines to deploy to the ECommerceDev subnet
 
 -   Virtual machines should not be allowed to be deployed on any subnet other than ECommerceDev
 
--   The only virtual machines that can be provisioned are Standard\_DS2.
+-   The only virtual machines that can be provisioned are Standard\_DS2
 
--   Each user of the environment should only be able to deploy one VM.
+-   Each user of the environment should only be able to deploy one VM
 
--   The BU-Electronics-Admin group should be allowed to grant access to the environment to other users.
+-   The BU-Electronics-Admin group should be allowed to grant access to the environment to other users
 
 ### Task 4: Test access to the DevTest labs environment 
 
-In this task, you will use the ElectronicsAdmin user account to grant access to the developer environment and then validate as a user whether access was successfully granted.
+In this task, you will use the ElectronicsAdmin user account to grant access to the developer environment, and then validate as a user whether access was successfully granted.
 
 #### Tasks to complete
 
--   Login as the ElectronicsAdmin user and grant access to the environment to the ElectronicsUser user.
+-   Login as the ElectronicsAdmin user and grant access to the environment to the ElectronicsUser user
 
--   Login as the ElectronicsUser user and provision a virtual machine that has Azure PowerShell and Fiddler 4 installed at provision time.
+-   Login as the ElectronicsUser user and provision a virtual machine that has Azure PowerShell and Fiddler 4 installed at provision time
 
 #### Exit criteria 
 
--   The ElectronicsUser account should only be allowed to use the environment you assigned permissions to (nothing further).
+-   The ElectronicsUser account should only be allowed to use the environment you assigned permissions to (nothing further)
 
--   The exit criteria put in place in task 4 should apply to this user.
+-   The exit criteria put in place in Task 4 should apply to this user
 
 ### Task 5: Finish configure secure connectivity
 
-In this task, you will configure certificates for the VPN gateway and for the end users and complete configuration of the VPN gateway. You will then configure and test access to the development environment.
+In this task, you will configure certificates for the VPN gateway and the end users, and complete configuration of the VPN gateway. You will then configure and test access to the development environment.
 
 #### Tasks to complete
 
--   Complete the configuration of the secure VPN solution.
+-   Complete the configuration of the secure VPN solution
 
--   Provision a certificate that can be used to authenticate a client to the VPN solution.
+-   Provision a certificate that can be used to authenticate a client to the VPN solution
 
--   Connect to the virtual network using the VPN solution.
+-   Connect to the virtual network using the VPN solution
 
--   Sign in to the Azure Management Portal using the ElectronicsUser user and connect to the previously created virtual machine using its private IP address.
+-   Sign in to the Azure Management Portal using the ElectronicsUser user and connect to the previously created virtual machine using its private IP address
 
 #### Exit criteria 
 
--   The ElectronicsUser user should be able to login to the portal, find his or her virtual machine, click **Connect** and successfully connect to its private IP address (no public IPs allowed).
+-   The ElectronicsUser user should be able to login to the portal, find his or her virtual machine, select **Connect** and successfully connect to its private IP address (no public IPs allowed)
 
 ## After the hands-on lab 
 
@@ -455,19 +456,17 @@ After the hands-on lab, you will remove the policies on your subscription
 
 ### Task 1: Remove resources and configuration created during this lab
 
-You should follow all steps provided *after* attending the hands-on lab.
+1.  Log in to the Azure portal
 
-1.  Log in to the Azure portal.
+2.  Navigate to the **Policy** blade
 
-2.  Navigate to the **Policy** blade.
+3.  Select **Assignments** and delete all policy assignments created during this lab
 
-3.  Click on **Assignments** and delete all policy assignments created during this lab
+4.  Select **Definitions** and delete any policy definitions or initiative definitions created during this lab
 
-4.  Click on **Definitions** and delete any policy definitions or initiative definitions created during this lab
+5.  Navigate to the **Management Groups** blade
 
-5.  Navigate to the **Management Groups** blade.
-
-6.  Remove any Management Groups crated during this lab.
+6.  Remove any Management Groups crated during this lab
 
 7.  Navigate to the **Resource Groups** blade.
 
@@ -475,5 +474,7 @@ You should follow all steps provided *after* attending the hands-on lab.
 
 9.  Navigate to the **Azure Active Directory** blade
 
-10. Remove any users and groups created during this lab.
+10. Remove any users and groups created during this lab
+
+You should follow all steps provided *after* attending the hands-on lab.
 
