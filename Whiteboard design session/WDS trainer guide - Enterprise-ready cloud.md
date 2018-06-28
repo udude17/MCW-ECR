@@ -617,27 +617,27 @@ Duration: 15 minutes
 }
 ```
 
-    Alternatively, separate subscriptions could be used for each project, and the above ARM policy applied at the subscription level.
+   Alternatively, separate subscriptions could be used for each project, and the above ARM policy applied at the subscription level.
 
 4.  **Design:** How could you enforce the cost tracking of cloud deployments within business units, according to the following taxonomies?
 
-        -   Development and Test
+       -   Development and Test
 
-        -   Production
+       -   Production
 
-        -   Support Services
+       -   Support Services
 
-        -   Infrastructure
+       -   Infrastructure
 
     **Solution:** To enforce a taxonomy that would group resource costs by the following categories, each new subscription would need an ARM policy assigned that enforced resource groups to have a tag with one of the following values assigned:
 
-        -   Tag Name: Environment---Value: Development and Test
+       -   Tag Name: Environment---Value: Development and Test
 
-        -   Tag Name: Environment---Value: Production
+       -   Tag Name: Environment---Value: Production
 
-        -   Tag Name: Environment---Value: Support Services
+       -   Tag Name: Environment---Value: Support Services
 
-        -   Tag Name: Environment---Value: Infrastructure
+       -   Tag Name: Environment---Value: Infrastructure
 
     This can be done with built in policies, specifically by applying the **Apply tag and its default value** and the **Enforce tag and its value** policies. A new resource group would be created for each environment (Production, Dev, etc.) and these policies would be applied, specifying the tags to assign.
 
@@ -649,11 +649,11 @@ Duration: 15 minutes
 
     Azure Cost Management by Cloudyn can be used for cost management reporting and alerting. To do this you must register with Cloudyn from the Azure Portal, and create a hierarchy of cost entities in Cloudyn representing different business units and the various taxonomy.
 
-        -   Choose appropriate access levels for each subscription in your EA
+       -   Choose appropriate access levels for each subscription in your EA
 
-        -   Assign each subscription to the appropriate cost entity
+       -   Assign each subscription to the appropriate cost entity
 
-        -   Create users for business units and the finance department
+       -   Create users for business units and the finance department
 
     ![The Actual Cost Over Time stacked bar graph displays bar graphs of cost by service, resource type, sub type, operations, and date time.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image14.png "Actual Cost Over Time stacked bar graph")
 
@@ -684,9 +684,9 @@ Duration: 15 minutes
 
 ```
 
-    The above example shows how to enforce a simple naming constraint on a single resource type---virtual machines. Enterprise IT need to enforce their convention across all their resource types. Implementing this in a single policy requires an impractically-large conditional logic in the policy rule.
+   The above example shows how to enforce a simple naming constraint on a single resource type---virtual machines. Enterprise IT need to enforce their convention across all their resource types. Implementing this in a single policy requires an impractically-large conditional logic in the policy rule.
 
-    Instead, separate policies should be created for each resource type. These policies should then be combined into a single *policy initiative.* Using a policy initiative allows the entire set of policies to be assigned in a single operation. It also allows new naming rules to be added easily---simply add the new rule to the initiative and it will be applied across all existing assignments.
+   Instead, separate policies should be created for each resource type. These policies should then be combined into a single *policy initiative.* Using a policy initiative allows the entire set of policies to be assigned in a single operation. It also allows new naming rules to be added easily---simply add the new rule to the initiative and it will be applied across all existing assignments.
 
 6.  **Design:** How can Enterprise IT minimize per-subscription configuration and centrally audit compliance with their governance rules?
 
@@ -698,9 +698,9 @@ Duration: 15 minutes
 
     Using the Standard policy tier enables Azure to generate a compliance report, showing which resources in the scope of a given policy are out of compliance (do not meet the policy rule condition) of the policy.
 
-        -   In the case of the naming convention policy, since this is applied at the root tenant management group level, this allows Enterprise IT to easily see which resources are not following the naming convention, company-wide.
+       -   In the case of the naming convention policy, since this is applied at the root tenant management group level, this allows Enterprise IT to easily see which resources are not following the naming convention, company-wide.
 
-        -   In the case of the policy to enforce Environment tags, the policy discussed earlier uses different tag values for different projects, hence the policy is not applied at the root tenant management group level, but instead at the level of individual subscriptions or resource groups. A separate policy should be created to verify that the Environment tag is in place and uses one of the permitted values. This policy can be applied at the root tenant management group level. This will both enforce that all resources in all subscriptions include the Environment (even if a project-level rule is forgotten), and also provide a single compliance audit report. An example policy is given below.
+       -   In the case of the policy to enforce Environment tags, the policy discussed earlier uses different tag values for different projects, hence the policy is not applied at the root tenant management group level, but instead at the level of individual subscriptions or resource groups. A separate policy should be created to verify that the Environment tag is in place and uses one of the permitted values. This policy can be applied at the root tenant management group level. This will both enforce that all resources in all subscriptions include the Environment (even if a project-level rule is forgotten), and also provide a single compliance audit report. An example policy is given below.
 
 ```
 {
@@ -730,20 +730,20 @@ Duration: 15 minutes
 
 ```
 
-    A similar policy can be used to enforce and audit use of other company-wide tags, such as ioCode.
+   A similar policy can be used to enforce and audit use of other company-wide tags, such as ioCode.
 
 
 7.  **Design:** How can Azure help business units minimize wasted spend on non-production VMs left running out-of-hours?
 
     **Solution:** Azure offers a number of features to minimize wasted spend on non-Production VMs:
 
-        -   For Dev/Test scenarios, Azure Dev/Test Labs enables the full lifecycle of Dev/Test environments to be managed, including hours of use, and policies on the number and size of VMs per user and per lab.
+       -   For Dev/Test scenarios, Azure Dev/Test Labs enables the full lifecycle of Dev/Test environments to be managed, including hours of use, and policies on the number and size of VMs per user and per lab.
 
-        -   Each VM can be configured with a time at which it will automatically shut down until restarted. This is available in the management portal when creating the VM, or afterwards. This feature was originally part of Dev/Test Labs and is now available for all VMs.
+       -   Each VM can be configured with a time at which it will automatically shut down until restarted. This is available in the management portal when creating the VM, or afterwards. This feature was originally part of Dev/Test Labs and is now available for all VMs.
 
-        -   The 'Start/Stop VMs during off-hours' offering in the Azure Marketplace also offers the ability to automatically configure when VMs will run. This solution has the advantage that a single configuration can be applied across a subscription (selectively if necessary), rather than being applied to each individual VMs. It also has the ability to schedule VM start time as well as stop time. It could potentially be extended to auto-shutdown VMs based on their Environment tag.
+       -   The 'Start/Stop VMs during off-hours' offering in the Azure Marketplace also offers the ability to automatically configure when VMs will run. This solution has the advantage that a single configuration can be applied across a subscription (selectively if necessary), rather than being applied to each individual VMs. It also has the ability to schedule VM start time as well as stop time. It could potentially be extended to auto-shutdown VMs based on their Environment tag.
 
-        -   Azure Cost Management (by Cloudyn) offers reports showing VM utilization and recommendations for stopping idle VMs and right-sizing under-utilized VMs.
+       -   Azure Cost Management (by Cloudyn) offers reports showing VM utilization and recommendations for stopping idle VMs and right-sizing under-utilized VMs.
 
 **Azure EA role descriptions**
 
@@ -763,29 +763,29 @@ Can add subscriptions to the account, update the service administrator and co-ad
 
 1.  **Design:** Identify a solution to restrict which services can be created and used in each business unit subscription. Diagram specifically how your solution would be put into place and perform a requirements analysis to determine if there are services needed that Trey Research has not added to their initial list. This solution should allow access to these services by default, but no others.
 
-        -   Virtual machines
+       -   Virtual machines
 
-        -   ExpressRoute
+       -   ExpressRoute
 
-            -   The ExpressRoute circuit(s) will be created and managed by IT. IT wants to ensure that sub-business units should be able to use the circuits, but not create new ones or change the existing circuits.
+           -   The ExpressRoute circuit(s) will be created and managed by IT. IT wants to ensure that sub-business units should be able to use the circuits, but not create new ones or change the existing circuits.
 
-        -   VPN gateways
+       -   VPN gateways
 
-        -   Storage (standard and premium)
+       -   Storage (standard and premium)
 
-        -   Virtual networks
+       -   Virtual networks
 
-        -   Backup
+       -   Backup
 
-        -   Site recovery
+       -   Site recovery
 
-        -   DevTest labs
+       -   DevTest labs
 
-        -   Log analytics
+       -   Log analytics
 
-        -   Web App
+       -   Web App
 
-        -   SQL Database
+       -   SQL Database
 
     **Solution:** Enterprise IT should apply two Azure Policies. The first will be the built-in policy **Allowed Resource Types**. They will choose each resource type required for the services the customer requires.
 
@@ -816,23 +816,23 @@ There's one catch---the Enterprise IT team will need a subscription in which to 
 
 Using a central policy in the Tenant root management group has another advantage; by using the Standard Tier of Azure Policy, a centralized report showing organizational compliance with the policy is available.
 
-1.  **Design:** One or more users from the business unit must have the permissions to create resources in the subscription and view all resources. The user should not have the ability to change policies set by Enterprise IT.
+2.  **Design:** One or more users from the business unit must have the permissions to create resources in the subscription and view all resources. The user should not have the ability to change policies set by Enterprise IT.
 
     **Solution:** Create a group in Azure AD for that business unit, for example, BU1-Azure-Managers, and add those users to the group. Within the Azure subscription, add the Azure AD group to the contributor role and assign that role to the Resource Group. Contributors do not have permissions to add or remove users or change policies.
 
-2.  **Design:** How would you assign permissions to users and groups?
+3.  **Design:** How would you assign permissions to users and groups?
 
     **Solution:** Using RBAC, we can assign users and groups permissions, Users can be assigned permissions to manage resources at the management group, subscription, resource group or resource level.
 
-3.  **Design**: How could we use templates to limit features available in Azure?
+4.  **Design**: How could we use templates to limit features available in Azure?
 
     **Solution**: Using Azure Resource Manager templates, we can limit various items like location, VM instance etc. It is done by changing the list of allowed values to be chosen from.
 
-4.  **Design**: Could we allow partner organization users to access our corporate applications?
+5.  **Design**: Could we allow partner organization users to access our corporate applications?
 
     **Solution**: Using Azure Active Directory B2B collaboration, we can provide access to business partners to our corporate applications using their own credentials and as users are removed from their partner directory, their access to our corporate applications is removed.
 
-5.  **Design:** For each project in Azure, the business unit administrator must have permissions to add or remove users, allow them to create resources, or even apply additional policies. Provide some pseudo code that would be needed to accomplish the task.
+6.  **Design:** For each project in Azure, the business unit administrator must have permissions to add or remove users, allow them to create resources, or even apply additional policies. Provide some pseudo code that would be needed to accomplish the task.
 
     **Solution:** For projects that require elevated permissions, the Enterprise IT team would need to be involved to create the subscription or resource group for the project and add the business unit administrator to the owner role of the new subscription or resource group.
 
@@ -923,25 +923,25 @@ Using a central policy in the Tenant root management group has another advantage
 
     **Proposed regions:**
 
-        -   Primary: East United States, Failover: South Central United States
+       -   Primary: East United States, Failover: South Central United States
 
-        -   Primary: West Europe, Failover: North Europe
+       -   Primary: West Europe, Failover: North Europe
 
-        -   Primary: Japan West, Failover Japan East
+       -   Primary: Japan West, Failover Japan East
 
     **Solution:** Instead of deploying in South Central United States and East United States, Trey Research should use East and West United States because they are paired regions and East United States and South Central United States are not.
 
-        -   Paired region benefits:
+       -   Paired region benefits:
 
-            -   Physical Isolation---When possible, Azure prefers at least 300 miles of separation between datacenters in a regional pair, although it is not practical or possible in all geographies. Physical datacenter separation reduces the likelihood of natural disasters, civil unrest, power outages, or physical network outages affecting both regions at once. Isolation is subject to the constraints within the geography (geography size, power/network infrastructure availability, regulations, etc.).
+           -   Physical Isolation---When possible, Azure prefers at least 300 miles of separation between datacenters in a regional pair, although it is not practical or possible in all geographies. Physical datacenter separation reduces the likelihood of natural disasters, civil unrest, power outages, or physical network outages affecting both regions at once. Isolation is subject to the constraints within the geography (geography size, power/network infrastructure availability, regulations, etc.).
 
-            -   Platform provided replication---Some services such as Geo-Redundant Storage provide automatic replication to the paired region.
+           -   Platform provided replication---Some services such as Geo-Redundant Storage provide automatic replication to the paired region.
 
-            -   Region recovery order---In the event of a broad outage, recovery of one region is prioritized out of every pair. Applications that are deployed across paired regions are guaranteed to have one of the regions recovered with priority. If an application is deployed across regions that are not paired, recovery may be delayed---in the worst case the chosen regions may be the last two to be recovered.
+           -   Region recovery order---In the event of a broad outage, recovery of one region is prioritized out of every pair. Applications that are deployed across paired regions are guaranteed to have one of the regions recovered with priority. If an application is deployed across regions that are not paired, recovery may be delayed---in the worst case the chosen regions may be the last two to be recovered.
 
-            -   Sequential updates---Planned Azure system updates are rolled out to paired regions sequentially (not at the same time) to minimize downtime from the effect of bugs, and logical failures in the rare event of a bad update.
+           -   Sequential updates---Planned Azure system updates are rolled out to paired regions sequentially (not at the same time) to minimize downtime from the effect of bugs, and logical failures in the rare event of a bad update.
 
-            -   Data residency---A region resides within the same geography as its pair (with the exception of Brazil South) in order to meet data residency requirements for tax and law enforcement jurisdiction purposes.
+           -   Data residency---A region resides within the same geography as its pair (with the exception of Brazil South) in order to meet data residency requirements for tax and law enforcement jurisdiction purposes.
 
 2.  **Design:** Explain how Trey Research could restrict services to just the supported regions.
 
@@ -963,9 +963,9 @@ Using a central policy in the Tenant root management group has another advantage
 
     **Solution:** Use Azure Resource Manager locks to add a secondary layer of protection on production workloads. Locks can set in two modes:
 
-        -   **CanNotDelete** means authorized users can still read and modify a resource, but they cannot delete it.
+       -   **CanNotDelete** means authorized users can still read and modify a resource, but they cannot delete it.
 
-        -   **ReadOnly** means authorized users can read from a resource, but they cannot delete it or perform any actions on it. The permission on the resource is restricted to the reader role. Applying ReadOnly can lead to unexpected results because some operations that seem like read operations actually require additional actions. For example, placing a ReadOnly lock on a storage account will prevent all users from listing the keys. The list keys operation is handled through a POST request because the returned keys are available for write operations. For another example, placing a ReadOnly lock on an App Service resource will prevent Visual Studio's Server Explorer from being able to display files for the resource because that interaction requires write access.
+       -   **ReadOnly** means authorized users can read from a resource, but they cannot delete it or perform any actions on it. The permission on the resource is restricted to the reader role. Applying ReadOnly can lead to unexpected results because some operations that seem like read operations actually require additional actions. For example, placing a ReadOnly lock on a storage account will prevent all users from listing the keys. The list keys operation is handled through a POST request because the returned keys are available for write operations. For another example, placing a ReadOnly lock on an App Service resource will prevent Visual Studio's Server Explorer from being able to display files for the resource because that interaction requires write access.
 
     To identify who deleted the resource, look at the audit logs for the subscription.![In the Azure Resource Manager, Monitor - Activity log, query requirements and query results display.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image19.png "Azure Resource Manager")
 
@@ -973,9 +973,9 @@ Using a central policy in the Tenant root management group has another advantage
 
     **Solution:** Use Azure Security Center to help secure VMs. In particular:
 
-        -   Azure Security Center allows you to centrally configure policy settings to define the security requirements of your organization. It then performs continuous security assessment of all VMs against that security policy, and provides actionable recommendations to remediate security vulnerabilities.
+       -   Azure Security Center allows you to centrally configure policy settings to define the security requirements of your organization. It then performs continuous security assessment of all VMs against that security policy, and provides actionable recommendations to remediate security vulnerabilities.
 
-        -   Using the Standard SKU of Azure Security Center in addition allows you to enable [adaptive application controls](https://docs.microsoft.com/azure/security-center/security-center-adaptive-application). These provide a means to block attempts to run malicious applications by maintaining whitelists of permitted executables. This feature can be applied selectively, for example only to Production and Pre-Production resource groups.
+       -   Using the Standard SKU of Azure Security Center in addition allows you to enable [adaptive application controls](https://docs.microsoft.com/azure/security-center/security-center-adaptive-application). These provide a means to block attempts to run malicious applications by maintaining whitelists of permitted executables. This feature can be applied selectively, for example only to Production and Pre-Production resource groups.
 
     Note: Just-In-Time (JIT) is another powerful Azure Security Center feature, allowing VM remote management ports to be closed by default and opened only when needed and under appropriate RBAC permissions. However, since Trey will be using ExpressRoute to connect their on-premises network with Azure, using JIT is not required (JIT only works on Internet-facing endpoints).
 
@@ -1004,15 +1004,15 @@ Using a central policy in the Tenant root management group has another advantage
 
     **Solution:** DevTest labs also offers these additional features that the creator of the DevTest lab could use to optimize cost:
 
-        -   Enable auto start and auto shutdown based on the time zone of the developers. Setting this policy could optimize cost by shutting down virtual machines when not in use.
+       -   Enable auto start and auto shutdown based on the time zone of the developers. Setting this policy could optimize cost by shutting down virtual machines when not in use.
 
-        -   The e-commerce could also limit the following when creating the sandbox depending on the needs of that team.
+       -   The e-commerce could also limit the following when creating the sandbox depending on the needs of that team.
 
-            -   Limit the number of virtual machines in the lab
+           -   Limit the number of virtual machines in the lab
 
-            -   Limit the virtual machine sizes available
+           -   Limit the virtual machine sizes available
 
-            -   Limit the number of virtual machines per user
+           -   Limit the number of virtual machines per user
 
 ## Checklist of preferred objection handling
 
