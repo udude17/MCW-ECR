@@ -409,17 +409,17 @@ In this task, you will use the Azure management portal to validate each of the p
 
 **Subtask 2: Test the ExpressRoute circuit policy**
 
-6.  Select **New** **\>** **Networking** **\>** **ExpressRoute**.
+1.  Select **New** **\>** **Networking** **\>** **ExpressRoute**.
 
     ![Azure portal screenshot, showing click sequence to create an ExpressRoute circuit](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image23.png "Create ExpressRoute click path")
 
-7.  Specify the following configuration for the circuit and select **Create**.
+2.  Specify the following configuration for the circuit and select **Create**.
 
 Note: you may have to specify an alternate region if West United States is not supported with your subscription.
 
 ![The Circuit configuration fields are set to the following settings: Circuit name, TestCircuit; Provider, AT&T; Peering location, Silicon Valley; Bandwidth, 50Mbps; SKU, Standard.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image24.png "Circuit configuration fields") ![The Circuit configuration fields are set to the following settings: Billing model, Unlimited; Subscription, opsgilitytraining; Resource group, PolicyTestIRG; Location, West US.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image25.png "Circuit configuration fields")
 
-8.  As with the Service Catalog policy, you should see an error in the Create ExpressRoute Circuit blade, which when clicked shows the error details:
+3.  As with the Service Catalog policy, you should see an error in the Create ExpressRoute Circuit blade, which when clicked shows the error details:
 
     ![Azure portal screenshot, showing error message \"There were policy errors. Click here to view details\"](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image21.png "Validation Error screenshot")
 
@@ -427,15 +427,15 @@ Note: you may have to specify an alternate region if West United States is not s
 
 **SubTask 3: Test the resource location policy**
 
-9.  Testing the resource location policy follows a similar pattern. Attempt to create a permitted resource, with a permitted name, but in a not-permitted region. For example, create a virtual network named 'erc-vnet' in South Central US. This should be rejected by the 'Restrict Azure locations' policy.
+1.  Testing the resource location policy follows a similar pattern. Attempt to create a permitted resource, with a permitted name, but in a not-permitted region. For example, create a virtual network named 'erc-vnet' in South Central US. This should be rejected by the 'Restrict Azure locations' policy.
 
-10. To test further, change to a permitted location (e.g. East US) and try again---this time, the virtual network should be created OK. Note: you may need to refresh browser to release caching on policies.
+2. To test further, change to a permitted location (e.g. East US) and try again---this time, the virtual network should be created OK. Note: you may need to refresh browser to release caching on policies.
 
 **SubTask 4: Test the naming convention policy**
 
-11. Attempt to create a permitted resource, in a permitted location, with a not-permitted name. For example, create a virtual network named 'erc-network' in East US. This should be rejected by the 'Resource Naming Convention' policy.
+1. Attempt to create a permitted resource, in a permitted location, with a not-permitted name. For example, create a virtual network named 'erc-network' in East US. This should be rejected by the 'Resource Naming Convention' policy.
 
-12. To test further, change to a permitted name (e.g. 'erc-network-vnet') and try again---this time, the virtual network should be created OK. Note: you may need to refresh browser to release caching on policies.
+2. To test further, change to a permitted name (e.g. 'erc-network-vnet') and try again---this time, the virtual network should be created OK. Note: you may need to refresh browser to release caching on policies.
 
 ## Exercise 2: Configure delegated permissions
 
@@ -931,13 +931,13 @@ In this task, you will configure certificates for the VPN gateway for the end us
 
 **Subtask 2: Configure the VPN gateway**
 
-11.  In the Azure Portal, make sure you are logged in as ElectronicsAdmin. Then navigate to **All services** \> **Virtual Network Gateways**, and select the **DevVPN** gateway created earlier.
+1.  In the Azure Portal, make sure you are logged in as ElectronicsAdmin. Then navigate to **All services** \> **Virtual Network Gateways**, and select the **DevVPN** gateway created earlier.
 
-12. Select **Point to site configuration**, and then select **Configure Now**
+2. Select **Point to site configuration**, and then select **Configure Now**
 
     ![Azure portal screenshot, showing the DevVPN point to site VPN configuration blade. Point to site configuration is highlighted, as is \'configure now\'](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image78.png "DevVPN point-to-site VPN configuration")
 
-13.  In the **DevVPN -- Point to site configuration** blade, enter the following details:
+3.  In the **DevVPN -- Point to site configuration** blade, enter the following details:
 
 - Address pool: 172.16.201.0/24
 
