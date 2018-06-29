@@ -62,25 +62,25 @@ Thank you for taking time to support the whiteboard design sessions as a trainer
 
 An amazing trainer:
 
--   Creates a safe environment in which learning can take place.
+-   Creates a safe environment in which learning can take place
 
--   Stimulates the participant's thinking.
+-   Stimulates the participant's thinking
 
--   Involves the participant in the learning process.
+-   Involves the participant in the learning process
 
--   Manages the learning process (on time, on topic, and adjusting to benefit participants).
+-   Manages the learning process (on time, on topic, and adjusting to benefit participants)
 
--   Ensures individual participant accountability.
+-   Ensures individual participant accountability
 
--   Ties it all together for the participant.
+-   Ties it all together for the participant
 
--   Provides insight and experience to the learning process.
+-   Provides insight and experience to the learning process
 
--   Effectively leads the whiteboard design session discussion.
+-   Effectively leads the whiteboard design session discussion
 
--   Monitors quality and appropriateness of participant deliverables.
+-   Monitors quality and appropriateness of participant deliverables
 
--   Effectively leads the feedback process.
+-   Effectively leads the feedback process
 
 ## Whiteboard design session flow 
 
@@ -88,7 +88,7 @@ Each whiteboard design session uses the following flow:
 
 **Step 1: Review the customer case study (15 minutes)**
 
-Outcome: Analyze your customer's needs
+Outcome: Analyze your customer's needs.
 
 -   Customer's background, situation, needs and technical requirements
 
@@ -98,7 +98,7 @@ Outcome: Analyze your customer's needs
 
 **Step 2: Design a proof of concept solution (60 minutes)**
 
-Outcome: Prepare to present a solution for your target customer audience
+Outcome: Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format. 
 
 -   Determine your target customer audience
 
@@ -110,7 +110,7 @@ Outcome: Prepare to present a solution for your target customer audience
 
 **Step 3: Present the solution (30 minutes)**
 
-Outcome: Present solution to your customer
+Outcome: Present solution to your customer.
 
 -   Present solution
 
@@ -128,13 +128,13 @@ Before conducting your first whiteboard design session:
 
 -   Read the Student guide (including the case study) and Trainer guide
 
--   Become familiar with all key points and activities.
+-   Become familiar with all key points and activities
 
--   Plan the point you want to stress, which questions you want to drive, transitions, and be ready to answer questions.
+-   Plan the point you want to stress, which questions you want to drive, transitions, and be ready to answer questions
 
--   Prior to the whiteboard design session, discuss the case study to pick up more ideas.
+-   Prior to the whiteboard design session, discuss the case study to pick up more ideas
 
--   Make notes for later.
+-   Make notes for later
 
 ## During the whiteboard design session: Tips for an effective whiteboard design session
 
@@ -144,7 +144,7 @@ Before conducting your first whiteboard design session:
 
 When participants are doing activities, you can **look ahead to refresh your memory**.
 
--   **Adjust activity and whiteboard design session pace** as needed to allow time for presenting, feedback, and sharing.
+-   **Adjust activity and whiteboard design session pace** as needed to allow time for presenting, feedback, and sharing
 
 -   **Add examples, points, and stories** from your own experience. Think about stories you can share that help you make your points clearly and effectively.
 
@@ -181,8 +181,11 @@ At the end of this whiteboard design session, you will be better able to design 
 **Outcome** 
 
 Analyze your customer’s needs.
-Time frame: 15 minutes 
+
+Timeframe: 15 minutes 
+
 Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips. 
+
 1.  Meet your table participants and trainer 
 2.  Read all of the directions for steps 1–3 in the student guide 
 3.  As a table team, review the following customer case study
@@ -192,15 +195,15 @@ Directions: With all participants in the session, the facilitator/SME presents a
 
 Trey Research is a manufacturing company that builds consumer products with 29.6 billion USD in annual revenue. Trey's headquarters are in New Jersey, but they have data centers and branch offices scattered across the United States with several major offices in the United Kingdom, France, and Japan.
 
-Even as large as it is, Trey seeks to maximize the cost-effectiveness and flexibility of its IT, especially in new projects and business units. With a dizzying number of existing business units, each with their own unique requirements from IT and ballooning costs from internal hardware and data center investment, Trey is looking to the cloud.
+Even as large as it is, Trey seeks to maximize the cost-effectiveness and flexibility of its IT, especially in new projects and business units. With a dizzying number of existing business units, each with its own unique requirements from IT and ballooning costs from internal hardware and data center investment, Trey is looking to the cloud.
 
 Trey is interested in a large-scale solution that will help mitigate creeping costs and start the transition to a modern cloud-based enterprise architecture.
 
 Trey's technical leadership has decided to move forward with a Microsoft enterprise agreement (EA) with a heavy commitment in Microsoft Azure. Ken Greenwald, Trey Research's CTO, is aware of the potential for the cloud, but also has a keen understanding that without strong architectural guidance, Trey may end up with a sub-optimal deployment that is difficult to support. These incorrect practices can then be disbursed across the enterprise. Ken wants to start on the right foot by focusing on best practices from the start.
 
-To kick off planning for integrating Azure into their environment, Ken introduced you to several directors within Trey Research's Enterprise IT group that have been part of the initial Azure planning process.
+To kick off planning for integrating Azure into their environment, Ken introduced you to several directors within Trey's Enterprise IT group that have been part of the initial Azure planning process.
 
-Enterprise IT is responsible for managing corporate network connectivity, datacenter distribution, capacity planning, identity, and enterprise wide SaaS services for Trey Research employees. Enterprise IT is also responsible for supporting the services and datacenters and setting auditing policy on hardware and services.
+Enterprise IT is responsible for managing corporate network connectivity, datacenter distribution, capacity planning, identity, and enterprise wide SaaS services for Trey Research employees. Enterprise IT is also responsible for supporting the services, datacenters, and setting auditing policy on hardware and services.
 
 *Subscription organization and chargeback*
 
@@ -212,7 +215,7 @@ Enterprise IT will be responsible for providing access to Azure for users in eac
 
 Within a business unit, each new project should track its consumption using a specific tag for its IO code within the business unit.
 
-Each business unit has a requirement to break down their costs into multiple categories so business managers in finance can analyze for spending patterns.
+Each business unit has a requirement to break down their costs into multiple categories so business managers in finance can analyze spending patterns:
 
 -   Development and Test
 
@@ -226,15 +229,15 @@ Business units and the finance department need a cost management dashboard to mo
 
 *Supported services and delegated access control*
 
-With a company the size of Trey Research, providing the ability to delegate permissions to different administrators at the business unit level is critical. At this point, Trey Research has deployed Office 365 and it is configured with federated access to their ADFS servers and their EA has been created within the same organization.
+With a company the size of Trey Research, providing the ability to delegate permissions to different administrators at the business unit level is critical. At this point, Trey Research has deployed Office 365 and it is configured with federated access to their ADFS servers. Trey's EA has been created within the same organization.
 
-Each business unit and sub-business unit has their own unique IT needs. IT has identified a list of services within Azure that they are willing to support and are interested in options for controlling access to unsupported services throughout the organization.
+Each business unit and sub-business unit has their own unique IT needs. IT has identified a list of services within Azure that they are willing to support and are interested in options for controlling access to unsupported services throughout the organization:
 
 -   Virtual machines
 
 -   ExpressRoute
 
-    -   The ExpressRoute circuit(s) will be created and managed by IT, but IT wants to ensure that sub-business units should be able to use the circuits, but not create new ones or change the existing circuits.
+    -   The ExpressRoute circuit(s) will be created and managed by IT. IT wants to ensure that sub-business units are able to use the circuits, but not create new ones or change the existing circuits:
 
 -   VPN gateways
 
@@ -262,11 +265,11 @@ At a high level, Trey Research is connected globally using an existing MPLS wide
 
 Enterprise IT understands that ExpressRoute is likely going to be the correct connectivity solution. However, they are unsure what they need to consider from a security perspective or for availability. Typically, they protect their perimeter network with firewalls. Is that needed with ExpressRoute and if so, what would they need to do to implement it? How does ExpressRoute implement redundancy? What should they be looking for when they talk to an ExpressRoute partner? Finally, for the sites that are not part of the WAN, how would they connect to resources in Azure?
 
-*Availability *
+*Availability*
 
 There are several Internet and intranet-facing web-based workloads that are considered critical to the business. These workloads typically use SQL Server and several use MySQL. With that in mind, Trey Research is recommending to business units to design those applications by deploying across multiple regions, or if that type of architecture is not feasible, to fail-back to on-premises in the event of a failure.
 
-This list is a list of primary and secondary regions IT will support for these scenarios.
+This is a list of primary and secondary regions IT will support for these scenarios:
 
 -   Primary: East United States, Fail over: South Central United States
 
@@ -276,49 +279,49 @@ This list is a list of primary and secondary regions IT will support for these s
 
 Trey Research would like to know if this list makes sense, if there is any guidance from Microsoft on building geo-redundant solutions across multiple data centers, and what other factors they should consider.
 
-*Security and accident protection *
+*Security and accident protection*
 
 If a service has an outage, it is important to know the chain of events that led up to the outage and who (if anyone) caused it. Additionally, Trey wants to ensure that production workloads cannot be accidently deleted by administrators getting confused over a test workload versus production. Trey Research are also concerned about how to ensure their VMs meet Azure security best practices and would like to ensure Production workloads are protected even in the event their security perimeter is compromised.
 
 *E-commerce developer team*
 
-The e-commerce team is owned by the Enterprise IT team and is responsible for building and maintaining the corporate website where consumers and channel partners can order products directly from Trey Research. The e-commerce site and order fulfillment system is currently hosted on Apache and Red Hat Enterprise Linux.
+The e-commerce team is owned by the Enterprise IT team and is responsible for building and maintaining the corporate website where consumers and channel partners can order products directly from Trey Research. The e-commerce site and order fulfillment system are currently hosted on Apache and Red Hat Enterprise Linux.
 
 This team has a significant percentage of developers that are contingent staff. Often these contingent staff members will come onboard for a short term to implement a new feature that the core team does not have the skills or resources to tackle. Currently, the e-commerce team is bringing resources onsite for this work, due to not having a secure remote access solution. Providing hardware resources and access to the development environment is a challenge due to the constant turnover of contingent staff. The time needed to provide an environment is disproportionally long relative to the amount of time the developer is there. This is because each developer must provision a set of services.
 
 ### Customer needs 
 
-1.  Provide access to create and manage new workloads in Azure for various business units.
+1.  Provide access to create and manage new workloads in Azure for various business units
 
-2.  Identify connectivity requirements with ExpressRoute access control and availability.
+2.  Identify connectivity requirements with ExpressRoute access control and availability
 
-3.  Implement a charge back for the business units for resources they consume while allowing each business unit to monitor their own usage.
+3.  Implement a charge back for the business units for resources they consume, while allowing each business unit to monitor their own usage
 
-4.  Apply governance to business units to control what can be created.
+4.  Apply governance to business units to control what can be created
 
-5.  Implement delegated access control for new projects within business unit subscriptions.
+5.  Implement delegated access control for new projects within business unit subscriptions
 
-6.  Implement a common resource naming standard across the organization.
+6.  Implement a common resource naming standard across the organization
 
-7.  The above governance controls must be implemented with minimum per-subscription configuration overhead, and compliance with these controls must be auditable to detect any out-of-compliance usage.
+7.  The above governance controls must be implemented with minimum per-subscription configuration overhead, and compliance with these controls must be auditable to detect any out-of-compliance usage
 
-8.  Identify a top-level strategy for building geo-redundant solutions.
+8.  Identify a top-level strategy for building geo-redundant solutions
 
-9.  Identify how Trey Research can track changes to the Azure-based deployments and prevent accidental deletion of resources.
+9.  Identify how Trey Research can track changes to the Azure-based deployments and prevent accidental deletion of resources
 
-10. Identify a solution of providing remote access to e-commerce team contingent staff.
+10. Identify a solution of providing remote access to e-commerce team contingent staff
 
-11. Increase agility to speed up the on-boarding of resources to make the e-commerce team contingent staff productive more quickly.
+11. Increase agility to speed up the on-boarding of resources to make the e-commerce team contingent staff productive more quickly
 
-12. Ensure full-time and contingent staff for e-commerce have access to what they need, but no more.
+12. Ensure full-time and contingent staff for e-commerce have access to what they need, but no more
 
 ### Customer objections 
 
 1.  We need the ability to split our Azure bill by business unit and even workload classification. Can Azure support this requirement? How can we analyze our bill for cost optimization and charge back?
 
-2.  As well as implementing our governance rules on how Azure is used, we need a way to audit that no deployments have been made that bypass those roles.
+2.  As well as implementing our governance rules on how Azure is used, we need a way to audit that no deployments have been made that bypass those roles
 
-3.  Security is important to us. We have evaluated Network Security Groups and our security team does not feel they offer the same level of security that we enjoy with our on-premises firewall-based solutions (Examples: intrusion and malware detection).
+3.  Security is important to us. We have evaluated Network Security Groups and our security team does not feel they offer the same level of security that we enjoy with our on-premises firewall-based solutions (examples: intrusion and malware detection).
 
 4.  Delegating control to business units is incredibly important to Trey Research. At our scale, a single team cannot possibly manage all the needs of the business. Corporate IT requires the ability to set policy at the enterprise level and still needs a detailed level of control. How can Azure address these needs?
 
@@ -343,11 +346,12 @@ This team has a significant percentage of developers that are contingent staff. 
 **Outcome** 
 Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format. 
 
-Time frame: 60 minutes
+Timeframe: 60 minutes
 
 **Business needs**
 
 Directions: With all participants at your table, answer the following questions and list the answers on a flip chart. 
+
 1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers? 
 2.  What customer business needs do you need to address with your solution?
 
@@ -371,9 +375,9 @@ Directions: With all participants at your table, respond to the following questi
 
 7.  How can Azure help Business Units minimize wasted spend on non-Production VMs left running out-of-hours?
 
-*Supported services and delegated access control *
+*Supported services and delegated access control*
 
-1.  Identify a solution to restrict which services can be created and used in each business unit subscription. Diagram specifically how your solution would be put into place and perform a requirements analysis to determine if there are services needed that Trey Research has not added to their initial list. This solution should allow access to the following services by default, but no others.
+1.  Identify a solution to restrict which services can be created and used in each business unit subscription. Diagram specifically how your solution would be put into place and perform a requirements analysis to determine if there are services needed that Trey Research has not added to their initial list. This solution should allow access to the following services by default, but not others:
 
     -   Virtual machines
 
@@ -409,33 +413,33 @@ Directions: With all participants at your table, respond to the following questi
 
 6.  For each project in Azure, the business unit administrator must have permissions to add or remove users, allow them to create resources, or even apply additional policies for resources in that project. Diagram at a high level how this would be achieved and provide some pseudo code that would be needed to accomplish the task.
 
-*Connectivity *
+*Connectivity*
 
-1.  Diagram at a high level how an ExpressRoute deployment for Trey Research should be configured for high availability.
+1.  Diagram at a high level how an ExpressRoute deployment for Trey Research should be configured for high availability
 
-2.  Walk through the steps that Trey Research would have to perform to enable other subscriptions to use ExpressRoute.
+2.  Walk through the steps that Trey Research would have to perform to enable other subscriptions to use ExpressRoute
 
 3.  From the security perspective, how could Trey Research deploy firewalls to protect their network after ExpressRoute is deployed? What network features are required and where would the firewalls be deployed? Diagram your solution.
 
 4.  For branch office sites that do not connect back to the WAN, how could they connect to Azure? Could Azure also be used to route traffic to different on-premises sites instead of their current site-to-site connections?
 
-*Availability *
+*Availability*
 
-1.  Evaluate the list of proposed regions and provide guidance on what policies are in place by Microsoft to help customers design a geo-redundant solution.
+1.  Evaluate the list of proposed regions and provide guidance on what policies are in place by Microsoft to help customers design a geo-redundant solution
 
-2.  Explain how Trey Research could restrict services to just the supported regions.
+2.  Explain how Trey Research could restrict services to just the supported regions
 
 3.  Diagram at a high level what a geo-redundant solution would look like for a public facing web application with a backend that uses SQL Server. What about a private facing web application?
 
 4.  For workloads within the same region, how could they ensure their virtual machines are available in the event of a physical server failure or a host update?
 
-*Security and accident protection *
+*Security and accident protection*
 
 1.  What would you recommend to Trey Research on how to mitigate accidently deleting production workloads? If that were to happen, what would the proper procedure be to identify who deleted the resource?
 
 How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even in the event that the security perimeter is compromised?*E-commerce developer team*
 
-1.  Identify a solution to provide access to a development environment that would be suitable for contingent staff for the e-commerce team.
+1.  Identify a solution to provide access to a development environment that would be suitable for contingent staff for the e-commerce team:
 
     -   What steps are needed to allow access to the environment?
 
@@ -448,9 +452,9 @@ How can we ensure our deployments meet Azure security best practices, and how ca
 
 Directions: With all participants at your table: 
 
-1.  Identify any customer needs that are not addressed with the proposed solution. 
-2.  Identify the benefits of your solution. 
-3.  Determine how you will respond to the customer’s objections. 
+1.  Identify any customer needs that are not addressed with the proposed solution 
+2.  Identify the benefits of your solution
+3.  Determine how you will respond to the customer’s objections
 
 Prepare a 15-minute chalk-talk style presentation to the customer.
 
@@ -460,24 +464,25 @@ Prepare a 15-minute chalk-talk style presentation to the customer.
  
 Present a solution to the target customer audience in a 15-minute chalk-talk format.
 
-Time frame: 30 minutes
+Timeframe: 30 minutes
 
 **Presentation** 
 
 Directions:
-1.  Pair with another table.
-2.  One table is the Microsoft team and the other table is the customer.
-3.  The Microsoft team presents their proposed solution to the customer.
-4.  The customer makes one of the objections from the list of objections.
-5.  The Microsoft team responds to the objection.
-6.  The customer team gives feedback to the Microsoft team. 
-7.  Tables switch roles and repeat Steps 2–6.
+
+1.  Pair with another table
+2.  One table is the Microsoft team and the other table is the customer
+3.  The Microsoft team presents their proposed solution to the customer
+4.  The customer makes one of the objections from the list of objections
+5.  The Microsoft team responds to the objection
+6.  The customer team gives feedback to the Microsoft team
+7.  Tables switch roles and repeat Steps 2–6
 
 ##  Wrap-up 
 
 Duration: 15 minutes
 
--   Tables reconvene with the larger group to hear a SME share the preferred solution for the case study.
+-   Tables reconvene with the larger group to hear the facilitator/SME share the preferred solution for the case study.
 
 ##  Additional references
 
@@ -504,47 +509,47 @@ Duration: 15 minutes
 
 ## Step 1: Review the customer case study
 
--   Check in with your table participants to introduce yourself as the trainer.
+-   Check in with your table participants to introduce yourself as the trainer
 
 -   Ask, "What questions do you have about the customer case study?"
 
--   Briefly review the steps and timeframes of the whiteboard design session.
+-   Briefly review the steps and timeframes of the whiteboard design session
 
--   Ready, set, go! Let the table participants begin.
+-   Ready, set, go! Let the table participants begin
 
 ## Step 2: Design a proof of concept solution
 
--   Check in with your tables to ensure that they are transitioning from step to step on time.
+-   Check in with your tables to ensure that they are transitioning from step to step on time
 
--   Provide some feedback on their responses to the business needs and design.
+-   Provide some feedback on their responses to the business needs and design
 
-    -   Try asking questions first that will lead the participants to discover the answers on their own.
+    -   Try asking questions first that will lead the participants to discover the answers on their own
 
--   Provide feedback for their responses to the customer's objections.
+-   Provide feedback for their responses to the customer's objections
 
-    -   Try asking questions first that will lead the participants to discover the answers on their own.
+    -   Try asking questions first that will lead the participants to discover the answers on their own
 
 ## Step 3: Present the solution
 
--   Determine which table will be paired with your table before Step 3 begins.
+-   Determine which table will be paired with your table before Step 3 begins
 
--   For the first round, assign one table as the Microsoft team and the other table as the customer.
+-   For the first round, assign one table as the Microsoft team and the other table as the customer
 
--   Have the Microsoft team present their solution to the customer team.
+-   Have the Microsoft team present their solution to the customer team
 
-    -   Have the customer team provide one objection for the Microsoft team to respond to.
+    -   Have the customer team provide one objection for the Microsoft team to respond to
 
-    -   The presentation and objections should be no longer than 10-minutes.
+    -   The presentation and objections should be no longer than 10-minutes
 
--   Have participants on the customer team give feedback to the Microsoft team.
+-   Have participants on the customer team give feedback to the Microsoft team
 
-    -   The feedback should be no longer than 5 minutes.
+    -   The feedback should be no longer than 5 minutes
 
-    -   If needed, the trainer may also provide feedback.
+    -   If needed, the trainer may also provide feedback
 
 ## Wrap-up
 
--   Have the table participants reconvene with the larger session group to hear a SME share the following preferred solution.
+-   Have the table participants reconvene with the larger session group to hear the facilitator/SME share the following preferred solution.
 
 ##  Preferred target audience
 
@@ -560,19 +565,21 @@ Duration: 15 minutes
 
 *Subscription organization and chargeback*
 
--   **Design:** Diagram how you would suggest organizing the Azure EA portal for Trey Research to allow access to Azure.
+1.  **Design:** Diagram how you would suggest organizing the Azure EA portal for Trey Research to allow access to Azure.
 
--   ![](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image8.png)**Solution:** Each business unit of Trey Research would have a department created in the Azure EA portal with one or more department administrators and account owners from Enterprise IT assigned. Enterprise IT would own the end-to-end experience of creating subscriptions to ensure that correct policies are in place and stay in place.
+    ![](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image8.png)
+    
+    **Solution:** Each business unit of Trey Research would have a department created in the Azure EA portal with one or more department administrators and account owners from Enterprise IT assigned. Enterprise IT would own the end-to-end experience of creating subscriptions to ensure that correct policies are in place and stay in place.
 
--   **Design:** How can Enterprise IT assign a spending quota to each business unit and monitor spending for each business unit's cost center? What happens if the business unit exceeds their assigned quota?
+2.  **Design:** How can Enterprise IT assign a spending quota to each business unit and monitor spending for each business unit's cost center? What happens if the business unit exceeds their assigned quota?
 
--   **Solution:** Each department should have a cost center assigned and the associated spending quota set by Enterprise IT. Notification emails are sent as different percentage levels of the quota are reached.
+    **Solution:** Each department should have a cost center assigned and the associated spending quota set by Enterprise IT. Notification emails are sent as different percentage levels of the quota are reached.
 
     ![The Add Department section displays. Fields include Department name, Cost center, and Spending quota.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image9.png "Add Department section")
 
--   **Design:** How can individual business units monitor their Azure spending?
+2.  **Design:** How can individual business units monitor their Azure spending?
 
--   **Solution:** Enterprise Admins can use the Azure EA portal (<https://ea.azure.com>) to view at a high-level, usage by department, account, or subscription by default.
+    **Solution:** Enterprise Admins can use the Azure EA portal (<https://ea.azure.com>) to view at a high-level, usage by department, account, or subscription by default.
 
     ![The June section displays, with All departments, All accounts, and All Subscriptions.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image10.png "June section")
 
@@ -582,9 +589,9 @@ Duration: 15 minutes
 
     The business unit users could also login to the Azure Management Portal (<https://portal.azure.com>) and see the current consumption of their subscription's Azure usage broken down by resource group (if the user has access to the resources).
 
--   **Design:** Within a business unit, costs for each project should be tracked independently based on the IO code for that specific project. How can per project cost tracking be implemented?
+3.  **Design:** Within a business unit, costs for each project should be tracked independently based on the IO code for that specific project. How can per project cost tracking be implemented?
 
--   **Solution:** Each new project should be deployed into one or more resource groups. Create an ARM policy that applies to the resource groups, that will append the IO code tag to resources as they are created. This allows for reporting at the project-level, based on the tag (expenses can be grouped by tag).
+    **Solution:** Each new project should be deployed into one or more resource groups. Create an ARM policy that applies to the resource groups that will append the IO code tag to resources as they are created. This allows for reporting at the project-level based on the tag (expenses can be grouped by tag).
 
 ```
 {
@@ -612,53 +619,49 @@ Duration: 15 minutes
 }
 ```
 
-Alternatively, separate subscriptions could be used for each project, and the above ARM policy applied at the subscription level.
+   Alternatively, separate subscriptions could be used for each project, and the above ARM policy applied at the subscription level.
 
--   **Design:** How could you enforce the cost tracking of cloud deployments within business units, according to the following taxonomies?
+4.  **Design:** How could you enforce the cost tracking of cloud deployments within business units, according to the following taxonomies?
 
-    -   Development and Test
+       -   Development and Test
 
-    -   Production
+       -   Production
 
-    -   Support Services
+       -   Support Services
 
-    -   Infrastructure
+       -   Infrastructure
 
--   **Solution:** To enforce a taxonomy that would group resource costs by the following categories, each new subscription would need an ARM policy assigned that enforced resource groups to have a tag with one of the following values assigned.
+    **Solution:** To enforce a taxonomy that would group resource costs by the following categories, each new subscription would need an ARM policy assigned that enforced resource groups to have a tag with one of the following values assigned:
 
-    -   Tag Name: Environment---Value: Development and Test
+       -   Tag Name: Environment---Value: Development and Test
 
-    -   Tag Name: Environment---Value: Production
+       -   Tag Name: Environment---Value: Production
 
-    -   Tag Name: Environment---Value: Support Services
+       -   Tag Name: Environment---Value: Support Services
 
-    -   Tag Name: Environment---Value: Infrastructure
+       -   Tag Name: Environment---Value: Infrastructure
 
-This can be done with built in policies, specifically by applying the **Apply tag and its default value** and the **Enforce tag and its value** policies. A new resource group would be created for each environment (Production, Dev, etc.) and these policies would be applied, specifying the tags to assign.
+    This can be done with built in policies, specifically by applying the **Apply tag and its default value** and the **Enforce tag and its value** policies. A new resource group would be created for each environment (Production, Dev, etc.) and these policies would be applied, specifying the tags to assign.
 
-![In the Add assignment blade, under Policy, Enforce tag and its value is selected and circled.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image12.png "Add assignment blade")
+    ![In the Add assignment blade, under Policy, Enforce tag and its value is selected and circled.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image12.png "Add assignment blade")
 
--   To view detailed information grouped by resource group or tags, the user would click the Download Usage link in the Azure EA portal, select the accounts and dates and request the usage data. A detailed .csv will be generated with a column for resource groups and tags.
+    To view detailed information grouped by resource group or tags, the user would select the Download Usage link in the Azure EA portal, select the accounts and dates, and request the usage data. A detailed .csv will be generated with a column for resource groups and tags.
 
-![the Download Usage tab has a date range set from 04/01/2016 to 6/30/2016.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image13.png "Download Usage tab")
+    ![the Download Usage tab has a date range set from 04/01/2016 to 6/30/2016.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image13.png "Download Usage tab")
 
--   Azure Cost Management by Cloudyn can be used for cost management reporting and alerting.
+    Azure Cost Management by Cloudyn can be used for cost management reporting and alerting. To do this you must register with Cloudyn from the Azure Portal, and create a hierarchy of cost entities in Cloudyn representing different business units and the various taxonomy.
 
-    -   To do this you must register with Cloudyn from the Azure Portal
+       -   Choose appropriate access levels for each subscription in your EA
 
-    -   Create a hierarchy of cost entities in Cloudyn representing different business units and the various taxonomy.
+       -   Assign each subscription to the appropriate cost entity
 
-        -   Choose appropriate access levels for each subscription in your EA.
+       -   Create users for business units and the finance department
 
-        -   Assign each subscription to the appropriate cost entity.
+    ![The Actual Cost Over Time stacked bar graph displays bar graphs of cost by service, resource type, sub type, operations, and date time.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image14.png "Actual Cost Over Time stacked bar graph")
 
-    -   Create users for business units and the finance department.
+5.  **Design:** How can Enterprise IT enforce a company-wide resource naming convention?
 
-![The Actual Cost Over Time stacked bar graph displays bar graphs of cost by service, resource type, sub type, operations, and date time.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image14.png "Actual Cost Over Time stacked bar graph")
-
--   **Design:** How can Enterprise IT enforce a company-wide resource naming convention?
-
--   **Solution:** A naming convention can be implementing using Azure Policy to restrict the names of each resource created.
+    **Solution:** A naming convention can be implementing using Azure Policy to restrict the names of each resource created.
 
 ```
 {
@@ -683,23 +686,23 @@ This can be done with built in policies, specifically by applying the **Apply ta
 
 ```
 
--   The above example shows how to enforce a simple naming constraint on a single resource type---virtual machines. Enterprise IT need to enforce their convention across all their resource types. Implementing this in a single policy requires an impractically-large conditional logic in the policy rule.
+   The above example shows how to enforce a simple naming constraint on a single resource type---virtual machines. Enterprise IT need to enforce their convention across all their resource types. Implementing this in a single policy requires an impractically-large conditional logic in the policy rule.
 
--   Instead, separate policies should be created for each resource type. These policies should then be combined into a single *policy initiative.* Using a policy initiative allows the entire set of policies to be assigned in a single operation. It also allows new naming rules to be added easily---simply add the new rule to the initiative and it will be applied across all existing assignments.
+   Instead, separate policies should be created for each resource type. These policies should then be combined into a single *policy initiative.* Using a policy initiative allows the entire set of policies to be assigned in a single operation. It also allows new naming rules to be added easily---simply add the new rule to the initiative and it will be applied across all existing assignments.
 
--   **Design:** How can Enterprise IT minimize per-subscription configuration and centrally audit compliance with their governance rules?
+6.  **Design:** How can Enterprise IT minimize per-subscription configuration and centrally audit compliance with their governance rules?
 
--   **Solution:** To minimize subscription-level configuration, subscriptions should be grouped into a management group hierarchy, managed by Enterprise IT. This hierarchy should reflect the business unit structure.
+    **Solution:** To minimize subscription-level configuration, subscriptions should be grouped into a management group hierarchy, managed by Enterprise IT. This hierarchy should reflect the business unit structure.
 
-    Enterprise IT should then apply Azure policies used for governance at the appropriate management group level. For example, since the naming convention policy initiative is to be used company wide, it need only be applied once, at the tenant root management group. It will then be inherited by all subscriptions in the organization, including new subscriptions, without any per-subscription configuration.
+    Enterprise IT should then apply Azure policies used for governance at the appropriate management group level. For example, since the naming convention policy initiative is to be used company wide, it need only be applied once at the tenant root management group. It will then be inherited by all subscriptions in the organization, including new subscriptions without any per-subscription configuration.
 
     ![Trey Research organization management group policy naming convention.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image15.png "Trey Research organization management group")
 
     Using the Standard policy tier enables Azure to generate a compliance report, showing which resources in the scope of a given policy are out of compliance (do not meet the policy rule condition) of the policy.
 
-    -   In the case of the naming convention policy, since this is applied at the root tenant management group level, this allows Enterprise IT to easily see which resources are not following the naming convention, company-wide.
+       -   In the case of the naming convention policy, since this is applied at the root tenant management group level, this allows Enterprise IT to easily see which resources are not following the naming convention, company-wide.
 
-    -   In the case of the policy to enforce Environment tags, the policy discussed earlier uses different tag values for different projects, hence the policy is not applied at the root tenant management group level, but instead at the level of individual subscriptions or resource groups. A separate policy should be created to verify that the Environment tag is in place and uses one of the permitted values. This policy can be applied at the root tenant management group level. This will both enforce that all resources in all subscriptions include the Environment (even if a project-level rule is forgotten), and also provide a single compliance audit report. An example policy is given below.
+       -   In the case of the policy to enforce Environment tags, the policy discussed earlier uses different tag values for different projects, hence the policy is not applied at the root tenant management group level, but instead at the level of individual subscriptions or resource groups. A separate policy should be created to verify that the Environment tag is in place and uses one of the permitted values. This policy can be applied at the root tenant management group level. This will both enforce that all resources in all subscriptions include the Environment (even if a project-level rule is forgotten), and also provide a single compliance audit report. An example policy is given below.
 
 ```
 {
@@ -729,20 +732,20 @@ This can be done with built in policies, specifically by applying the **Apply ta
 
 ```
 
- A similar policy can be used to enforce and audit use of other company-wide tags, such as ioCode.
+   A similar policy can be used to enforce and audit use of other company-wide tags, such as ioCode.
 
 
--   **Design:** How can Azure help business units minimize wasted spend on non-production VMs left running out-of-hours?
+7.  **Design:** How can Azure help business units minimize wasted spend on non-production VMs left running out-of-hours?
 
--   **Solution:** Azure offers a number of features to minimize wasted spend on non-Production VMs:
+    **Solution:** Azure offers a number of features to minimize wasted spend on non-Production VMs:
 
-    -   For Dev/Test scenarios, Azure Dev/Test Labs enables the full lifecycle of Dev/Test environments to be managed, including hours of use, and policies on the number and size of VMs per user and per lab.
+       -   For Dev/Test scenarios, Azure Dev/Test Labs enables the full lifecycle of Dev/Test environments to be managed, including hours of use, and policies on the number and size of VMs per user and per lab.
 
-    -   Each VM can be configured with a time at which it will automatically shut down until restarted. This is available in the management portal when creating the VM, or afterwards. This feature was originally part of Dev/Test Labs and is now available for all VMs.
+       -   Each VM can be configured with a time at which it will automatically shut down until restarted. This is available in the management portal when creating the VM, or afterwards. This feature was originally part of Dev/Test Labs and is now available for all VMs.
 
-    -   The 'Start/Stop VMs during off-hours' offering in the Azure Marketplace also offers the ability to automatically configure when VMs will run. This solution has the advantage that a single configuration can be applied across a subscription (selectively if necessary), rather than being applied to each individual VMs. It also has the ability to schedule VM start time as well as stop time. It could potentially be extended to auto-shutdown VMs based on their Environment tag.
+       -   The 'Start/Stop VMs during off-hours' offering in the Azure Marketplace also offers the ability to automatically configure when VMs will run. This solution has the advantage that a single configuration can be applied across a subscription (selectively if necessary), rather than being applied to each individual VMs. It also has the ability to schedule VM start time as well as stop time. It could potentially be extended to auto-shutdown VMs based on their Environment tag.
 
-    -   Azure Cost Management (by Cloudyn) offers reports showing VM utilization and recommendations for stopping idle VMs and right-sizing under-utilized VMs.
+       -   Azure Cost Management (by Cloudyn) offers reports showing VM utilization and recommendations for stopping idle VMs and right-sizing under-utilized VMs.
 
 **Azure EA role descriptions**
 
@@ -760,37 +763,37 @@ Can add subscriptions to the account, update the service administrator and co-ad
 
 *Supported services and delegated access control*
 
--   **Design:** Identify a solution to restrict which services can be created and used in each business unit subscription. Diagram specifically how your solution would be put into place and perform a requirements analysis to determine if there are services needed that Trey Research has not added to their initial list. This solution should allow access to these services by default, but no others.
+1.  **Design:** Identify a solution to restrict which services can be created and used in each business unit subscription. Diagram specifically how your solution would be put into place and perform a requirements analysis to determine if there are services needed that Trey Research has not added to their initial list. This solution should allow access to these services by default, but no others.
 
-    -   Virtual machines
+       -   Virtual machines
 
-    -   ExpressRoute
+       -   ExpressRoute
 
-        -   The ExpressRoute circuit(s) will be created and managed by IT, but IT wants to ensure that sub-business units should be able to use the circuits, but not create new ones or change the existing circuits.
+           -   The ExpressRoute circuit(s) will be created and managed by IT. IT wants to ensure that sub-business units should be able to use the circuits, but not create new ones or change the existing circuits.
 
-    -   VPN gateways
+       -   VPN gateways
 
-    -   Storage (standard and premium)
+       -   Storage (standard and premium)
 
-    -   Virtual networks
+       -   Virtual networks
 
-    -   Backup
+       -   Backup
 
-    -   Site recovery
+       -   Site recovery
 
-    -   DevTest labs
+       -   DevTest labs
 
-    -   Log analytics
+       -   Log analytics
 
-    -   Web App
+       -   Web App
 
-    -   SQL Database
+       -   SQL Database
 
--   **Solution:** Enterprise IT should apply two Azure Policies. The first will be the built-in policy **Allowed Resource Types**. They will choose each resource type required for the services the customer requires.
+    **Solution:** Enterprise IT should apply two Azure Policies. The first will be the built-in policy **Allowed Resource Types**. They will choose each resource type required for the services the customer requires.
 
-![Two callouts point to two fields in the Edit assignment blade. The first callout says to click the Allowed resource types field to select allowed resources. The second callout says that the Scope field shows each subscription.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image16.png "Edit assignment blade")
+    ![Two callouts point to two fields in the Edit assignment blade. The first callout says to click the Allowed resource types field to select allowed resources. The second callout says that the Scope field shows each subscription.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image16.png "Edit assignment blade")
 
-The second policy will be a custom policy to restrict the creation of ExpressRoute circuits, but allow existing circuits to be linked to virtual networks.
+    The second policy will be a custom policy to restrict the creation of ExpressRoute circuits, but allow existing circuits to be linked to virtual networks.
 
 **Service catalog policy to restrict ExpressRoute**
 
@@ -813,27 +816,27 @@ Management Groups give a better solution. The policies can instead be applied to
 
 There's one catch---the Enterprise IT team will need a subscription in which to host the ExpressRoute circuits used by the rest of the organization. A policy applied to the root tenant management group preventing creation of ExpressRoute circuits would also block these planned Enterprise IT circuits. Fortunately, Azure supports 'exception paths' when applying policies, for just this situation. When applying the ExpressRoute policy to the tenant root management group, an exception path should be specified, giving the resource group in which Enterprise IT manage the organization's ExpressRoute circuits. Creating ExpressRoute circuits is then blocked across the company, except in this resource group.
 
-Using a central policy in the Tenant root management group has another advantage: by using the Standard Tier of Azure Policy, a centralized report showing organizational compliance with the policy is available.
+Using a central policy in the Tenant root management group has another advantage; by using the Standard Tier of Azure Policy, a centralized report showing organizational compliance with the policy is available.
 
--   **Design:** One or more users from the business unit must have the permissions to create resources in the subscription and view all resources. The user should not have the ability to change policies set by Enterprise IT.
+2.  **Design:** One or more users from the business unit must have the permissions to create resources in the subscription and view all resources. The user should not have the ability to change policies set by Enterprise IT.
 
--   **Solution:** Create a group in Azure AD for that business unit, for example, BU1-Azure-Managers, and add those users to the group. Within the Azure subscription, add the Azure AD group to the contributor role and assign that role to the Resource Group. Contributors do not have permissions to add or remove users or change policies.
+    **Solution:** Create a group in Azure AD for that business unit, for example, BU1-Azure-Managers, and add those users to the group. Within the Azure subscription, add the Azure AD group to the contributor role and assign that role to the Resource Group. Contributors do not have permissions to add or remove users or change policies.
 
--   **Design:** How would you assign permissions to users and groups?
+3.  **Design:** How would you assign permissions to users and groups?
 
--   **Solution:** Using RBAC, we can assign users and groups permissions, Users can be assigned permissions to manage resources at the management group, subscription, resource group or resource level.
+    **Solution:** Using RBAC, we can assign users and groups permissions, Users can be assigned permissions to manage resources at the management group, subscription, resource group or resource level.
 
--   **Design**: How could we use templates to limit features available in Azure?
+4.  **Design**: How could we use templates to limit features available in Azure?
 
--   **Solution**: Using Azure Resource Manager templates, we can limit various items like location, VM instance etc. It is done by changing the list of allowed values to be chosen from.
+    **Solution**: Using Azure Resource Manager templates, we can limit various items like location, VM instance etc. It is done by changing the list of allowed values to be chosen from.
 
--   **Design**: Could we allow partner organization users to access our corporate applications?
+5.  **Design**: Could we allow partner organization users to access our corporate applications?
 
--   **Solution**: Using Azure Active Directory B2B collaboration, we can provide access to business partners to our corporate applications using their own credentials and as users are removed from their partner directory, their access to our corporate applications is removed.
+    **Solution**: Using Azure Active Directory B2B collaboration, we can provide access to business partners to our corporate applications using their own credentials and as users are removed from their partner directory, their access to our corporate applications is removed.
 
--   **Design:** For each project in Azure, the business unit administrator must have permissions to add or remove users, allow them to create resources, or even apply additional policies. Provide some pseudo code that would be needed to accomplish the task.
+6.  **Design:** For each project in Azure, the business unit administrator must have permissions to add or remove users, allow them to create resources, or even apply additional policies. Provide some pseudo code that would be needed to accomplish the task.
 
--   **Solution:** For projects that require elevated permissions, the Enterprise IT team would need to be involved to create the subscription or resource group for the project and add the business unit administrator to the owner role of the new subscription or resource group.
+    **Solution:** For projects that require elevated permissions, the Enterprise IT team would need to be involved to create the subscription or resource group for the project and add the business unit administrator to the owner role of the new subscription or resource group.
 
 ```
  $rgName = "BUProjectName"
@@ -852,13 +855,13 @@ Using a central policy in the Tenant root management group has another advantage
 
 *Connectivity*
 
--   **Design:** Diagram at a high level how an ExpressRoute deployment for Trey Research should be configured for high availability.
+1.  **Design:** Diagram at a high level how an ExpressRoute deployment for Trey Research should be configured for high availability.
 
--   **Solution:** Each major site location would be peered to the closest peering location. ExpressRoute Premium would be enabled to ensure that virtual networks on different continents could connect. Each virtual network could also be configured with a site-to-site VPN connection back to the primary data center to ensure connectivity during a short-term outage with their ExpressRoute circuit. Each virtual network would be linked to multiple circuits for additional redundancy. Note: ExpressRoute gateway and VPN gateway coexist on gateway subnet, we recommend that you create a gateway subnet of /27 or larger (/27, /26, /25 etc.). You must create the ExpressRoute gateway first before you add the Site-to-Site VPN gateway. For more information, please refer <https://docs.microsoft.com/en-us/azure/expressroute/expressroute-howto-coexist-classic>. ExpressRoute gateway can link up to 4 ExpressRoute circuit from different ExpressRoute Meetme location. For route optimization, please refer to <https://docs.microsoft.com/en-us/azure/expressroute/expressroute-optimize-routing>.
+    **Solution:** Each major site location would be peered to the closest peering location. ExpressRoute Premium would be enabled to ensure that virtual networks on different continents could connect. Each virtual network could also be configured with a site-to-site VPN connection back to the primary data center to ensure connectivity during a short-term outage with their ExpressRoute circuit. Each virtual network would be linked to multiple circuits for additional redundancy. Note: ExpressRoute gateway and VPN gateway coexist on gateway subnet, we recommend that you create a gateway subnet of /27 or larger (/27, /26, /25 etc.). You must create the ExpressRoute gateway first before you add the Site-to-Site VPN gateway. For more information, please refer <https://docs.microsoft.com/en-us/azure/expressroute/expressroute-howto-coexist-classic>. ExpressRoute gateway can link up to 4 ExpressRoute circuit from different ExpressRoute Meetme location. For route optimization, please refer to <https://docs.microsoft.com/en-us/azure/expressroute/expressroute-optimize-routing>.
 
--   **Design:** Walk through the steps that Trey Research would have to perform to enable other subscriptions to use ExpressRoute.
+2.  **Design:** Walk through the steps that Trey Research would have to perform to enable other subscriptions to use ExpressRoute.
 
--   **Solution:** The Enterprise IT group that provisions the ExpressRoute circuit(s) would have to create an authorization key, and the users in the delegated subscriptions would link to that subscription using an authorization key.
+    **Solution:** The Enterprise IT group that provisions the ExpressRoute circuit(s) would have to create an authorization key, and the users in the delegated subscriptions would link to that subscription using an authorization key.
 
 ```
  $circuit = Get-AzureRmExpressRouteCircuit -Name "MyCircuit" -ResourceGroupName "MyRG"
@@ -873,7 +876,7 @@ Using a central policy in the Tenant root management group has another advantage
 
 ```
 
-The output of the authorization will have the Authorization Key that can be shared by consumers of the circuit.
+    The output of the authorization will have the Authorization Key that can be shared by consumers of the circuit.
 
 ```
  Name : MyAuthorization1
@@ -888,9 +891,9 @@ The output of the authorization will have the Authorization Key that can be shar
 
 ```
 
-ProvisioningState : Succeeded
+    ProvisioningState : Succeeded
 
-Code a user in a subscription would use to link a new virtual network to the circuit.
+    Code a user in a subscription would use to link a new virtual network to the circuit.
 
 ```
 
@@ -906,117 +909,112 @@ Code a user in a subscription would use to link a new virtual network to the cir
 
 ```
 
--   **Design:** From the security perspective, how could Trey Research deploy firewalls to protect their network after ExpressRoute is deployed? What network features are required and where would the firewalls be deployed? Diagram your solution.
+3.  **Design:** From the security perspective, how could Trey Research deploy firewalls to protect their network after ExpressRoute is deployed? What network features are required and where would the firewalls be deployed? Diagram your solution.
 
--   **Solution:** Firewalls should be deployed within the virtual networks by deploying them as virtual machines behind the internal load balancer. User defined routes would then be configured to route outbound traffic of the virtual network through the firewall and incoming traffic to the virtual network. For more information about network virtual appliance high availability design, please refer <https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/dmz/nva-ha>
+    **Solution:** Firewalls should be deployed within the virtual networks by deploying them as virtual machines behind the internal load balancer. User defined routes would then be configured to route outbound traffic of the virtual network through the firewall and incoming traffic to the virtual network. For more information about network virtual appliance high availability design, please refer <https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/dmz/nva-ha>
 
--   **Design:** For branch office sites that do not connect back to the WAN, how could they connect to Azure?
+4.  **Design:** For branch office sites that do not connect back to the WAN, how could they connect to Azure?
 
--   **Solution:** Enabling site-to-site connections to the Azure virtual networks would allow connectivity without direct access to a link on the WAN. Please make sure Azure VPN IPSec capability is enough for customer branch office. We support up to 30 sites per VPN gateway. If more than 30, please consider commercial solution from Azure Marketplace.
+    **Solution:** Enabling site-to-site connections to the Azure virtual networks would allow connectivity without direct access to a link on the WAN. Please make sure Azure VPN IPSec capability is enough for customer branch office. We support up to 30 sites per VPN gateway. If more than 30, please consider commercial solution from Azure Marketplace.
 
-    ![This High-level connectivity plan diagram encompasses all of the previously mentioned solutions. ](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image17.png "High-level connectivity plan diagram")
+     ![This High-level connectivity plan diagram encompasses all of the previously mentioned solutions. ](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image17.png "High-level connectivity plan diagram")
 
 *Availability*
 
--   **Design:** Evaluate the list of proposed regions and provide guidance on what policies are in place by Microsoft to help customers design a geo-redundant solution.
+1.  **Design:** Evaluate the list of proposed regions and provide guidance on what policies are in place by Microsoft to help customers design a geo-redundant solution.
 
--   **Proposed regions:**
+    **Proposed regions:**
 
-    -   Primary: East United States, Failover: South Central United States
+       -   Primary: East United States, Failover: South Central United States
 
-    -   Primary: West Europe, Failover: North Europe
+       -   Primary: West Europe, Failover: North Europe
 
-    -   Primary: Japan West, Failover Japan East
+       -   Primary: Japan West, Failover Japan East
 
--   **Solution:**
+    **Solution:** Instead of deploying in South Central United States and East United States, Trey Research should use East and West United States because they are paired regions and East United States and South Central United States are not.
 
-    -   Instead of deploying in South Central United States and East United States, Trey Research should use East and West United States because they are paired regions and East United States and South Central United States are not.
+       -   Paired region benefits:
 
-    -   Paired region benefits:
+           -   Physical Isolation---When possible, Azure prefers at least 300 miles of separation between datacenters in a regional pair, although it is not practical or possible in all geographies. Physical datacenter separation reduces the likelihood of natural disasters, civil unrest, power outages, or physical network outages affecting both regions at once. Isolation is subject to the constraints within the geography (geography size, power/network infrastructure availability, regulations, etc.).
 
-        -   Physical Isolation---When possible, Azure prefers at least 300 miles of separation between datacenters in a regional pair, although it is not practical or possible in all geographies. Physical datacenter separation reduces the likelihood of natural disasters, civil unrest, power outages, or physical network outages affecting both regions at once. Isolation is subject to the constraints within the geography (geography size, power/network infrastructure availability, regulations, etc.).
+           -   Platform provided replication---Some services such as Geo-Redundant Storage provide automatic replication to the paired region.
 
-        -   Platform provided replication---Some services such as Geo-Redundant Storage provide automatic replication to the paired region.
+           -   Region recovery order---In the event of a broad outage, recovery of one region is prioritized out of every pair. Applications that are deployed across paired regions are guaranteed to have one of the regions recovered with priority. If an application is deployed across regions that are not paired, recovery may be delayed---in the worst case the chosen regions may be the last two to be recovered.
 
-        -   Region recovery order---In the event of a broad outage, recovery of one region is prioritized out of every pair. Applications that are deployed across paired regions are guaranteed to have one of the regions recovered with priority. If an application is deployed across regions that are not paired, recovery may be delayed---in the worst case the chosen regions may be the last two to be recovered.
+           -   Sequential updates---Planned Azure system updates are rolled out to paired regions sequentially (not at the same time) to minimize downtime from the effect of bugs, and logical failures in the rare event of a bad update.
 
-        -   Sequential updates---Planned Azure system updates are rolled out to paired regions sequentially (not at the same time) to minimize downtime from the effect of bugs, and logical failures in the rare event of a bad update.
+           -   Data residency---A region resides within the same geography as its pair (with the exception of Brazil South) in order to meet data residency requirements for tax and law enforcement jurisdiction purposes.
 
-        -   Data residency---A region resides within the same geography as its pair (with the exception of Brazil South) in order to meet data residency requirements for tax and law enforcement jurisdiction purposes.
+2.  **Design:** Explain how Trey Research could restrict services to just the supported regions.
 
--   **Design:** Explain how Trey Research could restrict services to just the supported regions.
+    **Solution:** Deploy the built-in policy **Allowed locations** to restrict the regions on which the services can be deployed to.
 
--   **Solution:** Deploy the built-in policy **Allowed locations** to restrict the regions on which the services can be deployed to.
+3.  **Design:** Diagram at a high level what a geo-redundant solution would look like for a public facing web application with a backend that uses SQL Server. What about a private facing web application?
 
--   **Design:** Diagram at a high level what a geo-redundant solution would look like for a public facing web application with a backend that uses SQL Server. What about a private facing web application?
+    **Solution:** For geo-redundant solutions, Traffic Manager should be considered. Traffic Manager can only test and return public endpoints for traffic distribution. For workloads that should only be exposed privately, they would need to be adapted to listen on a public IP with traffic locked down using NSGs. Alternatively, they could use an internal DNS solution such as SCOM to monitor and update DNS records.
 
--   **Solution:** For geo-redundant solutions, Traffic Manager should be considered. Traffic Manager can only test and return public endpoints for traffic distribution. For workloads that should only be exposed privately, they would need to be adapted to listen on a public IP with traffic locked down using NSGs. Alternatively, they could use an internal DNS solution such as SCOM to monitor and update DNS records.
+4.  **Design:** For workloads within the same region how could they ensure their virtual machines are available in the event of a physical server failure or a host update?
 
--   **Design:** For workloads within the same region how could they ensure their virtual machines are available in the event of a physical server failure or a host update?
+    **Solution:** Virtual machines that perform the same role (multiple web servers, SQL Servers, Active Directory Domain Controllers, etc.) should be grouped into an availability set. Availability sets distribute virtual machines across multiple physical racks for redundancy and allow the host machines your virtual machines execute on to be updated in a rolling manner instead of all at once.
 
--   **Solution:** Virtual machines that perform the same role (multiple web servers, SQL Servers, Active Directory Domain Controllers, etc.) should be grouped into an availability set. Availability sets distribute virtual machines across multiple physical racks for redundancy and allow the host machines your virtual machines execute on to be updated in a rolling manner instead of all at once.
+    ![This Geo-redundant solutions Availability diagram begins with Traffic Manager Priority Mode. Two arrows point from there, to West US, and East US. West US has an Availability set (Web Tier), and SQL AO Secondary. East US has an Availability set (Web Tier), and SQL AO Primary. Under these two is a banner reading \"Paired Regions.\"](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image18.png "Geo-redundant solutions Availability diagram")
 
-![This Geo-redundant solutions Availability diagram begins with Traffic Manager Priority Mode. Two arrows point from there, to West US, and East US. West US has an Availability set (Web Tier), and SQL AO Secondary. East US has an Availability set (Web Tier), and SQL AO Primary. Under these two is a banner reading \"Paired Regions.\"](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image18.png "Geo-redundant solutions Availability diagram")
+*Security and accident protection*
 
-*Security and accident protection *
+1.  **Design:** What would you recommend to Trey Research on how to mitigate accidently deleting production workloads? If that were to happen what would the proper procedure be to identify who deleted the resource?
 
--   **Design:** What would you recommend to Trey Research on how to mitigate accidently deleting production workloads? If that were to happen what would the proper procedure be to identify who deleted the resource?
+    **Solution:** Use Azure Resource Manager locks to add a secondary layer of protection on production workloads. Locks can set in two modes:
 
--   **Solution:** Use Azure Resource Manager locks to add a secondary layer of protection on production workloads. Locks can set in two modes:
+       -   **CanNotDelete** means authorized users can still read and modify a resource, but they cannot delete it.
 
-    -   **CanNotDelete** means authorized users can still read and modify a resource, but they cannot delete it.
+       -   **ReadOnly** means authorized users can read from a resource, but they cannot delete it or perform any actions on it. The permission on the resource is restricted to the reader role. Applying ReadOnly can lead to unexpected results because some operations that seem like read operations actually require additional actions. For example, placing a ReadOnly lock on a storage account will prevent all users from listing the keys. The list keys operation is handled through a POST request because the returned keys are available for write operations. For another example, placing a ReadOnly lock on an App Service resource will prevent Visual Studio's Server Explorer from being able to display files for the resource because that interaction requires write access.
 
-    -   **ReadOnly** means authorized users can read from a resource, but they cannot delete it or perform any actions on it. The permission on the resource is restricted to the reader role. Applying ReadOnly can lead to unexpected results because some operations that seem like read operations actually require additional actions. For example, placing a ReadOnly lock on a storage account will prevent all users from listing the keys. The list keys operation is handled through a POST request because the returned keys are available for write operations. For another example, placing a ReadOnly lock on an App Service resource will prevent Visual Studio's Server Explorer from being able to display files for the resource because that interaction requires write access.
+    To identify who deleted the resource, look at the audit logs for the subscription.![In the Azure Resource Manager, Monitor - Activity log, query requirements and query results display.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image19.png "Azure Resource Manager")
 
-To identify who deleted the resource, look at the audit logs for the subscription.![In the Azure Resource Manager, Monitor - Activity log, query requirements and query results display.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image19.png "Azure Resource Manager")
+2.  **Design:** How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even in the event that the security perimeter is compromised?
 
--   **Design:** How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even in the event that the security perimeter is compromised?
+    **Solution:** Use Azure Security Center to help secure VMs. In particular:
 
--   **Solution:** Use Azure Security Center to help secure VMs. In particular:
+       -   Azure Security Center allows you to centrally configure policy settings to define the security requirements of your organization. It then performs continuous security assessment of all VMs against that security policy, and provides actionable recommendations to remediate security vulnerabilities.
 
-    -   Azure Security Center allows you to centrally configure policy settings to define the security requirements of your organization. It then performs continuous security assessment of all VMs against that security policy, and provides actionable recommendations to remediate security vulnerabilities.
+       -   Using the Standard SKU of Azure Security Center in addition allows you to enable [adaptive application controls](https://docs.microsoft.com/azure/security-center/security-center-adaptive-application). These provide a means to block attempts to run malicious applications by maintaining whitelists of permitted executables. This feature can be applied selectively, for example only to Production and Pre-Production resource groups.
 
-    -   Using the Standard SKU of Azure Security Center in addition allows you to enable [adaptive application controls](https://docs.microsoft.com/azure/security-center/security-center-adaptive-application). These provide a means to block attempts to run malicious applications by maintaining whitelists of permitted executables. This feature can be applied selectively, for example only to Production and Pre-Production resource groups.
+    Note: Just-In-Time (JIT) is another powerful Azure Security Center feature, allowing VM remote management ports to be closed by default and opened only when needed and under appropriate RBAC permissions. However, since Trey will be using ExpressRoute to connect their on-premises network with Azure, using JIT is not required (JIT only works on Internet-facing endpoints).
 
-Note: Just-In-Time (JIT) is another powerful Azure Security Center feature, allowing VM remote management ports to be closed by default and opened only when needed and under appropriate RBAC permissions. However, since Trey will be using ExpressRoute to connect their on-premises network with Azure, using JIT is not required (JIT only works on Internet-facing endpoints).
+*E-commerce*
 
-*E-commerce *
+1.  **Design:** Identify a solution to provide access to a development environment that would be suitable for contingent staff for the e-commerce team. Describe the steps needed to implement this solution that addresses the customer's need of speeding up onboarding, allowing remote development, and controlling access specifically to only allow users to access resources on the ECommerceDev subnet.
 
--   **Design:** Identify a solution to provide access to a development environment that would be suitable for contingent staff for the e-commerce team. Describe the steps needed to implement this solution that addresses the customer's need of speeding up onboarding, allowing remote development, and controlling access specifically to only allow users to access resources on the ECommerceDev subnet.
+    **Solution:** To address this issue, IT could create multiple DevTests lab environments for e-commerce developers and contingent staff brought in to use the solution. Each lab environment would be used by developers and staff in the same time zones.
 
--   **Solution:**
+    -   Create a preconfigured image with supported operating systems and common tools.
 
+    -   Create artifacts that can be added to the virtual machine at provision time that are specific to different teams of developers.
 
--   To address this issue, IT could create multiple DevTests lab environments for e-commerce developers and contingent staff brought in to use the solution. Each lab environment would be used by developers and staff in the same time zones.
+    -   Apply a network security group to the ECommerceDev lab subnet that restricts outbound traffic to just the subnet.
 
--   Create a preconfigured image with supported operating systems and common tools.
+    -   Configure the DevTestLabs lab to have access to the ECommerceDev lab subnet.
 
--   Create artifacts that can be added to the virtual machine at provision time that are specific to different teams of developers.
+    -   Leverage Point-to-Site VPN connectivity to allow remote developers a secure way to work and reduce the need to bring remote resources onsite.
 
--   Apply a network security group to the ECommerceDev lab subnet that restricts outbound traffic to just the subnet.
-
--   Configure the DevTestLabs lab to have access to the ECommerceDev lab subnet.
-
--   Leverage Point-to-Site VPN connectivity to allow remote developers a secure way to work and reduce the need to bring remote resources onsite.
-
--   Create a user in the DevTestLabs role for the lab environment. This role has a limited set of permissions designed to use the virtual machines assigned to the lab.
+    -   Create a user in the DevTestLabs role for the lab environment. This role has a limited set of permissions designed to use the virtual machines assigned to the lab.
 
     ![Screenshot of a DevTestLabs lab environment.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image20.png "DevTestLabs lab environment")
 
 
--   **Design:** What cost control options would you propose to put in place to optimize this environment?
+2.  **Design:** What cost control options would you propose to put in place to optimize this environment?
 
--   **Solution:** DevTest labs also offers these additional features that the creator of the DevTest lab could use to optimize cost:
+    **Solution:** DevTest labs also offers these additional features that the creator of the DevTest lab could use to optimize cost:
 
-    -   Enable auto start and auto shutdown based on the time zone of the developers. Setting this policy could optimize cost by shutting down virtual machines when not in use.
+       -   Enable auto start and auto shutdown based on the time zone of the developers. Setting this policy could optimize cost by shutting down virtual machines when not in use.
 
-    -   The e-commerce could also limit the following when creating the sandbox depending on the needs of that team.
+       -   The e-commerce could also limit the following when creating the sandbox depending on the needs of that team.
 
-        -   Limit the number of virtual machines in the lab
+           -   Limit the number of virtual machines in the lab
 
-        -   Limit the virtual machine sizes available
+           -   Limit the virtual machine sizes available
 
-        -   Limit the number of virtual machines per user
+           -   Limit the number of virtual machines per user
 
 ## Checklist of preferred objection handling
 
@@ -1059,4 +1057,3 @@ With role-based access control, IT can allow access at varying levels for the bu
 *"The governance controls Azure provides allows Trey Research to move forward with a modern enterprise cloud environment knowing that IT still is in control but allows flexibility for our business units to do their job without us in the way."*
 
 ---Ken Greenwald, CTO
-

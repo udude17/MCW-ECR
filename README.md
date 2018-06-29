@@ -1,4 +1,4 @@
-# Enterprise Ready Cloud
+# Enterprise-ready Cloud
 Trey Research is a manufacturing company that builds consumer products with 29.6 billion USD in annual revenue. Trey's headquarters are in New Jersey, but they have data centers and branch offices scattered across the United States with several major offices in the United Kingdom, France, and Japan.
 
 Even as large as it is, Trey seeks to maximize the cost-effectiveness and flexibility of its IT, especially in new projects and business units. With a dizzying number of existing business units, each with their own unique requirements from IT and ballooning costs from internal hardware and data center investment, Trey is looking to the cloud.
@@ -38,7 +38,7 @@ At the end of this whiteboard design session, you will be better able to design 
 -   Put controls in place to allow deployment of services only in specific regions
 
 
-### Hand-on Lab
+### Hands-on Lab
 In this hands-on lab, you are working with Trey Research to setup some best practices regarding policies, permissions, and remote access to their network. Some tasks will include creating scripts that Enterprise IT will use to automatically set policy and delegate permissions when a new subscription is created. You will also help them solve a critical problem for on-boarding new developers and controlling access to what they can access on the network.
 
 Additionally, you will know how to: 
