@@ -141,13 +141,13 @@ In this Task, you will create a new Management Group so that policies can be app
 
 #### Tasks to complete
 
-Create a new Management Group, and move a subscription into this Management Group.
+-   Create a new Management Group, and move a subscription into this Management Group.
 
 Note: We'll use our own Management Group, if you have permissions you could also use the Tenant Root Management Group.
 
 #### Exit criteria
 
-Management group created with at least one subscription within it.
+-   Management group created with at least one subscription within it.
 
 ### Task 1: Create the service catalog policy
 
