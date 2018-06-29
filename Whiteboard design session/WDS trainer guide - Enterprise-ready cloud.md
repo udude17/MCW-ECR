@@ -88,7 +88,7 @@ Each whiteboard design session uses the following flow:
 
 **Step 1: Review the customer case study (15 minutes)**
 
-Outcome: Analyze your customer's needs
+Outcome: Analyze your customer's needs.
 
 -   Customer's background, situation, needs and technical requirements
 
@@ -98,7 +98,7 @@ Outcome: Analyze your customer's needs
 
 **Step 2: Design a proof of concept solution (60 minutes)**
 
-Outcome: Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format 
+Outcome: Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format. 
 
 -   Determine your target customer audience
 
@@ -110,7 +110,7 @@ Outcome: Design a solution and prepare to present the solution to the target cus
 
 **Step 3: Present the solution (30 minutes)**
 
-Outcome: Present solution to your customer
+Outcome: Present solution to your customer.
 
 -   Present solution
 
@@ -154,7 +154,7 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 **Involve your participants.** Talk and share your knowledge but always involve your participants, even while you are the one speaking.
 
-**Ask questions** and get them to share to fully involve your group in the learning process
+**Ask questions** and get them to share to fully involve your group in the learning process.
 
 **Ask first**, whenever possible. Before launching into a topic, learn your audience's opinions about it and experiences with it. Asking first enables you to assess their level of knowledge and experience and leaves them more open to what you are presenting.
 
@@ -567,7 +567,9 @@ Duration: 15 minutes
 
 1.  **Design:** Diagram how you would suggest organizing the Azure EA portal for Trey Research to allow access to Azure.
 
-    ![](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image8.png)**Solution:** Each business unit of Trey Research would have a department created in the Azure EA portal with one or more department administrators and account owners from Enterprise IT assigned. Enterprise IT would own the end-to-end experience of creating subscriptions to ensure that correct policies are in place and stay in place.
+    ![](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image8.png)
+    
+    **Solution:** Each business unit of Trey Research would have a department created in the Azure EA portal with one or more department administrators and account owners from Enterprise IT assigned. Enterprise IT would own the end-to-end experience of creating subscriptions to ensure that correct policies are in place and stay in place.
 
 2.  **Design:** How can Enterprise IT assign a spending quota to each business unit and monitor spending for each business unit's cost center? What happens if the business unit exceeds their assigned quota?
 
