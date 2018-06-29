@@ -36,7 +36,6 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
         - [Infographic for common scenarios](#infographic-for-common-scenarios)
     - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
     - [Step 3: Present the solution](#step-3-present-the-solution)
-    - [Step 3: Present the solution](#step-3-present-the-solution-1)
     - [Wrap-up](#wrap-up)
     - [Additional references](#additional-references)
 
@@ -318,9 +317,9 @@ Directions: With all participants at your table, respond to the following questi
 
 1.  What would you recommend to Trey Research on how to mitigate accidently deleting production workloads? If that were to happen, what would the proper procedure be to identify who deleted the resource?
 
-How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even in the event that the security perimeter is compromised?*E-commerce developer team*
+2.  How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even in the event that the security perimeter is compromised?*E-commerce developer team*
 
-1.  Identify a solution to provide access to a development environment that would be suitable for contingent staff for the e-commerce team:
+Identify a solution to provide access to a development environment that would be suitable for contingent staff for the e-commerce team:
 
     -   What steps are needed to allow access to the environment?
 
