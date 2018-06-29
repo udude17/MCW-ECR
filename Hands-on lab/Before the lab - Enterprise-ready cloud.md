@@ -1,5 +1,5 @@
 
-# Enterprise Ready Cloud setup
+# Enterprise-ready Cloud setup
 
 ## Requirements
 
@@ -17,9 +17,9 @@ To complete this lab, you must have full global admin access to the Azure AD ten
 
 ### Task 1: Validate global admin access to Azure AD tenant
 
-1.  Login to <http://portal.azure.com>, click on **All Services**, and type in **Azure Active Directory**.
+1.  Login to <http://portal.azure.com>, click on **All Services**, and type in **Azure Active Directory**
 
-2.  Open the Azure Active Directory tenant. Click Users -\> New User.
+2.  Open the Azure Active Directory tenant. Click Users -\> New User
 
 3.  Create a new user called testuser/test1. Use the tenant name on the header for the domain name of the email.
 
