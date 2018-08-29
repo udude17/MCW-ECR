@@ -45,15 +45,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 In this whiteboard design session, you will work in a group to design a comprehensive solution to address concerns about security, charge back, tagging and other areas to help apply an enterprise governance model for Trey Research.
 
-At the end of this whiteboard design session, you will be better able to design a governance plan to showcase the security and governance features of Azure and control costs. In addition,
-
--   Provide for cost tracking by business unit, environment, and project
-
--   Provide for a distributed administration model
-
--   Put a service catalog in place to prevent deployment of unsupported Azure services
-
--   Put controls in place to allow deployment of services only in specific regions
+At the end of this whiteboard design session, you will be better able to design a governance plan to showcase the security and governance features of Azure and control costs. In addition, you'll learn how to provide for cost tracking by business unit, environment, and project, provide for a distributed administration model, put a service catalog in place to prevent deployment of unsupported Azure services, and put controls in place to allow deployment of services only in specific regions.
 
 ## Step 1: Review the customer case study 
 
