@@ -9,7 +9,7 @@ Hands-on lab step-on-step
 </div>
 
 <div class="MCWHeader3">
-June 2018
+September 2018
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -31,29 +31,30 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Overview](#overview)
     - [Requirements](#requirements)
     - [Solution architecture](#solution-architecture)
-    - [Exercise 1: Create the policy for Enterprise IT](#exercise-1-create-the-policy-for-enterprise-it)
+    - [Exercise 1: Create the policy for Enterprise IT](#exercise-1--create-the-policy-for-enterprise-it)
         - [Help references](#help-references)
-        - [Task 1: Create a Management Group](#task-1-create-a-management-group)
-        - [Task 2: Apply the service catalog policy](#task-2-apply-the-service-catalog-policy)
-        - [Task 3: Restrict the creation of ExpressRoute circuits](#task-3-restrict-the-creation-of-expressroute-circuits)
-        - [Task 4: Restrict the creation of resources in regions](#task-4-restrict-the-creation-of-resources-in-regions)
-        - [Task 5: Create and apply a naming convention](#task-5-create-and-apply-a-naming-convention)
-        - [Task 6: Test the policies](#task-6-test-the-policies)
-    - [Exercise 2: Configure delegated permissions](#exercise-2-configure-delegated-permissions)
-        - [Help references](#help-references-1)
-        - [Task 1: Create groups in Azure AD for delegation](#task-1-create-groups-in-azure-ad-for-delegation)
-        - [Task 2: Create user accounts in Azure AD for delegation](#task-2-create-user-accounts-in-azure-ad-for-delegation)
-        - [Task 3: Enable a business unit administrator for the subscription](#task-3-enable-a-business-unit-administrator-for-the-subscription)
-        - [Task 4: Enable project-based delegation and chargeback](#task-4-enable-project-based-delegation-and-chargeback)
-    - [Exercise 3: Create the environment for the e-commerce team](#exercise-3-create-the-environment-for-the-e-commerce-team)
-        - [Help references](#help-references-2)
-        - [Task 1: Create a new virtual network](#task-1-create-a-new-virtual-network)
-        - [Task 2: Configure secure VPN for connectivity](#task-2-configure-secure-vpn-for-connectivity)
-        - [Task 3: Create an Azure DevTest lab environment](#task-3-create-an-azure-devtest-lab-environment)
-        - [Task 4: Test access to the DevTest labs environment](#task-4-test-access-to-the-devtest-labs-environment)
-        - [Task 5: Finish configuring secure connectivity](#task-5-finish-configuring-secure-connectivity)
+        - [Task 1: Create a Management Group](#task-1--create-a-management-group)
+        - [Task 2: Apply the service catalog policy](#task-2--apply-the-service-catalog-policy)
+    - [ Resource Name](#resource-name)
+        - [Task 3: Restrict the creation of ExpressRoute circuits](#task-3--restrict-the-creation-of-expressroute-circuits)
+        - [Task 4: Restrict the creation of resources in regions](#task-4--restrict-the-creation-of-resources-in-regions)
+        - [Task 5: Create and apply a naming convention](#task-5--create-and-apply-a-naming-convention)
+        - [Task 6: Test the policies](#task-6--test-the-policies)
+    - [Exercise 2: Configure delegated permissions](#exercise-2--configure-delegated-permissions)
+        - [Help references](#help-references)
+        - [Task 1: Create groups in Azure AD for delegation](#task-1--create-groups-in-azure-ad-for-delegation)
+        - [Task 2: Create user accounts in Azure AD for delegation](#task-2--create-user-accounts-in-azure-ad-for-delegation)
+        - [Task 3: Enable a business unit administrator for the subscription](#task-3--enable-a-business-unit-administrator-for-the-subscription)
+        - [Task 4: Enable project-based delegation and chargeback](#task-4--enable-project-based-delegation-and-chargeback)
+    - [Exercise 3: Create the environment for the e-commerce team](#exercise-3--create-the-environment-for-the-e-commerce-team)
+        - [Help references](#help-references)
+        - [Task 1: Create a new virtual network](#task-1--create-a-new-virtual-network)
+        - [Task 2: Configure secure VPN for connectivity](#task-2--configure-secure-vpn-for-connectivity)
+        - [Task 3: Create an Azure DevTest lab environment](#task-3--create-an-azure-devtest-lab-environment)
+        - [Task 4: Test access to the DevTest labs environment](#task-4--test-access-to-the-devtest-labs-environment)
+        - [Task 5: Finish configuring secure connectivity](#task-5--finish-configuring-secure-connectivity)
     - [After the hands-on lab](#after-the-hands-on-lab)
-        - [Task 1: Remove resources and configuration created during this lab](#task-1-remove-resources-and-configuration-created-during-this-lab)
+        - [Task 1: Remove resources and configuration created during this lab](#task-1--remove-resources-and-configuration-created-during-this-lab)
 
 <!-- /TOC -->
 
