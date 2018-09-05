@@ -114,7 +114,7 @@ Note: We'll use our own Management Group, if you have permissions you could also
 
     ![Azure portal screenshot, showing New Management Group, then the group ID and name being filled in.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image5.png "Create Management Group blade")
 
-3.  Select on the newly-created management group, then select **Add existing**. Select 'Subscription' as the existing resource type, and choose your subscription from the drop-down list, then select **Save**.
+3.  Select on the newly-created management group, then select **details**. Select 'Add Subscription' as the existing resource type, and choose your subscription from the drop-down list, then select **Save**.
 
     ![Azure portal screenshot, showing adding an existing subscription to a management group](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image6.png "Add subscription to managment group screenshot")
 
