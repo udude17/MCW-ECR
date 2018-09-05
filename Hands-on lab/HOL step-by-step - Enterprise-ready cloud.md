@@ -173,13 +173,11 @@ In this exercise, you will apply one of the built-in Azure Policies to restrict 
 
     d.  Assigned by: Enterprise IT
 
-    e.  Pricing Tier: Standard
+    e.  Scope: Enterprise Ready Cloud (ERC) management group, as created in Task 1
 
-    f.  Scope: Enterprise Ready Cloud (ERC) management group, as created in Task 1
+    f.  Exclusions: None
 
-    g.  Exclusions: None
-
-    h.  Parameters \| Allowed resource types: Choose the resource types identified in Step 3 (you may need to include some additional types, such as for NICs, Public IP Addresses, NSGs, etc.)
+    g.  Parameters \| Allowed resource types: Choose the resource types identified in Step 3 (you may need to include some additional types, such as for NICs, Public IP Addresses, NSGs, etc.)
 
     The assignment form should look like this:
 
@@ -207,8 +205,6 @@ In this exercise, you will apply another built-in Azure policy to restrict the c
 
 - Assigned by: Enterprise IT
 
-- Pricing Tier: Standard
-
 - Scope: Enterprise Ready Cloud (the management group created earlier)
 
 - Exclusions: The resource group created in Step 1 above. Select the management group, subscription, and resource group.
@@ -235,10 +231,10 @@ In this exercise, you will create a new Azure Policy assignment that restricts t
 
 - Assigned by: Enterprise IT
 
-- Pricing Tier: Free
+- Pricing Tier: Free or standard
 
-- Scope: Enterprise Ready Cloud (the management group created earlier)
-
+- Scope: Enterprise Ready Cloud 
+  
 - Exclusions: None
 
 - Parameters \| Allowed locations: East US, West US, North Europe, West Europe, Japan East, Japan West
@@ -264,7 +260,7 @@ First, we shall create a generic policy definition that restricts resources of a
 - Definition location: Enterprise Ready Cloud (the Management Group created earlier)
 
 - Name: Restrict Resource Name Suffix
-
+  
 - Description: Restrict resources of a given type to have a name ending with a given suffix. The resource type and suffix are parameterized.
 
 - Category: Create New, "Naming"
@@ -319,9 +315,9 @@ Once the policy definition is complete, select **Save**.
 
 Next, we shall create a policy initiative comprising multiple instances of our policy definition (one per resource type)
 
-3.  From the **Policy** blade, on the **Definitions** panel, select **+Initiative Defintion**
+1.  From the **Policy** blade, on the **Definitions** panel, select **+Initiative Defintion**
 
-4.  Fill in the Initiative Definition form as follows (but [don't]{.underline} select Save yet)
+2.  Fill in the Initiative Definition form as follows (but [don't]{.underline} select Save yet)
 
 - Definition location: Enterprise Ready Cloud (the Management Group created earlier)
 
@@ -365,7 +361,7 @@ Finally, we will apply the policy initiative across all subscriptions in the Man
 
 - Assigned by: Enterprise IT
 
-- Pricing Tier: Standard
+- Pricing Tier: Free / Standard
 
 - Scope: Enterprise Ready Cloud (the Management Group created earlier)
 
