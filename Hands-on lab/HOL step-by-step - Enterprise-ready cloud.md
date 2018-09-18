@@ -31,30 +31,29 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Overview](#overview)
     - [Requirements](#requirements)
     - [Solution architecture](#solution-architecture)
-    - [Exercise 1: Create the policy for Enterprise IT](#exercise-1--create-the-policy-for-enterprise-it)
+    - [Exercise 1: Create the policy for Enterprise IT](#exercise-1-create-the-policy-for-enterprise-it)
         - [Help references](#help-references)
-        - [Task 1: Create a Management Group](#task-1--create-a-management-group)
-        - [Task 2: Apply the service catalog policy](#task-2--apply-the-service-catalog-policy)
-    - [ Resource Name](#resource-name)
-        - [Task 3: Restrict the creation of ExpressRoute circuits](#task-3--restrict-the-creation-of-expressroute-circuits)
-        - [Task 4: Restrict the creation of resources in regions](#task-4--restrict-the-creation-of-resources-in-regions)
-        - [Task 5: Create and apply a naming convention](#task-5--create-and-apply-a-naming-convention)
-        - [Task 6: Test the policies](#task-6--test-the-policies)
-    - [Exercise 2: Configure delegated permissions](#exercise-2--configure-delegated-permissions)
-        - [Help references](#help-references)
-        - [Task 1: Create groups in Azure AD for delegation](#task-1--create-groups-in-azure-ad-for-delegation)
-        - [Task 2: Create user accounts in Azure AD for delegation](#task-2--create-user-accounts-in-azure-ad-for-delegation)
-        - [Task 3: Enable a business unit administrator for the subscription](#task-3--enable-a-business-unit-administrator-for-the-subscription)
-        - [Task 4: Enable project-based delegation and chargeback](#task-4--enable-project-based-delegation-and-chargeback)
-    - [Exercise 3: Create the environment for the e-commerce team](#exercise-3--create-the-environment-for-the-e-commerce-team)
-        - [Help references](#help-references)
-        - [Task 1: Create a new virtual network](#task-1--create-a-new-virtual-network)
-        - [Task 2: Configure secure VPN for connectivity](#task-2--configure-secure-vpn-for-connectivity)
-        - [Task 3: Create an Azure DevTest lab environment](#task-3--create-an-azure-devtest-lab-environment)
-        - [Task 4: Test access to the DevTest labs environment](#task-4--test-access-to-the-devtest-labs-environment)
-        - [Task 5: Finish configuring secure connectivity](#task-5--finish-configuring-secure-connectivity)
+        - [Task 1: Create a Management Group](#task-1-create-a-management-group)
+        - [Task 2: Apply the service catalog policy](#task-2-apply-the-service-catalog-policy)
+        - [Task 3: Restrict the creation of ExpressRoute circuits](#task-3-restrict-the-creation-of-expressroute-circuits)
+        - [Task 4: Restrict the creation of resources in regions](#task-4-restrict-the-creation-of-resources-in-regions)
+        - [Task 5: Create and apply a naming convention](#task-5-create-and-apply-a-naming-convention)
+        - [Task 6: Test the policies](#task-6-test-the-policies)
+    - [Exercise 2: Configure delegated permissions](#exercise-2-configure-delegated-permissions)
+        - [Help references](#help-references-1)
+        - [Task 1: Create groups in Azure AD for delegation](#task-1-create-groups-in-azure-ad-for-delegation)
+        - [Task 2: Create user accounts in Azure AD for delegation](#task-2-create-user-accounts-in-azure-ad-for-delegation)
+        - [Task 3: Enable a business unit administrator for the subscription](#task-3-enable-a-business-unit-administrator-for-the-subscription)
+        - [Task 4: Enable project-based delegation and chargeback](#task-4-enable-project-based-delegation-and-chargeback)
+    - [Exercise 3: Create the environment for the e-commerce team](#exercise-3-create-the-environment-for-the-e-commerce-team)
+        - [Help references](#help-references-2)
+        - [Task 1: Create a new virtual network](#task-1-create-a-new-virtual-network)
+        - [Task 2: Configure secure VPN for connectivity](#task-2-configure-secure-vpn-for-connectivity)
+        - [Task 3: Create an Azure DevTest lab environment](#task-3-create-an-azure-devtest-lab-environment)
+        - [Task 4: Test access to the DevTest labs environment](#task-4-test-access-to-the-devtest-labs-environment)
+        - [Task 5: Finish configuring secure connectivity](#task-5-finish-configuring-secure-connectivity)
     - [After the hands-on lab](#after-the-hands-on-lab)
-        - [Task 1: Remove resources and configuration created during this lab](#task-1--remove-resources-and-configuration-created-during-this-lab)
+        - [Task 1: Remove resources and configuration created during this lab](#task-1-remove-resources-and-configuration-created-during-this-lab)
 
 <!-- /TOC -->
 
@@ -124,40 +123,40 @@ In this exercise, you will apply one of the built-in Azure Policies to restrict 
 
 1.  First, we need to build a list of resource types, which will be permitted, and their corresponding resource providers. We'll do that using PowerShell. Start PowerShell ISE, and log in to your Azure subscription:
 
-```
-    Login-AzureRmAccount -Subscription "{subscription name or id}"
-```
+    ```
+        Login-AzureRmAccount -Subscription "{subscription name or id}"
+    ```
 
 2.  Enter the following script into the edit window, and run the script:
 
-```
-    $FormatEnumerationLimit = -1
-    Get-AzureRmResourceProvider `
-      | Select-Object ProviderNamespace, ResourceTypes `
-      | Format-List
-```
+    ```
+        $FormatEnumerationLimit = -1
+        Get-AzureRmResourceProvider `
+        | Select-Object ProviderNamespace, ResourceTypes `
+        | Format-List
+    ```
 
 3.  Review the list, and identify the resource providers and resource types for each of the following:
 
-  Resource Name
-  --------------------------
--  Resource Group
--   Virtual Machines
--   Disk
--   Network Interface
--   Public IP Address
--   Network Security Group
--   Virtual Networks
--   Virtual Network Gateways
--   ExpressRoute Circuits
--   VPN Gateways
--   Storage Accounts
--   Backup Vault
--   Site Recovery Vault
--   DevTest Labs
--   Key Vault
--   Web Apps
--   SQL Database
+    Resource Name
+    --------------------------
+    -  Resource Group
+    -   Virtual Machines
+    -   Disk
+    -   Network Interface
+    -   Public IP Address
+    -   Network Security Group
+    -   Virtual Networks
+    -   Virtual Network Gateways
+    -   ExpressRoute Circuits
+    -   VPN Gateways
+    -   Storage Accounts
+    -   Backup Vault
+    -   Site Recovery Vault
+    -   DevTest Labs
+    -   Key Vault
+    -   Web Apps
+    -   SQL Database
 
 4.  Launch the Azure Management portal, and navigate to **Policy** under **All services**:
 
@@ -215,7 +214,7 @@ In this exercise, you will apply another built-in Azure policy to restrict the c
 
     ![Azure portal screenshot, showing the Assign Policy blade. The policy is \'Not allowed resource types\' and the ExpressRouteCircuits resource type has been selected. The policy is assigned at the Management group scope, with the ExpressRoute-group resource group as an exclusion path.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image10.png "Assign Policy blade")
 
-When complete, select **Assign** to create the policy assignment.
+    When complete, select **Assign** to create the policy assignment.
 
 ### Task 4: Restrict the creation of resources in regions 
 
@@ -407,9 +406,9 @@ In this task, you will use the Azure management portal to validate each of the p
 
 2.  Specify the following configuration for the circuit and select **Create**.
 
-Note: you may have to specify an alternate region if West United States is not supported with your subscription.
+    > Note: you may have to specify an alternate region if West United States is not supported with your subscription.
 
-![The Circuit configuration fields are set to the following settings: Circuit name, TestCircuit; Provider, AT&T; Peering location, Silicon Valley; Bandwidth, 50Mbps; SKU, Standard.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image24.png "Circuit configuration fields") ![The Circuit configuration fields are set to the following settings: Billing model, Unlimited; Subscription, opsgilitytraining; Resource group, PolicyTestIRG; Location, West US.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image25.png "Circuit configuration fields")
+    ![The Circuit configuration fields are set to the following settings: Circuit name, TestCircuit; Provider, AT&T; Peering location, Silicon Valley; Bandwidth, 50Mbps; SKU, Standard.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image24.png "Circuit configuration fields") ![The Circuit configuration fields are set to the following settings: Billing model, Unlimited; Subscription, opsgilitytraining; Resource group, PolicyTestIRG; Location, West US.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image25.png "Circuit configuration fields")
 
 3.  As with the Service Catalog policy, you should see an error in the Create ExpressRoute Circuit blade, which when clicked shows the error details:
 
@@ -498,31 +497,31 @@ In this task, you will update a script to automatically add a user to the contri
 
 1.  Open PowerShell ISE, and log in to your Azure account
 
-```
-    Login-AzureRmAccount
-```
+    ```
+        Login-AzureRmAccount
+    ```
 
 2.  Create a new script **ConfigureSubscription.ps1** in PowerShell ISE
 
 3.  Add the following code to script, and save the file. This code will retrieve the object ID for the Active Directory group passed in and assign the group to the Contributor role on the subscription.
 
-```
+    ```
 
-    param([string]$SubscriptionId, [string]$AdGroupName) 
+        param([string]$SubscriptionId, [string]$AdGroupName) 
 
-    Select-AzureRmSubscription -SubscriptionId $SubscriptionId
+        Select-AzureRmSubscription -SubscriptionId $SubscriptionId
 
-    $scope = "/subscriptions/$SubscriptionId"
+        $scope = "/subscriptions/$SubscriptionId"
 
-    $groupObjectId = (Get-AzureRmADGroup -SearchString $AdGroupName).Id.Guid
+        $groupObjectId = (Get-AzureRmADGroup -SearchString $AdGroupName).Id.Guid
 
-    Write-Host "Adding group to contributor role" -ForegroundColor Green
+        Write-Host "Adding group to contributor role" -ForegroundColor Green
 
-    New-AzureRmRoleAssignment -Scope $scope `
-                              -RoleDefinitionName "Contributor" `
-                              -ObjectId $groupObjectId 
+        New-AzureRmRoleAssignment -Scope $scope `
+                                -RoleDefinitionName "Contributor" `
+                                -ObjectId $groupObjectId 
 
-```
+    ```
 
 This code will add an Azure AD security group to the contributor role at the subscription scope.
 
@@ -530,15 +529,15 @@ This code will add an Azure AD security group to the contributor role at the sub
 
     Paste this under the param section of the script and save.
 
-```
-    $SubscriptionId = "{your subscription id}"
-```
+    ```
+        $SubscriptionId = "{your subscription id}"
+    ```
 
 5.  Execute the script passing in the -SubscriptionID and -AdGroupName parameters:
 
-```
-    .\ConfigureSubscription.ps1 -SubscriptionId $SubscriptionId -AdGroupName "BU-Electronics-Admin"
-```
+    ```
+        .\ConfigureSubscription.ps1 -SubscriptionId $SubscriptionId -AdGroupName "BU-Electronics-Admin"
+    ```
 
 6.  Close all instances of your browser (or switch to a different type of browser) and re-launch In-Private or Incognito mode
 
@@ -570,78 +569,78 @@ In this task, you will create a script that will create a new resource group, as
 
 2.  Add the following code to the script, and **Save** the file
 
-```
-    param(
-        [string]$SubscriptionId, 
-        [string]$ResourceGroupName, 
-        [String]$Location, 
-        [String]$IOCode,
-        [string]$AdGroupName
-    ) 
+    ```
+        param(
+            [string]$SubscriptionId, 
+            [string]$ResourceGroupName, 
+            [String]$Location, 
+            [String]$IOCode,
+            [string]$AdGroupName
+        ) 
 
-    Select-AzureRmSubscription -SubscriptionId $SubscriptionId
+        Select-AzureRmSubscription -SubscriptionId $SubscriptionId
 
-    # Create resource group
-    New-AzureRmResourceGroup -Name $ResourceGroupName -Location $Location 
+        # Create resource group
+        New-AzureRmResourceGroup -Name $ResourceGroupName -Location $Location 
 
-    $scope = "/subscriptions/$subscriptionId/resourceGroups/$resourceGroupName"
+        $scope = "/subscriptions/$subscriptionId/resourceGroups/$resourceGroupName"
 
-    # Assign Owner role to given group
-    $groupObjectId = (Get-AzureRmADGroup -SearchString $AdGroupName).Id.Guid
+        # Assign Owner role to given group
+        $groupObjectId = (Get-AzureRmADGroup -SearchString $AdGroupName).Id.Guid
 
-    New-AzureRmRoleAssignment -Scope $scope `
-                              -RoleDefinitionName "Owner" `
-                              -ObjectId $groupObjectId
+        New-AzureRmRoleAssignment -Scope $scope `
+                                -RoleDefinitionName "Owner" `
+                                -ObjectId $groupObjectId
 
-    # Assign policy to apply IOCode tag
-    $definition = Get-AzureRmPolicyDefinition | where {$_.Properties.displayName -eq "Apply tag and its default value"}
+        # Assign policy to apply IOCode tag
+        $definition = Get-AzureRmPolicyDefinition | where {$_.Properties.displayName -eq "Apply tag and its default value"}
 
-    $parameters = @{
-        tagName = 'IOCode'
-        tagValue = $IOCode
-        }
+        $parameters = @{
+            tagName = 'IOCode'
+            tagValue = $IOCode
+            }
 
-    New-AzureRmPolicyAssignment -Name "AppendIOCode" `
-                                -Scope $scope `
-                                -DisplayName "Append IO Code" `
-                                -PolicyDefinition $definition `
-                                -PolicyParameterObject $parameters
+        New-AzureRmPolicyAssignment -Name "AppendIOCode" `
+                                    -Scope $scope `
+                                    -DisplayName "Append IO Code" `
+                                    -PolicyDefinition $definition `
+                                    -PolicyParameterObject $parameters
 
-```
+    ```
 
 
 This code creates a new resource group in the specified region. It then assigns the group to the owner role definition just for the resource group. It will allow users in the group to have full ownership of resources within the resource group only. This code applies a built-in policy to append a tag with name 'IOCode' and then applies the given tag value to any resource created in the resource group.
 
 3.  In the **Console** pane, create a new variable called **\$location**, and specify a region name to deploy to the resource group to. This location must be one of the supported regions in your previously created policy.
 
-```
-    $location = "West US"
-```
+    ```
+        $location = "West US"
+    ```
 
 4.  In the **Console** pane, create a new variable called **\$resourceGroupName**, and specify the value as **DelegatedProjectDemo**. Also, make sure you create a **\$SubscriptionId** variable as you did earlier.
 
-```
-    $resourceGroupName = "DelegatedProjectDemo"
-    $SubscriptionId = "{your subscription id}"
-```
+    ```
+        $resourceGroupName = "DelegatedProjectDemo"
+        $SubscriptionId = "{your subscription id}"
+    ```
 
 5.  In the **Console** pane, execute the following command to create a new resource group with delegated permissions and IO Code policy
 
-```
-    .\CreateProjectResourceGroup.ps1 -SubscriptionId $SubscriptionId -ResourceGroupName $resourceGroupName -Location $location -IOCode "1000150" -AdGroupName "BU-Electronics-Admin"
-```
+    ```
+        .\CreateProjectResourceGroup.ps1 -SubscriptionId $SubscriptionId -ResourceGroupName $resourceGroupName -Location $location -IOCode "1000150" -AdGroupName "BU-Electronics-Admin"
+    ```
 
 6.  Create a new storage account in the resource group (choose a unique name) to validate the ioCode tag was applied (replace uniquestorageaccount with a unique value)
 
-```
-    New-AzureRmStorageAccount -ResourceGroupName $resourceGroupName `
-                              -Name "uniquestorageaccount" -SkuName Standard_LRS `
-                              -Location $location 
-```
+    ```
+        New-AzureRmStorageAccount -ResourceGroupName $resourceGroupName `
+                                -Name "uniquestorageaccount" -SkuName Standard_LRS `
+                                -Location $location 
+    ```
 
-You should see the ioCode tag applied in the output.
+    You should see the ioCode tag applied in the output.
 
-![Screenshot of the Console Pane displaying the following line of code: Tags : {\[ioCode, 1000150\]}](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image36.png "Console Pane code")
+    ![Screenshot of the Console Pane displaying the following line of code: Tags : {\[ioCode, 1000150\]}](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image36.png "Console Pane code")
 
 7.  Switch back to the Azure Management portal using the ElectronicsAdmin credentials
 
@@ -883,21 +882,21 @@ In this task, you will configure certificates for the VPN gateway for the end us
 
 2.  Launch a command prompt (run cmd.exe), and navigate to the **C:\\Hackathon\\ERC** folder by typing in the following command:
 
-```
-    CD C:\Hackathon\ERC
-```
+    ```
+        CD C:\Hackathon\ERC
+    ```
 
 3.  Execute the following command to generate a root certificate for configuring a point-to-site VPN gateway
 
-```
-    makecert -sky exchange -r -n "CN=P2SROOT" -pe -a sha1 -len 2048 -ss My .\P2SRoot.cer
-```
+    ```
+        makecert -sky exchange -r -n "CN=P2SROOT" -pe -a sha1 -len 2048 -ss My .\P2SRoot.cer
+    ```
 
 4.  Execute the following command to generate a client certificate:
 
-```
-    makecert.exe -n "CN=P2SClient" -pe -sky exchange -m 96 -ss My -in "P2SRoot" -is my -a sha1
-```
+    ```
+        makecert.exe -n "CN=P2SClient" -pe -sky exchange -m 96 -ss My -in "P2SRoot" -is my -a sha1
+    ```
 
 5.  Using **File Explorer**, navigate to the C:\\Hackathon\\ERC folder, and then double-click the **P2SRoot.cer** file
 
@@ -931,17 +930,17 @@ In this task, you will configure certificates for the VPN gateway for the end us
 
 3.  In the **DevVPN -- Point to site configuration** blade, enter the following details:
 
-- Address pool: 172.16.201.0/24
+    - Address pool: 172.16.201.0/24
 
-- Under Root Certificates, enter
+    - Under Root Certificates, enter
 
-    -  Name: P2SROOT
+        -  Name: P2SROOT
 
-    -  Public Certificate Data: Paste the certificate data copied to the clipboard earlier
+        -  Public Certificate Data: Paste the certificate data copied to the clipboard earlier
 
-    ![Azure portal screenshot, showing the point to site configuration\--the public certificate is filled in, the address pool selected, and the save button clicked](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image79.png "Add public key")
+        ![Azure portal screenshot, showing the point to site configuration\--the public certificate is filled in, the address pool selected, and the save button clicked](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image79.png "Add public key")
 
-    Once complete, select **Save**.
+        Once complete, select **Save**.
 
 **Subtask 3: Configure and test the client**
 
