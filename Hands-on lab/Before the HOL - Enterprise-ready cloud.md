@@ -20,13 +20,29 @@ The names of manufacturers, products, or URLs are provided for informational pur
 
 © 2018 Microsoft Corporation. All rights reserved.
 
+Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
+
+**Contents**
+
+<!-- TOC -->
+
+- [Enterprise-ready cloud before the hands-on lab setup guide](#enterprise-ready-cloud-before-the-hands-on-lab-setup-guide)
+    - [Requirements](#requirements)
+    - [Before the hands-on lab](#before-the-hands-on-lab)
+        - [Task 1: Validate global admin access to Azure AD tenant](#task-1-validate-global-admin-access-to-azure-ad-tenant)
+        - [Task 2: Setup a development environment](#task-2-setup-a-development-environment)
+
+<!-- /TOC -->
+
+# Enterprise-ready cloud before the hands-on lab setup guide 
+
 ## Requirements
 
 -   Local machine or a virtual machine configured with:
 
-    -   Visual Studio 2015 or 2017 Community Edition or VS Code
+    -   Visual Studio 2015 or 2017 Community Edition or VS Code.
 
--   Full global admin access to the Azure AD tenant associated with your Azure subscription
+-   Full global admin access to the Azure AD tenant associated with your Azure subscription.
 
 ## Before the hands-on lab
 
@@ -36,18 +52,20 @@ To complete this lab, you must have full global admin access to the Azure AD ten
 
 ### Task 1: Validate global admin access to Azure AD tenant
 
-1.  Login to <http://portal.azure.com>, click on **All Services**, and type in **Azure Active Directory**
+1.  Login to <http://portal.azure.com>, click on **All Services**, and type in **Azure Active Directory**.
 
-2.  Open the Azure Active Directory tenant. Click Users -\> New User
+2.  Open the Azure Active Directory tenant. Click Users -\> New User.
 
 3.  Create a new user called testuser/test1. Use the tenant name on the header for the domain name of the email.
 
     ![Create user Azure portal blade with user name and email domain name highlighted.](images/Setup/image3.png "Create User blade")
 
-**If you can create the user, you will enough permissions in Azure AD to complete the lab. If you cannot, you will need more permissions before proceeding.**
+>**Note:** If you can create the user, you will enough permissions in Azure AD to complete the lab. If you cannot, you will need more permissions before proceeding.
 
 ### Task 2: Setup a development environment
 
 If you do not have a machine set up with Visual Studio complete this task, and use this VM to complete the remainder of the Lab.
 
 1.  Create a DS2\_V2 Azure Virtual Machine using the Visual Studio Community 2017 image from the Azure Marketplace.
+
+You should follow all steps provided *before* performing the Hands-on lab.
