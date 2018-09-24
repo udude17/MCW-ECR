@@ -164,19 +164,19 @@ In this exercise, you will apply one of the built-in Azure Policies to restrict 
 
 5.  Select **Assignments**, then **Assign Policy**. Complete the form as follows:
 
-    a.  Policy: **Select 'Allowed resource types'**.
+    -   Policy: **Select 'Allowed resource types'**.
 
-    b.  Name: **Service Catalog policy**
+    -   Name: **Service Catalog policy**
 
-    c.  Description: **Restrict resource types to those permitted by Enterprise IT**.
+    -   Description: **Restrict resource types to those permitted by Enterprise IT**.
 
-    d.  Assigned by: **Enterprise IT**
+    -   Assigned by: **Enterprise IT**
 
-    e.  Scope: **Enterprise Ready Cloud (ERC) management group, as created in Task 1**.
+    -   Scope: **Enterprise Ready Cloud (ERC) management group, as created in Task 1**.
 
-    f.  Exclusions: **None**
-
-    g.  Parameters \| Allowed resource types: **Choose the resource types identified in Step 3 (you may need to include some additional types, such as for NICs, Public IP Addresses, NSGs, etc.)**.
+    -   Exclusions: **None**
+    
+    -   Parameters \| Allowed resource types: **Choose the resource types identified in Step 3 (you may need to include some additional types, such as for NICs, Public IP Addresses, NSGs, etc.)**.
 
     The assignment form should look like this:
 
@@ -232,7 +232,7 @@ In this exercise, you will create a new Azure Policy assignment that restricts t
 
 - Pricing Tier: **Free or standard**
 
-- Scope: **Enterprise Ready Cloud **
+- Scope: **Enterprise Ready Cloud**
   
 - Exclusions: **None**
 
@@ -318,11 +318,11 @@ Next, we shall create a policy initiative comprising multiple instances of our p
 
 2.  Fill in the Initiative Definition form as follows (but [don't]{.underline} select Save yet).
 
-- Definition location: **Enterprise Ready Cloud (the Management Group created earlier)**
+- Definition location: **Enterprise Ready Cloud (the Management Group created earlier)**.
 
 - Name: **Naming Convention**
 
-- Description: **Trey Research resource naming convention**
+- Description: **Trey Research resource naming convention**.
 
 - Category: **Use Existing \| Naming**
 
@@ -477,20 +477,26 @@ In this task, you will create two user accounts in Azure AD that you will use fo
 
 3.  Specify the following configuration for the new user:
 
-- **Name**:  Electronics Admin                                         
-- **User name:** [ElectronicsAdmin@\[yourtenant\].onmicrosoft.com](mailto:ElectronicsAdmin@[yourtenant].onmicrosoft.com) 
-- **Groups**: Add the user to the BU-Electronics-Admin group.     
-- **Password**: Check the Show password checkbox and note the password for later.     
+- Name:  **Electronics Admin**
+
+- User name:  **[ElectronicsAdmin@\[yourtenant\].onmicrosoft.com](mailto:ElectronicsAdmin@[yourtenant].onmicrosoft.com)**
+
+- Groups: **Add the user to the BU-Electronics-Admin group**.
+
+- Password: **Check the Show password checkbox and note the password for later**.     
 
     ![In the New User dialog box, the Name, User name, and Groups fields are circled, and set to the previously defined settings. At the bottom, the check box for Show Password is selected and circled.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image31.png "New User dialog box") |
 
 
 4.  Create a second user with the following configuration:
 
-- **Name**: Electronics User                                             
-- **User name:** [ElectronicsUser@\[yourtenant\].onmicrosoft.com](mailto:ElectronicsUser@[yourtenant].onmicrosoft.com) 
-- **Groups**: Add the user to the BU-Electronics-User group.             
-- **Password**: Check the Show password checkbox and note the password for later.
+- Name: **Electronics User** 
+
+- User name: **[ElectronicsUser@\[yourtenant\].onmicrosoft.com](mailto:ElectronicsUser@[yourtenant].onmicrosoft.com)**
+
+- Groups: **Add the user to the BU-Electronics-User group.**
+
+- Password: **Check the Show password checkbox and note the password for later.**
                                                 
     ![In the New User dialog box, the Name, User name, and Groups fields are circled, and set to the previously defined settings. At the bottom, the check box for Show Password is selected and circled.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image32.png "New User dialog box") |
 
