@@ -369,19 +369,19 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 |    |            |
 |----------|:-------------:|
-|Videos on the Azure EA Portal | <https://channel9.msdn.com/blogs/EA.Azure.com|
+|Videos on the Azure EA Portal | <https://channel9.msdn.com/blogs/EA.Azure.com>|
 |EA Portal Roles  |  <http://www.redbaronofazure.com/?cat=111>|
 |Azure Policy| <https://docs.microsoft.com/azure/azure-policy/azure-policy-introduction>|
 |Azure Policy Initiatives | https://docs.microsoft.com/azure/azure-policy/azure-policy-introduction\#initiative-definition|
-|Role Based Access Control Configuration|<https://docs.microsoft.com/azure/active-directory/role-based-access-control-configure|
+|Role Based Access Control Configuration|<https://docs.microsoft.com/azure/active-directory/role-based-access-control-configure>|
 |Built in Roles for RBAC  | <https://docs.microsoft.com/azure/active-directory/role-based-access-built-in-roles>|
 |Custom Roles for RBAC| <https://docs.microsoft.com/azure/active-directory/role-based-access-control-custom-roles>|
-|Management Groups   |<https://docs.microsoft.com/azure/azure-resource-manager/management-groups-overview|
+|Management Groups   |<https://docs.microsoft.com/azure/azure-resource-manager/management-groups-overview>|
 |Virtual Networks User Defined Routes  | <https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview >|
-|Azure Traffic Manager  | <https://docs.microsoft.com/azure/traffic-manager/|
-|ExpressRoute FAQ   | <https://azure.microsoft.com/en-us/documentation/articles/expressroute-faqshttps://docs.microsoft.com/azure/expressroute/expressroute-faqs](https://docs.microsoft.com/azure/expressroute/expressroute-faqs|
+|Azure Traffic Manager  | <https://docs.microsoft.com/azure/traffic-manager/>|
+|ExpressRoute FAQ   | <https://azure.microsoft.com/en-us/documentation/articles/expressroute-faqshttps://docs.microsoft.com/azure/expressroute/expressroute-faqs>](https://docs.microsoft.com/azure/expressroute/expressroute-faqs|
 |SQL Server in Azure Virtual Machines with High Availability  | https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-sql-high-availability-dr?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json|
-|Azure Active Directory B2B collaboration | <https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b|
+|Azure Active Directory B2B collaboration | <https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b>|
 |Azure Cost Management by Cloudyn | <https://docs.microsoft.com/en-us/azure/cost-management/overview>|
 |Azure Security Center | <https://docs.microsoft.com/azure/security-center/security-center-intro>|
 |Auto-shutdown of VMs   |<https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.StartStopVMSolution?tab=Overview>|
