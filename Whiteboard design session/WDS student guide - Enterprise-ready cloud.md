@@ -49,18 +49,19 @@ At the end of this whiteboard design session, you will be better able to design 
 
 ## Step 1: Review the customer case study 
 
-**Outcome** 
+**Outcome**
 
-Analyze your customer’s needs.
+Analyze your customer's needs.
 
-Timeframe: 15 minutes 
+Timeframe: 15 minutes
 
-Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips. 
+Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips.
 
-1.  Meet your table participants and trainer 
-2.  Read all of the directions for steps 1–3 in the student guide 
-3.  As a table team, review the following customer case study
+1.  Meet your table participants and trainer.
 
+2.  Read all of the directions for steps 1-3 in the student guide.
+
+3.  As a table team, review the following customer case study.
 
 ### Customer situation
 
@@ -162,29 +163,29 @@ This team has a significant percentage of developers that are contingent staff. 
 
 ### Customer needs 
 
-1.  Provide access to create and manage new workloads in Azure for various business units
+1.  Provide access to create and manage new workloads in Azure for various business units.
 
-2.  Identify connectivity requirements with ExpressRoute access control and availability
+2.  Identify connectivity requirements with ExpressRoute access control and availability.
 
-3.  Implement a charge back for the business units for resources they consume, while allowing each business unit to monitor their own usage
+3.  Implement a charge back for the business units for resources they consume, while allowing each business unit to monitor their own usage.
 
-4.  Apply governance to business units to control what can be created
+4.  Apply governance to business units to control what can be created.
 
-5.  Implement delegated access control for new projects within business unit subscriptions
+5.  Implement delegated access control for new projects within business unit subscriptions.
 
-6.  Implement a common resource naming standard across the organization
+6.  Implement a common resource naming standard across the organization.
 
-7.  The above governance controls must be implemented with minimum per-subscription configuration overhead, and compliance with these controls must be auditable to detect any out-of-compliance usage
+7.  The above governance controls must be implemented with minimum per-subscription configuration overhead, and compliance with these controls must be auditable to detect any out-of-compliance usage.
 
-8.  Identify a top-level strategy for building geo-redundant solutions
+8.  Identify a top-level strategy for building geo-redundant solutions.
 
-9.  Identify how Trey Research can track changes to the Azure-based deployments and prevent accidental deletion of resources
+9.  Identify how Trey Research can track changes to the Azure-based deployments and prevent accidental deletion of resources.
 
-10. Identify a solution of providing remote access to e-commerce team contingent staff
+10. Identify a solution of providing remote access to e-commerce team contingent staff.
 
-11. Increase agility to speed up the on-boarding of resources to make the e-commerce team contingent staff productive more quickly
+11. Increase agility to speed up the on-boarding of resources to make the e-commerce team contingent staff productive more quickly.
 
-12. Ensure full-time and contingent staff for e-commerce have access to what they need, but no more
+12. Ensure full-time and contingent staff for e-commerce have access to what they need, but no more.
 
 ### Customer objections 
 
@@ -214,21 +215,23 @@ This team has a significant percentage of developers that are contingent staff. 
 
 ## Step 2: Design a proof of concept solution
 
-**Outcome** 
-Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format. 
+**Outcome**
+
+Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format.
 
 Timeframe: 60 minutes
 
 **Business needs**
 
-Directions: With all participants at your table, answer the following questions and list the answers on a flip chart. 
+Directions:  With all participants at your table, answer the following questions and list the answers on a flip chart:
 
-1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers? 
+1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers?
+
 2.  What customer business needs do you need to address with your solution?
 
 **Design**
 
-Directions: With all participants at your table, respond to the following questions on a flip chart.
+Directions: With all participants at your table, respond to the following questions on a flip chart:
 
 *Subscription organization and charge back*
 
@@ -286,9 +289,9 @@ Directions: With all participants at your table, respond to the following questi
 
 *Connectivity*
 
-1.  Diagram at a high level how an ExpressRoute deployment for Trey Research should be configured for high availability
+1.  Diagram at a high level how an ExpressRoute deployment for Trey Research should be configured for high availability.
 
-2.  Walk through the steps that Trey Research would have to perform to enable other subscriptions to use ExpressRoute
+2.  Walk through the steps that Trey Research would have to perform to enable other subscriptions to use ExpressRoute.
 
 3.  From the security perspective, how could Trey Research deploy firewalls to protect their network after ExpressRoute is deployed? What network features are required and where would the firewalls be deployed? Diagram your solution.
 
@@ -296,9 +299,9 @@ Directions: With all participants at your table, respond to the following questi
 
 *Availability*
 
-1.  Evaluate the list of proposed regions and provide guidance on what policies are in place by Microsoft to help customers design a geo-redundant solution
+1.  Evaluate the list of proposed regions and provide guidance on what policies are in place by Microsoft to help customers design a geo-redundant solution.
 
-2.  Explain how Trey Research could restrict services to just the supported regions
+2.  Explain how Trey Research could restrict services to just the supported regions.
 
 3.  Diagram at a high level what a geo-redundant solution would look like for a public facing web application with a backend that uses SQL Server. What about a private facing web application?
 
@@ -312,48 +315,55 @@ Directions: With all participants at your table, respond to the following questi
 
 Identify a solution to provide access to a development environment that would be suitable for contingent staff for the e-commerce team:
 
-    -   What steps are needed to allow access to the environment?
+   -   What steps are needed to allow access to the environment?
 
-    -   What would be needed to automate the environment to speed up onboarding?
+   -   What would be needed to automate the environment to speed up onboarding?
 
-    -   What options could you propose to allow access for remote employees? Specifically, how could they access resources on the ECommerceDev network but nothing else on the Azure network?
-
+   -   What options could you propose to allow access for remote employees? Specifically, how could they access resources on the ECommerceDev network but nothing else on the Azure network?
 
 **Prepare**
 
-Directions: With all participants at your table: 
+Directions: With all participants at your table:
 
-1.  Identify any customer needs that are not addressed with the proposed solution 
-2.  Identify the benefits of your solution
-3.  Determine how you will respond to the customer’s objections
+1.  Identify any customer needs that are not addressed with the proposed solution.
+
+2.  Identify the benefits of your solution.
+
+3.  Determine how you will respond to the customer's objections.
 
 Prepare a 15-minute chalk-talk style presentation to the customer.
 
 ## Step 3: Present the solution
 
 **Outcome**
- 
+
 Present a solution to the target customer audience in a 15-minute chalk-talk format.
 
 Timeframe: 30 minutes
 
-**Presentation** 
+**Presentation**
 
 Directions:
 
-1.  Pair with another table
-2.  One table is the Microsoft team and the other table is the customer
-3.  The Microsoft team presents their proposed solution to the customer
-4.  The customer makes one of the objections from the list of objections
-5.  The Microsoft team responds to the objection
-6.  The customer team gives feedback to the Microsoft team
-7.  Tables switch roles and repeat Steps 2–6
+1.  Pair with another table.
+
+2.  One table is the Microsoft team and the other table is the customer.
+
+3.  The Microsoft team presents their proposed solution to the customer.
+
+4.  The customer makes one of the objections from the list of objections.
+
+5.  The Microsoft team responds to the objection.
+
+6.  The customer team gives feedback to the Microsoft team.
+
+7.  Tables switch roles and repeat Steps 2-6.
 
 ##  Wrap-up 
 
-Duration: 15 minutes
+Timeframe: 15 minutes
 
--   Tables reconvene with the larger group to hear the facilitator/SME share the preferred solution for the case study.
+Directions: Tables reconvene with the larger group to hear the facilitator/SME share the preferred solution for the case study.
 
 ##  Additional references
 
