@@ -377,7 +377,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 |Built in Roles for RBAC  | <https://docs.microsoft.com/azure/active-directory/role-based-access-built-in-roles>|
 |Custom Roles for RBAC| <https://docs.microsoft.com/azure/active-directory/role-based-access-control-custom-roles>|
 |Management Groups   |<https://docs.microsoft.com/azure/azure-resource-manager/management-groups-overview>|
-|Virtual Networks User Defined Routes  | <https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview >|
+|Virtual Networks User Defined Routes  | <https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview>|
 |Azure Traffic Manager  | <https://docs.microsoft.com/azure/traffic-manager/>|
 |ExpressRoute FAQ   | <https://azure.microsoft.com/en-us/documentation/articles/expressroute-faqshttps://docs.microsoft.com/azure/expressroute/expressroute-faqs>](https://docs.microsoft.com/azure/expressroute/expressroute-faqs|
 |SQL Server in Azure Virtual Machines with High Availability  | https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-sql-high-availability-dr?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json|
