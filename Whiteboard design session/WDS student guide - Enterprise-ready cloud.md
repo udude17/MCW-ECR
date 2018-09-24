@@ -322,6 +322,8 @@ Directions: With all participants at your table, respond to the following questi
    -   What would be needed to automate the environment to speed up onboarding?
 
    -   What options could you propose to allow access for remote employees? Specifically, how could they access resources on the ECommerceDev network but nothing else on the Azure network?
+   
+2.  What cost control options would you propose to put in place to otimaze this environment?
 
 **Prepare**
 
