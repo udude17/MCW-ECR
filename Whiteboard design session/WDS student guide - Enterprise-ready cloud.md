@@ -313,7 +313,9 @@ Directions: With all participants at your table, respond to the following questi
 
 2.  How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even in the event that the security perimeter is compromised?*E-commerce developer team*
 
-Identify a solution to provide access to a development environment that would be suitable for contingent staff for the e-commerce team:
+*E-commerce*
+
+1.  Identify a solution to provide access to a development environment that would be suitable for contingent staff for the e-commerce team:
 
    -   What steps are needed to allow access to the environment?
 
