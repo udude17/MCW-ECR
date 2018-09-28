@@ -315,7 +315,7 @@ Directions: With all participants at your table, respond to the following questi
 
 *E-commerce developer team*
 
-3.  Identify a solution to provide access to a development environment that would be suitable for contingent staff for the e-commerce team:
+1.  Identify a solution to provide access to a development environment that would be suitable for contingent staff for the e-commerce team:
 
    -   What steps are needed to allow access to the environment?
 
@@ -323,7 +323,7 @@ Directions: With all participants at your table, respond to the following questi
 
    -   What options could you propose to allow access for remote employees? Specifically, how could they access resources on the ECommerceDev network but nothing else on the Azure network?
    
-4.  What cost control options would you propose to put in place to optimize this environment?
+2.  What cost control options would you propose to put in place to optimize this environment?
 
 **Prepare**
 
@@ -383,7 +383,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 |Management Groups   |<https://docs.microsoft.com/azure/azure-resource-manager/management-groups-overview>|
 |Virtual Networks User Defined Routes  | <https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview>|
 |Azure Traffic Manager  | <https://docs.microsoft.com/azure/traffic-manager/>|
-|ExpressRoute FAQ   | <https://azure.microsoft.com/en-us/documentation/articles/expressroute-faqshttps://docs.microsoft.com/azure/expressroute/expressroute-faqs>](https://docs.microsoft.com/azure/expressroute/expressroute-faqs|
+|ExpressRoute FAQ   | <https://azure.microsoft.com/en-us/documentation/articles/expressroute-faqshttps://docs.microsoft.com/azure/expressroute/expressroute-faqs>](https://docs.microsoft.com/azure/expressroute/expressroute-faqs)|
 |SQL Server in Azure Virtual Machines with High Availability  | https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-sql-high-availability-dr?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json|
 |Azure Active Directory B2B collaboration | <https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b>|
 |Azure Cost Management by Cloudyn | <https://docs.microsoft.com/en-us/azure/cost-management/overview>|
