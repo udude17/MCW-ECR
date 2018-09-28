@@ -9,7 +9,7 @@ Whiteboard design session student guide
 </div>
 
 <div class="MCWHeader3">
-June 2018
+September 2018
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -49,18 +49,19 @@ At the end of this whiteboard design session, you will be better able to design 
 
 ## Step 1: Review the customer case study 
 
-**Outcome** 
+**Outcome**
 
-Analyze your customer’s needs.
+Analyze your customer's needs.
 
-Timeframe: 15 minutes 
+Timeframe: 15 minutes
 
-Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips. 
+Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips.
 
-1.  Meet your table participants and trainer 
-2.  Read all of the directions for steps 1–3 in the student guide 
-3.  As a table team, review the following customer case study
+1.  Meet your table participants and trainer.
 
+2.  Read all of the directions for steps 1-3 in the student guide.
+
+3.  As a table team, review the following customer case study.
 
 ### Customer situation
 
@@ -162,29 +163,29 @@ This team has a significant percentage of developers that are contingent staff. 
 
 ### Customer needs 
 
-1.  Provide access to create and manage new workloads in Azure for various business units
+1.  Provide access to create and manage new workloads in Azure for various business units.
 
-2.  Identify connectivity requirements with ExpressRoute access control and availability
+2.  Identify connectivity requirements with ExpressRoute access control and availability.
 
-3.  Implement a charge back for the business units for resources they consume, while allowing each business unit to monitor their own usage
+3.  Implement a charge back for the business units for resources they consume, while allowing each business unit to monitor their own usage.
 
-4.  Apply governance to business units to control what can be created
+4.  Apply governance to business units to control what can be created.
 
-5.  Implement delegated access control for new projects within business unit subscriptions
+5.  Implement delegated access control for new projects within business unit subscriptions.
 
-6.  Implement a common resource naming standard across the organization
+6.  Implement a common resource naming standard across the organization.
 
-7.  The above governance controls must be implemented with minimum per-subscription configuration overhead, and compliance with these controls must be auditable to detect any out-of-compliance usage
+7.  The above governance controls must be implemented with minimum per-subscription configuration overhead, and compliance with these controls must be auditable to detect any out-of-compliance usage.
 
-8.  Identify a top-level strategy for building geo-redundant solutions
+8.  Identify a top-level strategy for building geo-redundant solutions.
 
-9.  Identify how Trey Research can track changes to the Azure-based deployments and prevent accidental deletion of resources
+9.  Identify how Trey Research can track changes to the Azure-based deployments and prevent accidental deletion of resources.
 
-10. Identify a solution of providing remote access to e-commerce team contingent staff
+10. Identify a solution of providing remote access to e-commerce team contingent staff.
 
-11. Increase agility to speed up the on-boarding of resources to make the e-commerce team contingent staff productive more quickly
+11. Increase agility to speed up the on-boarding of resources to make the e-commerce team contingent staff productive more quickly.
 
-12. Ensure full-time and contingent staff for e-commerce have access to what they need, but no more
+12. Ensure full-time and contingent staff for e-commerce have access to what they need, but no more.
 
 ### Customer objections 
 
@@ -214,21 +215,23 @@ This team has a significant percentage of developers that are contingent staff. 
 
 ## Step 2: Design a proof of concept solution
 
-**Outcome** 
-Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format. 
+**Outcome**
+
+Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format.
 
 Timeframe: 60 minutes
 
 **Business needs**
 
-Directions: With all participants at your table, answer the following questions and list the answers on a flip chart. 
+Directions:  With all participants at your table, answer the following questions and list the answers on a flip chart:
 
-1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers? 
+1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers?
+
 2.  What customer business needs do you need to address with your solution?
 
 **Design**
 
-Directions: With all participants at your table, respond to the following questions on a flip chart.
+Directions: With all participants at your table, respond to the following questions on a flip chart:
 
 *Subscription organization and charge back*
 
@@ -286,9 +289,9 @@ Directions: With all participants at your table, respond to the following questi
 
 *Connectivity*
 
-1.  Diagram at a high level how an ExpressRoute deployment for Trey Research should be configured for high availability
+1.  Diagram at a high level how an ExpressRoute deployment for Trey Research should be configured for high availability.
 
-2.  Walk through the steps that Trey Research would have to perform to enable other subscriptions to use ExpressRoute
+2.  Walk through the steps that Trey Research would have to perform to enable other subscriptions to use ExpressRoute.
 
 3.  From the security perspective, how could Trey Research deploy firewalls to protect their network after ExpressRoute is deployed? What network features are required and where would the firewalls be deployed? Diagram your solution.
 
@@ -296,9 +299,9 @@ Directions: With all participants at your table, respond to the following questi
 
 *Availability*
 
-1.  Evaluate the list of proposed regions and provide guidance on what policies are in place by Microsoft to help customers design a geo-redundant solution
+1.  Evaluate the list of proposed regions and provide guidance on what policies are in place by Microsoft to help customers design a geo-redundant solution.
 
-2.  Explain how Trey Research could restrict services to just the supported regions
+2.  Explain how Trey Research could restrict services to just the supported regions.
 
 3.  Diagram at a high level what a geo-redundant solution would look like for a public facing web application with a backend that uses SQL Server. What about a private facing web application?
 
@@ -308,70 +311,81 @@ Directions: With all participants at your table, respond to the following questi
 
 1.  What would you recommend to Trey Research on how to mitigate accidently deleting production workloads? If that were to happen, what would the proper procedure be to identify who deleted the resource?
 
-2.  How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even in the event that the security perimeter is compromised?*E-commerce developer team*
+2.  How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even in the event that the security perimeter is compromised?
 
-Identify a solution to provide access to a development environment that would be suitable for contingent staff for the e-commerce team:
+*E-commerce developer team*
 
-    -   What steps are needed to allow access to the environment?
+1.  Identify a solution to provide access to a development environment that would be suitable for contingent staff for the e-commerce team:
 
-    -   What would be needed to automate the environment to speed up onboarding?
+   -   What steps are needed to allow access to the environment?
 
-    -   What options could you propose to allow access for remote employees? Specifically, how could they access resources on the ECommerceDev network but nothing else on the Azure network?
+   -   What would be needed to automate the environment to speed up on-boarding?
 
+   -   What options could you propose to allow access for remote employees? Specifically, how could they access resources on the ECommerceDev network but nothing else on the Azure network?
+   
+2.  What cost control options would you propose to put in place to optimize this environment?
 
 **Prepare**
 
-Directions: With all participants at your table: 
+Directions: With all participants at your table:
 
-1.  Identify any customer needs that are not addressed with the proposed solution 
-2.  Identify the benefits of your solution
-3.  Determine how you will respond to the customer’s objections
+1.  Identify any customer needs that are not addressed with the proposed solution.
+
+2.  Identify the benefits of your solution.
+
+3.  Determine how you will respond to the customer's objections.
 
 Prepare a 15-minute chalk-talk style presentation to the customer.
 
 ## Step 3: Present the solution
 
 **Outcome**
- 
+
 Present a solution to the target customer audience in a 15-minute chalk-talk format.
 
 Timeframe: 30 minutes
 
-**Presentation** 
+**Presentation**
 
 Directions:
 
-1.  Pair with another table
-2.  One table is the Microsoft team and the other table is the customer
-3.  The Microsoft team presents their proposed solution to the customer
-4.  The customer makes one of the objections from the list of objections
-5.  The Microsoft team responds to the objection
-6.  The customer team gives feedback to the Microsoft team
-7.  Tables switch roles and repeat Steps 2–6
+1.  Pair with another table.
+
+2.  One table is the Microsoft team and the other table is the customer.
+
+3.  The Microsoft team presents their proposed solution to the customer.
+
+4.  The customer makes one of the objections from the list of objections.
+
+5.  The Microsoft team responds to the objection.
+
+6.  The customer team gives feedback to the Microsoft team.
+
+7.  Tables switch roles and repeat Steps 2-6.
 
 ##  Wrap-up 
 
-Duration: 15 minutes
+Timeframe: 15 minutes
 
--   Tables reconvene with the larger group to hear the facilitator/SME share the preferred solution for the case study.
+Directions: Tables reconvene with the larger group to hear the facilitator/SME share the preferred solution for the case study.
 
 ##  Additional references
 
 |    |            |
 |----------|:-------------:|
-|Videos on the Azure EA Portal | <https://channel9.msdn.com/blogs/EA.Azure.com|
+|Videos on the Azure EA Portal | <https://channel9.msdn.com/blogs/EA.Azure.com>|
 |EA Portal Roles  |  <http://www.redbaronofazure.com/?cat=111>|
 |Azure Policy| <https://docs.microsoft.com/azure/azure-policy/azure-policy-introduction>|
 |Azure Policy Initiatives | https://docs.microsoft.com/azure/azure-policy/azure-policy-introduction\#initiative-definition|
-|Role Based Access Control Configuration|<https://docs.microsoft.com/azure/active-directory/role-based-access-control-configure|
+|Role Based Access Control Configuration|<https://docs.microsoft.com/azure/active-directory/role-based-access-control-configure>|
 |Built in Roles for RBAC  | <https://docs.microsoft.com/azure/active-directory/role-based-access-built-in-roles>|
-|Custom Roles for RBAC| <https://docs.microsoft.com/azure/active-directory/role-based-access-control-custom-roles>|
-|Management Groups   |<https://docs.microsoft.com/azure/azure-resource-manager/management-groups-overview|
-|Virtual Networks User Defined Routes  | <https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview >|
-|Azure Traffic Manager  | <https://docs.microsoft.com/azure/traffic-manager/|
-|ExpressRoute FAQ   | <https://azure.microsoft.com/en-us/documentation/articles/expressroute-faqshttps://docs.microsoft.com/azure/expressroute/expressroute-faqs](https://docs.microsoft.com/azure/expressroute/expressroute-faqs|
+|Custom Roles for RBAC| <https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles>|
+|Management Groups   |<https://docs.microsoft.com/azure/azure-resource-manager/management-groups-overview>|
+|Virtual Networks User Defined Routes  | <https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview>|
+|Azure Traffic Manager  | <https://docs.microsoft.com/azure/traffic-manager/>|
+|ExpressRoute FAQ   | <https://azure.microsoft.com/en-us/documentation/articles/expressroute-faqshttps://docs.microsoft.com/azure/expressroute/expressroute-faqs>](https://docs.microsoft.com/azure/expressroute/expressroute-faqs)|
 |SQL Server in Azure Virtual Machines with High Availability  | https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-sql-high-availability-dr?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json|
-|Azure Active Directory B2B collaboration | <https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b|
+|Azure Active Directory B2B collaboration | <https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b>|
 |Azure Cost Management by Cloudyn | <https://docs.microsoft.com/en-us/azure/cost-management/overview>|
 |Azure Security Center | <https://docs.microsoft.com/azure/security-center/security-center-intro>|
 |Auto-shutdown of VMs   |<https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.StartStopVMSolution?tab=Overview>|

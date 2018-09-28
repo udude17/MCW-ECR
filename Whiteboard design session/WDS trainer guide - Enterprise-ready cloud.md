@@ -9,7 +9,7 @@ Whiteboard design session trainer guide
 </div>
 
 <div class="MCWHeader3">
-June 2018
+September 2018
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -62,25 +62,25 @@ Thank you for taking time to support the whiteboard design sessions as a trainer
 
 An amazing trainer:
 
--   Creates a safe environment in which learning can take place
+-   Creates a safe environment in which learning can take place.
 
--   Stimulates the participant's thinking
+-   Stimulates the participant's thinking.
 
--   Involves the participant in the learning process
+-   Involves the participant in the learning process.
 
--   Manages the learning process (on time, on topic, and adjusting to benefit participants)
+-   Manages the learning process (on time, on topic, and adjusting to benefit participants).
 
--   Ensures individual participant accountability
+-   Ensures individual participant accountability.
 
--   Ties it all together for the participant
+-   Ties it all together for the participant.
 
--   Provides insight and experience to the learning process
+-   Provides insight and experience to the learning process.
 
--   Effectively leads the whiteboard design session discussion
+-   Effectively leads the whiteboard design session discussion.
 
--   Monitors quality and appropriateness of participant deliverables
+-   Monitors quality and appropriateness of participant deliverables.
 
--   Effectively leads the feedback process
+-   Effectively leads the feedback process.
 
 ## Whiteboard design session flow 
 
@@ -88,7 +88,9 @@ Each whiteboard design session uses the following flow:
 
 **Step 1: Review the customer case study (15 minutes)**
 
-Outcome: Analyze your customer's needs.
+**Outcome**
+
+Analyze your customer's needs.
 
 -   Customer's background, situation, needs and technical requirements
 
@@ -98,19 +100,23 @@ Outcome: Analyze your customer's needs.
 
 **Step 2: Design a proof of concept solution (60 minutes)**
 
-Outcome: Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format. 
+**Outcome**
 
--   Determine your target customer audience
+Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format.
 
--   Determine customer's business needs to address your solution
+-   Determine your target customer audience.
 
--   Design and diagram your solution
+-   Determine customer's business needs to address your solution.
 
--   Prepare to present your solution
+-   Design and diagram your solution.
+
+-   Prepare to present your solution.
 
 **Step 3: Present the solution (30 minutes)**
 
-Outcome: Present solution to your customer.
+**Outcome**
+
+Present solution to your customer:
 
 -   Present solution
 
@@ -126,15 +132,15 @@ Outcome: Present solution to your customer.
 
 Before conducting your first whiteboard design session:
 
--   Read the Student guide (including the case study) and Trainer guide
+-   Read the Student guide (including the case study) and Trainer guide.
 
--   Become familiar with all key points and activities
+-   Become familiar with all key points and activities.
 
--   Plan the point you want to stress, which questions you want to drive, transitions, and be ready to answer questions
+-   Plan the point you want to stress, which questions you want to drive, transitions, and be ready to answer questions.
 
--   Prior to the whiteboard design session, discuss the case study to pick up more ideas
+-   Prior to the whiteboard design session, discuss the case study to pick up more ideas.
 
--   Make notes for later
+-   Make notes for later.
 
 ## During the whiteboard design session: Tips for an effective whiteboard design session
 
@@ -144,7 +150,7 @@ Before conducting your first whiteboard design session:
 
 When participants are doing activities, you can **look ahead to refresh your memory**.
 
--   **Adjust activity and whiteboard design session pace** as needed to allow time for presenting, feedback, and sharing
+-   **Adjust activity and whiteboard design session pace** as needed to allow time for presenting, feedback, and sharing.
 
 -   **Add examples, points, and stories** from your own experience. Think about stories you can share that help you make your points clearly and effectively.
 
@@ -156,7 +162,7 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 **Ask questions** and get them to share to fully involve your group in the learning process.
 
-**Ask first**, whenever possible. Before launching into a topic, learn your audience's opinions about it and experiences with it. Asking first enables you to assess their level of knowledge and experience and leaves them more open to what you are presenting.
+**Ask first**, whenever possible. Before launching into a topic, learn your audience's opinions about it and experiences with it. Asking first enables you to assess their level of knowledge and experience, and leaves them more open to what you are presenting.
 
 **Wait for responses**. If you ask a question such as, "What's your experience with (fill in the blank)?" then wait. Do not be afraid of a little silence. If you leap into the silence, your participants will feel you are not serious about involving them and will become passive. Give participants a chance to think, and if no one answers, patiently ask again. You will usually get a response.
 
@@ -170,18 +176,19 @@ At the end of this whiteboard design session, you will be better able to design 
 
 ## Step 1: Review the customer case study 
 
-**Outcome** 
+**Outcome**
 
-Analyze your customer’s needs.
+Analyze your customer's needs.
 
-Timeframe: 15 minutes 
+Timeframe: 15 minutes
 
-Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips. 
+Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips.
 
-1.  Meet your table participants and trainer 
-2.  Read all of the directions for steps 1–3 in the student guide 
-3.  As a table team, review the following customer case study
+1.  Meet your table participants and trainer.
 
+2.  Read all of the directions for steps 1-3 in the student guide.
+
+3.  As a table team, review the following customer case study.
 
 ### Customer situation
 
@@ -283,29 +290,29 @@ This team has a significant percentage of developers that are contingent staff. 
 
 ### Customer needs 
 
-1.  Provide access to create and manage new workloads in Azure for various business units
+1.  Provide access to create and manage new workloads in Azure for various business units.
 
-2.  Identify connectivity requirements with ExpressRoute access control and availability
+2.  Identify connectivity requirements with ExpressRoute access control and availability.
 
-3.  Implement a charge back for the business units for resources they consume, while allowing each business unit to monitor their own usage
+3.  Implement a charge back for the business units for resources they consume, while allowing each business unit to monitor their own usage.
 
-4.  Apply governance to business units to control what can be created
+4.  Apply governance to business units to control what can be created.
 
-5.  Implement delegated access control for new projects within business unit subscriptions
+5.  Implement delegated access control for new projects within business unit subscriptions.
 
-6.  Implement a common resource naming standard across the organization
+6.  Implement a common resource naming standard across the organization.
 
-7.  The above governance controls must be implemented with minimum per-subscription configuration overhead, and compliance with these controls must be auditable to detect any out-of-compliance usage
+7.  The above governance controls must be implemented with minimum per-subscription configuration overhead, and compliance with these controls must be auditable to detect any out-of-compliance usage.
 
-8.  Identify a top-level strategy for building geo-redundant solutions
+8.  Identify a top-level strategy for building geo-redundant solutions.
 
-9.  Identify how Trey Research can track changes to the Azure-based deployments and prevent accidental deletion of resources
+9.  Identify how Trey Research can track changes to the Azure-based deployments and prevent accidental deletion of resources.
 
-10. Identify a solution of providing remote access to e-commerce team contingent staff
+10. Identify a solution of providing remote access to e-commerce team contingent staff.
 
-11. Increase agility to speed up the on-boarding of resources to make the e-commerce team contingent staff productive more quickly
+11. Increase agility to speed up the on-boarding of resources to make the e-commerce team contingent staff productive more quickly.
 
-12. Ensure full-time and contingent staff for e-commerce have access to what they need, but no more
+12. Ensure full-time and contingent staff for e-commerce have access to what they need, but no more.
 
 ### Customer objections 
 
@@ -332,24 +339,25 @@ This team has a significant percentage of developers that are contingent staff. 
 ![This is a screenshot of a slide, titled Common scenarios - infrastructure as a service. This slide has: a Virtual Machines overview; Virtual Networks Overview; Site-to-Site Connections information; Point-to-Site Connections Information; Virtual Network Example VNET; and a Virtual Network diagram. At this time, we are unable to capture all of the information in the slide. Future versions of this course should address this.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image6.png "Common scenarios - infrastructure as a service")
 
 ![ExpressRoute Deployment Options include Cloud Exchange Co-location, Point-to-point Ethernet Connection, and Any-to-any (IPVPN) Connection.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image7.png "ExpressRoute Deployment Options")
-
 ## Step 2: Design a proof of concept solution
 
-**Outcome** 
-Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format. 
+**Outcome**
+
+Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format.
 
 Timeframe: 60 minutes
 
 **Business needs**
 
-Directions: With all participants at your table, answer the following questions and list the answers on a flip chart. 
+Directions:  With all participants at your table, answer the following questions and list the answers on a flip chart:
 
-1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers? 
+1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers?
+
 2.  What customer business needs do you need to address with your solution?
 
 **Design**
 
-Directions: With all participants at your table, respond to the following questions on a flip chart.
+Directions: With all participants at your table, respond to the following questions on a flip chart:
 
 *Subscription organization and charge back*
 
@@ -407,9 +415,9 @@ Directions: With all participants at your table, respond to the following questi
 
 *Connectivity*
 
-1.  Diagram at a high level how an ExpressRoute deployment for Trey Research should be configured for high availability
+1.  Diagram at a high level how an ExpressRoute deployment for Trey Research should be configured for high availability.
 
-2.  Walk through the steps that Trey Research would have to perform to enable other subscriptions to use ExpressRoute
+2.  Walk through the steps that Trey Research would have to perform to enable other subscriptions to use ExpressRoute.
 
 3.  From the security perspective, how could Trey Research deploy firewalls to protect their network after ExpressRoute is deployed? What network features are required and where would the firewalls be deployed? Diagram your solution.
 
@@ -429,70 +437,81 @@ Directions: With all participants at your table, respond to the following questi
 
 1.  What would you recommend to Trey Research on how to mitigate accidently deleting production workloads? If that were to happen, what would the proper procedure be to identify who deleted the resource?
 
-How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even in the event that the security perimeter is compromised?*E-commerce developer team*
+How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even in the event that the security perimeter is compromised?
+
+*E-commerce developer team*
 
 1.  Identify a solution to provide access to a development environment that would be suitable for contingent staff for the e-commerce team:
 
     -   What steps are needed to allow access to the environment?
 
-    -   What would be needed to automate the environment to speed up onboarding?
+    -   What would be needed to automate the environment to speed up on-boarding?
 
     -   What options could you propose to allow access for remote employees? Specifically, how could they access resources on the ECommerceDev network but nothing else on the Azure network?
-
+    
+2.  What cost control options would you propose to put in place to optimize this environment?
 
 **Prepare**
 
-Directions: With all participants at your table: 
+Directions: With all participants at your table:
 
-1.  Identify any customer needs that are not addressed with the proposed solution 
-2.  Identify the benefits of your solution
-3.  Determine how you will respond to the customer’s objections
+1.  Identify any customer needs that are not addressed with the proposed solution.
+
+2.  Identify the benefits of your solution.
+
+3.  Determine how you will respond to the customer's objections.
 
 Prepare a 15-minute chalk-talk style presentation to the customer.
 
 ## Step 3: Present the solution
 
 **Outcome**
- 
+
 Present a solution to the target customer audience in a 15-minute chalk-talk format.
 
 Timeframe: 30 minutes
 
-**Presentation** 
+**Presentation**
 
 Directions:
 
-1.  Pair with another table
-2.  One table is the Microsoft team and the other table is the customer
-3.  The Microsoft team presents their proposed solution to the customer
-4.  The customer makes one of the objections from the list of objections
-5.  The Microsoft team responds to the objection
-6.  The customer team gives feedback to the Microsoft team
-7.  Tables switch roles and repeat Steps 2–6
+1.  Pair with another table.
+
+2.  One table is the Microsoft team and the other table is the customer.
+
+3.  The Microsoft team presents their proposed solution to the customer.
+
+4.  The customer makes one of the objections from the list of objections.
+
+5.  The Microsoft team responds to the objection.
+
+6.  The customer team gives feedback to the Microsoft team.
+
+7.  Tables switch roles and repeat Steps 2-6.
 
 ##  Wrap-up 
 
-Duration: 15 minutes
+Timeframe: 15 minutes
 
--   Tables reconvene with the larger group to hear the facilitator/SME share the preferred solution for the case study.
+Directions: Tables reconvene with the larger group to hear the facilitator/SME share the preferred solution for the case study.
 
 ##  Additional references
 
 |    |            |
 |----------|:-------------:|
-|Videos on the Azure EA Portal | <https://channel9.msdn.com/blogs/EA.Azure.com|
+|Videos on the Azure EA Portal | <https://channel9.msdn.com/blogs/EA.Azure.com>|
 |EA Portal Roles  |  <http://www.redbaronofazure.com/?cat=111>|
 |Azure Policy| <https://docs.microsoft.com/azure/azure-policy/azure-policy-introduction>|
 |Azure Policy Initiatives | https://docs.microsoft.com/azure/azure-policy/azure-policy-introduction\#initiative-definition|
-|Role Based Access Control Configuration|<https://docs.microsoft.com/azure/active-directory/role-based-access-control-configure|
+|Role Based Access Control Configuration|<https://docs.microsoft.com/azure/active-directory/role-based-access-control-configure>|
 |Built in Roles for RBAC  | <https://docs.microsoft.com/azure/active-directory/role-based-access-built-in-roles>|
-|Custom Roles for RBAC| <https://docs.microsoft.com/azure/active-directory/role-based-access-control-custom-roles>|
-|Management Groups   |<https://docs.microsoft.com/azure/azure-resource-manager/management-groups-overview|
-|Virtual Networks User Defined Routes  | <https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview >|
-|Azure Traffic Manager  | <https://docs.microsoft.com/azure/traffic-manager/|
-|ExpressRoute FAQ   | <https://azure.microsoft.com/en-us/documentation/articles/expressroute-faqshttps://docs.microsoft.com/azure/expressroute/expressroute-faqs](https://docs.microsoft.com/azure/expressroute/expressroute-faqs|
+|Custom Roles for RBAC| <https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles>|
+|Management Groups   |<https://docs.microsoft.com/azure/azure-resource-manager/management-groups-overview>|
+|Virtual Networks User Defined Routes  | <https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview>|
+|Azure Traffic Manager  | <https://docs.microsoft.com/azure/traffic-manager/>|
+|ExpressRoute FAQ   | <https://azure.microsoft.com/en-us/documentation/articles/expressroute-faqshttps://docs.microsoft.com/azure/expressroute/expressroute-faqs>](https://docs.microsoft.com/azure/expressroute/expressroute-faqs)|
 |SQL Server in Azure Virtual Machines with High Availability  | https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-sql-high-availability-dr?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json|
-|Azure Active Directory B2B collaboration | <https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b|
+|Azure Active Directory B2B collaboration | <https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b>|
 |Azure Cost Management by Cloudyn | <https://docs.microsoft.com/en-us/azure/cost-management/overview>|
 |Azure Security Center | <https://docs.microsoft.com/azure/security-center/security-center-intro>|
 |Auto-shutdown of VMs   |<https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.StartStopVMSolution?tab=Overview>|
@@ -501,43 +520,39 @@ Duration: 15 minutes
 
 ## Step 1: Review the customer case study
 
--   Check in with your table participants to introduce yourself as the trainer
+-   Check in with your table participants to introduce yourself as the trainer.
 
 -   Ask, "What questions do you have about the customer case study?"
 
--   Briefly review the steps and timeframes of the whiteboard design session
+-   Briefly review the steps and timeframes of the whiteboard design session.
 
--   Ready, set, go! Let the table participants begin
+-   Ready, set, go! Let the table participants begin.
 
 ## Step 2: Design a proof of concept solution
 
--   Check in with your tables to ensure that they are transitioning from step to step on time
+-   Check in with your tables to ensure that they are transitioning from step to step on time.
 
--   Provide some feedback on their responses to the business needs and design
+-   Provide some feedback on their responses to the business needs and design.
 
-    -   Try asking questions first that will lead the participants to discover the answers on their own
+    -   Try asking questions first that will lead the participants to discover the answers on their own.
 
--   Provide feedback for their responses to the customer's objections
+-   Provide feedback for their responses to the customer's objections.
 
-    -   Try asking questions first that will lead the participants to discover the answers on their own
+    -   Try asking questions first that will lead the participants to discover the answers on their own.
 
 ## Step 3: Present the solution
 
--   Determine which table will be paired with your table before Step 3 begins
+-   Determine which table will be paired with your table before Step 3 begins.
 
--   For the first round, assign one table as the Microsoft team and the other table as the customer
+-   For the first round, assign one table as the presenting team and the other table as the customer.
 
--   Have the Microsoft team present their solution to the customer team
+-   Have the presenting team present their solution to the customer team.
 
-    -   Have the customer team provide one objection for the Microsoft team to respond to
+    -   Have the customer team provide one objection for the presenting team to respond to.
 
-    -   The presentation and objections should be no longer than 10-minutes
+    -   The presentation, objections, and feedback should take no longer than 15 minutes.
 
--   Have participants on the customer team give feedback to the Microsoft team
-
-    -   The feedback should be no longer than 5 minutes
-
-    -   If needed, the trainer may also provide feedback
+    -   If needed, the trainer may also provide feedback.
 
 ## Wrap-up
 
@@ -559,7 +574,7 @@ Duration: 15 minutes
 
 1.  **Design:** Diagram how you would suggest organizing the Azure EA portal for Trey Research to allow access to Azure.
 
-    ![](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image8.png)
+    ![A diagram representing the organization of Azure subscriptions for Trey Research.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image8.png "Azure Subscriptions")
     
     **Solution:** Each business unit of Trey Research would have a department created in the Azure EA portal with one or more department administrators and account owners from Enterprise IT assigned. Enterprise IT would own the end-to-end experience of creating subscriptions to ensure that correct policies are in place and stay in place.
 
@@ -569,7 +584,7 @@ Duration: 15 minutes
 
     ![The Add Department section displays. Fields include Department name, Cost center, and Spending quota.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image9.png "Add Department section")
 
-2.  **Design:** How can individual business units monitor their Azure spending?
+3.  **Design:** How can individual business units monitor their Azure spending?
 
     **Solution:** Enterprise Admins can use the Azure EA portal (<https://ea.azure.com>) to view at a high-level, usage by department, account, or subscription by default.
 
@@ -581,7 +596,7 @@ Duration: 15 minutes
 
     The business unit users could also login to the Azure Management Portal (<https://portal.azure.com>) and see the current consumption of their subscription's Azure usage broken down by resource group (if the user has access to the resources).
 
-3.  **Design:** Within a business unit, costs for each project should be tracked independently based on the IO code for that specific project. How can per project cost tracking be implemented?
+4.  **Design:** Within a business unit, costs for each project should be tracked independently based on the IO code for that specific project. How can per project cost tracking be implemented?
 
     **Solution:** Each new project should be deployed into one or more resource groups. Create an ARM policy that applies to the resource groups that will append the IO code tag to resources as they are created. This allows for reporting at the project-level based on the tag (expenses can be grouped by tag).
 
@@ -613,7 +628,7 @@ Duration: 15 minutes
 
    Alternatively, separate subscriptions could be used for each project, and the above ARM policy applied at the subscription level.
 
-4.  **Design:** How could you enforce the cost tracking of cloud deployments within business units, according to the following taxonomies?
+5.  **Design:** How could you enforce the cost tracking of cloud deployments within business units, according to the following taxonomies?
 
        -   Development and Test
 
@@ -643,15 +658,15 @@ Duration: 15 minutes
 
     Azure Cost Management by Cloudyn can be used for cost management reporting and alerting. To do this you must register with Cloudyn from the Azure Portal, and create a hierarchy of cost entities in Cloudyn representing different business units and the various taxonomy.
 
-       -   Choose appropriate access levels for each subscription in your EA
+       -   Choose appropriate access levels for each subscription in your EA.
 
-       -   Assign each subscription to the appropriate cost entity
+       -   Assign each subscription to the appropriate cost entity.
 
-       -   Create users for business units and the finance department
+       -   Create users for business units and the finance department.
 
     ![The Actual Cost Over Time stacked bar graph displays bar graphs of cost by service, resource type, sub type, operations, and date time.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image14.png "Actual Cost Over Time stacked bar graph")
 
-5.  **Design:** How can Enterprise IT enforce a company-wide resource naming convention?
+6.  **Design:** How can Enterprise IT enforce a company-wide resource naming convention?
 
     **Solution:** A naming convention can be implementing using Azure Policy to restrict the names of each resource created.
 
@@ -682,7 +697,7 @@ Duration: 15 minutes
 
    Instead, separate policies should be created for each resource type. These policies should then be combined into a single *policy initiative.* Using a policy initiative allows the entire set of policies to be assigned in a single operation. It also allows new naming rules to be added easily---simply add the new rule to the initiative and it will be applied across all existing assignments.
 
-6.  **Design:** How can Enterprise IT minimize per-subscription configuration and centrally audit compliance with their governance rules?
+7.  **Design:** How can Enterprise IT minimize per-subscription configuration and centrally audit compliance with their governance rules?
 
     **Solution:** To minimize subscription-level configuration, subscriptions should be grouped into a management group hierarchy, managed by Enterprise IT. This hierarchy should reflect the business unit structure.
 
@@ -727,7 +742,7 @@ Duration: 15 minutes
    A similar policy can be used to enforce and audit use of other company-wide tags, such as ioCode.
 
 
-7.  **Design:** How can Azure help business units minimize wasted spend on non-production VMs left running out-of-hours?
+8.  **Design:** How can Azure help business units minimize wasted spend on non-production VMs left running out-of-hours?
 
     **Solution:** Azure offers a number of features to minimize wasted spend on non-Production VMs:
 
@@ -868,7 +883,7 @@ Using a central policy in the Tenant root management group has another advantage
 
 ```
 
-    The output of the authorization will have the Authorization Key that can be shared by consumers of the circuit.
+The output of the authorization will have the Authorization Key that can be shared by consumers of the circuit.
 
 ```
  Name : MyAuthorization1
@@ -881,11 +896,12 @@ Using a central policy in the Tenant root management group has another advantage
 
  AuthorizationUseStatus : Available
 
+ ProvisioningState : Succeeded
+
 ```
+  
 
-    ProvisioningState : Succeeded
-
-    Code a user in a subscription would use to link a new virtual network to the circuit.
+Code a user in a subscription would use to link a new virtual network to the circuit.
 
 ```
 
@@ -971,7 +987,7 @@ Using a central policy in the Tenant root management group has another advantage
 
        -   Using the Standard SKU of Azure Security Center in addition allows you to enable [adaptive application controls](https://docs.microsoft.com/azure/security-center/security-center-adaptive-application). These provide a means to block attempts to run malicious applications by maintaining whitelists of permitted executables. This feature can be applied selectively, for example only to Production and Pre-Production resource groups.
 
-    Note: Just-In-Time (JIT) is another powerful Azure Security Center feature, allowing VM remote management ports to be closed by default and opened only when needed and under appropriate RBAC permissions. However, since Trey will be using ExpressRoute to connect their on-premises network with Azure, using JIT is not required (JIT only works on Internet-facing endpoints).
+    >**Note**: Just-In-Time (JIT) is another powerful Azure Security Center feature, allowing VM remote management ports to be closed by default and opened only when needed and under appropriate RBAC permissions. However, since Trey will be using ExpressRoute to connect their on-premises network with Azure, using JIT is not required (JIT only works on Internet-facing endpoints).
 
 *E-commerce*
 
@@ -1002,11 +1018,11 @@ Using a central policy in the Tenant root management group has another advantage
 
        -   The e-commerce could also limit the following when creating the sandbox depending on the needs of that team.
 
-           -   Limit the number of virtual machines in the lab
+           -   Limit the number of virtual machines in the lab.
 
-           -   Limit the virtual machine sizes available
+           -   Limit the virtual machine sizes available.
 
-           -   Limit the number of virtual machines per user
+           -   Limit the number of virtual machines per user.
 
 ## Checklist of preferred objection handling
 
