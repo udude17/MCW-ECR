@@ -28,13 +28,13 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 - [Enterprise-ready cloud whiteboard design session student guide](#enterprise-ready-cloud-whiteboard-design-session-student-guide)
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
-    - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
+    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
         - [Customer situation](#customer-situation)
         - [Customer needs](#customer-needs)
         - [Customer objections](#customer-objections)
         - [Infographic for common scenarios](#infographic-for-common-scenarios)
-    - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
-    - [Step 3: Present the solution](#step-3--present-the-solution)
+    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
+    - [Step 3: Present the solution](#step-3-present-the-solution)
     - [Wrap-up](#wrap-up)
     - [Additional references](#additional-references)
 
@@ -315,15 +315,15 @@ Directions: With all participants at your table, respond to the following questi
 
 *E-commerce developer team*
 
-1.  Identify a solution to provide access to a development environment that would be suitable for contingent staff for the e-commerce team:
+3.  Identify a solution to provide access to a development environment that would be suitable for contingent staff for the e-commerce team:
 
    -   What steps are needed to allow access to the environment?
 
-   -   What would be needed to automate the environment to speed up onboarding?
+   -   What would be needed to automate the environment to speed up on-boarding?
 
    -   What options could you propose to allow access for remote employees? Specifically, how could they access resources on the ECommerceDev network but nothing else on the Azure network?
    
-2.  What cost control options would you propose to put in place to otimaze this environment?
+4.  What cost control options would you propose to put in place to optimize this environment?
 
 **Prepare**
 
@@ -379,7 +379,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 |Azure Policy Initiatives | https://docs.microsoft.com/azure/azure-policy/azure-policy-introduction\#initiative-definition|
 |Role Based Access Control Configuration|<https://docs.microsoft.com/azure/active-directory/role-based-access-control-configure>|
 |Built in Roles for RBAC  | <https://docs.microsoft.com/azure/active-directory/role-based-access-built-in-roles>|
-|Custom Roles for RBAC| <https://docs.microsoft.com/azure/active-directory/role-based-access-control-custom-roles>|
+|Custom Roles for RBAC| <https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles>|
 |Management Groups   |<https://docs.microsoft.com/azure/azure-resource-manager/management-groups-overview>|
 |Virtual Networks User Defined Routes  | <https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview>|
 |Azure Traffic Manager  | <https://docs.microsoft.com/azure/traffic-manager/>|

@@ -29,24 +29,24 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 - [Trainer information](#trainer-information)
     - [Role of the trainer](#role-of-the-trainer)
     - [Whiteboard design session flow](#whiteboard-design-session-flow)
-    - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session--how-to-prepare)
-    - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session--tips-for-an-effective-whiteboard-design-session)
+    - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session-how-to-prepare)
+    - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session-tips-for-an-effective-whiteboard-design-session)
 - [Enterprise-ready cloud whiteboard design session student guide](#enterprise-ready-cloud-whiteboard-design-session-student-guide)
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
-    - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
+    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
         - [Customer situation](#customer-situation)
         - [Customer needs](#customer-needs)
         - [Customer objections](#customer-objections)
         - [Infographic for common scenarios](#infographic-for-common-scenarios)
-    - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
-    - [Step 3: Present the solution](#step-3--present-the-solution)
+    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
+    - [Step 3: Present the solution](#step-3-present-the-solution)
     - [Wrap-up](#wrap-up)
     - [Additional references](#additional-references)
 - [Enterprise-ready cloud whiteboard design session trainer guide](#enterprise-ready-cloud-whiteboard-design-session-trainer-guide)
-    - [Step 1: Review the customer case study](#step-1--review-the-customer-case-study)
-    - [Step 2: Design a proof of concept solution](#step-2--design-a-proof-of-concept-solution)
-    - [Step 3: Present the solution](#step-3--present-the-solution)
-    - [Wrap-up](#wrap-up)
+    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
+    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
+    - [Step 3: Present the solution](#step-3-present-the-solution-1)
+    - [Wrap-up](#wrap-up-1)
     - [Preferred target audience](#preferred-target-audience)
     - [Preferred solution](#preferred-solution)
     - [Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
@@ -435,21 +435,21 @@ Directions: With all participants at your table, respond to the following questi
 
 *Security and accident protection*
 
-1.  What would you recommend to Trey Research on how to mitigate accidently deleting production workloads? If that were to happen, what would the proper procedure be to identify who deleted the resource?
+5.  What would you recommend to Trey Research on how to mitigate accidently deleting production workloads? If that were to happen, what would the proper procedure be to identify who deleted the resource?
 
 How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even in the event that the security perimeter is compromised?
 
 *E-commerce developer team*
 
-1.  Identify a solution to provide access to a development environment that would be suitable for contingent staff for the e-commerce team:
+6.  Identify a solution to provide access to a development environment that would be suitable for contingent staff for the e-commerce team:
 
     -   What steps are needed to allow access to the environment?
 
-    -   What would be needed to automate the environment to speed up onboarding?
+    -   What would be needed to automate the environment to speed up on-boarding?
 
     -   What options could you propose to allow access for remote employees? Specifically, how could they access resources on the ECommerceDev network but nothing else on the Azure network?
     
-2.  What cost control options would you propose to put in place to otimaze this environment?
+7.  What cost control options would you propose to put in place to optimize this environment?
 
 **Prepare**
 
@@ -505,7 +505,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 |Azure Policy Initiatives | https://docs.microsoft.com/azure/azure-policy/azure-policy-introduction\#initiative-definition|
 |Role Based Access Control Configuration|<https://docs.microsoft.com/azure/active-directory/role-based-access-control-configure>|
 |Built in Roles for RBAC  | <https://docs.microsoft.com/azure/active-directory/role-based-access-built-in-roles>|
-|Custom Roles for RBAC| <https://docs.microsoft.com/azure/active-directory/role-based-access-control-custom-roles>|
+|Custom Roles for RBAC| <https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles>|
 |Management Groups   |<https://docs.microsoft.com/azure/azure-resource-manager/management-groups-overview>|
 |Virtual Networks User Defined Routes  | <https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview>|
 |Azure Traffic Manager  | <https://docs.microsoft.com/azure/traffic-manager/>|
@@ -574,7 +574,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 1.  **Design:** Diagram how you would suggest organizing the Azure EA portal for Trey Research to allow access to Azure.
 
-    ![](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image8.png)
+    ![A diagram representing the organization of Azure subscriptions for Trey Research.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image8.png "Azure Subscriptions")
     
     **Solution:** Each business unit of Trey Research would have a department created in the Azure EA portal with one or more department administrators and account owners from Enterprise IT assigned. Enterprise IT would own the end-to-end experience of creating subscriptions to ensure that correct policies are in place and stay in place.
 
@@ -883,7 +883,7 @@ Using a central policy in the Tenant root management group has another advantage
 
 ```
 
-    The output of the authorization will have the Authorization Key that can be shared by consumers of the circuit.
+The output of the authorization will have the Authorization Key that can be shared by consumers of the circuit.
 
 ```
  Name : MyAuthorization1
@@ -896,11 +896,12 @@ Using a central policy in the Tenant root management group has another advantage
 
  AuthorizationUseStatus : Available
 
+ ProvisioningState : Succeeded
+
 ```
+  
 
-    ProvisioningState : Succeeded
-
-    Code a user in a subscription would use to link a new virtual network to the circuit.
+Code a user in a subscription would use to link a new virtual network to the circuit.
 
 ```
 
