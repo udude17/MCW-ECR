@@ -39,7 +39,7 @@ At the end of this hands-on lab, you will know how to provide cost tracking by b
 - Azure Web Apps
 - Azure Virtual Networks
 - SQL Server
-- Operations Management Suite
+- Azure Log Analytics
 - Azure Backup
 
 ## Azure solutions
