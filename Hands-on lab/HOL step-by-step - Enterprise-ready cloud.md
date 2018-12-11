@@ -174,7 +174,7 @@ In this exercise, you will apply one of the built-in Azure Policies to restrict 
     - Web Apps
     - SQL Database
 
-    **Note:** If you do not see the Microsoft.Compute resource provider it is because you have not yet created any compute resources. You can manually register the provider with the following command:
+    >**Note:** If you do not see the Microsoft.Compute resource provider it is because you have not yet created any compute resources. You can manually register the provider with the following command:
 
     ```powershell
     Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Compute
@@ -331,7 +331,7 @@ In this exercise, you will apply one of the built-in Azure Policies to restrict 
     }
     ```
 
-    Click **Save**
+    Click **Save**.
 
 7.  On the *Policy - Definitions* blade, select the **Service catalog** policy definition you just created and then select **Assign** on the *Service catalog* blade.
 
@@ -363,7 +363,7 @@ In this exercise, you will apply another built-in Azure policy to restrict the c
 2.  Return to the **Policy** blade in the Azure portal. Select **Assignments**, then **Assign Policy**. Complete the form as follows:
 
     - Scope: **Enterprise Ready Cloud (the management group created earlier)**
-    - Exclusions: **The resource group created in Step 1 above. Select the management group, subscription, and resource group**    
+    - Exclusions: **The resource group created in Step 1 above. Select the management group, subscription, and resource group**.    
     - Policy definition: **Not allowed resource types**
     - Assignment name: **Block ExpressRoute circuits**
     - Description: **Block creating of ExpressRoute circuits, except in the Enterprise IT dedicated ExpressRoute resource group**
@@ -466,7 +466,7 @@ First, we will create a generic policy definition that restricts resources of a 
 
 4.  Fill in the Initiative Definition form as follows (but **don't** select Save yet).
 
-    - Definition location: **Enterprise Ready Cloud (the Management Group created earlier)**.
+    - Definition location: **Enterprise Ready Cloud (the Management Group created earlier)**
     - Name: **Naming Convention**
     - Description: **Trey Research resource naming convention**
     - Category: **Use Existing \| Naming**
@@ -626,8 +626,8 @@ In this task, you will create two user accounts in Azure AD that you will use fo
 
     - Name:  **Electronics Admin**
     - User name:  **[ElectronicsAdmin@\[yourtenant\].onmicrosoft.com](mailto:ElectronicsAdmin@[yourtenant].onmicrosoft.com)**
-    - Groups: **Add the user to the BU-Electronics-Admin group**
-    - Password: **Check the Show password checkbox and note the password for later**
+    - Groups: **Add the user to the BU-Electronics-Admin group**.
+    - Password: **Check the Show password checkbox and note the password for later**.
 
     ![In the New User dialog box, the Name, User name, and Groups fields are circled, and set to the previously defined settings. At the bottom, the check box for Show Password is selected and circled.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image31.png "New User dialog box") |
 
@@ -636,8 +636,8 @@ In this task, you will create two user accounts in Azure AD that you will use fo
 
     - Name: **Electronics User** 
     - User name: **[ElectronicsUser@\[yourtenant\].onmicrosoft.com](mailto:ElectronicsUser@[yourtenant].onmicrosoft.com)**
-    - Groups: **Add the user to the BU-Electronics-User group**
-    - Password: **Check the Show password checkbox and note the password for later**
+    - Groups: **Add the user to the BU-Electronics-User group**.
+    - Password: **Check the Show password checkbox and note the password for later**.
                                                 
     ![In the New User dialog box, the Name, User name, and Groups fields are circled, and set to the previously defined settings. At the bottom, the check box for Show Password is selected and circled.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image32.png "New User dialog box") |
 
@@ -929,7 +929,7 @@ In this task, you will start the provisioning of a VPN gateway that will be used
 
 3.  Click **Create** to start provisioning the VPN gateway.
 
-    **NOTE:** This step will take up to 45 minutes to complete. Continue to the next task. Gateway configuration will be continued in a later task.
+    **>Note:** This step will take up to 45 minutes to complete. Continue to the next task. Gateway configuration will be continued in a later task.
 
 ### Task 3: Create an Azure DevTest lab environment 
 
