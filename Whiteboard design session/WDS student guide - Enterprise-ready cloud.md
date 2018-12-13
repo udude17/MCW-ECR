@@ -9,7 +9,7 @@ Whiteboard design session student guide
 </div>
 
 <div class="MCWHeader3">
-September 2018
+November 2018
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -206,6 +206,8 @@ This team has a significant percentage of developers that are contingent staff. 
 ### Infographic for common scenarios
 
 ![This is a screenshot of a slide. Azure EA Portal has the following bulleted list items: Manage access to Azure EA enrollments; Organize and delegate access to subscriptions; View usage; and http://ea.azure.com. A subscription flowchart on the right starts at the top with Enterprise Enrollment, then flows down to Department, Account, and Subscriptions.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image4.png "Azure EA Portal")
+
+![This is a screenshot of a slide. Azure Cost Management has the following bulleted list items: Understand where costs originate; Delegated access to reports and usage. There are two screenshots on the right - one of a daily spend chart and another that displays a full view pivot chart grouped by resource group.](images/Whiteboarddesignsessionstudentguide-Enterprise-readycloudimages/media/image8.png "Azure Cost Management")
 
 ![This is a screenshot of a slide. Role-based access control (RBAC) and ARM Policies has two bullets: Governance of Azure Resources, and Granular Access Control. This slide also has an illustration of access control, which is separated into two sides by an arrow labeled Access Inheritance. On the left side are subscription, resource groups, and resources. On the right are three sets each of Contributors, Owner, and Readers.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image5.png "Role-based access control (RBAC) and RM Policies")
 
