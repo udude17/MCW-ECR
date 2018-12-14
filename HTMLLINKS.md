@@ -7,5 +7,5 @@
 
 [HOL step-by-step - Enterprise-ready cloud.html](https://cloudworkshop.blob.core.windows.net/enterprise-ready-cloud/Hands-on%20lab/HOL%20step-by-step%20-%20Enterprise-ready%20cloud.html)
 
-[HOL unguided - Enterprise-ready cloud.html](https://cloudworkshop.blob.core.windows.net/enterprise-ready-cloud/Hands-on%20lab/HOL%20unguided%20-%20Enterprise-ready%20cloud.html)
+
 
