@@ -9,7 +9,7 @@ Whiteboard design session trainer guide
 </div>
 
 <div class="MCWHeader3">
-November 2018
+May 2019
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -18,7 +18,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2018 Microsoft Corporation. All rights reserved.
+© 2019 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspxare trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -27,30 +27,31 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 <!-- TOC -->
 
 - [Trainer information](#trainer-information)
-    - [Role of the trainer](#role-of-the-trainer)
-    - [Whiteboard design session flow](#whiteboard-design-session-flow)
-    - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session-how-to-prepare)
-    - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session-tips-for-an-effective-whiteboard-design-session)
+  - [Role of the trainer](#role-of-the-trainer)
+  - [Whiteboard design session flow](#whiteboard-design-session-flow)
+  - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session-how-to-prepare)
+  - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session-tips-for-an-effective-whiteboard-design-session)
 - [Enterprise-ready cloud whiteboard design session student guide](#enterprise-ready-cloud-whiteboard-design-session-student-guide)
-    - [Abstract and learning objectives](#abstract-and-learning-objectives)
-    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
-        - [Customer situation](#customer-situation)
-        - [Customer needs](#customer-needs)
-        - [Customer objections](#customer-objections)
-        - [Infographic for common scenarios](#infographic-for-common-scenarios)
-    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
-    - [Step 3: Present the solution](#step-3-present-the-solution)
-    - [Wrap-up](#wrap-up)
-    - [Additional references](#additional-references)
+  - [Abstract and learning objectives](#abstract-and-learning-objectives)
+  - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
+    - [Customer situation](#customer-situation)
+    - [Customer needs](#customer-needs)
+    - [Customer objections](#customer-objections)
+    - [Infographic for common scenarios](#infographic-for-common-scenarios)
+  - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
+    - [REMOVE Customer objections](#remove-customer-objections)
+  - [Step 3: Present the solution](#step-3-present-the-solution)
+  - [Wrap-up](#wrap-up)
+  - [Additional references](#additional-references)
 - [Enterprise-ready cloud whiteboard design session trainer guide](#enterprise-ready-cloud-whiteboard-design-session-trainer-guide)
-    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
-    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
-    - [Step 3: Present the solution](#step-3-present-the-solution)
-    - [Wrap-up](#wrap-up)
-    - [Preferred target audience](#preferred-target-audience)
-    - [Preferred solution](#preferred-solution)
-    - [Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
-    - [Customer quote (to be read back to the attendees at the end)](#customer-quote-to-be-read-back-to-the-attendees-at-the-end)
+  - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
+  - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
+  - [Step 3: Present the solution](#step-3-present-the-solution-1)
+  - [Wrap-up](#wrap-up-1)
+  - [Preferred target audience](#preferred-target-audience)
+  - [Preferred solution](#preferred-solution)
+  - [Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
+  - [Customer quote (to be read back to the attendees at the end)](#customer-quote-to-be-read-back-to-the-attendees-at-the-end)
 
 <!-- /TOC -->
 
@@ -198,137 +199,126 @@ Even as large as it is, Trey seeks to maximize the cost-effectiveness and flexib
 
 Trey is interested in a large-scale solution that will help mitigate creeping costs and start the transition to a modern cloud-based enterprise architecture.
 
-Trey's technical leadership has decided to move forward with a Microsoft enterprise agreement (EA) with a heavy commitment in Microsoft Azure. Ken Greenwald, Trey Research's CTO, is aware of the potential for the cloud, but also has a keen understanding that without strong architectural guidance, Trey may end up with a sub-optimal deployment that is difficult to support. These incorrect practices can then be disbursed across the enterprise. Ken wants to start on the right foot by focusing on best practices from the start.
+Trey's technical leadership has decided to move forward with a Microsoft enterprise agreement (EA) with a heavy commitment in Microsoft Azure. Ken Greenwald, Trey Research's CTO, is aware of the potential for the cloud, but also has a keen understanding that without strong governance, Trey may end up with an environment that lacks essential business controls. These incorrect practices can then be disbursed across the enterprise, leading to an unmanageable Azure estate and costs which are hard to track or control. Ken wants to start on the right foot by enforcing common-sense best practices from the start.
 
 To kick off planning for integrating Azure into their environment, Ken introduced you to several directors within Trey's Enterprise IT group that have been part of the initial Azure planning process.
 
 Enterprise IT is responsible for managing corporate network connectivity, datacenter distribution, capacity planning, identity, and enterprise wide SaaS services for Trey Research employees. Enterprise IT is also responsible for supporting the services, datacenters, and setting auditing policy on hardware and services.
 
-*Subscription organization and chargeback*
+To help drive Azure adoption and best practices, Ken has chartered a Cloud Governance team within Enterprise IT. This team will be responsible for all aspects of Azure governance. This includes defining, implementing and enforcing cloud governance and working with other teams to ensure best practices are adopted.
 
-This table is a partial view of Trey Research's organization. Each rectangle represents a business unit and subunits within the business unit. Each of which has IT resources with an assigned budget/quota that will be able to consume Azure for related IT services.
+Rather than re-invent the wheel, the Cloud Governance team have decided to adopt Microsoft's Cloud Adoption Framework as a baseline upon which they will build their governance implementation. This framework is divided into five disciplines.
 
-![Trey Research has three business units: Industrial and Consumer, Electronics, and Life Sciences. Each of the Business Units has the same subunits: Product development, Marketing, and Sales and Support. Sales and Suppoort also has its own sub-unit, Regional (US/EU/Asia). ](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image2.png "Trey Research organizational flowchart")
+*Cost Management*
 
-Enterprise IT will be responsible for providing access to Azure for users in each individual business unit and tracking their Azure usage costs at the department and subscription level by the business unit's cost center.
+Trey Research has three business units: Industrial and Consumer, Electronics, and Life Sciences. Each of the Business Units has the same subunits: Product development, Marketing, and Sales and Support. Sales and Support is further divided into region subunits (US/EU/Asia). This hierarchy is shown in the following diagram:
 
-Within a business unit, each new project should track its consumption using a specific tag for its IO code within the business unit.
+![Trey Research has three business units: Industrial and Consumer, Electronics, and Life Sciences. Each of the Business Units has the same subunits: Product development, Marketing, and Sales and Support. Sales and Support is further divided into region subunits (US/EU/Asia). ](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image2.png "Trey Research organizational flowchart")
 
-Each business unit has a requirement to break down their costs into multiple categories so business managers in finance can analyze spending patterns:
+Each business unit and subunit is allocated an Azure quota/budget and is responsible for tracking their expenditure within that budget. Within a business unit, each new project should track its consumption using a specific tag for its IO code within the business unit.
+
+In addition, each business unit has a requirement to break down their costs into the following categories. Accurate allocation of costs between this categories is essential, since this data feeds into gross margin and net profit figures collated by the central finance team and published quarterly to investors.
 
 -   Development and Test
-
 -   Production
-
 -   Support Services
-
 -   Infrastructure
 
-Business units and the finance department need a cost management dashboard to more easily identify current cost and anomalous spending to better manage their Azure spend.
+Business units and the finance department need tools to accurately and reliably track all Azure costs, including a cost management dashboard and reports to understand current costs and projected future costs. Alerts when budgets are approached or exceeded are required.
 
-*Supported services and delegated access control*
+In addition, the Cloud Governance team's charter includes company-wide monitoring and reporting of all Azure spend, including reviewing usage to identify cost-saving opportunities and identifying and investigating anomalous spending.
 
-With a company the size of Trey Research, providing the ability to delegate permissions to different administrators at the business unit level is critical. At this point, Trey Research has deployed Office 365 and it is configured with federated access to their ADFS servers. Trey's EA has been created within the same organization.
 
-Each business unit and sub-business unit has their own unique IT needs. IT has identified a list of services within Azure that they are willing to support and are interested in options for controlling access to unsupported services throughout the organization:
+*Security Baseline*
 
--   Virtual machines
+The IT security team have advised a precautionary approach to cloud adoption. The Cloud Governance team are keen to adopt a strong set of best practices to make sure the IT security and business teams feel comfortable to avoid security becoming an adoption blocker.
 
--   ExpressRoute
+If a service has an outage, it is important to know the chain of events that led up to the outage and who (if anyone) caused it.
 
-    -   The ExpressRoute circuit(s) will be created and managed by IT. IT wants to ensure that sub-business units are able to use the circuits, but not create new ones or change the existing circuits:
+IT security require that all Azure VMs (Windows and Linux) meet their password complexity requirements. Automatic updates must be enabled on Dev/Test environments, and disabled on production environments, where patching must be managed manually.
 
--   VPN gateways
 
--   Storage
+*Resource Consistency*
 
--   Virtual networks
+While the Cloud Governance team is not yet familiar with the full range of Azure services available. They want to limit Trey's Azure adoption to an initial set of core services and locations, which will be expanded over time. These should be centrally enforced, with the ability to grant exceptions where required (for example, to teams piloting new technologies).
 
--   Backup
+The IT Security team is particularly concerned about production environments. These require additional controls to ensure that resources cannot be accidentally modified or deleted by administrators getting confused between a test workload versus production.
 
--   Site recovery
+To maintain consistency, the Cloud Governance team is developing a set of naming conventions. These names will apply to subscriptions, resource groups and resources. Trey require the ability to enforce this naming convention consistently across their Azure subscriptions.
 
--   DevTest labs
 
--   Web Apps
+*Identity Baseline*
 
--   SQL Database
+Trey Research has deployed Office 365 and it is configured with federated access to their ADFS servers. Trey's EA has been created within the same organization.
 
-For each new project, a user in the business unit should be allowed to have rights for managing his or her team by having the ability to add or remove users and allow them to create resources in the subscription.
+Providing the ability to delegate permissions to different administrators at the business unit and subunit level is critical. However, for an organization the size of Trey Research, it is not possible for the Cloud Governance team to manage all user permissions centrally. Instead, for each new project, a user in the business unit should be able to manage access for his or her team to those project resources, to provide the access they need, but no more. To maintain consistency and to enable Cloud Governance team audit, Azure access should be controlled using built-in roles only, not custom roles.
 
-*Connectivity*
+The Trey e-commerce team make significant use of contingent staff. At present, these staff are granted identities in the existing Trey directory, and are required to work on-site to gain access to Trey development and test environments. Trey would like to streamline this process and enable remote working. 
 
-At a high level, Trey Research is connected globally using an existing MPLS wide area network. There are several smaller offices that are connected via site-to-site VPN.
+*Deployment Acceleration*
 
-![An MPLS WAN cloud is in the center, and five bi-directional arrows point to the following location icons: New Jersey (HQ), Branch Office, Japan, UK, and France. ](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image3.png "Trey Research Connectivity diagram")
+Increased agility is one of Trey's primary motivation for adopting the cloud. They are keen to take full advantage of deployment automation to enable agile processes that will enable them to update their services more frequently and easily.
 
-Enterprise IT understands that ExpressRoute is likely going to be the correct connectivity solution. However, they are unsure what they need to consider from a security perspective or for availability. Typically, they protect their perimeter network with firewalls. Is that needed with ExpressRoute and if so, what would they need to do to implement it? How does ExpressRoute implement redundancy? What should they be looking for when they talk to an ExpressRoute partner? Finally, for the sites that are not part of the WAN, how would they connect to resources in Azure?
+However, they are also concerned about how to maintain consistency and control across environments.  They are concerned that production and test environments may diverge over time. However, they can't use identical automation in both environments, since test environments are often scaled differently to production to save costs.
 
-*Availability*
-
-There are several Internet and intranet-facing web-based workloads that are considered critical to the business. These workloads typically use SQL Server and several use MySQL. With that in mind, Trey Research is recommending to business units to design those applications by deploying across multiple regions, or if that type of architecture is not feasible, to fail-back to on-premises in the event of a failure.
-
-This is a list of primary and secondary regions IT will support for these scenarios:
-
--   Primary: East United States, Fail over: South Central United States
-
--   Primary: West Europe, Fail over: North Europe
-
--   Primary: Japan West, Fail over Japan East
-
-Trey Research would like to know if this list makes sense, if there is any guidance from Microsoft on building geo-redundant solutions across multiple data centers, and what other factors they should consider.
-
-*Security and accident protection*
-
-If a service has an outage, it is important to know the chain of events that led up to the outage and who (if anyone) caused it. Additionally, Trey wants to ensure that production workloads cannot be accidently deleted by administrators getting confused over a test workload versus production. Trey Research are also concerned about how to ensure their VMs meet Azure security best practices and would like to ensure Production workloads are protected even in the event their security perimeter is compromised.
-
-*E-commerce developer team*
-
-The e-commerce team is owned by the Enterprise IT team and is responsible for building and maintaining the corporate website where consumers and channel partners can order products directly from Trey Research. The e-commerce site and order fulfillment system are currently hosted on Apache and Red Hat Enterprise Linux.
-
-This team has a significant percentage of developers that are contingent staff. Often these contingent staff members will come onboard for a short term to implement a new feature that the core team does not have the skills or resources to tackle. Currently, the e-commerce team is bringing resources onsite for this work, due to not having a secure remote access solution. Providing hardware resources and access to the development environment is a challenge due to the constant turnover of contingent staff. The time needed to provide an environment is disproportionally long relative to the amount of time the developer is there. This is because each developer must provision a set of services.
+The Cloud Governance team has developed best-practice configurations for commonly-deployed services, such as a DMZ network or a pair of web servers. They are looking for a way to automate these deployments. They recognize that these best practices will evolve over time, and so are also looking for a way to track existing deployments to ensure updates are rolled out consistently. In addition, where resources are deployed following Cloud Governance team best practices, individual business units should not be able to modify the configuration of those resources.
 
 ### Customer needs 
 
-1.  Provide access to create and manage new workloads in Azure for various business units.
+*Cost Management*
 
-2.  Identify connectivity requirements with ExpressRoute access control and availability.
+1.  Implement a charge back mechanism for the business units for resources they consume based on the IO code for each application.
+ 
+2.  Enable allocation of costs between categories: Development and Test, Production, Support Services, and Infrastructure.
 
-3.  Implement a charge back for the business units for resources they consume, while allowing each business unit to monitor their own usage.
+3.  Provide cost management tools for budgets, alerts, dashboards, spending reports, and forecasts.
 
-4.  Apply governance to business units to control what can be created.
+4.  Identify anomalies and cost-saving opportunities for further investigation.
 
-5.  Implement delegated access control for new projects within business unit subscriptions.
+*Security Baseline*
 
-6.  Implement a common resource naming standard across the organization.
+5.  Enable investigation of changes leading up to any outage.
+   
+6.  Ensure Windows and Linux VMs meet password complexity requirements.
+   
+7.  Ensure automatic updates are enabled on Dev/Test environments, and disabled on Production environments (which must be managed separately).
 
-7.  The above governance controls must be implemented with minimum per-subscription configuration overhead, and compliance with these controls must be auditable to detect any out-of-compliance usage.
+*Resource Consistency*
 
-8.  Identify a top-level strategy for building geo-redundant solutions.
+8.  Allow the Cloud Governance team to control which Azure services can be used across the business units, with exceptions for approved pilot projects.
 
-9.  Identify how Trey Research can track changes to the Azure-based deployments and prevent accidental deletion of resources.
+9.  Implement delegated access control for new projects within business unit subscriptions.
 
-10. Identify a solution of providing remote access to e-commerce team contingent staff.
+10. Prevent accidental deletion of resources.
 
-11. Increase agility to speed up the on-boarding of resources to make the e-commerce team contingent staff productive more quickly.
+11. Implement a common resource naming standard across the organization.
 
-12. Ensure full-time and contingent staff for e-commerce have access to what they need, but no more.
+*Identity Baseline*
+
+12. Delegate access management to business units for each application they own, while enforcing that only built-in roles are used .
+
+13. Ensure full-time and contingent staff for e-commerce have access to what they need, but no more.
+
+14. Identify a solution to streamline identity management and provide remote access for e-commerce team contingent staff.
+
+*Deployment Acceleration*
+
+15. Implement deployment automation while allowing controlled divergence between environments (e.g. smaller footprint for Dev/Test environments)
+
+16. Provide a means to track and update existing deployments to meet updated best practices.
+
+17. Provide a means to prevent best-practice deployments being modified outside the control of the Cloud Governance team.
+    
 
 ### Customer objections 
 
-1.  We need the ability to split our Azure bill by business unit and even workload classification. Can Azure support this requirement? How can we analyze our bill for cost optimization and charge back?
+1. Per-subscription configuration won't scale to an organization the size of Trey Research. How can governance controls be implemented with minimum per-subscription configuration overhead?
 
-2.  As well as implementing our governance rules on how Azure is used, we need a way to audit that no deployments have been made that bypass those roles
+2.  As well as implementing our governance rules on how Azure is used, we need a way to audit that no deployments have been made that bypass those rules. This audit needs to scale across the entire organization.
 
-3.  Security is important to us. We have evaluated Network Security Groups and our security team does not feel they offer the same level of security that we enjoy with our on-premises firewall-based solutions (examples: intrusion and malware detection).
+3.  How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even if the security perimeter is compromised?
 
-4.  Delegating control to business units is incredibly important to Trey Research. At our scale, a single team cannot possibly manage all the needs of the business. Corporate IT requires the ability to set policy at the enterprise level and still needs a detailed level of control. How can Azure address these needs?
-
-5.  Trey Research currently monitors their on-premises workloads using SCOM. A small business unit experimented with running virtual machines in AWS and the monitoring team was not thrilled with a completely different system for monitoring for availability. Does Azure have the same problem?
-
-6.  How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even if the security perimeter is compromised?
-
-7.  How can Azure help control the costs associated with non-Production VMs left running out-of-hours?
+4.  How can Azure help control the costs associated with non-Production VMs left running out-of-hours?
 
 ### Infographic for common scenarios
 
@@ -361,49 +351,38 @@ Directions:  With all participants at your table, answer the following questions
 
 Directions: With all participants at your table, respond to the following questions on a flip chart:
 
-*Subscription organization and charge back*
+*Cost Management*
 
-1.  Diagram how you would suggest organizing the Azure EA portal for Trey Research to allow access to Azure.
+1.  Design a charge back mechanism for the business units for resources they consume based on the IO code for each application. Assuming your design is based on resource-level tags, how will you implement the following use cases?
+    - Every resource group must have an 'IOCode' tag
+    - Every time a resource is created, it is assigned an 'IOCode' tag with a value matching its resource group
+    - Any resource whose 'IOCode' tag is missing does not match its corresponding resource group tag (for example, after moving the resource between resource groups) can be easily identified. Child resources, for which tags to not apply, are excluded.
+  
+2.  Design a cost allocation mechanism to track Azure costs across the Development and Test, Production, Support Services, and Infrastructure categories.
 
-2.  How can Enterprise IT assign a spending quota to each business unit and monitor spending for each business unit's cost center? What happens if the business unit exceeds their assigned quota?
+3.  What tools are available to meet the cost management requirements of the individual business units, the finance team, and the Cloud Governance team? These requirements include setting budgets and alerts for each cost center, creating spending reports and forecasts, and identifying and investigating anomalies.
 
-3.  How can individual business units monitor their Azure spending?
+*Security Baseline*
 
-4.  Within a business unit, costs for each project should be tracked independently based on the IO code for that specific project. How can per project tracking be implemented? How would you implement cost management reporting and alerting?
+5.  Enable investigation of changes leading up to any outage.
+   
+6.  Ensure Windows and Linux VMs meet password complexity requirements.
+   
+7.  Ensure automatic updates are enabled on Dev/Test environments, and disabled on Production environments (which must be managed separately).
 
-5.  How can Enterprise IT enforce a company-wide resource naming convention?
+*Resource Consistency*
 
-6.  How can Enterprise IT minimize per-subscription configuration and centrally audit compliance with their governance rules?
+1.  Identify a solution to restrict which services can be created and used in each business unit subscription.
+1.  Allow the Cloud Governance team to control which Azure services can be used across the business units, with exceptions for approved pilot projects.
 
-7.  How can Azure help Business Units minimize wasted spend on non-Production VMs left running out-of-hours?
+2.  Implement delegated access control for new projects within business unit subscriptions.
 
-*Supported services and delegated access control*
+3.  Prevent accidental deletion of resources.
 
-1.  Identify a solution to restrict which services can be created and used in each business unit subscription. Diagram specifically how your solution would be put into place and perform a requirements analysis to determine if there are services needed that Trey Research has not added to their initial list. This solution should allow access to the following services by default, but not others:
+4.  How can Enterprise IT enforce a company-wide resource naming convention?
+5.  Implement a common resource naming standard across the organization.
 
-    -   Virtual machines
-
-    -   ExpressRoute
-
-        -   The ExpressRoute circuit(s) will be created and managed by IT, however IT wants to ensure that business units are able to use the circuits, but not create new ones or change the existing circuits.
-
-    -   VPN gateways
-
-    -   Storage
-
-    -   Virtual networks
-
-    -   Backup
-
-    -   Site recovery
-
-    -   DevTest labs
-
-    -   Log analytics
-
-    -   Web Apps
-
-    -   SQL Database
+*Identity Baseline*
 
 2.  One or more users from the business unit must have the permissions to create resources in the subscription and view all resources. The user should not have the ability to change policies set by Enterprise IT.
 
@@ -415,25 +394,65 @@ Directions: With all participants at your table, respond to the following questi
 
 6.  For each project in Azure, the business unit administrator must have permissions to add or remove users, allow them to create resources, or even apply additional policies for resources in that project. Diagram at a high level how this would be achieved and provide some pseudo code that would be needed to accomplish the task.
 
+
+12. Delegate access management to business units for each application they own, while enforcing that only built-in roles are used .
+
+13. Ensure full-time and contingent staff for e-commerce have access to what they need, but no more.
+
+14. Identify a solution to streamline identity management and provide remote access for e-commerce team contingent staff.
+
+*Deployment Acceleration*
+
+15. Implement deployment automation while allowing controlled divergence between environments (e.g. smaller footprint for Dev/Test environments)
+
+16. Provide a means to track and update existing deployments to meet updated best practices.
+
+17. Provide a means to prevent best-practice deployments being modified outside the control of the Cloud Governance team.
+
+
+### REMOVE Customer objections 
+
+6.  How can Enterprise IT minimize per-subscription configuration and centrally audit compliance with their governance rules?
+1. Per-subscription configuration won't scale to an organization the size of Trey Research. How can governance controls be implemented with minimum per-subscription configuration overhead?
+
+2.  As well as implementing our governance rules on how Azure is used, we need a way to audit that no deployments have been made that bypass those rules. This audit needs to scale across the entire organization.
+
+3.  How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even if the security perimeter is compromised?
+
+7.  How can Azure help Business Units minimize wasted spend on non-Production VMs left running out-of-hours?
+1.  How can Azure help control the costs associated with non-Production VMs left running out-of-hours?
+
+
+
+
+
+
+
+*Subscription organization and charge back*
+
+1.  Diagram how you would suggest organizing the Azure EA portal for Trey Research to allow access to Azure.
+
+
+
+
+
+
+
+
+
+
+
+
+
+*Supported services and delegated access control*
+
+ 
+
+
+
 *Connectivity*
 
-1.  Diagram at a high level how an ExpressRoute deployment for Trey Research should be configured for high availability.
-
-2.  Walk through the steps that Trey Research would have to perform to enable other subscriptions to use ExpressRoute.
-
-3.  From the security perspective, how could Trey Research deploy firewalls to protect their network after ExpressRoute is deployed? What network features are required and where would the firewalls be deployed? Diagram your solution.
-
-4.  For branch office sites that do not connect back to the WAN, how could they connect to Azure? Could Azure also be used to route traffic to different on-premises sites instead of their current site-to-site connections?
-
-*Availability*
-
-1.  Evaluate the list of proposed regions and provide guidance on what policies are in place by Microsoft to help customers design a geo-redundant solution
-
-2.  Explain how Trey Research could restrict services to just the supported regions
-
-3.  Diagram at a high level what a geo-redundant solution would look like for a public facing web application with a backend that uses SQL Server. What about a private facing web application?
-
-4.  For workloads within the same region, how could they ensure their virtual machines are available in the event of a physical server failure or a host update?
+1. 
 
 *Security and accident protection*
 
