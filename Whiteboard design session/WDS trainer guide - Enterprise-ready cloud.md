@@ -39,7 +39,6 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Customer objections](#customer-objections)
     - [Infographic for common scenarios](#infographic-for-common-scenarios)
   - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
-    - [REMOVE Customer objections](#remove-customer-objections)
   - [Step 3: Present the solution](#step-3-present-the-solution)
   - [Wrap-up](#wrap-up)
   - [Additional references](#additional-references)
@@ -235,7 +234,7 @@ The IT security team have advised a precautionary approach to cloud adoption. Th
 
 If a service has an outage, it is important to know the chain of events that led up to the outage and who (if anyone) caused it.
 
-IT security require that all Azure VMs (Windows and Linux) meet their password complexity requirements. Automatic updates must be enabled on Dev/Test environments, and disabled on production environments, where patching must be managed manually.
+IT security require that all Azure VMs (Windows and Linux) meet their password complexity requirements. They also require that only approved OS images are used as the baseline for any VM.
 
 
 *Resource Consistency*
@@ -251,7 +250,7 @@ To maintain consistency, the Cloud Governance team is developing a set of naming
 
 Trey Research has deployed Office 365 and it is configured with federated access to their ADFS servers. Trey's EA has been created within the same organization.
 
-Providing the ability to delegate permissions to different administrators at the business unit and subunit level is critical. However, for an organization the size of Trey Research, it is not possible for the Cloud Governance team to manage all user permissions centrally. Instead, for each new project, a user in the business unit should be able to manage access for his or her team to those project resources, to provide the access they need, but no more. To maintain consistency and to enable Cloud Governance team audit, Azure access should be controlled using built-in roles only, not custom roles.
+Providing the ability to delegate permissions to different administrators at the business unit and subunit level is critical. However, for an organization the size of Trey Research, it is not possible for the Cloud Governance team to manage all user permissions centrally. Instead, for each new project, an administrator in the business unit should be able to manage access for his or her team. The business unit administrator must not be able to override or circumnavigate governance rules defined by the Cloud Governance team.  Team members must be provide the access they need, to the resources they need, but no more.  To maintain consistency and to enable Cloud Governance team audit, Azure access should be controlled using built-in roles only, not custom roles.
 
 The Trey e-commerce team make significant use of contingent staff. At present, these staff are granted identities in the existing Trey directory, and are required to work on-site to gain access to Trey development and test environments. Trey would like to streamline this process and enable remote working. 
 
@@ -261,7 +260,7 @@ Increased agility is one of Trey's primary motivation for adopting the cloud. Th
 
 However, they are also concerned about how to maintain consistency and control across environments.  They are concerned that production and test environments may diverge over time. However, they can't use identical automation in both environments, since test environments are often scaled differently to production to save costs.
 
-The Cloud Governance team has developed best-practice configurations for commonly-deployed services, such as a DMZ network or a pair of web servers. They are looking for a way to automate these deployments. They recognize that these best practices will evolve over time, and so are also looking for a way to track existing deployments to ensure updates are rolled out consistently. In addition, where resources are deployed following Cloud Governance team best practices, individual business units should not be able to modify the configuration of those resources.
+The Cloud Governance team has developed best-practice reference implementations for commonly-deployed services, such as a DMZ network or a pair of web servers. They are looking for a way to automate these deployments. They recognize that these best practices will evolve over time, and so are also looking for a way to track existing deployments to ensure updates are rolled out consistently. In addition, where resources are deployed following Cloud Governance team best practices, individual business units should not be able to modify the configuration of those resources.
 
 ### Customer needs 
 
@@ -271,43 +270,39 @@ The Cloud Governance team has developed best-practice configurations for commonl
  
 2.  Enable allocation of costs between categories: Development and Test, Production, Support Services, and Infrastructure.
 
-3.  Provide cost management tools for budgets, alerts, dashboards, spending reports, and forecasts.
-
-4.  Identify anomalies and cost-saving opportunities for further investigation.
+3.  Provide cost management tools for budgets, alerts, dashboards, spending reports, forecasts, anomaly detection and investigation, and cost-saving recommendations.
 
 *Security Baseline*
 
-5.  Enable investigation of changes leading up to any outage.
+4.  Enable investigation of changes leading up to any outage.
    
-6.  Ensure Windows and Linux VMs meet password complexity requirements.
+5.  Ensure Windows and Linux VMs meet password complexity requirements.
    
-7.  Ensure automatic updates are enabled on Dev/Test environments, and disabled on Production environments (which must be managed separately).
+6.  Ensure VMs can only be created using an approved OS image.
 
 *Resource Consistency*
 
-8.  Allow the Cloud Governance team to control which Azure services can be used across the business units, with exceptions for approved pilot projects.
+7.  Allow the Cloud Governance team to control which Azure services can be used across the business units, with exceptions for approved pilot projects.
 
-9.  Implement delegated access control for new projects within business unit subscriptions.
+8.  Prevent accidental deletion of resources.
 
-10. Prevent accidental deletion of resources.
-
-11. Implement a common resource naming standard across the organization.
+9.  Implement a common resource naming standard across the organization.
 
 *Identity Baseline*
 
-12. Delegate access management to business units for each application they own, while enforcing that only built-in roles are used .
+10. Delegate access management to business units for each application they own. Business unit administrators should not be able to change or override policies defined by the Cloud Governance team.
 
-13. Ensure full-time and contingent staff for e-commerce have access to what they need, but no more.
+11. Ensure staff have access to what they need, but no more, while enforcing that only built-in roles are used. 
 
-14. Identify a solution to streamline identity management and provide remote access for e-commerce team contingent staff.
+12. Identify a solution to streamline identity management and provide remote access for e-commerce team contingent staff.
 
 *Deployment Acceleration*
 
-15. Implement deployment automation while allowing controlled divergence between environments (e.g. smaller footprint for Dev/Test environments)
+13.  Implement deployment automation while allowing controlled divergence between environments (e.g. smaller footprint for Dev/Test environments)
 
-16. Provide a means to track and update existing deployments to meet updated best practices.
+14.  Provide a means to track and update existing best-practice reference implementation deployments to meet updated best practices.
 
-17. Provide a means to prevent best-practice deployments being modified outside the control of the Cloud Governance team.
+15.  Provide a means to prevent best-practice reference implementation deployments being modified outside the control of the Cloud Governance team.
     
 
 ### Customer objections 
@@ -364,113 +359,36 @@ Directions: With all participants at your table, respond to the following questi
 
 *Security Baseline*
 
-5.  Enable investigation of changes leading up to any outage.
+4.  Following an outage, how can you identify and analyze any recent changes which may have contributed?
    
-6.  Ensure Windows and Linux VMs meet password complexity requirements.
+5.  How can you ensure that both Windows and Linux VMs meet password complexity requirements?
    
-7.  Ensure automatic updates are enabled on Dev/Test environments, and disabled on Production environments (which must be managed separately).
+6.  How can you ensure that only approved OS images are used when creating new VMs?
 
 *Resource Consistency*
 
-1.  Identify a solution to restrict which services can be created and used in each business unit subscription.
-1.  Allow the Cloud Governance team to control which Azure services can be used across the business units, with exceptions for approved pilot projects.
+7.  Identify a solution to restrict which services can be used in each Azure subscription, across the company. How will your solution allow exceptions for approved pilot projects?
 
-2.  Implement delegated access control for new projects within business unit subscriptions.
+8.  How can you prevent accidental deletion of production resources, by administrators who require access to manage those resources?
 
-3.  Prevent accidental deletion of resources.
-
-4.  How can Enterprise IT enforce a company-wide resource naming convention?
-5.  Implement a common resource naming standard across the organization.
+9.  How can Enterprise IT enforce a company-wide resource naming convention?
 
 *Identity Baseline*
 
-2.  One or more users from the business unit must have the permissions to create resources in the subscription and view all resources. The user should not have the ability to change policies set by Enterprise IT.
+10. How can you delegate access management to business units for each application they own, while protecting other applications and ensuring that controls implemented by the Cloud Governance teams cannot be circumvented?
 
-3.  How would you assign permission to users and groups?
+11. How can you ensure staff have access to what they need, but no more, while enforcing that only built-in roles are used. 
 
-4.  Could we allow users from partner organizations to access corporate applications?
-
-5.  Is there another way to limit access to services in Azure using templates?
-
-6.  For each project in Azure, the business unit administrator must have permissions to add or remove users, allow them to create resources, or even apply additional policies for resources in that project. Diagram at a high level how this would be achieved and provide some pseudo code that would be needed to accomplish the task.
-
-
-12. Delegate access management to business units for each application they own, while enforcing that only built-in roles are used .
-
-13. Ensure full-time and contingent staff for e-commerce have access to what they need, but no more.
-
-14. Identify a solution to streamline identity management and provide remote access for e-commerce team contingent staff.
+12. Identify a solution to streamline identity management and provide remote access for e-commerce team contingent staff.
 
 *Deployment Acceleration*
 
-15. Implement deployment automation while allowing controlled divergence between environments (e.g. smaller footprint for Dev/Test environments)
+13. How can Trey implement an 'Infrastructure as Code' approach to deployment automation, while still allowing different footprints in different environments?
 
-16. Provide a means to track and update existing deployments to meet updated best practices.
+14. How can the Cloud Governance team track where their best-practices reference implementations are deployed, and manage updates to those deployments?
 
-17. Provide a means to prevent best-practice deployments being modified outside the control of the Cloud Governance team.
+15. How can the Cloud Governance team prevent best-practice reference implementation deployments from being modified outside of their control?
 
-
-### REMOVE Customer objections 
-
-6.  How can Enterprise IT minimize per-subscription configuration and centrally audit compliance with their governance rules?
-1. Per-subscription configuration won't scale to an organization the size of Trey Research. How can governance controls be implemented with minimum per-subscription configuration overhead?
-
-2.  As well as implementing our governance rules on how Azure is used, we need a way to audit that no deployments have been made that bypass those rules. This audit needs to scale across the entire organization.
-
-3.  How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even if the security perimeter is compromised?
-
-7.  How can Azure help Business Units minimize wasted spend on non-Production VMs left running out-of-hours?
-1.  How can Azure help control the costs associated with non-Production VMs left running out-of-hours?
-
-
-
-
-
-
-
-*Subscription organization and charge back*
-
-1.  Diagram how you would suggest organizing the Azure EA portal for Trey Research to allow access to Azure.
-
-
-
-
-
-
-
-
-
-
-
-
-
-*Supported services and delegated access control*
-
- 
-
-
-
-*Connectivity*
-
-1. 
-
-*Security and accident protection*
-
-1.  What would you recommend to Trey Research on how to mitigate accidently deleting production workloads? If that were to happen, what would the proper procedure be to identify who deleted the resource?
-
-How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even in the event that the security perimeter is compromised?
-
-*E-commerce developer team*
-
-1.  Identify a solution to provide access to a development environment that would be suitable for contingent staff for the e-commerce team:
-
-    -   What steps are needed to allow access to the environment?
-
-    -   What would be needed to automate the environment to speed up on-boarding?
-
-    -   What options could you propose to allow access for remote employees? Specifically, how could they access resources on the ECommerceDev network but nothing else on the Azure network?
-    
-2.  What cost control options would you propose to put in place to optimize this environment?
 
 **Prepare**
 
