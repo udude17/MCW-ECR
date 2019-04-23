@@ -27,10 +27,9 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 <!-- TOC -->
 
 - [Enterprise-ready cloud before the hands-on lab setup guide](#enterprise-ready-cloud-before-the-hands-on-lab-setup-guide)
-    - [Requirements](#requirements)
-    - [Before the hands-on lab](#before-the-hands-on-lab)
-        - [Task 1: Validate global admin access to Azure AD tenant](#task-1-validate-global-admin-access-to-azure-ad-tenant)
-        - [Task 2: Setup a development environment](#task-2-setup-a-development-environment)
+  - [Requirements](#requirements)
+  - [Before the hands-on lab](#before-the-hands-on-lab)
+    - [Task 1: Validate global admin access to Azure AD tenant](#task-1-validate-global-admin-access-to-azure-ad-tenant)
 
 <!-- /TOC -->
 
@@ -38,9 +37,9 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 ## Requirements
 
--   Local machine or a virtual machine configured with:
-    -   Visual Studio 2015 or 2017 Community Edition or VS Code.
--   Full global admin access to the Azure AD tenant associated with your Azure subscription.
+- Full global admin access to the Azure AD tenant associated with your Azure subscription.
+
+> **Note**: In this lab, [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) is used for executing commands using the Azure CLI and Azure PowerShell. Both the Azure CLI and Azure PowerShell can be installed locally if needed. 
 
 ## Before the hands-on lab
 
@@ -50,20 +49,28 @@ To complete this lab, you must have full global admin access to the Azure AD ten
 
 ### Task 1: Validate global admin access to Azure AD tenant
 
-1.  Login to <http://portal.azure.com>, click on **All Services**, and type in **Azure Active Directory**.
+To validate that you have Global Administrator access to your Azure AD tenant, we will elevate access for a Global Administrator to allow for the management of Azure resources. 
 
-2.  Open the Azure Active Directory tenant. Click Users -\> New User.
+1. Sign in to the [Azure portal](https://portal.azure.com/) or the [Azure Active Directory admin center](https://aad.portal.azure.com/) as a Global Administrator.
 
-3.  Create a new user called testuser/test1. Use the tenant name on the header for the domain name of the email.
+2. In the navigation list, click **Azure Active Directory** and then click **Properties**.
 
-    ![Create user Azure portal blade with user name and email domain name highlighted.](images/Setup/image3.png "Create User blade")
+    ![Azure Active Directory Properties blade in the Azure portal.](images/Setup/image1.png "Properties blade")
 
->**Note:** If you can create the user, you will enough permissions in Azure AD to complete the lab. If you cannot, you will need more permissions before proceeding.
+3. Under *Access management for Azure resources*, set the toggle to **Yes**.
 
-### Task 2: Setup a development environment
+    ![Azure Active Directory Properties blade in the Azure portal with the Access management for Azure resources set to Yes.](images/Setup/image2.png "Properties blade - Access management for Azure resources")
 
-If you do not have a machine set up with Visual Studio, complete this task and use this VM to complete the remainder of the Lab.
+    > **Note**: When you set the toggle to Yes, you are assigned the User Access Administrator role in Azure RBAC at the root scope (/). This grants you permission to assign roles in all Azure subscriptions and management groups associated with this Azure AD directory. This toggle is only available to users who are assigned the Global Administrator role in Azure AD.
 
-1.  Create a DS2\_V2 Azure Virtual Machine using the Visual Studio Community 2017 image from the Azure Marketplace.
+4. Click **Save** to save your setting.
+
+    ![Azure Active Directory Properties blade in the Azure portal with the Save button highlighted.](images/Setup/image4.png "Properties blade - Save button")
+
+    > **Note**: This setting is not a global property and applies only to the currently signed in user. You can't elevate access for all members of the Global Administrator role.
+
+5.  Login to <http://portal.azure.com>, click on **All Services**, and type in **Azure Active Directory**.
+
+6. Sign out and sign back in to refresh your access.
 
 You should follow all steps provided *before* performing the Hands-on lab.
