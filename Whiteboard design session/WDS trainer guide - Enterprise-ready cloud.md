@@ -204,7 +204,7 @@ To kick off planning for integrating Azure into their environment, Ken introduce
 
 Enterprise IT is responsible for managing corporate network connectivity, datacenter distribution, capacity planning, identity, and enterprise wide SaaS services for Trey Research employees. Enterprise IT is also responsible for supporting the services, datacenters, and setting auditing policy on hardware and services.
 
-To help drive Azure adoption and best practices, Ken has chartered a Cloud Governance team within Enterprise IT. This team will be responsible for all aspects of Azure governance. This includes defining, implementing and enforcing cloud governance and working with other teams to ensure best practices are adopted.
+To help drive Azure adoption and best practices, Ken has chartered a Cloud Governance team within Enterprise IT, headed by Laura Knight. This team will be responsible for all aspects of Azure governance. This includes defining, implementing and enforcing cloud governance and working with other teams to ensure best practices are adopted.
 
 Rather than re-invent the wheel, the Cloud Governance team have decided to adopt Microsoft's Cloud Adoption Framework as a baseline upon which they will build their governance implementation. This framework is divided into five disciplines.
 
@@ -351,19 +351,19 @@ Directions: With all participants at your table, respond to the following questi
 1.  Design a charge back mechanism for the business units for resources they consume based on the IO code for each application. Assuming your design is based on resource-level tags, how will you implement the following use cases?
     - Every resource group must have an 'IOCode' tag
     - Every time a resource is created, it is assigned an 'IOCode' tag with a value matching its resource group
-    - Any resource whose 'IOCode' tag is missing does not match its corresponding resource group tag (for example, after moving the resource between resource groups) can be easily identified. Child resources, for which tags to not apply, are excluded.
+    - Any resource whose 'IOCode' tag is missing or does not match its corresponding resource group tag (for example, after moving the resource between resource groups) can be easily identified. Child resources, for which tags to not apply, are excluded.
   
 2.  Design a cost allocation mechanism to track Azure costs across the Development and Test, Production, Support Services, and Infrastructure categories.
 
-3.  What tools are available to meet the cost management requirements of the individual business units, the finance team, and the Cloud Governance team? These requirements include setting budgets and alerts for each cost center, creating spending reports and forecasts, and identifying and investigating anomalies.
+3.  What tools are available to meet the cost management requirements of the individual business units, the finance team, and the Cloud Governance team? These requirements include setting budgets and alerts for each cost center, creating spending reports and forecasts, and identifying and investigating anomalies. What permissions and configuration are required to enable users to have access to these tools?
 
 *Security Baseline*
 
-4.  Following an outage, how can you identify and analyze any recent changes which may have contributed?
+4.  Following an outage, how can you identify and analyze any recent changes which may have contributed? Investigations will require details of which resource was changed, when it was changed, who made the change, and what was changed. How can you track changes to both resource properties (capturing both before and after state) as well as changes inside a virtual machine?
    
 5.  How can you ensure that both Windows and Linux VMs meet password complexity requirements?
    
-6.  How can you ensure that only approved OS images are used when creating new VMs?
+6.  How can you ensure that only approved OS images are used when creating new VMs? Your implementation should support a customizable list of built-in images as well as custom images.
 
 *Resource Consistency*
 
@@ -500,11 +500,261 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 ##  Preferred target audience
 
 -   Ken Greenwald, CTO
+-   Laura Knight, head of Cloud Governance team
 -   Enterprise IT directors
 -   Business unit technical leads within Enterprise IT
 -   EA portal administrators
 
 ## Preferred solution
+
+### Cost Management <!-- omit in toc -->
+
+1.  **Design:** Design a charge back mechanism for the business units for resources they consume based on the IO code for each application. Assuming your design is based on resource-level tags, how will you implement the following use cases?
+    - Every resource group must have an 'IOCode' tag
+    - Every time a resource is created, it is assigned an 'IOCode' tag with a value matching its resource group
+    - Any resource whose 'IOCode' tag is missing or does not match its corresponding resource group tag (for example, after moving the resource between resource groups) can be easily identified. Child resources, for which tags to not apply, are excluded.
+
+    **Solution:** The IOCode tag will be implemented using three separate Azure policy definitions. 
+
+    The first policy requires that all resource groups are assigned the 'IOCode' tag. The built-in policy **Require specified tag on resource groups** can be used. Note that this policy uses '"mode": "all"', since the alternative '"mode": "indexed"' does not apply to resource groups. The policy rule is specific to resource groups only.
+
+    ![Screenshot from the Azure portal showing the policy definition for the 'Require specified tag on resource groups' built-in policy](images/require-tag-rg.png "'Require specified tag on resource groups' policy definition")
+
+    > **Note:** This policy will require that all resource groups specify the IOCode tag *at the time they are created*. Using the Azure portal, it will no longer be possible to create a resource group at the same time as deploying a resource. You will need to create the resource group separately so the resource group tag can be specified.
+
+    The second policy requires that each resource is assigned an 'IOCode' tag upon creation. If the 'IOCode' tag is missing, then it is added automatically, using the value from the corresponding resource group tag.  The built-in policy **Append tag and its value from the resource group** can be used. Note that this policy uses '"mode": "indexed"', which ensures this policy only applies to resources which can be tagged, and not to child resources which do not support tags (such as subnets of a virtual network).
+
+    ![Screenshot from the Azure portal showing the policy definition for the 'Append tag and its value from the resource group' built-in policy](images/tag-resource-from-rg.png "'Append tag and its value from the resource group' policy definition")
+
+    The above policy does not enforce that the IOCode tag, if present when the resource is created, matches the IOCode tag of the resource group. This case will be audited by our third policy. However, this policy could be used a basis for a custom policy which does enforce that the IOCodes on the resource and resource group match.
+
+    The third policy audits that the IOCode tag is present on all resources, and that its value matches the value of the corresponding resource group tag. As with the previous rule, '"mode": "indexed"' is used to avoid creating false audit reports for child resource types. In this case, a custom definition is required:
+
+    ```
+    {
+        "mode": "Indexed",
+        "parameters": {
+            "tagName": {
+                "type": "String",
+                "metadata": {
+                    "displayName": "Tag Name",
+                    "description": "Name of the tag, such as 'environment'"
+                }
+            }
+        },
+        "policyRule": {
+            "if": {
+                "not": {
+                    "field": "[concat('tags[', parameters('tagName'), ']')]",
+                    "equals": "[resourceGroup().tags[parameters('tagName')]]"
+                }
+            },
+            "then": {
+                "effect": "audit"
+            }
+        }
+    }
+    ```
+
+    These three policy definitions are grouped into a single policy initiative, for ease of management. A single initiative parameter, 'Tag Name', is passed to all three policy definitions.
+
+    ![Screenshot showing the intiative definition containing 3 policy definitions, 'Require specified tag on resource groups', Append tag and its value from the resource groups' and 'Audit tag matches resource group'](images/tag-initiative-defn.png)
+
+    This initiative will then be assigned at an appropriate management group scope (perhaps even the tenant root management group) so the policies are effective across all subscriptions in the organization.
+  
+2.  **Design:** Design a cost allocation mechanism to track Azure costs across the Development and Test, Production, Support Services, and Infrastructure categories.
+
+    **Solution:** To enforce a taxonomy that would group resource costs by the following categories, each new subscription would need an ARM policy assigned that enforced resource groups to have a tag with one of the following values assigned:
+       -   Tag Name: Environment---Value: Development and Test
+       -   Tag Name: Environment---Value: Production
+       -   Tag Name: Environment---Value: Support Services
+       -   Tag Name: Environment---Value: Infrastructure
+
+    This can be done with built in policies, specifically by applying the **Apply tag and its default value** and the **Enforce tag and its value** policies. A new resource group would be created for each environment (Production, Dev, etc.) and these policies would be applied, specifying the tags to assign.
+
+    ![In the Add assignment blade, under Policy, Enforce tag and its value is selected and circled.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image12.png "Add assignment blade")
+
+    Once resources are tagged, costs can be tracked using the cost management tools described in the following question.
+
+3.  **Design:** What tools are available to meet the cost management requirements of the individual business units, the finance team, and the Cloud Governance team? These requirements include setting budgets and alerts for each cost center, creating spending reports and forecasts, and identifying and investigating anomalies. What permissions and configuration are required to enable users to have access to these tools?
+
+    **Solution:** Azure currently offers two services for cost management. There is a cost management feature integrated into the Azure portal, and there is also the Azure Cost Management (formerly Cloudyn) service, which has its own portal. In addition, EA subscriptions also offer the ability to roll up billing at an account, department or EA level.
+
+    For most requirements, Trey can use the Azure cost management features that are integrated into the Azure portal. This is available under **All Services > Cost Management + Billing**. This provides:
+
+    -   Cost analysis reports. These allow you to analyze your Azure spend (<https://docs.microsoft.com/en-us/azure/cost-management/quick-acm-cost-analysis#review-costs-in-cost-analysis>). After first defining your date range, you can then view charts of either daily, monthly, or cumulative spend. These charts can be filtered or segmented based on a wide range of criteria, such as resource group, resource type, location, or based on resource tags. This variety of charts and ability to drill down into the data is useful for investigating spending anomalies.
+  
+    -   Budgets and Alerts. You can define a budget, and configure alerts when a %age of that budget is spent (<https://docs.microsoft.com/azure/cost-management/tutorial-acm-create-budgets>). Alerts are integrated with action groups, enabling a variety of alert actions (such as email, SMS, or even triggering custom automation).
+
+        ![The Create budget blade displays. Fields include Name, Amount, Resets, Start date, and Expiration date. Alert conditions and recipients are also configured through this blade.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image21.png "Create budget blade")
+
+    Cost analysis, budgets and alerts can be defined at a variety of scopes, from management groups to subscriptions to individual resource groups (see the cost management features on the respective management group, subscription and resource group blades). Information from cost analysis can also be downloaded through a detailed .csv with any filters or groupings applied to the exported data.
+
+    ![The Download button is visible in the cost analysis blade](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image23.png "Cost analysis download button")
+
+    > **Note:** Users must be assigned the Cost Management Reader role at the appropriate scope to have access to cost analysis reports. These permissions are also included in the Reader, Contributor and Owner roles.
+    >
+    >For EA subscriptions, an Enrollment Administrator must enable "AO view charges" in the Azure EA Portal ([https://ea.azure.com](https://ea.azure.com)) to enable cost views in Azure Cost Management.
+    >
+    > ![View charges for both DA and AO are set to disabled.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image11.png "View charges")
+    >
+    > For further details, see https://docs.microsoft.com/azure/cost-management/assign-access-acm-data.
+
+    Azure Cost Management by Cloudyn can also be used for cost management reporting and alerting. This offers a richer set of functionality than the Azure portal. To use Cloudyn you must register from the Azure Portal, and create a hierarchy of cost entities in Cloudyn representing different business units and the various taxonomy.
+
+       -   Choose appropriate access levels for each subscription in your EA.
+       -   Assign each subscription to the appropriate entity.
+       -   Create users for business units and the finance department.
+
+    ![The Actual Cost Over Time stacked bar graph displays bar graphs of cost by service, resource type, sub type, operations, and date time.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image14.png "Actual Cost Over Time stacked bar graph")
+
+
+### Security Baseline <!-- omit in toc -->
+
+4.  **Design:** Following an outage, how can you identify and analyze any recent changes which may have contributed? Investigations will require details of which resource was changed, when it was changed, who made the change, and what was changed. How can you track changes to both resource properties (capturing both before and after state) as well as changes inside a virtual machine?
+   
+    **Solution:** The Azure activity log provides a full history of changes to the configuration of Azure resources. It shows when changes were made, and which account made the changes. The log can be filtered in many ways (resource type, resource group, time, event severity, etc) and also exported as a CSV for processing off-line.
+
+    ![A screenshot of the Azure activity log](images/activity-log.png "Azure activity log")
+
+    However, the activity log does not provide details of exactly which resource properties were changed, nor the before/after values of those properties. This data is available from the change history feature of the Azure resource graph (currently in public preview).
+
+    To view the change history for a resource in the Azure portal, identify and click on the resource in any Azure policy compliance report (the compliance status of the resource doesn't matter). Then click the **Change History (preview)** tab.
+
+    ![A screenshot of the change history tab for a resource in Azure policy](images/change-history-tab.png "Change history tab")
+
+    This tab shows a list of timestamps for each change. Click on a timestamp to see a visual diff of the change.
+
+    ![A screenshot of the visual diff showing the before and after state of a VM. The diff highlights that the vmSize has been changed.](images/change-history-visual-diff.png "Change history visual diff")
+
+    For more information on the resource graph change history, see https://docs.microsoft.com/azure/governance/resource-graph/how-to/get-resource-changes and https://docs.microsoft.com/azure/governance/policy/how-to/determine-non-compliance#change-history-preview.
+
+    The change history only captures changes to resource properties. It does not capture changes that occur within an Azure VM. To monitor VM changes, the Azure Automation Change Tracking solution should be used. Supporting both Windows and Linux, this solution tracks VM changes including files, registry keys, services/daemons, and software deployments. For more information, see https://docs.microsoft.com/azure/automation/automation-change-tracking.
+
+5.  **Design:** How can you ensure that both Windows and Linux VMs meet password complexity requirements?
+   
+    **Solution:** Azure policy guest configuration allows Azure policy to be used to audit settings with an Azure VM (Windows and Linux). It can be used to audit and deploy application settings and installed software. It can also be used to enforce password age and complexity rules. A variety of built-in policy definitions are available. THe built-in policy initiative **\[Preview\]: Audit VMs with insecure password security settings** contains a default collection of password policy definitions for both Windows and Linux VMs.
+
+    ![Screenshot showing the policy definitions in the '\[Preview\]: Audit VMs with insecure password security settings' policy initiative](images/password-policy.png "Password policy for guest VMs")
+
+6.  **Design:** How can you ensure that only approved OS images are used when creating new VMs? Your implementation should support a customizable list of built-in images as well as custom images.
+
+    **Solution:** Azure policy can be used to control which OS images may be used with any Azure VM. Both built-in and custom images can be supported. The built-in policy **\[Preview\]: Audit Log Analytics Agent Deployment - VM Image (OS) unlisted** provides an example that can be used as a baseline for a custom policy.
+
+    ```
+    {
+        "parameters": {
+            "CustomImageIds": {
+                "type": "Array",
+                "metadata": {
+                    "displayName": "Optional: List of VM images to allow",
+                    "description": "Example value: '/subscriptions/<subscriptionId>/resourceGroups/YourResourceGroup/providers/Microsoft.Compute/images/ContosoStdImage'"
+                },
+                "defaultValue": []
+            }
+        },
+        "policyRule": {
+            "if": {
+                "allOf": [
+                    {
+                        "field": "type",
+                        "equals": "Microsoft.Compute/virtualMachines"
+                    },
+                    {
+                        "not": {
+                            "anyOf": [
+                                {
+                                    "field": "Microsoft.Compute/imageId",
+                                    "in": "[parameters('CustomImageIds')]"
+                                },
+                                {
+                                    "allOf": [
+                                        {
+                                            "field": "Microsoft.Compute/imagePublisher",
+                                            "equals": "MicrosoftWindowsServer"
+                                        },
+                                        {
+                                            "field": "Microsoft.Compute/imageOffer",
+                                            "equals": "WindowsServer"
+                                        },
+                                        {
+                                            "field": "Microsoft.Compute/imageSKU",
+                                            "in": [
+                                                "2012-R2-Datacenter",
+                                                "2016-Datacenter",
+                                                "2019-Datacenter",
+                                                "2019-Datacenter-Core",
+                                                "2019-Datacenter-Core-with-Containers"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]    
+                        }
+                    }
+                ]
+            },
+            "then": {
+                "effect": "deny"
+            }
+        }
+    }
+
+    ```
+
+### Resource Consistency <!-- omit in toc -->
+
+7.  **Design:** Identify a solution to restrict which services can be used in each Azure subscription, across the company. How will your solution allow exceptions for approved pilot projects?
+
+    **Solution:** TODO
+
+8.  **Design:** How can you prevent accidental deletion of production resources, by administrators who require access to manage those resources?
+
+    **Solution:** TODO
+
+9.  **Design:** How can Enterprise IT enforce a company-wide resource naming convention?
+
+    **Solution:** TODO
+
+### Identity Baseline <!-- omit in toc -->
+
+10. **Design:** How can you delegate access management to business units for each application they own, while protecting other applications and ensuring that controls implemented by the Cloud Governance teams cannot be circumvented?
+
+    **Solution:** TODO
+
+11. **Design:** How can you ensure staff have access to what they need, but no more, while enforcing that only built-in roles are used. 
+
+    **Solution:** TODO
+
+12. **Design:** Identify a solution to streamline identity management and provide remote access for e-commerce team contingent staff.
+    
+    **Solution:** TODO
+
+
+### Deployment Acceleration <!-- omit in toc -->
+
+13. **Design:** How can Trey implement an 'Infrastructure as Code' approach to deployment automation, while still allowing different footprints in different environments?
+
+    **Solution:** TODO
+
+14. **Design:** How can the Cloud Governance team track where their best-practices reference implementations are deployed, and manage updates to those deployments?
+
+    **Solution:** TODO
+
+15. **Design:** How can the Cloud Governance team prevent best-practice reference implementation deployments from being modified outside of their control?
+
+    **Solution:** TODO
+
+
+
+
+
+
+
+
+
+
+
 
 ### Subscription organization and chargeback <!-- omit in toc -->
 
