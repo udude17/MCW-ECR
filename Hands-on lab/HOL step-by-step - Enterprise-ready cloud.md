@@ -1218,11 +1218,11 @@ After completing the hands-on lab, you will remove the policies on your subscrip
 
 5. Navigate to the **Blueprints** blade. 
 
-1. Remove any blueprint assignments and any blueprints created during this lab.
+6. Remove any blueprint assignments and any blueprints created during this lab.
 
-6. Navigate to the **Management Groups** blade.
+7. Navigate to the **Management Groups** blade.
 
-7. Remove any Management Groups crated during this lab.
+8. Remove any Management Groups crated during this lab.
 
 8. Navigate to the **Resource Groups** blade.
 
