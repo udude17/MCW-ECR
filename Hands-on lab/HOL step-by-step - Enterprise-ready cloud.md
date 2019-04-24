@@ -606,18 +606,21 @@ In this exercise, you will configure delegated permissions for users in the Trey
 | Role Based Access Control  | <https://docs.microsoft.com/azure/active-directory/role-based-access-control-configure> |
 | Manage RBAC with PowerShell | <https://docs.microsoft.com/azure/active-directory/role-based-access-control-manage-access-powershell> |
 
-
 ### Task 1: Create groups in Azure AD for delegation 
 
-In this task, you will create two groups in Azure AD that you will use for testing delegated access control. You will add the users created in the previous task to the groups.
+In this task, you will create two groups in Azure AD that you will use for testing delegated access control. In the next task, users will be created that will be added to these existing security groups.
 
-1.  Open the Azure Active Directory console under the Azure Management portal in your browser (<https://portal.azure.com>).
+1. Open the Azure Active Directory blade in the Azure portal in your browser. 
+   
+   ```s
+   https://portal.azure.com
+   ```
 
-2.  Select **Groups**, and then select **New group**.
+2. Select **Groups**, and then select **New group**.
 
     ![Screenshot of the New group button.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image27.png "New group button")
 
-3.  Specify the **Security** as the Group type and **BU-Electronics-Admin** as the **Name** and **Description**. Change the Membership type to **Assigned**. Click **Create**.
+3. Specify the **Security** as the Group type and **BU-Electronics-Admin** as the **Name** and **Description**. Change the Membership type to **Assigned**. Click **Create**.
 
     ![Azure portal screenshot, showing New Azure AD Group blade. THe group type is security, group name and group description are BU-Electronics-Admin. Membership type is \'Assigned\', with no members assigned.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image28.png "New Azure AD Group blade")
 
@@ -627,7 +630,7 @@ In this task, you will create two groups in Azure AD that you will use for testi
 
 In this task, you will create two user accounts in Azure AD that you will use for testing delegated access control.
 
-1.  Navigate to **All services -\> Azure Active Directory**, and select **Custom domain names** to find out the name of your Azure AD tenant (this will be needed in the next step).
+1. Navigate to **All services -\> Azure Active Directory**, and select **Custom domain names** to find out the name of your Azure AD tenant (this will be needed in the next step).
 
     ![Azure portal screenshot, showing button \'Custom Domain Names\'](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image29.png "Custom domain names button")
 
