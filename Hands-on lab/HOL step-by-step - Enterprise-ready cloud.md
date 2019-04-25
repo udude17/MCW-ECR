@@ -51,7 +51,9 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Task 2: Publish a draft blueprint and assign it](#task-2-publish-a-draft-blueprint-and-assign-it)
     - [Task 3: Update the Service catalog policy to allow blueprint assignments](#task-3-update-the-service-catalog-policy-to-allow-blueprint-assignments)
     - [Task 4: Assign a blueprint](#task-4-assign-a-blueprint)
-    - [Task 5: Verify blueprint policy and resource creation](#task-5-verify-blueprint-policy-and-resource-creation)
+    - [Task 5: Verify blueprint assignment and resource creation](#task-5-verify-blueprint-assignment-and-resource-creation)
+    - [Task 6: Editing blueprints](#task-6-editing-blueprints)
+    - [Task 7: Verify compliance with Azure Policy](#task-7-verify-compliance-with-azure-policy)
   - [After the hands-on lab](#after-the-hands-on-lab)
     - [Task 1: Remove resources and configuration created during this lab](#task-1-remove-resources-and-configuration-created-during-this-lab)
 
@@ -883,7 +885,7 @@ Now both the security groups **BU-Electronics-Admins** and **BU-Electronics-User
 
 ## Exercise 3: Use Azure Blueprints to govern your Azure environment
 
-Duration: 45 minutes
+Duration: 75 minutes
 
 In this exercise you will create an Azure Blueprint at the Management Group scope to model your Azure environment using Azure Blueprint artifacts such as resource groups, Azure Resource Manager templates, resource locks, Azure Policy, and Azure RBAC.
 
@@ -895,6 +897,7 @@ In this exercise you will create an Azure Blueprint at the Management Group scop
 | Understand resource locking in Azure Blueprints | https://docs.microsoft.com/azure/governance/blueprints/concepts/resource-locking |
 | Azure Resource Manager overview | https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview |
 | Understand the structure and syntax of Azure Resource Manager templates | https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authoring-templates |
+| Get compliance data of Azure resources | https://docs.microsoft.com/azure/governance/policy/how-to/get-compliance-data |
 
 ### Task 1: Create a new Azure Blueprint
 
@@ -914,7 +917,7 @@ In this task, you will create a new Azure Blueprint and add several artifacts to
 
     ![Choose a blueprint sample blade with the Blank Blueprint tile highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image119.png "Create a blank blueprint")
 
-1. In the **Create blueprint** blade, enter the following to complete the form:
+4. In the **Create blueprint** blade, enter the following to complete the form:
 
     - Blueprint name: **governance-baseline**
     - Blueprint description: **The governance-baseline blueprint will be applied to all subscriptions within the ERC management group.**
@@ -922,55 +925,55 @@ In this task, you will create a new Azure Blueprint and add several artifacts to
 
     ![Create blueprint blade with the form completed.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image120.png "Create blueprint")
 
-1. Click **Next : Artifacts >>**.
+5. Click **Next : Artifacts >>**.
 
-1. Click **+ Add artifact...** and then select **Policy assignment** for the **Artifact type** in the **Add artifact** blade.
+6. Click **+ Add artifact...** and then select **Policy assignment** for the **Artifact type** in the **Add artifact** blade.
 
     ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image121.png "Add artifact")
 
-1. Select the **Require specified tag on resource groups** policy and click **Add**.
+7. Select the **Require specified tag on resource groups** policy and click **Add**.
 
     ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected and the Require specified tag on resource groups policy definition highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image132.png "Add artifact policy definition selection")
 
     > **Note**: In Exercise 2, Azure Policy was used to automatically tag resources as they were created in a resource group, but recall that any tags on the resource group itself were not inherited. Through this blueprint, we will ensure that the *IOCode* and *CostCenter* tags are enforced on each resource group that is created *and* that the tags that are set on the resource group are automatically inherited by any child resources.
 
-1. Click **+ Add artifact...** and then select **Policy assignment** for the **Artifact type** in the **Add artifact** blade.
+8. Click **+ Add artifact...** and then select **Policy assignment** for the **Artifact type** in the **Add artifact** blade.
 
     ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image121.png "Add artifact")
 
-1. Select the **Require specified tag on resource groups** policy and click **Add**.
+9. Select the **Require specified tag on resource groups** policy and click **Add**.
 
     ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected and the Require specified tag on resource groups policy definition highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image132.png "Add artifact policy definition selection")
 
     > **Note**: We need to add two of the same policy definition so we can enforce each tag for *IOCode* and *CostCenter*.
 
-1. Click **+ Add artifact...** and then select **Policy assignment** for the **Artifact type** in the **Add artifact** blade.
+10. Click **+ Add artifact...** and then select **Policy assignment** for the **Artifact type** in the **Add artifact** blade.
 
     ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image121.png "Add artifact")
 
-1. Select the **Append tag and its value from the resource group** policy and click **Add**.
+11. Select the **Append tag and its value from the resource group** policy and click **Add**.
 
     ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected and the Append tag and its value from the resource group policy definition highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image123.png "Add artifact policy definition selection")
 
-1. Click **+ Add artifact...** and then select **Policy assignment** for the **Artifact type** in the **Add artifact** blade.
+12. Click **+ Add artifact...** and then select **Policy assignment** for the **Artifact type** in the **Add artifact** blade.
 
     ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image121.png "Add artifact")
 
-1. Select the **Append tag and its value from the resource group** policy and click **Add**.
+13. Select the **Append tag and its value from the resource group** policy and click **Add**.
 
     ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected and the Append tag and its value from the resource group policy definition highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image123.png "Add artifact policy definition selection")
 
     > **Note**: We need to add two of the same policy definition so we can ensure each tag for *IOCode* and *CostCenter* is replicated from the resource group to any child resources.
 
-1. Click **+ Add artifact...** and then select **Azure Resource Manager template (Subscription)** for the **Artifact type** in the **Add artifact** blade.
+14. Click **+ Add artifact...** and then select **Azure Resource Manager template (Subscription)** for the **Artifact type** in the **Add artifact** blade.
 
     ![Add artifact blade in the Azure portal with the Azure Resource Manager template (Subscription) artifact type selected.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image125.png "Add artifact")
 
-1. Complete the form with the following information. This resource group will be used to demonstrate that the policy enacted in our blueprint is working by creating a resource group and then creating a storage account within that resource group.
+15. Complete the form with the following information. This resource group will be used to demonstrate that the policy enacted in our blueprint is working by creating a resource group and then creating a storage account within that resource group.
 
     - Artifact display name: **BU-RG**
 
-1. In the Template field, paste the following template and click **Add**:
+16. In the Template field, paste the following template and click **Add**:
 
     ```json
     {
@@ -1073,7 +1076,7 @@ In this task, you will create a new Azure Blueprint and add several artifacts to
 
     > **Note**: The template parameters will be determined at the time the blueprint is assigned. This allows us flexibility if we need to make a blueprint assignment multiple times and have it maintain a dynamic nature.
 
-1. Save the blueprint as a draft by clicking the **Save Draft** button.
+17. Save the blueprint as a draft by clicking the **Save Draft** button.
 
     ![Create blueprint blade in the Azure portal for with the Save Draft highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image127.png "Save Draft blueprint")
 
@@ -1122,6 +1125,8 @@ In this task, you will publish the previously created blueprint and assign the b
 
 ### Task 3: Update the Service catalog policy to allow blueprint assignments
 
+In this task, you will update an existing policy that blocks the deployment of Blueprint assignments to your Azure subscriptions located in the Enterprise Ready Cloud (ERC) management group.
+
 1. In the Azure portal, navigate to the Policy service.
 
 1. Select the **Definitions** blade followed by the **Service catalog** policy.
@@ -1145,9 +1150,11 @@ In this task, you will publish the previously created blueprint and assign the b
 
 ### Task 4: Assign a blueprint
 
+In this task you will make a blueprint assignment of a published blueprint to an Azure subscription.
+
 1. In the Azure portal, navigate to the Blueprints service.
 
-1. Select **Blueprint definitions** and then the **governance-baseline** blueprint created in the previous step.
+1. Select **Blueprint definitions** and then the **governance-baseline** blueprint created in the previous task.
 
     ![The Blueprint definitions blade in the Azure portal with the governance-baseline blueprint highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image128.png "Blueprint definitions")
 
@@ -1184,7 +1191,9 @@ In this task, you will publish the previously created blueprint and assign the b
 
 1. Click the **Blueprint assignment succeeded** link in the notification to view the status of the blueprint. 
 
-### Task 5: Verify blueprint policy and resource creation
+### Task 5: Verify blueprint assignment and resource creation
+
+In this task you will verify that the resource artifacts from the blueprint assignment have been created and that the policies deployed as a part of the assignment are operating as designed.
 
 1. In the Azure portal, select **Resource groups** followed by the **EnterpriseITRG** resource group.
 
@@ -1200,6 +1209,234 @@ In this task, you will publish the previously created blueprint and assign the b
 
     ![The treyrsrch storage account in the Azure portal with the IOCode and CostCenter tags highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image141.png "Resource tags")
 
+
+### Task 6: Editing blueprints
+
+In this task, you will edit the existing blueprint to add an additional policy to audit for the compliance of the resource group tag(s) matching the tags of child resources and publish the updated blueprint to your Azure subscription.
+
+The policy required to audit for the match of a given tag name and value is a custom policy. To leverage the policy within a blueprint, we first need to create the policy at the same scope as our blueprint, which in this case is the Enterprise Ready Cloud (ERC) management group.
+
+1. In the Azure portal, navigate to the Policy service.
+
+1. Select **Definitions** and then click **+ Policy definition**.
+
+    ![Policy definitions blade in the Azure portal with the Add policy definition button highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image143.png "Add policy definition")
+
+1. In the **New Policy definition** form, enter the following values:
+
+    - Definition location: **Enterprise Ready Cloud**
+    - Name: **Audit tag and its value from the resource group**
+    - Description: **Audit tag and its value from the resource group**
+    - Category: **(Create new) Tagging**
+    - Policy rule: Use the definition in the following code block
+
+    ```json
+    {
+        "mode": "Indexed",
+        "parameters": {
+            "tagName": {
+                "type": "String",
+                "metadata": {
+                    "displayName": "Tag Name",
+                    "description": "Name of the tag, such as 'environment'"
+                }
+            }
+        },
+        "policyRule": {
+            "if": {
+                "not": {
+                    "field": "[concat('tags[', parameters('tagName'), ']')]",
+                    "equals": "[resourceGroup().tags[parameters('tagName')]]"
+                }
+            },
+            "then": {
+                "effect": "audit"
+            }
+        }
+    }
+    ```
+
+    ![Adding a new policy definition to audit that a given tag on resource group is the same name and value on child resources.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image144.png "New policy definition")
+
+1. Click **Save**.
+
+1. To simplify the management of our blueprint, next we will create a new initiative definition for use in the existing governance-baseline blueprint. Select **Definitions** followed by **+ Initiative definition**.
+
+    ![In the Azure portal, select Definitions followed by Add initiative definition.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image145.png "Add initiative definition")
+
+1. In the **New Initiative definition** form, enter the following values:
+
+    - Definition location: **Enterprise Ready Cloud**
+    - Name: **Governance Baseline Initiative**
+    - Description: **Governance Baseline Initiative for use in the governance-baseline blueprint.**.
+    - Category: **(Use existing) Tagging**
+
+1. Add the following policies to the initiative and set the parameters to the following:
+
+      - **Audit tag and its value from the resource group**
+        - Value(s): **Use Initiative Parameter**
+          - **TAGNAME_1**
+      - **Audit tag and its value from the resource group**
+        - Value(s): **Use Initiative Parameter**
+          - **TAGNAME_2**
+      - **Require specified tag on resource groups**
+        - Value(s): **Use Initiative Parameter**
+          - **TAGNAME_1**
+      - **Require specified tag on resource groups**
+        - Value(s): **Use Initiative Parameter**
+          - **TAGNAME_2**
+      - **Append tag and its value from the resource group**
+        - Value(s): **Use Initiative Parameter**
+          - **TAGNAME_1**
+      - **Append tag and its value from the resource group**
+        - Value(s): **Use Initiative Parameter**
+          - **TAGNAME_2**
+
+    The form should looking like the following:
+
+    ![Creation of a new initiative definition at the ERC scope.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image146.png "New initiative definition")
+
+1. Click **Save**. This new initiative definition allows us to consolidate all of the policy assignments in our existing blueprint to ensure the presence of the *IOCode* and *CostCenter* tags on resource groups and that child resources not only have those tags, but that their values match the parent resource group as well.
+
+2. In the Azure portal, navigate to the Blueprints service.
+
+3. Select **Blueprint definitions** and then the **governance-baseline** blueprint created in the previous task.
+
+    ![The Blueprint definitions blade in the Azure portal with the governance-baseline blueprint highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image128.png "Blueprint definitions")
+
+4. Click **Edit blueprint**.
+
+    ![The Blueprint definitions blade in the Azure portal with the governance-baseline open and the Edit blueprint button highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image142.png "Edit blueprint")
+
+5. Click **Next : Artifacts >>**.
+
+1. Click **+ Add artifact...** and then select **Policy assignment** for the **Artifact type** in the **Add artifact** blade.
+
+    ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image121.png "Add artifact")
+
+1. Select the **Governance Baseline Initiative** and click **Add**.
+   
+    ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected and the Governance Baseline Initiative highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image147.png "Add artifact")
+
+1. Remove the other remaining policy assignments which are now included in the **Governance Baseline Initiative** by clicking the ellipsis (...) and then **Remove**.
+
+    ![Removing the existing policy assignments from the blueprint.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image148.png "Remove artifact")
+
+1. When you are finished removing the policies, you should be left with the *Azure Resource Manager template* artifact and the *Policy assignment* artifact for the selected initiative definition.
+
+    ![The governance-baseline blueprint with only two artifacts remaining.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image149.png "governance-baseline blueprint")
+
+1. Save the blueprint as a draft by clicking the **Save Draft** button.
+
+    ![Create blueprint blade in the Azure portal for with the Save Draft highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image127.png "Save Draft blueprint")
+
+1. Click **Publish blueprint**.
+
+    ![The governance-baseline blueprint with the Publish blueprint button highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image150.png "Publish blueprint")
+
+1. Enter a version number (for example *2.0*) in the **Version** field and click **Publish**.
+
+1. Click **Assign blueprint**.
+
+    ![The governance-baseline blueprint with the Assign blueprint button highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image151.png "Assign blueprint button")
+
+1. In the **Assign blueprint** blade, select your target **Subscription**, enter an updated assignment name such as **Assignment-governance-baseline-2**, select a location (making sure to select a location your previous policy allows such as East US), make sure the latest version of the blueprint is selected, and then scroll down to the **Artifact parameters** section of the blade.
+
+    ![The governance-baseline blueprint Assign blueprint form.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image152.png "Assign blueprint")
+
+1. Complete the **Artifact parameters** section of the blade with the following:
+
+    - BU-RG
+      - rgName: **EnterpriseITRG**
+      - rgLocation: **eastus**
+      - storagePrefix: **treyrsrch**
+      - IOCode: **1000151**
+      - CostCenter: **Enterprise IT**
+    - Governance Baseline Initiative
+      - Tag Name: **IOCode**
+      - Tag Name: **CostCenter**
+
+    ![The governance-baseline blueprint Assign blueprint form with the Artifact parameters section highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image153.png "Assign blueprint Artifact parameters")
+
+2. Click **Assign**. You will see a notification that the blueprint assignment is being created.
+
+    ![The governance-baseline blueprint assignment being created toast notification.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image154.png "Creating blueprint assignment")
+
+1. To view the status of the blueprint deployment, in the Azure portal, navigate to the Blueprints service.
+
+1. Click **Assigned blueprints** followed by **Assignment-governance-baseline-2**.
+
+    ![The blueprint assignments blade in the Azure portal with the Assignment-governance-baseline-2 blueprint assignment highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image155.png "Blueprint assignments")
+
+1. Wait for the deployment to complete. You will see a message of **Assignment succeeded** upon completion.
+
+    ![The blueprint assignment blade in the Azure portal for the governance-baseline blueprint with the Assignment succeeded message highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image156.png "governance-baseline blueprint assignment")
+
+    > **Note**: Notice that because we used the same values for the resource group and storage account prefix parameters, the Azure Resource Manager template artifact in the blueprint assignment was able to reconcile the existing resources not and not create new ones.
+
+### Task 7: Verify compliance with Azure Policy
+
+In this task you will explore the compliance features of Azure Policy by working with the previously created audit policy that was a part of the *Governance Baseline Initiative* initiative definition created in the *Enterprise Ready Cloud* management group.
+
+1. Launch the Azure Cloud Shell and select PowerShell. If prompted to create storage, click the **Create storage** button.
+
+    ![Azure portal screenshot showing the button to launch the Azure Cloud Shell.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image93.png "Azure Cloud Shell launch button")
+
+    ![Azure portal screenshot showing the Azure Cloud Shell first launch experience.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image94.png "Azure Cloud Shell PowerShell")
+
+1. Execute the following script to create a new resource group.
+
+    ```powershell
+    az group create -n MarketingRG -l eastus --tags IOCode=1000150 CostCenter=Marketing
+    ```
+
+1. Execute the following script to move the existing storage account in *EnterpriseITRG* to the resource group *MarketingRG*. When prompted, select **Yes** to initiate the move.
+
+    ```powershell
+    $resource = Get-AzResource -ResourceGroupName EnterpriseITRG | Where-Object { $_.Name -like "treyrsrch*" -and $_.ResourceType -eq "Microsoft.Storage/storageAccounts" }
+    Move-AzResource -DestinationResourceGroupName MarketingRG -ResourceId $resource.ResourceId
+    ```
+
+    ![Azure Cloud Shell screenshot showing the move request for a resource from one resource group to another.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image157.png "Azure Cloud Shell PowerShell")
+
+
+    > **Note**: It was take several minutes for the move to complete. Do not proceed to the next step until the script has completed.
+
+1. Execute the following script to view the tags on the *MarketingRG* resource group and the moved storage account. Do the tags match?
+
+    ```powershell
+    Invoke-Command -ScriptBlock { 
+        Write-Output "Resource group tags:"
+        Write-Output (Get-AzResourceGroup -Name MarketingRG).Tags
+        Write-Output "Storage account tags:"
+        Write-Output (Get-AzResource -ResourceGroupName MarketingRG | Where-Object { $_.Name -like "treyrsrch*" -and $_.ResourceType -eq "Microsoft.Storage/storageAccounts" }).Tags
+    }
+    ```
+
+    > **Note**: In this case the tags to not match. The Azure Policy which appends tags from the resource group to child resources only effects create and update operations and not move operations.
+
+2. In addition to Azure PowerShell and the Azure CLI, Azure Policy can be used to view the compliance of your resources through both the Azure portal and the command line.
+
+1. Navigate to the Policy service in the Azure portal and select **Compliance** followed by **Governance Baseline Initiative**.
+
+    ![Azure Policy compliance in the Azure Portal with the Governance Baseline Initiative highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image158.png "Azure policy compliance")
+
+1. On the **Initiative compliance** blade, select one of the **Audit tag and its value from the resource group** policies.
+
+    ![A screenshot of the Initiative compliance blade in the Azure Portal for the Governance Baseline Initiative with one of the Audit tag and its value from the resource group policies highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image159.png "Initiative compliance")
+
+1. On the **Policy compliance** blade you can view all of the non-compliant resources. 
+
+    ![A screenshot of the Policy compliance blade in the Azure Portal for the Governance Baseline Initiative with one of the Audit tag and its value from the resource group policies highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image160.png "Policy compliance")
+
+    > **Note**: This is an audit policy, not a deny policy, so it does not prevent the creation of resources, but it can surface resource that do not meet your organizational standards and offer a clear line of sight to remediation.
+
+1. You may (or may not) see the non-compliant state of the storage account that was moved earlier. Azure policy compliance checks do not currently have a published SLA for how long it takes an initial compliance check to occur or how long it takes for ongoing compliance checks to occur. 
+
+    It is often on the order of the less than 20-30 minutes for evaluation and when the next check occurs the storage account that was moved earlier will be flagged as non-compliant, because while the tag names for the child resources in the *MarketingRG* for *CostCenter* and *IOCode* are present, their values on the the storage account do not match the parent the values of the tags on the parent resource group.
+
+    ![A screenshot of the Resource compliance blade in the Azure Portal for the Governance Baseline Initiative and the Audit tag and its value from the resource group policy.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image160.png "Resource compliance")
+
 ## After the hands-on lab 
 
 Duration: 10 minutes
@@ -1208,7 +1445,13 @@ After completing the hands-on lab, you will remove the policies on your subscrip
 
 ### Task 1: Remove resources and configuration created during this lab
 
+You should follow all steps provided *after* attending the Hands-on lab.
+
 1. Log in to the Azure portal.
+
+5. Navigate to the **Blueprints** blade. 
+
+6. Remove any blueprint assignments and any blueprints created during this lab.
 
 2. Navigate to the **Policy** blade.
 
@@ -1216,20 +1459,16 @@ After completing the hands-on lab, you will remove the policies on your subscrip
 
 4. Select **Definitions**, and delete any policy definitions or initiative definitions created during this lab.
 
-5. Navigate to the **Blueprints** blade. 
+5. Navigate to the **Management Groups** blade.
 
-6. Remove any blueprint assignments and any blueprints created during this lab.
+6. Remove any Management Groups crated during this lab.
 
-7. Navigate to the **Management Groups** blade.
+7. Navigate to the **Resource Groups** blade.
 
-8. Remove any Management Groups crated during this lab.
+8.  Remove any resource groups created during this lab. 
+   
+   > **Note**: This will also delete any resources in those resource groups.
 
-8. Navigate to the **Resource Groups** blade.
+9.  Navigate to the **Azure Active Directory** blade.
 
-9.  Remove any resource groups created during this lab. This will also delete any resources in those resource groups.
-
-10. Navigate to the **Azure Active Directory** blade.
-
-11. Remove any users and groups created during this lab.
-
-You should follow all steps provided *after* attending the Hands-on lab.
+10. Remove any users and groups created during this lab.
