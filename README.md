@@ -20,9 +20,9 @@ At the end of the workshop, you will be better able to design a governance plan 
 
 ### Whiteboard Design Session
 
-In this whiteboard design session, you will work in a group to design a comprehensive solution to address concerns about security, charge back, tagging and other areas to help apply an enterprise governance model for Trey Research.
+In this whiteboard design session, you will work in a group to design a comprehensive solution to address concerns about cost management, security, subscription and resource management, identity, deployment, and other areas to help apply an enterprise governance model for Trey Research.
 
-At the end of this whiteboard design session, you will be better able to design a governance plan to showcase the security and governance features of Azure and control costs. In addition, you'll learn how to provide for cost tracking by business unit, environment, and project, provide for a distributed administration model, put a service catalog in place to prevent deployment of unsupported Azure services, and put controls in place to allow deployment of services only in specific regions.
+At the end of this whiteboard design session, you will be better able to design a governance plan to showcase the security, governance, and cost management features of Azure. In addition, you'll learn how to provide cost tracking and alerting by business unit and environment, implement a distributed administration model, and control the deployment of Azure services, all delivered at scale across a large enterprise.
 
 ### Hands-on Lab
 
@@ -34,17 +34,15 @@ At the end of this hands-on lab, you will know how to provide cost tracking by b
 - Azure VMs
 - Azure Portal
 - Azure PowerShell
-- Azure Storage
 - Azure Active Directory
-- Azure Web Apps
-- Azure Virtual Networks
-- SQL Server
-- Azure Log Analytics
-- Azure Backup
+- Azure Policy
+- Azure Role-Based Access Control
+- Azure Management Groups
+- Azure Resource Graph
+- Azure Blueprints
 
 ## Azure solutions
 DC Migration
 
 ## Related references
 - [MCW](https://github.com/Microsoft/MCW)
-- [Hybrid networking](https://microsoft.sharepoint.com/sites/infopedia/pages/layouts/kcdoc.aspx?k=g01kc-1-30340)
