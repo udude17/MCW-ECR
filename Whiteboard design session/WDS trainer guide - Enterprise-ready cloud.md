@@ -20,7 +20,7 @@ The names of manufacturers, products, or URLs are provided for informational pur
 
 © 2019 Microsoft Corporation. All rights reserved.
 
-Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspxare trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
+Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
 **Contents**
 
@@ -170,9 +170,9 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 ## Abstract and learning objectives 
 
-In this whiteboard design session, you will work in a group to design a comprehensive solution to address concerns about security, charge back, tagging and other areas to help apply an enterprise governance model for Trey Research.
+In this whiteboard design session, you will work in a group to design a comprehensive solution to address concerns about cost management, security, subscription and resource management, identity, deployment, and other areas to help apply an enterprise governance model for Trey Research.
 
-At the end of this whiteboard design session, you will be better able to design a governance plan to showcase the security and governance features of Azure and control costs. In addition, you'll learn how to provide for cost tracking by business unit, environment, and project, provide for a distributed administration model, put a service catalog in place to prevent deployment of unsupported Azure services, and put controls in place to allow deployment of services only in specific regions.
+At the end of this whiteboard design session, you will be better able to design a governance plan to showcase the security, governance, and cost management features of Azure. In addition, you'll learn how to provide cost tracking and alerting by business unit and environment, implement a distributed administration model, and control the deployment of Azure services, all delivered at scale across a large enterprise.
 
 ## Step 1: Review the customer case study 
 
@@ -212,7 +212,7 @@ Rather than re-invent the wheel, the Cloud Governance team have decided to adopt
 
 Trey Research has three business units: Industrial and Consumer, Electronics, and Life Sciences. Each of the Business Units has the same subunits: Product development, Marketing, and Sales and Support. Sales and Support is further divided into region subunits (US/EU/Asia). This hierarchy is shown in the following diagram:
 
-![Trey Research has three business units: Industrial and Consumer, Electronics, and Life Sciences. Each of the Business Units has the same subunits: Product development, Marketing, and Sales and Support. Sales and Support is further divided into region subunits (US/EU/Asia). ](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image2.png "Trey Research organizational flowchart")
+![Trey Research has three business units: Industrial and Consumer, Electronics, and Life Sciences. Each of the Business Units has the same subunits: Product development, Marketing, and Sales and Support. Sales and Support is further divided into region subunits (US/EU/Asia). ](images/org-chart.png "Trey Research organizational flowchart")
 
 Each business unit and subunit is allocated an Azure quota/budget and is responsible for tracking their expenditure within that budget. Within a business unit, each new project should track its consumption using a specific tag for its IO code within the business unit.
 
@@ -239,7 +239,7 @@ IT security require that all Azure VMs (Windows and Linux) meet their password c
 
 *Resource Consistency*
 
-While the Cloud Governance team is not yet familiar with the full range of Azure services available. They want to limit Trey's Azure adoption to an initial set of core services and locations, which will be expanded over time. These should be centrally enforced, with the ability to grant exceptions where required (for example, to teams piloting new technologies).
+While the Cloud Governance team is not yet familiar with the full range of Azure services available. They want to limit Trey's Azure adoption to an initial set of core services and locations, which will be expanded over time. These should be centrally enforced, with the ability to grant exceptions where required (for example, for teams piloting new technologies, or one-off deployments of a shared resource such as an ExpressRoute circuit).
 
 The IT Security team is particularly concerned about production environments. These require additional controls to ensure that resources cannot be accidentally modified or deleted by administrators getting confused between a test workload versus production.
 
@@ -266,11 +266,11 @@ The Cloud Governance team has developed best-practice reference implementations 
 
 *Cost Management*
 
-1.  Implement a charge back mechanism for the business units for resources they consume based on the IO code for each application.
- 
-2.  Enable allocation of costs between categories: Development and Test, Production, Support Services, and Infrastructure.
+1.  Provide cost management tools for budgets, alerts, dashboards, spending reports, forecasts, anomaly detection and investigation, and cost-saving recommendations.
 
-3.  Provide cost management tools for budgets, alerts, dashboards, spending reports, forecasts, anomaly detection and investigation, and cost-saving recommendations.
+2.  Implement a charge back mechanism for the business units for resources they consume based on the IO code for each application.
+ 
+3.  Enable allocation of costs between categories: Development and Test, Production, Support Services, and Infrastructure.
 
 *Security Baseline*
 
@@ -282,7 +282,7 @@ The Cloud Governance team has developed best-practice reference implementations 
 
 *Resource Consistency*
 
-7.  Allow the Cloud Governance team to control which Azure services can be used across the business units, with exceptions for approved pilot projects.
+7.  Allow the Cloud Governance team to control which Azure services can be used across the business units, while allowing controlled exceptions.
 
 8.  Prevent accidental deletion of resources.
 
@@ -317,15 +317,15 @@ The Cloud Governance team has developed best-practice reference implementations 
 
 ### Infographic for common scenarios
 
-![This is a screenshot of a slide. Azure EA Portal has the following bulleted list items: Manage access to Azure EA enrollments; Organize and delegate access to subscriptions; View usage; and http://ea.azure.com. A subscription flowchart on the right starts at the top with Enterprise Enrollment, then flows down to Department, Account, and Subscriptions.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image4.png "Azure EA Portal")
+![This is a screenshot of a slide, titled Azure Cost Management. It has the following bullet list items: Understand where costs originate; Set budgets and alerts; Roll up reports across the organization with management groups; Delegated access to reports and usage. There are two screenshots on the right - one of a daily spend chart and another that displays a full view pivot chart grouped by resource group.](images/slide-cost-mgmt.png "Common scenarios - Azure Cost Management")
 
-![This is a screenshot of a slide. Azure Cost Management has the following bulleted list items: Understand where costs originate; Delegated access to reports and usage. There are two screenshots on the right - one of a daily spend chart and another that displays a full view pivot chart grouped by resource group.](images/Whiteboarddesignsessionstudentguide-Enterprise-readycloudimages/media/image8.png "Azure Cost Management")
+![This is a screenshot of a slide, titled Role-based access control (RBAC) and Azure policy. It has the following bullet list items: Governance of Azure resources, and Granular access control. This slide also has an illustration of access control, which is separated into two sides by an arrow labeled Access Inheritance. On the left side are subscription, resource groups, and resources. On the right are three sets each of Contributors, Owner, and Readers.](images/slide-rbac-policy.png "Common scenarios - role-based access control (RBAC) and Azure policy")
 
-![This is a screenshot of a slide. Role-based access control (RBAC) and ARM Policies has two bullets: Governance of Azure Resources, and Granular Access Control. This slide also has an illustration of access control, which is separated into two sides by an arrow labeled Access Inheritance. On the left side are subscription, resource groups, and resources. On the right are three sets each of Contributors, Owner, and Readers.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image5.png "Role-based access control (RBAC) and RM Policies")
+![This is a screenshot of a slide, titled Management groups. It has the following bulleted list items: Apply governance at scale; Assign RBAC and policy across subscriptions; Aggregate Advisor, Security Center and Cost Management reports from across the organization. On the right, the slide shows a 4-layer management group hierarchy, with subscriptions sitting under various hierarchy nodes.](images/slide-management-groups.png "Common scenarios - management groups")
 
-![This is a screenshot of a slide, titled Common scenarios - infrastructure as a service. This slide has: a Virtual Machines overview; Virtual Networks Overview; Site-to-Site Connections information; Point-to-Site Connections Information; Virtual Network Example VNET; and a Virtual Network diagram. At this time, we are unable to capture all of the information in the slide. Future versions of this course should address this.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image6.png "Common scenarios - infrastructure as a service")
+![This is a screenshot of a slide, titled Azure blueprints. It has the following bulleted list items: Automated provisioning of entire environments; Deployment tracking and updates; Optional locking against unauthorized changes. There is a diagram showing a blueprint composed of role-based access controls, policy, and templates. Arrows show this blueprint being deployed to multiple subscriptions.](images/slide-blueprints.png "Common scenarios - Azure blueprints")
 
-![ExpressRoute Deployment Options include Cloud Exchange Co-location, Point-to-point Ethernet Connection, and Any-to-any (IPVPN) Connection.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image7.png "ExpressRoute Deployment Options")
+
 ## Step 2: Design a proof of concept solution
 
 **Outcome**
@@ -348,14 +348,14 @@ Directions: With all participants at your table, respond to the following questi
 
 *Cost Management*
 
-1.  Design a charge back mechanism for the business units for resources they consume based on the IO code for each application. Assuming your design is based on resource-level tags, how will you implement the following use cases?
+1.  What tools are available to meet the cost management requirements of the individual business units, the finance team, and the Cloud Governance team? These requirements include setting budgets and alerts for each cost center, creating spending reports and forecasts, and identifying and investigating anomalies. What permissions and configuration are required to enable users to have access to these tools?
+  
+2.  Design a charge back mechanism for the business units for resources they consume based on the IO code for each application. Assuming your design is based on resource-level tags, how will you implement the following use cases?
     - Every resource group must have an 'IOCode' tag
     - Every time a resource is created, it is assigned an 'IOCode' tag with a value matching its resource group
     - Any resource whose 'IOCode' tag is missing or does not match its corresponding resource group tag (for example, after moving the resource between resource groups) can be easily identified. Child resources, for which tags to not apply, are excluded.
   
-2.  Design a cost allocation mechanism to track Azure costs across the Development and Test, Production, Support Services, and Infrastructure categories.
-
-3.  What tools are available to meet the cost management requirements of the individual business units, the finance team, and the Cloud Governance team? These requirements include setting budgets and alerts for each cost center, creating spending reports and forecasts, and identifying and investigating anomalies. What permissions and configuration are required to enable users to have access to these tools?
+3.  Design a cost allocation mechanism to track Azure costs across the Development and Test, Production, Support Services, and Infrastructure categories.
 
 *Security Baseline*
 
@@ -367,7 +367,7 @@ Directions: With all participants at your table, respond to the following questi
 
 *Resource Consistency*
 
-7.  Identify a solution to restrict which services can be used in each Azure subscription, across the company. How will your solution allow exceptions for approved pilot projects?
+7.  Identify a solution to restrict which services can be used in each Azure subscription, across the company. How will your solution allow exceptions for specific resource types for approved pilot projects or one-off deployments?
 
 8.  How can you prevent accidental deletion of production resources, by administrators who require access to manage those resources?
 
@@ -388,8 +388,7 @@ Directions: With all participants at your table, respond to the following questi
 14. How can the Cloud Governance team track where their best-practices reference implementations are deployed, and manage updates to those deployments?
 
 15. How can the Cloud Governance team prevent best-practice reference implementation deployments from being modified outside of their control?
-
-
+ 
 **Prepare**
 
 Directions: With all participants at your table:
@@ -438,22 +437,22 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 |    |            |
 |----------|:-------------:|
-|Videos on the Azure EA Portal | <https://channel9.msdn.com/blogs/EA.Azure.com>|
-|EA Portal Roles  |  <http://www.redbaronofazure.com/?cat=111>|
-|Azure Policy| <https://docs.microsoft.com/azure/azure-policy/azure-policy-introduction>|
-|Azure Policy Initiatives | https://docs.microsoft.com/azure/azure-policy/azure-policy-introduction\#initiative-definition|
-|Role Based Access Control Configuration|<https://docs.microsoft.com/azure/active-directory/role-based-access-control-configure>|
-|Built in Roles for RBAC  | <https://docs.microsoft.com/azure/active-directory/role-based-access-built-in-roles>|
-|Custom Roles for RBAC| <https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles>|
-|Management Groups   |<https://docs.microsoft.com/azure/azure-resource-manager/management-groups-overview>|
-|Virtual Networks User Defined Routes  | <https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview>|
-|Azure Traffic Manager  | <https://docs.microsoft.com/azure/traffic-manager/>|
-|ExpressRoute FAQ   | <https://azure.microsoft.com/en-us/documentation/articles/expressroute-faqshttps://docs.microsoft.com/azure/expressroute/expressroute-faqs>](https://docs.microsoft.com/azure/expressroute/expressroute-faqs)|
-|SQL Server in Azure Virtual Machines with High Availability  | https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-sql-high-availability-dr?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json|
-|Azure Active Directory B2B collaboration | <https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b>|
-|Azure Cost Management by Cloudyn | <https://docs.microsoft.com/en-us/azure/cost-management/overview>|
-|Azure Security Center | <https://docs.microsoft.com/azure/security-center/security-center-intro>|
-|Auto-shutdown of VMs   |<https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.StartStopVMSolution?tab=Overview>|
+|Azure Governance | https://docs.microsoft.com/azure/governance/ |
+|Azure Enterprise Scaffold | https://docs.microsoft.com/azure/architecture/cloud-adoption/appendix/azure-scaffold |
+|Microsoft Cloud Adoption Framework (CAF)  |  https://docs.microsoft.com/azure/architecture/cloud-adoption/overview  |
+|CAF Large Enterprise journey  |  https://docs.microsoft.com/azure/architecture/cloud-adoption/governance/journeys/large-enterprise/overview  |
+|Azure Policy |  https://docs.microsoft.com/azure/governance/policy/overview |
+|Role Based Access Control Configuration | https://docs.microsoft.com/azure/active-directory/role-based-access-control-configure |
+|Built in Roles for RBAC  | https://docs.microsoft.com/azure/active-directory/role-based-access-built-in-roles |
+|Custom Roles for RBAC| https://docs.microsoft.com/azure/role-based-access-control/custom-roles |
+|Management Groups   | https://docs.microsoft.com/azure/governance/management-groups |
+|Azure Cost Management |  https://docs.microsoft.com/azure/cost-management/overview-cost-mgt  |
+|Azure Cost Management by Cloudyn | https://docs.microsoft.com/azure/cost-management/overview |
+|EA Portal Roles  |   http://www.redbaronofazure.com/?cat=111 |
+|Azure Blueprints | https://docs.microsoft.com/en-us/azure/governance/blueprints/overview |
+|Azure Resource Graph | https://docs.microsoft.com/azure/governance/resource-graph/ |
+|Azure Security Center |  https://docs.microsoft.com/azure/security-center/security-center-intro |
+|Auto-shutdown of VMs   | https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.StartStopVMSolution?tab=Overview |
 
 # Enterprise-ready cloud whiteboard design session trainer guide
 
@@ -497,7 +496,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 -   Have the table participants reconvene with the larger session group to hear the facilitator/SME share the following preferred solution.
 
-##  Preferred target audience
+## Preferred target audience
 
 -   Ken Greenwald, CTO
 -   Laura Knight, head of Cloud Governance team
@@ -509,7 +508,68 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 ### Cost Management <!-- omit in toc -->
 
-1.  **Design:** Design a charge back mechanism for the business units for resources they consume based on the IO code for each application. Assuming your design is based on resource-level tags, how will you implement the following use cases?
+3.  **Design:** What tools are available to meet the cost management requirements of the individual business units, the finance team, and the Cloud Governance team? These requirements include setting budgets and alerts for each cost center, creating spending reports and forecasts, and identifying and investigating anomalies. What permissions and configuration are required to enable users to have access to these tools?
+
+    **Solution:** Azure currently offers two services for cost management. There is a cost management feature integrated into the Azure portal, and there is also the Azure Cost Management (formerly Cloudyn) service, which has its own portal. In addition, EA subscriptions also offer the ability to roll up billing at an account, department or EA level.
+
+    Regardless of which cost management tool is used, the first step is to ensure all Azure subscriptions are organized into an appropriate hierarchy. Costs can then be aggregated at each node in this hierarchy for roll-up reporting. Each of the three tools described uses a separate hierarchy:
+    - Cost management in the Azure portal uses the management group hierarchy.
+    - Azure Cost Management by Cloudyn uses a hierarchy defined within the Cloudyn tool
+    - EA subscriptions are organized into a 4-level hierarchy, comprising the EA (root), departments, accounts, and subscriptions.
+
+    Where multiple cost management tools are used, it will make most sense to mirror the same hierarchy across each tool. We will focus on the management group hierarchy, since this hierarchy is also fundamental to many of the other governance controls Trey will use.
+
+    For Trey Research, the hierarchy will comprise the tenant root management group, followed by a separate management group for each business unit (Electronics, Life Sciences, etc). Under each of these management groups sits another management group for each subunit (Product Development, Marketing, Sales & Support). An additional management group layer is used for the regional subunits within Sales and Support.
+
+    ![A diagram of the Trey Research management group hierarchy. This mirrors their organizational strucuture, with a tenant root group at the top of the tree representing the organization, branching into separate groups for business units and subunits.](images/management-group-hierarchy.png "Trey Research management group hierarchy")
+
+    Under each of these management groups, subscriptions used by each subunit are created, and applications deployed within each subscription. This can be organized in several ways. It is a good idea to group production deployments together, at either the subscription level or by including an additional management group level. Likewise, pre-production deployments and Dev/Test deployments should also be grouped.
+
+    ![A diagram showing a management group for a business subunit, which has sub-groups for production and pre-production. Within these sub-groups, separate subscriptions are used for each application, and for shared services](images/management-groups-and-subscriptions.png "Trey subscription grouping")
+
+    With the subscription hierarchy in place, Trey can now implement cost management.
+
+    *Cost Management in the Azure Portal*
+
+    For most requirements, Trey can use the Azure cost management features that are integrated into the Azure portal. This is available under **All Services > Cost Management + Billing**. This provides:
+
+    -   Cost analysis reports. These allow you to analyze your Azure spend (<https://docs.microsoft.com/en-us/azure/cost-management/quick-acm-cost-analysis#review-costs-in-cost-analysis>). After first defining your date range, you can then view charts of either daily, monthly, or cumulative spend. These charts can be filtered or segmented based on a wide range of criteria, such as resource group, resource type, location, or based on resource tags. This variety of charts and ability to drill down into the data is useful for investigating spending anomalies.
+
+        ![A screenshot of a cost analysis report from the Azure portal](images/cost-analysis.png "Cost analysis report")
+  
+    -   Budgets and Alerts. You can define a budget, and configure alerts when a %age of that budget is spent (<https://docs.microsoft.com/azure/cost-management/tutorial-acm-create-budgets>). Alerts are integrated with action groups, enabling a variety of alert actions (such as email, SMS, or even triggering custom automation).
+
+        ![The Create budget blade displays. Fields include Name, Amount, Resets, Start date, and Expiration date. Alert conditions and recipients are also configured through this blade.](images/create-budget.png "Create budget blade")
+
+    Cost analysis, budgets and alerts can be defined at a variety of scopes, from management groups to subscriptions to individual resource groups (see the cost management features on the respective management group, subscription and resource group blades). Information from cost analysis can also be downloaded through a detailed .csv with any filters or groupings applied to the exported data.
+
+    ![The Download button is visible in the cost analysis blade](images/download-billing.png "Cost analysis download button")
+
+    > **Note:** Users must be assigned the Cost Management Reader role at the appropriate scope to have access to cost analysis reports. These permissions are also included in the Reader, Contributor and Owner roles.
+    >
+    >For EA subscriptions, an Enrollment Administrator must enable "AO view charges" in the Azure EA Portal ([https://ea.azure.com](https://ea.azure.com)) to enable cost views in Azure Cost Management.
+    >
+    > ![View charges for both DA and AO are set to disabled.](images/ea-view-charges.png "View charges settings in the EA portal")
+    >
+    > For further details, see https://docs.microsoft.com/azure/cost-management/assign-access-acm-data.
+
+    *Azure Cost Management by Cloudyn*
+
+    Azure Cost Management by Cloudyn can also be used for cost management reporting and alerting. This offers a richer set of functionality than the Azure portal. However, Cloudyn is gradually being replaced by Azure Cost Management within the Azure portal.
+    
+    To use Cloudyn you must register from the Azure Portal. New Cloudyn registrations are limited to Microsoft CSP partner adminstrators (not applicable to Trey Research, who consume Azure via an Enterprise Agreement). Existing Cloudyn customers can continue to using Cloudyn for a limited time.
+    
+    Once registered, Trey can create a hierarchy of cost entities in Cloudyn representing different business units and the various taxonomy.
+
+       -   Choose appropriate access levels for each subscription in your EA.
+       -   Assign each subscription to the appropriate entity.
+       -   Create users for business units and the finance department.
+
+    Trey can then use Cloudyn for reports, forecasts, alerts, interactive investigation of anomalies, and cost-saving recommendations.
+
+    ![The Actual Cost Over Time stacked bar graph displays bar graphs of cost by service, resource type, sub type, operations, and date time.](images/cloudyn.png "Actual Cost Over Time stacked bar graph")
+
+4.  **Design:** Design a charge back mechanism for the business units for resources they consume based on the IO code for each application. Assuming your design is based on resource-level tags, how will you implement the following use cases?
     - Every resource group must have an 'IOCode' tag
     - Every time a resource is created, it is assigned an 'IOCode' tag with a value matching its resource group
     - Any resource whose 'IOCode' tag is missing or does not match its corresponding resource group tag (for example, after moving the resource between resource groups) can be easily identified. Child resources, for which tags to not apply, are excluded.
@@ -562,7 +622,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     This initiative will then be assigned at an appropriate management group scope (perhaps even the tenant root management group) so the policies are effective across all subscriptions in the organization.
   
-2.  **Design:** Design a cost allocation mechanism to track Azure costs across the Development and Test, Production, Support Services, and Infrastructure categories.
+5.  **Design:** Design a cost allocation mechanism to track Azure costs across the Development and Test, Production, Support Services, and Infrastructure categories.
 
     **Solution:** To enforce a taxonomy that would group resource costs by the following categories, each new subscription would need an ARM policy assigned that enforced resource groups to have a tag with one of the following values assigned:
        -   Tag Name: Environment---Value: Development and Test
@@ -572,41 +632,9 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     This can be done with built in policies, specifically by applying the **Apply tag and its default value** and the **Enforce tag and its value** policies. A new resource group would be created for each environment (Production, Dev, etc.) and these policies would be applied, specifying the tags to assign.
 
-    ![In the Add assignment blade, under Policy, Enforce tag and its value is selected and circled.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image12.png "Add assignment blade")
+    ![In the Add assignment blade, under Policy, Enforce tag and its value is selected and circled.](images/enforce-tag-value.png "Add assignment blade")
 
-    Once resources are tagged, costs can be tracked using the cost management tools described in the following question.
-
-3.  **Design:** What tools are available to meet the cost management requirements of the individual business units, the finance team, and the Cloud Governance team? These requirements include setting budgets and alerts for each cost center, creating spending reports and forecasts, and identifying and investigating anomalies. What permissions and configuration are required to enable users to have access to these tools?
-
-    **Solution:** Azure currently offers two services for cost management. There is a cost management feature integrated into the Azure portal, and there is also the Azure Cost Management (formerly Cloudyn) service, which has its own portal. In addition, EA subscriptions also offer the ability to roll up billing at an account, department or EA level.
-
-    For most requirements, Trey can use the Azure cost management features that are integrated into the Azure portal. This is available under **All Services > Cost Management + Billing**. This provides:
-
-    -   Cost analysis reports. These allow you to analyze your Azure spend (<https://docs.microsoft.com/en-us/azure/cost-management/quick-acm-cost-analysis#review-costs-in-cost-analysis>). After first defining your date range, you can then view charts of either daily, monthly, or cumulative spend. These charts can be filtered or segmented based on a wide range of criteria, such as resource group, resource type, location, or based on resource tags. This variety of charts and ability to drill down into the data is useful for investigating spending anomalies.
-  
-    -   Budgets and Alerts. You can define a budget, and configure alerts when a %age of that budget is spent (<https://docs.microsoft.com/azure/cost-management/tutorial-acm-create-budgets>). Alerts are integrated with action groups, enabling a variety of alert actions (such as email, SMS, or even triggering custom automation).
-
-        ![The Create budget blade displays. Fields include Name, Amount, Resets, Start date, and Expiration date. Alert conditions and recipients are also configured through this blade.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image21.png "Create budget blade")
-
-    Cost analysis, budgets and alerts can be defined at a variety of scopes, from management groups to subscriptions to individual resource groups (see the cost management features on the respective management group, subscription and resource group blades). Information from cost analysis can also be downloaded through a detailed .csv with any filters or groupings applied to the exported data.
-
-    ![The Download button is visible in the cost analysis blade](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image23.png "Cost analysis download button")
-
-    > **Note:** Users must be assigned the Cost Management Reader role at the appropriate scope to have access to cost analysis reports. These permissions are also included in the Reader, Contributor and Owner roles.
-    >
-    >For EA subscriptions, an Enrollment Administrator must enable "AO view charges" in the Azure EA Portal ([https://ea.azure.com](https://ea.azure.com)) to enable cost views in Azure Cost Management.
-    >
-    > ![View charges for both DA and AO are set to disabled.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image11.png "View charges")
-    >
-    > For further details, see https://docs.microsoft.com/azure/cost-management/assign-access-acm-data.
-
-    Azure Cost Management by Cloudyn can also be used for cost management reporting and alerting. This offers a richer set of functionality than the Azure portal. To use Cloudyn you must register from the Azure Portal, and create a hierarchy of cost entities in Cloudyn representing different business units and the various taxonomy.
-
-       -   Choose appropriate access levels for each subscription in your EA.
-       -   Assign each subscription to the appropriate entity.
-       -   Create users for business units and the finance department.
-
-    ![The Actual Cost Over Time stacked bar graph displays bar graphs of cost by service, resource type, sub type, operations, and date time.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image14.png "Actual Cost Over Time stacked bar graph")
+    Once resources are tagged, costs can be tracked using the cost management tools described earlier.
 
 
 ### Security Baseline <!-- omit in toc -->
@@ -704,550 +732,178 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 ### Resource Consistency <!-- omit in toc -->
 
-7.  **Design:** Identify a solution to restrict which services can be used in each Azure subscription, across the company. How will your solution allow exceptions for approved pilot projects?
+7.  **Design:** Identify a solution to restrict which services can be used in each Azure subscription, across the company. How will your solution allow exceptions for specific resource types for approved pilot projects or one-off deployments?
 
-    **Solution:** TODO
+    **Solution:** The Cloud Governance team will use Azure policy to control which Azure resources can be created, and also to grant exceptions.
+    
+    The first policy be the built-in policy **Allowed Resource Types**. They will choose each resource type that is permitted for use, and assign the policy at management group scope for the business units or even the entire organization.
+
+    To permit exceptions, two approaches are possible.
+    
+    The first approach is to define an exception scope for the above 'Allowed Resource Types' policy assignment. The exception scope will typically be a subscription or resource group, but also could be an individual resource. This works well when the exception is a specific resource, for example to allow creation of an ExpressRoute circuit for shared use across the organization, since the exception path includes the resource type. However, where the exception scope is a subscription or resource group, this approach allows resources of **any** type to be created in that scope, which doesn't meet the requirement for controlled exceptions.
+
+    Instead, an alternative approach is to modify the list of resource types in the 'Allowed Resource Types' policy assignment to add the new resource type. The requirement to limit the types of resources is maintained, but in this state the resource can deployed everywhere, which is often not desirable for one-off deployments. To restrict the scope at which these one-off resources can be depoyed, a second built-in policy **Not Allowed Resource Types** is assigned, again at the management group scope, blocking just this new resource type everywhere except on an exception scope defined in this second policy assignment.
+
+    ![A diagram showing two policies. 'Allowed resource types' lists commonly-used resource types plus the 'pilot resource type'. 'Not allowed resource types' also includes the pilot resource type, with an exclusion scope for the permitted pilot deployment](images/policy-pilot.png "Policies for piloting limited use of a new resource type")
+
+    This alternative approach has the advantage of allowing exceptions that are limited both in the scope at which the exception is granted, and in the type of resource permitted.
+
+    Restricting resources on resource type may not suffice. For example, all VMs share the same resource type, but they differ vastly in costs depending on the VM family and size. Likewise, managed disks are all one resource type, but vary hugely in cost based on the storage type and disk size. Additional policies may be required to obtain adequate control over these resource types.
 
 8.  **Design:** How can you prevent accidental deletion of production resources, by administrators who require access to manage those resources?
 
-    **Solution:** TODO
+    **Solution:** There are two ways to prevent accidental resource deletion: resource locks, and blueprints.
+
+    Azure resource locks are used to 'lock' a resource against accidental changes. There are two types of lock: 'Read Only' locks prevent all changes. 'Do Not Delete' locks allow a resource to be modified, but not deleted.
+
+    Azure resource locks can be assigned at the subscription, resource group, or resource level (they cannot be assigned at management group scope). They apply to all resources within that scope. For example, a 'Do not delete' lock on a resource group prevents any resource in that resource group from being deleted, but does not impact resources in other resource groups.
+
+    Any attempt to delete or modify a resource that is subject to a 'Read Only' lock will fail, as will attempts to delete a resource subject to a 'Do Not Delete' lock. The lock must first be removed, then re-created if necessary once the change has been made.
+
+    Creating and deleting resource locks requires dedicated RBAC permissions. These are included in the 'Owner' role, but not the 'Contributor' role. They can be assigned using the 'User Access Administrator' role.
+
+    Another way to prevent accidental resource modification or deletion is to deploy the resources using an Azure blueprint. Each blueprint assignment can optionally lock the blueprint resources. Again, two lock types are supported, 'Do Not Delete' and 'Read Only'. In this case, the **only** way to change or delete the resources is by deploying an updated version of the blueprint. Even the subscription owner cannot override blueprint locks.
+
+    ![A screenshot from the Azure portal showing the lock options when deploying a blueprint. The options are 'Don't lock', 'Do Not Delete', and 'Read Only'.](images/blueprint-lock.png "Blueprint lock options")
 
 9.  **Design:** How can Enterprise IT enforce a company-wide resource naming convention?
 
-    **Solution:** TODO
+    **Solution:** A naming convention can be implementing using Azure Policy to restrict the names of each resource created.
+
+    ```
+    {
+        "if": {
+            "allOf": [
+                {
+                    "field": "type",
+                    "equals": "Microsoft.Compute/virtualMachines"
+                },
+                {
+                    "not": {
+                        "field": "name",
+                        "like": "*-vm"
+                    }
+                }
+            ]
+        },
+        "then": {
+            "effect": "deny"
+        }
+    }
+
+    ```
+
+   The above example shows how to enforce a simple naming constraint on a single resource type---virtual machines. Enterprise IT need to enforce their convention across all their resource types. Implementing this in a single policy requires an impractically-large conditional logic in the policy rule.
+
+   Instead, separate policies should be created for each resource type. These policies should then be combined into a single *policy initiative.* Using a policy initiative allows the entire set of policies to be assigned in a single operation. It also allows new naming rules to be added easily---simply add the new rule to the initiative and it will be applied across all existing assignments.
 
 ### Identity Baseline <!-- omit in toc -->
 
 10. **Design:** How can you delegate access management to business units for each application they own, while protecting other applications and ensuring that controls implemented by the Cloud Governance teams cannot be circumvented?
 
-    **Solution:** TODO
+    **Solution:** This can be achieved using Azure role-based access control (RBAC). Create a group in Azure AD for that business unit, for example, BU1-Azure-Managers, and add those users to the group. Add the Azure AD group to the contributor role and assign that role to the subscription used by the business unit. A similar approach can be used for sub-units or teams within the business unit, assigning the contributor role to either dedicated subscriptions or individual resource groups.
+    
+    Contributors do not have permissions to add or remove users or change policies. They are also unable to move a subscription between management groups. Hence, they cannot override controls defined by the Cloud Governance team.
 
 11. **Design:** How can you ensure staff have access to what they need, but no more, while enforcing that only built-in roles are used. 
 
-    **Solution:** TODO
+    **Solution:** As with the previous question, role-based access control can be used to ensure staff have access to what they need, but no more. Rather than using the general-purpose contributor role, Azure also provides fine-grained roles that grant permission to use specific Azure services. For example, a network engineer may be granted the Network Contributor role, so they can manage network resources only. They might also be granted the Reader role, so they can view, but not modify, the resources using the network.
+
+    To restrict use of RBAC to built-in roles, Azure policy can be used. The following example shows a policy rule which prevents the use of custom roles.
+
+    ```
+    "policyRule": {
+        "if": {
+            "allOf": [
+                {
+                    "field": "type",
+                    "equals": "Microsoft.Authorization/roleDefinitions"
+                },
+                {
+                    "field": "Microsoft.Authorization/roleDefinitions/type",
+                    "equals": "CustomRole"
+                }
+            ]
+        },
+        "then": {
+            "effect": "deny"
+        }
+    }
+    ```
+
 
 12. **Design:** Identify a solution to streamline identity management and provide remote access for e-commerce team contingent staff.
     
-    **Solution:** TODO
+    **Solution:** Using Azure AD, contingent staff can be granted access to Azure resources using their existing Azure AD identity, rather than having to create a new identity in the Trey directory. This simplifies identity management.
+
+    Azure resources are managed via Azure resource manager, which means that can be managed from any Internet-enabled location. Access to the Trey premises or network is not require for resource management.
+
+    Using templates and 'infrastructure as code', it is easy to deploy new Dev and Test environments for contingent staff.
+
+    If network access to an existing Trey deployment is required, this can be implemented using a VPN. This can be either a site-to-site VPN from the contingent staff offices to the Trey virtual network, or individual point-to-site VPNs for each contingent staff team member. Access can be limited as necessary using network security groups.
 
 
 ### Deployment Acceleration <!-- omit in toc -->
 
 13. **Design:** How can Trey implement an 'Infrastructure as Code' approach to deployment automation, while still allowing different footprints in different environments?
 
-    **Solution:** TODO
+    **Solution:** Resource manager templates provide a declarative means to deploy Azure resources. Each template file describes all the resources to be deployed, and Azure takes care of the deployment process. This provides a fully-automated way to deploy entire applications, including all networking, storage, compute and other components.
+
+    Template files can be stored and managed similarly to source code, using a repository. This provides a central archive with version control.
+
+    Each template file can be parameterized. These parameters can be used to control details which vary between each deployment, including the deployment footprint (size and number of VMs, etc). Parameters are specified using parameter files, which are specified together with the template itself at deployment time. These parameter files can also be stored in source control. This allows the same template to be used for different environments, by using a different parameter file to tailor each deployment.
 
 14. **Design:** How can the Cloud Governance team track where their best-practices reference implementations are deployed, and manage updates to those deployments?
 
-    **Solution:** TODO
+    **Solution:** The Cloud Governance team can use Azure blueprints to publish and managed their best-practice reference implementations of common deployments.
+    
+    Azure blueprints build on top of Azure templates. Each blueprint specifies a collection of artifacts to deploy---these can include templates, policy, and role-based access control permissions.
+    
+    Unlike templates, blueprints are stored and managed inside Azure. They are fully versioned, and each deployment is tracked. This allows you to easily identify all deployments of a particular blueprint. The blueprint version for each deployment is also tracked, enabling controlled roll-out of updated versions across deployments.
 
 15. **Design:** How can the Cloud Governance team prevent best-practice reference implementation deployments from being modified outside of their control?
 
-    **Solution:** TODO
-
-
-
-
-
-
-
-
-
-
-
-
-### Subscription organization and chargeback <!-- omit in toc -->
-
-1.  **Design:** Diagram how you would suggest organizing the Azure EA portal for Trey Research to allow access to Azure.
-
-    ![A diagram representing the organization of Azure subscriptions for Trey Research.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image8.png "Azure Subscriptions")
+    **Solution:** Azure blueprints support locking of deployed resources. There are two types of lock: 'Read Only' and 'Do Not Delete'. These locks prevent the deployed resources from being modified except by deploying an updated version of the blueprint.
     
-    **Solution:** Each business unit of Trey Research would have a department created in the Azure EA portal with one or more department administrators and account owners from Enterprise IT assigned. Enterprise IT would own the end-to-end experience of creating subscriptions to ensure that correct policies are in place and stay in place.
+    There are no workarounds or backdoors---even the owner of the subscription in which the blueprint has been deployed cannot override the locks imposed by the blueprint.
 
-2.  **Design:** How can Enterprise IT assign a spending quota to each business unit and monitor spending for each business unit's cost center? What happens if the business unit exceeds their assigned quota?
 
-    **Solution:** Each department should have a budget assigned at the subscription or resource group level in Azure Cost Management (<https://docs.microsoft.com/en-us/azure/cost-management/tutorial-acm-create-budgets>). Budgets in Cost Management help you plan for and drive organizational accountability. With budgets, you can account for the Azure services you consume or subscribe to during a specific period. Notification emails are sent as different percentage levels of the quota are reached.
 
-    ![The Create budget blade displays. Fields include Name, Amount, Resets, Start date, and Expiration date. Alert conditions and recipients are also configured through this blade.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image21.png "Create budget blade")
 
-3.  **Design:** How can individual business units monitor their Azure spending?
 
-    **Solution:** Business Unit owners can use Azure Cost Management [cost analysis](https://docs.microsoft.com/en-us/azure/cost-management/quick-acm-cost-analysis#review-costs-in-cost-analysis) to view aggregated costs and understand where costs occur over time. Accumulated costs can be viewed in monthly, quarterly, yearly filtered views to understand consumption against budgets.
 
-    Business Unit owners can be assigned [Cost Management Reader](https://docs.microsoft.com/en-us/azure/cost-management/quick-acm-cost-analysis#prerequisites) rights at the subscription or resource group level to view the appropriate cost data. 
 
-    ![Cost analysis displays grouped by resource group](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image22.png "Cost analysis grouped by resource group")
-    
-    Note that an Enrollment Administrator must enable "[AO view charges](https://docs.microsoft.com/en-us/azure/cost-management/quick-acm-cost-analysis#prerequisites)" in the Azure EA Portal ([https://ea.azure.com](https://ea.azure.com)) to enable cost views in Azure Cost Management.
 
-    ![View charges for both DA and AO are set to disabled.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image11.png "View charges")
 
-4.  **Design:** Within a business unit, costs for each project should be tracked independently based on the IO code for that specific project. How can per project cost tracking be implemented?
 
-    **Solution:** Each new project should be deployed into one or more resource groups. Create an ARM policy that applies to the resource groups that will append an IO code tag and Cost Center tag to resources as they are created. This allows for reporting at the project-level based on one or more tags (expenses can be grouped by tag).
 
-```
-{
-    "if": {
-        "not": {
-            "anyOf": [
-                {
-                    "source": "action",
-                    "like": "Microsoft.Resources/[ProjectResourceGroup]/*"
-                }
-            ]
-        }
-    },
-    "then": {
-        "effect": "append",
-        "details": [
-            {
-                "field": "tags",
-                "value": {
-                    "ioCode": "[IOCODEVALUE]"
-                }
-            },
-            {
-                "field": "tags",
-                "value": {
-                    "costCenter": "[COSTCENTERVALUE]"
-                }
-            }
-        ]
-    }
-}
-```
 
-   Alternatively, separate subscriptions could be used for each project, and the above ARM policy applied at the subscription level.
-
-5.  **Design:** How could you enforce the cost tracking of cloud deployments within business units, according to the following taxonomies?
-
-       -   Development and Test
-       -   Production
-       -   Support Services
-       -   Infrastructure
-
-    **Solution:** To enforce a taxonomy that would group resource costs by the following categories, each new subscription would need an ARM policy assigned that enforced resource groups to have a tag with one of the following values assigned:
-       -   Tag Name: Environment---Value: Development and Test
-       -   Tag Name: Environment---Value: Production
-       -   Tag Name: Environment---Value: Support Services
-       -   Tag Name: Environment---Value: Infrastructure
-
-    This can be done with built in policies, specifically by applying the **Apply tag and its default value** and the **Enforce tag and its value** policies. A new resource group would be created for each environment (Production, Dev, etc.) and these policies would be applied, specifying the tags to assign.
-
-    ![In the Add assignment blade, under Policy, Enforce tag and its value is selected and circled.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image12.png "Add assignment blade")
-
-    To view cost information grouped by resource group or tags, the user would use Azure Cost Management and review the costs in cost analysis (<https://docs.microsoft.com/en-us/azure/cost-management/quick-acm-cost-analysis#review-costs-in-cost-analysis>). Users assigned the Cost Management Reader role at the subscription or resource group level will have access to cost analysis reports and can create pivots by resource group or tag. Information from cost analysis can also be downloaded through a detailed .csv with any filters or groupings applied to the exported data.
-
-    ![The Download button is visible in the cost analysis blade](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image23.png "Cost analysis download button")
-
-    Azure Cost Management by Cloudyn can be used for cost management reporting and alerting. To do this you must register with Cloudyn from the Azure Portal, and create a hierarchy of cost entities in Cloudyn representing different business units and the various taxonomy.
-
-       -   Choose appropriate access levels for each subscription in your EA.
-       -   Assign each subscription to the appropriate entity.
-       -   Create users for business units and the finance department.
-
-    ![The Actual Cost Over Time stacked bar graph displays bar graphs of cost by service, resource type, sub type, operations, and date time.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image14.png "Actual Cost Over Time stacked bar graph")
-
-6.  **Design:** How can Enterprise IT enforce a company-wide resource naming convention?
-
-    **Solution:** A naming convention can be implementing using Azure Policy to restrict the names of each resource created.
-
-```
-{
-    "if": {
-        "allOf": [
-            {
-                "field": "type",
-                "equals": "Microsoft.Compute/virtualMachines"
-            },
-            {
-                "not": {
-                    "field": "name",
-                    "like": "*-vm"
-                }
-            }
-        ]
-    },
-    "then": {
-        "effect": "deny"
-    }
-}
-
-```
-
-   The above example shows how to enforce a simple naming constraint on a single resource type---virtual machines. Enterprise IT need to enforce their convention across all their resource types. Implementing this in a single policy requires an impractically-large conditional logic in the policy rule.
-
-   Instead, separate policies should be created for each resource type. These policies should then be combined into a single *policy initiative.* Using a policy initiative allows the entire set of policies to be assigned in a single operation. It also allows new naming rules to be added easily---simply add the new rule to the initiative and it will be applied across all existing assignments.
-
-7.  **Design:** How can Enterprise IT minimize per-subscription configuration and centrally audit compliance with their governance rules?
-
-    **Solution:** To minimize subscription-level configuration, subscriptions should be grouped into a management group hierarchy, managed by Enterprise IT. This hierarchy should reflect the business unit structure.
-
-    Enterprise IT should then apply Azure policies used for governance at the appropriate management group level. For example, since the naming convention policy initiative is to be used company wide, it need only be applied once at the tenant root management group. It will then be inherited by all subscriptions in the organization, including new subscriptions without any per-subscription configuration.
-
-    Role and policy assignments could also be bundled into an Azure Blueprint (<https://docs.microsoft.com/en-us/azure/governance/blueprints/overview>). A blueprint is a package or container for composing sets of standards, patterns, and requirements related to the implementation of Azure cloud services, security, and design that can be reused to maintain consistency and compliance. Including role and policy assignments in a blueprint enables the creation of the right pattern during assignment of the blueprint. Blueprint as are saved in a management group.
-
-    ![Trey Research organization management group policy naming convention.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image15.png "Trey Research organization management group")
-
-    Using the Standard policy tier enables Azure to generate a compliance report, showing which resources in the scope of a given policy are out of compliance (do not meet the policy rule condition) of the policy.
-
-       -   In the case of the naming convention policy, since this is applied at the root tenant management group level, this allows Enterprise IT to easily see which resources are not following the naming convention, company-wide.
-       -   In the case of the policy to enforce Environment tags, the policy discussed earlier uses different tag values for different projects, hence the policy is not applied at the root tenant management group level, but instead at the level of individual subscriptions or resource groups. A separate policy should be created to verify that the Environment tag is in place and uses one of the permitted values. This policy can be applied at the root tenant management group level. This will both enforce that all resources in all subscriptions include the Environment (even if a project-level rule is forgotten), and also provide a single compliance audit report. An example policy is given below.
-
-```
-{
-    "if": {
-        "not": {
-            "allOf": [
-                {
-                    "field": "tags",
-                    "containsKey": "Environment"
-                },
-                {
-                    "field": "Environment",
-                    "in": [
-                        "Development and Test",
-                        "Production",
-                        "Support Services",
-                        "Infrastructure"
-                    ]
-                }
-            ]
-        }
-    },
-    "then": {
-        "effect": "audit"
-    }
-}
-
-```
-
-   A similar policy can be used to enforce and audit use of other company-wide tags, such as ioCode.
-
-8.  **Design:** How can Azure help business units minimize wasted spend on non-production VMs left running out-of-hours?
-
-    **Solution:** Azure offers a number of features to minimize wasted spend on non-Production VMs:
-
-       -   For Dev/Test scenarios, Azure Dev/Test Labs enables the full lifecycle of Dev/Test environments to be managed, including hours of use, and policies on the number and size of VMs per user and per lab.
-       -   Each VM can be configured with a time at which it will automatically shut down until restarted. This is available in the management portal when creating the VM, or afterwards. This feature was originally part of Dev/Test Labs and is now available for all VMs.
-       -   The 'Start/Stop VMs during off-hours' offering in the Azure Marketplace also offers the ability to automatically configure when VMs will run. This solution has the advantage that a single configuration can be applied across a subscription (selectively if necessary), rather than being applied to each individual VMs. It also has the ability to schedule VM start time as well as stop time. It could potentially be extended to auto-shutdown VMs based on their Environment tag.
-       -   Azure Advisor monitors your virtual machine usage and can identify low-utilization virtual machines. Virtual machines whose average CPU utilization is 5 percent or less and network usage is 7 MB or less for four or more days are considered low-utilization virtual machines. The CPU utilization rule is configurable and can be set to 5%, 10%, 15%, or 20%. Refer to <https://docs.microsoft.com/en-us/azure/advisor/advisor-get-started#configure-the-average-cpu-utilization-rule-for-the-low-usage-virtual-machine-recommendation>.
-       -   Azure Cost Management (by Cloudyn) offers reports showing VM utilization and recommendations for stopping idle VMs and right-sizing under-utilized VMs.
-
-**Azure EA role descriptions**
-
-- **Enterprise admin:**  Can add other enterprise or department administrators, add departments, add or associate accounts to the enrollment, can view usage and charges data across all accounts and subscriptions, can view the monetary commitment balance associated to the enrollment. There is no limit to the number of enterprise administrators on an enrollment.
-- **Department admin:**  Can edit their department name and cost center, manage department admins, add accounts to their enrollment and their departments, remove accounts from their departments, and view department charges if enabled by the enterprise admin.
-- **Account owner:**  Can add subscriptions to the account, update the service administrator and co-administrator for an individual subscription, view usage data for their account, and view account charges if enabled by the enterprise administrator. The account owner will not have visibility of the monetary commitment balance unless they also have enterprise administrator rights.
-
-**Built-in role descriptions**
-- **Owner:**  Lets you manage everything, including access to resources.
-- **Contributor:**  Lets you manage everything except access to resources.
-- **Reader:**  Lets you view everything, but not make any changes.
-- **Cost Management Contributor:**  Can view costs and manage cost configuration (e.g. budgets, exports)
-- **Cost Management Reader:**  Can view cost data and configuration (e.g. budgets, exports)
-
-### Supported services and delegated access control <!-- omit in toc -->
-
-1.  **Design:** Identify a solution to restrict which services can be created and used in each business unit subscription. Diagram specifically how your solution would be put into place and perform a requirements analysis to determine if there are services needed that Trey Research has not added to their initial list. This solution should allow access to these services by default, but no others.
-
-       -   Virtual machines
-       -   ExpressRoute
-           -   The ExpressRoute circuit(s) will be created and managed by IT. IT wants to ensure that sub-business units should be able to use the circuits, but not create new ones or change the existing circuits.
-       -   VPN gateways
-       -   Storage (standard and premium)
-       -   Virtual networks
-       -   Backup
-       -   Site recovery
-       -   DevTest labs
-       -   Log analytics
-       -   Web App
-       -   SQL Database
-
-    **Solution:** Enterprise IT should apply two Azure Policies. The first will be the built-in policy **Allowed Resource Types**. They will choose each resource type required for the services the customer requires.
-
-    ![Two callouts point to two fields in the Edit assignment blade. The first callout says to click the Allowed resource types field to select allowed resources. The second callout says that the Scope field shows each subscription.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image16.png "Edit assignment blade")
-
-    The second policy will be a custom policy to restrict the creation of ExpressRoute circuits, but allow existing circuits to be linked to virtual networks.
-
-**Service catalog policy to restrict ExpressRoute**
-
-```
-{
-    "if": {
-        "source": "action",
-        "equals": "Microsoft.Network/expressRouteCircuits/write"
-    },
-    "then": {
-        "effect": "deny"
-    }
-}
-
-```
-
-Prior to the addition of Management Groups, it would have been necessary to apply these policies on every subscription in the organization. This is an administrative burden---it can be automated, but this still leaves scopes for non-compliance in case for some reason a subscription is created without the policy being applied.
-
-Management Groups give a better solution. The policies can instead be applied to the tenant root management group. With this single step, the policies are effective across every subscription in the organization, and are also effective on all new subscriptions without any additional steps being taken.
-
-There's one catch---the Enterprise IT team will need a subscription in which to host the ExpressRoute circuits used by the rest of the organization. A policy applied to the root tenant management group preventing creation of ExpressRoute circuits would also block these planned Enterprise IT circuits. Fortunately, Azure supports 'exception paths' when applying policies, for just this situation. When applying the ExpressRoute policy to the tenant root management group, an exception path should be specified, giving the resource group in which Enterprise IT manage the organization's ExpressRoute circuits. Creating ExpressRoute circuits is then blocked across the company, except in this resource group.
-
-Using a central policy in the Tenant root management group has another advantage; by using the Standard Tier of Azure Policy, a centralized report showing organizational compliance with the policy is available.
-
-2.  **Design:** One or more users from the business unit must have the permissions to create resources in the subscription and view all resources. The user should not have the ability to change policies set by Enterprise IT.
-
-    **Solution:** Create a group in Azure AD for that business unit, for example, BU1-Azure-Managers, and add those users to the group. Within the Azure subscription, add the Azure AD group to the contributor role and assign that role to the Resource Group. Contributors do not have permissions to add or remove users or change policies.
-
-3.  **Design:** How would you assign permissions to users and groups?
-
-    **Solution:** Using RBAC, we can assign users and groups permissions, Users can be assigned permissions to manage resources at the management group, subscription, resource group or resource level.
-
-4.  **Design**: How could we use templates to limit features available in Azure?
-
-    **Solution**: Using Azure Resource Manager templates, we can limit various items like location, VM instance etc. It is done by changing the list of allowed values to be chosen from.
-
-5.  **Design**: Could we allow partner organization users to access our corporate applications?
-
-    **Solution**: Using Azure Active Directory B2B collaboration, we can provide access to business partners to our corporate applications using their own credentials and as users are removed from their partner directory, their access to our corporate applications is removed.
-
-6.  **Design:** For each project in Azure, the business unit administrator must have permissions to add or remove users, allow them to create resources, or even apply additional policies. Provide some pseudo code that would be needed to accomplish the task.
-
-    **Solution:** For projects that require elevated permissions, the Enterprise IT team would need to be involved to create the subscription or resource group for the project and add the business unit administrator to the owner role of the new subscription or resource group.
-
-```
- $rgName = "BUProjectName"
-
- $region = "West US"
-
- $userToAdd = "[user from AD]"
-
- $rg = New-AzureRmResourceGroup -Name $rgName -Location $region
-
- New-AzureRmRoleAssignment -ResourceGroupName $resourceGroup `
-  -RoleDefinitionName "Owner" `
-  -SignInName $userToAdd
-
-```
-
-### Connectivity <!-- omit in toc -->
-
-1.  **Design:** Diagram at a high level how an ExpressRoute deployment for Trey Research should be configured for high availability.
-
-    **Solution:** Each major site location would be peered to the closest peering location. ExpressRoute Premium would be enabled to ensure that virtual networks on different continents could connect. 
-
-    An alternative to ExpressRoute Premium global connectivity would be ExpressRoute Global Reach (<https://docs.microsoft.com/en-us/azure/expressroute/expressroute-global-reach>). ExpressRoute Global Reach can be used to link ExpressRoute circuits together to make a link between on-premises networks.
-    
-    Each virtual network could also be configured with a site-to-site VPN connection back to the primary data center to ensure connectivity during a short-term outage with their ExpressRoute circuit. Each virtual network would be linked to multiple circuits for additional redundancy. 
-    
-    Note: ExpressRoute gateway and VPN gateway coexist on gateway subnet, we recommend that you create a gateway subnet of /27 or larger (/27, /26, /25 etc.). You must create the ExpressRoute gateway first before you add the Site-to-Site VPN gateway. For more information, please refer to <https://docs.microsoft.com/en-us/azure/expressroute/expressroute-howto-coexist-classic>. ExpressRoute gateway can link up to 4 ExpressRoute circuit from different ExpressRoute Meetme location. For route optimization, please refer to <https://docs.microsoft.com/en-us/azure/expressroute/expressroute-optimize-routing>.
-
-    ExpressRoute and VPN gateways can also be deployed in Azure Availability Zones for additional resiliency. Refer to <https://docs.microsoft.com/en-us/azure/vpn-gateway/create-zone-redundant-vnet-gateway>.
-
-2.  **Design:** Walk through the steps that Trey Research would have to perform to enable other subscriptions to use ExpressRoute.
-
-    **Solution:** The Enterprise IT group that provisions the ExpressRoute circuit(s) would have to create an authorization key, and the users in the delegated subscriptions would link to that subscription using an authorization key.
-
-```
- $circuit = Get-AzureRmExpressRouteCircuit -Name "MyCircuit" -ResourceGroupName "MyRG"
-
- Add-AzureRmExpressRouteCircuitAuthorization -ExpressRouteCircuit $circuit `
-     -Name "MyAuthorization1"
-
- Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $circuit
-
- $auth1 = Get-AzureRmExpressRouteCircuitAuthorization -ExpressRouteCircuit $circuit `
-     -Name "MyAuthorization1"
-
-```
-
-The output of the authorization will have the Authorization Key that can be shared by consumers of the circuit.
-
-```
- Name : MyAuthorization1
-
- Id : /subscriptions/&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&/resourceGroups/ERCrossSubTestRG/providers/Microsoft.Network/expressRouteCircuits/CrossSubTest/authorizations/MyAuthorization1
-
- Etag : &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-
- AuthorizationKey : ####################################
-
- AuthorizationUseStatus : Available
-
- ProvisioningState : Succeeded
-
-```
-  
-
-Code a user in a subscription would use to link a new virtual network to the circuit.
-
-```
-
- $id = "/subscriptions/********************************/resourceGroups/ERCrossSubTestRG/providers/Microsoft.Network/expressRouteCircuits/MyCircuit"
-
- $connection = New-AzureRmVirtualNetworkGatewayConnection -Name "ERConnection" `
-     -ResourceGroupName "RemoteResourceGroup" `
-     -Location "East US" `
-     -VirtualNetworkGateway1 $gw `
-     -PeerId $id `
-     -ConnectionType ExpressRoute `
-     -AuthorizationKey "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
-
-```
-
-3.  **Design:** From the security perspective, how could Trey Research deploy firewalls to protect their network after ExpressRoute is deployed? What network features are required and where would the firewalls be deployed? Diagram your solution.
-
-    **Solution:** Firewalls should be deployed within the virtual networks by deploying them as virtual machines behind the internal load balancer or Trey Research could deploy Azure Firewall. Azure Firewall is a managed, cloud-based network security service that protects the resources in Azure Virtual Networks. It is a fully stateful firewall as a service with built-in high availability and unrestricted cloud scalability. Refer to <https://docs.microsoft.com/en-us/azure/firewall/overview> for a list of features and configuration instructions.
-
-    ![High-level diagram of Azure Firewall](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image24.png "Azure Firewall diagram")
-    
-    User defined routes would then be configured to route outbound traffic of the virtual network through the firewall and incoming traffic to the virtual network. For more information about network virtual appliance high availability design, please refer to <https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/dmz/nva-ha>. 
-
-4.  **Design:** For branch office sites that do not connect back to the WAN, how could they connect to Azure?
-
-    **Solution:** Enabling site-to-site connections to the Azure virtual networks would allow connectivity without direct access to a link on the WAN. Please make sure Azure VPN IPSec capability is enough for customer branch office. We support up to 30 sites per VPN gateway. If you have more than 30, please consider a commercial solution from Azure Marketplace.
-
-     ![This High-level connectivity plan diagram encompasses all of the previously mentioned solutions.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image17.png "High-level connectivity plan diagram")
-
-     An alternative to Site-to-Site connections would be Azure Virtual WAN. Azure Virtual WAN is a networking service that provides optimized and automated branch-to-branch connectivity through Azure with site-to-site, ExpressRoute, and point-to-site connectivity options. Azure Virtual WAN allows for up to 1000 connections in a single hub. Refer to <https://docs.microsoft.com/en-us/azure/virtual-wan/virtual-wan-about> for more information.
-
-     ![High-level diagram of Azure Virtual WAN Site-to-Site](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image25.png "Azure Virtual WAN diagram")
-
-### Availability <!-- omit in toc -->
-
-1.  **Design:** Evaluate the list of proposed regions and provide guidance on what policies are in place by Microsoft to help customers design a geo-redundant solution.
-
-    **Proposed regions:**
-
-       -   Primary: East United States, Failover: South Central United States
-       -   Primary: West Europe, Failover: North Europe
-       -   Primary: Japan West, Failover Japan East
-
-    **Solution:** Instead of deploying in South Central United States and East United States, Trey Research should use East and West United States because they are paired regions and East United States and South Central United States are not.
-
-       -   Paired region benefits:
-
-           -   Physical Isolation---When possible, Azure prefers at least 300 miles of separation between datacenters in a regional pair, although it is not practical or possible in all geographies. Physical datacenter separation reduces the likelihood of natural disasters, civil unrest, power outages, or physical network outages affecting both regions at once. Isolation is subject to the constraints within the geography (geography size, power/network infrastructure availability, regulations, etc.).
-
-           -   Platform provided replication---Some services such as Geo-Redundant Storage provide automatic replication to the paired region.
-
-           -   Region recovery order---In the event of a broad outage, recovery of one region is prioritized out of every pair. Applications that are deployed across paired regions are guaranteed to have one of the regions recovered with priority. If an application is deployed across regions that are not paired, recovery may be delayed---in the worst case the chosen regions may be the last two to be recovered.
-
-           -   Sequential updates---Planned Azure system updates are rolled out to paired regions sequentially (not at the same time) to minimize downtime from the effect of bugs, and logical failures in the rare event of a bad update.
-
-           -   Data residency---A region resides within the same geography as its pair (with the exception of Brazil South) in order to meet data residency requirements for tax and law enforcement jurisdiction purposes.
-
-2.  **Design:** Explain how Trey Research could restrict services to just the supported regions.
-
-    **Solution:** Deploy the built-in policy **Allowed locations** to restrict the regions on which the services can be deployed to.
-
-3.  **Design:** Diagram at a high level what a geo-redundant solution would look like for a public facing web application with a backend that uses SQL Server. What about a private facing web application?
-
-    **Solution:** For geo-redundant solutions, Traffic Manager should be considered. Traffic Manager can only test and return public endpoints for traffic distribution. For workloads that should only be exposed privately, they would need to be adapted to listen on a public IP with traffic locked down using NSGs. Alternatively, they could use an internal DNS solution such as SCOM to monitor and update DNS records.
-
-4.  **Design:** For workloads within the same region how could they ensure their virtual machines are available in the event of a physical server failure or a host update?
-
-    **Solution:** Virtual machines that perform the same role (multiple web servers, SQL Servers, Active Directory Domain Controllers, etc.) should be grouped into an availability set. Availability sets distribute virtual machines across multiple physical racks for redundancy and allow the host machines your virtual machines execute on to be updated in a rolling manner instead of all at once. Availability sets offer an SLA of 99.95%.
-
-    To increase the resiliency of virtual machines and their SLA, you could use Availability Zones in select Azure regions. Where Availability Sets increase resiliency within a single datacenter, Availability Zones increase resiliency by hosting your virtual machines in separate datacenters within a single region. Availability Zones are unique physical locations within an Azure region. Each zone is made up of one or more datacenters equipped with independent power, cooling, and networking. To ensure resiliency, there’s a minimum of three separate zones in all enabled regions. By using Availability Zones, the SLA for VM uptime is 99.99%. Refer to <https://docs.microsoft.com/en-us/azure/availability-zones/az-overview>.
-
-    ![This Geo-redundant solutions Availability diagram begins with Traffic Manager Priority Mode. Two arrows point from there, to West US, and East US. West US has an Availability set (Web Tier), and SQL AO Secondary. East US has an Availability set (Web Tier), and SQL AO Primary. Under these two is a banner reading \"Paired Regions.\"](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image18.png "Geo-redundant solutions Availability diagram")
-
-### Security and accident protection <!-- omit in toc -->
-
-1.  **Design:** What would you recommend to Trey Research on how to mitigate accidentally deleting production workloads? If that were to happen what would the proper procedure be to identify who deleted the resource?
-
-    **Solution:** Use Azure Resource Manager locks to add a secondary layer of protection on production workloads. Locks can set in two modes:
-
-       -   **CanNotDelete** means authorized users can still read and modify a resource, but they cannot delete it.
-
-       -   **ReadOnly** means authorized users can read from a resource, but they cannot delete it or perform any actions on it. The permission on the resource is restricted to the reader role. Applying ReadOnly can lead to unexpected results because some operations that seem like read operations actually require additional actions. For example, placing a ReadOnly lock on a storage account will prevent all users from listing the keys. The list keys operation is handled through a POST request because the returned keys are available for write operations. For another example, placing a ReadOnly lock on an App Service resource will prevent Visual Studio's Server Explorer from being able to display files for the resource because that interaction requires write access.
-
-    To identify who deleted the resource, look at the audit logs for the subscription.![In the Azure Resource Manager, Monitor - Activity log, query requirements and query results display.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image19.png "Azure Resource Manager")
-
-    In addition to monitoring the activity logs manually, an active log alert can also be created. Activity log alerts are alerts that are activated when a new log event happens that matches one or more conditions specified in the alert. You can use activity log alerts to be notified via email, SMS, webhook, and even push notifications through the Azure mobile app. Refer to <https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-activity-log-alerts> for information on configuring activity log alerts.
-
-2.  **Design:** How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even in the event that the security perimeter is compromised?
-
-    **Solution:** Use Azure Security Center to help secure VMs. In particular:
-
-       -   Azure Security Center allows you to centrally configure policy settings to define the security requirements of your organization. It then performs continuous security assessment of all VMs against that security policy, and provides actionable recommendations to remediate security vulnerabilities.
-
-       -   Using the Standard SKU of Azure Security Center in addition allows you to enable [adaptive application controls](https://docs.microsoft.com/azure/security-center/security-center-adaptive-application). These provide a means to block attempts to run malicious applications by maintaining whitelists of permitted executables. This feature can be applied selectively, for example only to Production and Pre-Production resource groups.
-
-    >**Note**: Just-In-Time (JIT) is another powerful Azure Security Center feature, allowing VM remote management ports to be closed by default and opened only when needed and under appropriate RBAC permissions. However, since Trey will be using ExpressRoute to connect their on-premises network with Azure, using JIT is not required (JIT only works on Internet-facing endpoints).
-
-*E-commerce*
-
-1.  **Design:** Identify a solution to provide access to a development environment that would be suitable for contingent staff for the e-commerce team. Describe the steps needed to implement this solution that addresses the customer's need of speeding up onboarding, allowing remote development, and controlling access specifically to only allow users to access resources on the ECommerceDev subnet.
-
-    **Solution:** To address this issue, IT could create multiple DevTests lab environments for e-commerce developers and contingent staff brought in to use the solution. Each lab environment would be used by developers and staff in the same time zones.
-
-    -   Create a preconfigured image with supported operating systems and common tools.
-
-    -   Create artifacts that can be added to the virtual machine at provision time that are specific to different teams of developers.
-
-    -   Apply a network security group to the ECommerceDev lab subnet that restricts outbound traffic to just the subnet.
-
-    -   Configure the DevTestLabs lab to have access to the ECommerceDev lab subnet.
-
-    -   Leverage Point-to-Site VPN connectivity to allow remote developers a secure way to work and reduce the need to bring remote resources onsite.
-
-    -   Create a user in the DevTestLabs role for the lab environment. This role has a limited set of permissions designed to use the virtual machines assigned to the lab.
-
-    ![Screenshot of a DevTestLabs lab environment.](images/Whiteboarddesignsessiontrainerguide-Enterprise-readycloudimages/media/image20.png "DevTestLabs lab environment")
-
-
-2.  **Design:** What cost control options would you propose to put in place to optimize this environment?
-
-    **Solution:** DevTest labs also offers these additional features that the creator of the DevTest lab could use to optimize cost:
-
-       -   Enable auto start and auto shutdown based on the time zone of the developers. Setting this policy could optimize cost by shutting down virtual machines when not in use.
-
-       -   The e-commerce could also limit the following when creating the sandbox depending on the needs of that team.
-
-           -   Limit the number of virtual machines in the lab.
-
-           -   Limit the virtual machine sizes available.
-
-           -   Limit the number of virtual machines per user.
 
 ## Checklist of preferred objection handling
 
-**Objection:** We need the ability to split our Azure bill by business unit, per project tracking, and even workload classification. Can Azure support this requirement? How can we analyze our bill for cost optimization and charge back?
+**Objection:** Per-subscription configuration won't scale to an organization the size of Trey Research. How can governance controls be implemented with minimum per-subscription configuration overhead?
 
-**Answer:** The Azure EA Portal allows a company to split their Azure usage up by departments (business units) and view consumption information at that level.
+**Answer:** Azure subscriptions should be grouped into a management group hierarchy. The root of this hierarchy is the tenant root management group. Under this root, a tree of managemnet groups can be implemented to represent the business units and subunits within the organization. Each Azure subscription is then assigned to a management group node within this tree.
 
-For more detailed consumption information, including the ability to track consumption against budgets, Azure Cost Management can be configured.
+Many Azure governance controls be assigned at the management group scope, which means they apply across all subscriptions under that management group node. This enables a single configuration to apply consistently and reliably across a large number of subscriptions.  Supported controls include Azure policy and Azure role-based access control. In addition, Azure Advisor, Security Center, and Activity Logs all support management group views.
 
-For per-project tracking, an ARM policy can automatically append an IO code to all resources created for the project. The Azure bill can roll up costs by the IO code.
 
-Tags can also be used to associate a resource with a workload classification (like testing, production, or however they want to classify).
+**Objection:** As well as implementing our governance rules on how Azure is used, we need a way to audit that no deployments have been made that bypass those rules. This audit needs to scale across the entire organization.
 
-**Objection:** As well as implementing our governance rules on how Azure is used, we need a way to audit that no deployments have been made that bypass those roles.
+**Answer:** Implement governance rules using Azure Policy, and assign those Policies at the root tenant management group scope. This ensures the policy is applied across all subscriptions within the organization.
 
-**Answer:** Implement governance rules using Azure Policy, and assign those Policies at the root tenant management group scope using the 'Standard' Azure Policy pricing tier. This ensures the policy is applied across all subscriptions within the organization, and enables an organization-wide compliance report.
+As well as controlling resource deployments, Azure policy provides compliance reports to identify any out-of-policy resource. Deploying the policy at the tenant root management group scope provides a single reports for all resources in the organization. If more fine-grained reporting is required, this can be achieved by deploying the policy at the appropriate scope.
 
-**Objection:** Security is important to us. We have evaluated Network Security Groups and our security team does not feel they offer the same level of security that we use without on-premises firewall-based solutions, such as intrusion and malware detection.
 
-**Answer:** There are many third-party advanced firewall solutions available through the Azure Marketplace. Many support a bring your own license (BYOL) model where existing customers can reuse their licenses in Azure. They also support a pay-as-you go model for customers that want to pay as they use the product. For customers that do not want to deploy a network virtual appliance, there is also Azure Firewall, a cloud-managed stateful firewall that can be used to protect resources in your virtual networks.
-
-**Objection:** Delegating control to business units is incredibly important to Trey Research. At our scale, a single team cannot possibly manage all of the needs of the business. Corporate IT requires the ability to set policy at the enterprise level and still needs a detailed level of control. How can Azure address these needs?
-
-**Answer:** At the enterprise level, IT can set policies and add users and groups as a subscription is created so when the subscription is handed off to the teams within each business unit they are setup per IT specs.
-
-With role-based access control, IT can allow access at varying levels for the business units, whether it is just allowing contingent developers access to a development environment, or it is allowing administrators full access to a subscription (excluding changing policy and access controls).
-
-**Objection:** Trey Research currently monitors their on-premises workloads using SCOM. A small business unit experimented with running virtual machines in AWS and the monitoring team was not thrilled with a completely different system for monitoring for availability. Does Azure have the same problem?
-
-**Answer:** There are multiple potential solutions to this problem. First, the virtual machines in Azure could be monitored the same way using the SCOM agent. Data would flow over the ExpressRoute connection. Another option would be to explore Azure Log Analytics. This service would allow you to monitor servers on-premises and in Azure, and any VMs in another cloud (like AWS). When using Log Analytics for Onsite VMs or VMs in other clouds, an agent would need to be installed using the KEYs found in the Azure portal. It would allow for their data to be sent to the Log Analytics workspace in Azure.
-
-**Objection:** How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even in the event that the security perimeter is compromised?
+**Objection:** How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even if the security perimeter is compromised?
 
 **Answer:** Azure Security Center allows you to define your VM security policy, monitor compliance, and receive actionable recommendations on how to implement Azure security best practices. Adaptive Application Controls, available in the Azure Security Center Standard pricing tier, enable you to control whitelists of which executables can run in your Production environments.
+
 
 **Objection:** How can Azure help control the costs associated with non-Production VMs left running out-of-hours?
 
 **Answer:** DevTest labs, auto-VM shutdown, and the start-stop VM marketplace solution, all offer the ability to automatically shut down VMs. Azure Cost Management (by Cloudyn) provides additional reports to identify idle VMs and to right-size underutilized VMs.
+
 
 ## Customer quote (to be read back to the attendees at the end)
 
