@@ -508,7 +508,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 ### Cost Management <!-- omit in toc -->
 
-3.  **Design:** What tools are available to meet the cost management requirements of the individual business units, the finance team, and the Cloud Governance team? These requirements include setting budgets and alerts for each cost center, creating spending reports and forecasts, and identifying and investigating anomalies. What permissions and configuration are required to enable users to have access to these tools?
+1.  **Design:** What tools are available to meet the cost management requirements of the individual business units, the finance team, and the Cloud Governance team? These requirements include setting budgets and alerts for each cost center, creating spending reports and forecasts, and identifying and investigating anomalies. What permissions and configuration are required to enable users to have access to these tools?
 
     **Solution:** Azure currently offers two services for cost management. There is a cost management feature integrated into the Azure portal, and there is also the Azure Cost Management (formerly Cloudyn) service, which has its own portal. In addition, EA subscriptions also offer the ability to roll up billing at an account, department or EA level.
 
@@ -569,7 +569,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     ![The Actual Cost Over Time stacked bar graph displays bar graphs of cost by service, resource type, sub type, operations, and date time.](images/cloudyn.png "Actual Cost Over Time stacked bar graph")
 
-4.  **Design:** Design a charge back mechanism for the business units for resources they consume based on the IO code for each application. Assuming your design is based on resource-level tags, how will you implement the following use cases?
+2.  **Design:** Design a charge back mechanism for the business units for resources they consume based on the IO code for each application. Assuming your design is based on resource-level tags, how will you implement the following use cases?
     - Every resource group must have an 'IOCode' tag
     - Every time a resource is created, it is assigned an 'IOCode' tag with a value matching its resource group
     - Any resource whose 'IOCode' tag is missing or does not match its corresponding resource group tag (for example, after moving the resource between resource groups) can be easily identified. Child resources, for which tags to not apply, are excluded.
@@ -622,7 +622,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     This initiative will then be assigned at an appropriate management group scope (perhaps even the tenant root management group) so the policies are effective across all subscriptions in the organization.
   
-5.  **Design:** Design a cost allocation mechanism to track Azure costs across the Development and Test, Production, Support Services, and Infrastructure categories.
+3.  **Design:** Design a cost allocation mechanism to track Azure costs across the Development and Test, Production, Support Services, and Infrastructure categories.
 
     **Solution:** To enforce a taxonomy that would group resource costs by the following categories, each new subscription would need an ARM policy assigned that enforced resource groups to have a tag with one of the following values assigned:
        -   Tag Name: Environment---Value: Development and Test
@@ -661,7 +661,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 5.  **Design:** How can you ensure that both Windows and Linux VMs meet password complexity requirements?
    
-    **Solution:** Azure policy guest configuration allows Azure policy to be used to audit settings with an Azure VM (Windows and Linux). It can be used to audit and deploy application settings and installed software. It can also be used to enforce password age and complexity rules. A variety of built-in policy definitions are available. THe built-in policy initiative **\[Preview\]: Audit VMs with insecure password security settings** contains a default collection of password policy definitions for both Windows and Linux VMs.
+    **Solution:** Azure policy guest configuration allows Azure policy to be used to audit settings with an Azure VM (Windows and Linux). It can be used to audit and deploy application settings and installed software. It can also be used to enforce password age and complexity rules. A variety of built-in policy definitions are available. The built-in policy initiative **\[Preview\]: Audit VMs with insecure password security settings** contains a default collection of password policy definitions for both Windows and Linux VMs.
 
     ![Screenshot showing the policy definitions in the '\[Preview\]: Audit VMs with insecure password security settings' policy initiative](images/password-policy.png "Password policy for guest VMs")
 
@@ -742,7 +742,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
     
     The first approach is to define an exception scope for the above 'Allowed Resource Types' policy assignment. The exception scope will typically be a subscription or resource group, but also could be an individual resource. This works well when the exception is a specific resource, for example to allow creation of an ExpressRoute circuit for shared use across the organization, since the exception path includes the resource type. However, where the exception scope is a subscription or resource group, this approach allows resources of **any** type to be created in that scope, which doesn't meet the requirement for controlled exceptions.
 
-    Instead, an alternative approach is to modify the list of resource types in the 'Allowed Resource Types' policy assignment to add the new resource type. The requirement to limit the types of resources is maintained, but in this state the resource can deployed everywhere, which is often not desirable for one-off deployments. To restrict the scope at which these one-off resources can be depoyed, a second built-in policy **Not Allowed Resource Types** is assigned, again at the management group scope, blocking just this new resource type everywhere except on an exception scope defined in this second policy assignment.
+    Instead, an alternative approach is to modify the list of resource types in the 'Allowed Resource Types' policy assignment to add the new resource type. The requirement to limit the types of resources is maintained, but in this state the resource can deployed everywhere, which is often not desirable for one-off deployments. To restrict the scope at which these one-off resources can be deployed, a second built-in policy **Not Allowed Resource Types** is assigned, again at the management group scope, blocking just this new resource type everywhere except on an exception scope defined in this second policy assignment.
 
     ![A diagram showing two policies. 'Allowed resource types' lists commonly-used resource types plus the 'pilot resource type'. 'Not allowed resource types' also includes the pilot resource type, with an exclusion scope for the permitted pilot deployment](images/policy-pilot.png "Policies for piloting limited use of a new resource type")
 
@@ -868,17 +868,6 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
     There are no workarounds or backdoors---even the owner of the subscription in which the blueprint has been deployed cannot override the locks imposed by the blueprint.
 
 
-
-
-
-
-
-
-
-
-
-
-
 ## Checklist of preferred objection handling
 
 **Objection:** Per-subscription configuration won't scale to an organization the size of Trey Research. How can governance controls be implemented with minimum per-subscription configuration overhead?
@@ -902,7 +891,9 @@ As well as controlling resource deployments, Azure policy provides compliance re
 
 **Objection:** How can Azure help control the costs associated with non-Production VMs left running out-of-hours?
 
-**Answer:** DevTest labs, auto-VM shutdown, and the start-stop VM marketplace solution, all offer the ability to automatically shut down VMs. Azure Cost Management (by Cloudyn) provides additional reports to identify idle VMs and to right-size underutilized VMs.
+**Answer:** DevTest labs, auto-VM shutdown, and the start-stop VM marketplace solution, all offer the ability to automatically shut down VMs.
+
+Azure Advisor and Azure Cost Management (by Cloudyn) provides additional reports to identify idle VMs and to right-size underutilized VMs.
 
 
 ## Customer quote (to be read back to the attendees at the end)
