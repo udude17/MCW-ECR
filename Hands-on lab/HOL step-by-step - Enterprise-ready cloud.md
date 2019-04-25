@@ -1435,6 +1435,8 @@ In this task you will explore the compliance features of Azure Policy by working
 
     It is often on the order of the less than 20-30 minutes for evaluation and when the next check occurs the storage account that was moved earlier will be flagged as non-compliant, because while the tag names for the child resources in the *MarketingRG* for *CostCenter* and *IOCode* are present, their values on the the storage account do not match the parent the values of the tags on the parent resource group.
 
+    ![A screenshot of the Resource compliance blade in the Azure Portal for the Governance Baseline Initiative and the Audit tag and its value from the resource group policy.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image160.png "Resource compliance")
+
 ## After the hands-on lab 
 
 Duration: 10 minutes
@@ -1443,7 +1445,13 @@ After completing the hands-on lab, you will remove the policies on your subscrip
 
 ### Task 1: Remove resources and configuration created during this lab
 
+You should follow all steps provided *after* attending the Hands-on lab.
+
 1. Log in to the Azure portal.
+
+5. Navigate to the **Blueprints** blade. 
+
+6. Remove any blueprint assignments and any blueprints created during this lab.
 
 2. Navigate to the **Policy** blade.
 
@@ -1451,20 +1459,16 @@ After completing the hands-on lab, you will remove the policies on your subscrip
 
 4. Select **Definitions**, and delete any policy definitions or initiative definitions created during this lab.
 
-5. Navigate to the **Blueprints** blade. 
+5. Navigate to the **Management Groups** blade.
 
-6. Remove any blueprint assignments and any blueprints created during this lab.
+6. Remove any Management Groups crated during this lab.
 
-7. Navigate to the **Management Groups** blade.
+7. Navigate to the **Resource Groups** blade.
 
-8. Remove any Management Groups crated during this lab.
+8.  Remove any resource groups created during this lab. 
+   
+   > **Note**: This will also delete any resources in those resource groups.
 
-9. Navigate to the **Resource Groups** blade.
+9.  Navigate to the **Azure Active Directory** blade.
 
-10. Remove any resource groups created during this lab. This will also delete any resources in those resource groups.
-
-11. Navigate to the **Azure Active Directory** blade.
-
-12. Remove any users and groups created during this lab.
-
-You should follow all steps provided *after* attending the Hands-on lab.
+10. Remove any users and groups created during this lab.
