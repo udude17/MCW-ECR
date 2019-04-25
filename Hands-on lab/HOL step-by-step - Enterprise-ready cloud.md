@@ -44,14 +44,14 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Task 1: Create groups in Azure AD for delegation](#task-1-create-groups-in-azure-ad-for-delegation)
     - [Task 2: Create user accounts in Azure AD for delegation](#task-2-create-user-accounts-in-azure-ad-for-delegation)
     - [Task 3: Enable a business unit administrator for the subscription](#task-3-enable-a-business-unit-administrator-for-the-subscription)
-    - [Task 4: Enable project-based delegation and chargeback](#task-4-enable-project-based-delegation-and-chargeback)
-  - [Exercise 3: Create the environment for the E-commerce team](#exercise-3-create-the-environment-for-the-e-commerce-team)
+    - [Task 4: Enable project-based delegation and chargeback with tags](#task-4-enable-project-based-delegation-and-chargeback-with-tags)
+  - [Exercise 3: Use Azure Blueprints to govern your Azure environment](#exercise-3-use-azure-blueprints-to-govern-your-azure-environment)
     - [Help references](#help-references-2)
-    - [Task 1: Create a new virtual network](#task-1-create-a-new-virtual-network)
-    - [Task 2: Configure secure VPN for connectivity](#task-2-configure-secure-vpn-for-connectivity)
-    - [Task 3: Create an Azure DevTest lab environment](#task-3-create-an-azure-devtest-lab-environment)
-    - [Task 4: Test access to the DevTest labs environment](#task-4-test-access-to-the-devtest-labs-environment)
-    - [Task 5: Finish configuring secure connectivity](#task-5-finish-configuring-secure-connectivity)
+    - [Task 1: Create a new Azure Blueprint](#task-1-create-a-new-azure-blueprint)
+    - [Task 2: Publish a draft blueprint and assign it](#task-2-publish-a-draft-blueprint-and-assign-it)
+    - [Task 3: Update the Service catalog policy to allow blueprint assignments](#task-3-update-the-service-catalog-policy-to-allow-blueprint-assignments)
+    - [Task 4: Assign a blueprint](#task-4-assign-a-blueprint)
+    - [Task 5: Verify blueprint policy and resource creation](#task-5-verify-blueprint-policy-and-resource-creation)
   - [After the hands-on lab](#after-the-hands-on-lab)
     - [Task 1: Remove resources and configuration created during this lab](#task-1-remove-resources-and-configuration-created-during-this-lab)
 
@@ -91,8 +91,10 @@ In this exercise, you will first create a Management Group for your Azure subscr
 
 |    |            |
 |----------|:-------------:|
-| Azure Policy  | <https://docs.microsoft.com/azure/azure-policy/azure-policy-introduction>|
-| Azure Management Groups | <https://docs.microsoft.com/azure/azure-resource-manager/management-groups-overview>|
+| Governance in the Microsoft CAF for Azure | https://docs.microsoft.com/azure/architecture/cloud-adoption/governance/overview |
+| The Five Disciplines of Cloud Governance | https://docs.microsoft.com/azure/architecture/cloud-adoption/governance/governance-disciplines |
+| Azure Policy | <https://docs.microsoft.com/azure/azure-policy/azure-policy-introduction> |
+| Azure Management Groups | <https://docs.microsoft.com/azure/azure-resource-manager/management-groups-overview> |
 
 ### Task 1: Create a Management Group
 
@@ -594,7 +596,7 @@ In this task, you will use the Azure management portal to validate each of the p
 
 Duration: 60 minutes
 
-In this exercise, you will configure delegated permissions for users in the Trey Research business unit. You will extend a PowerShell script to automatically provision a limited access user with the configuration of the subscription.
+In this exercise, you will configure delegated permissions for users in the Trey Research business unit. You will use the Azure AD Graph commands in the Azure CLI to work with users and groups and you will extend a PowerShell script to automatically provision a limited access user with the configuration of the subscription.
 
 ### Help references
 
@@ -605,68 +607,67 @@ In this exercise, you will configure delegated permissions for users in the Trey
 | Managing Azure AD Security Groups | <https://docs.microsoft.com/azure/active-directory/active-directory-groups-create-azure-portal> |
 | Role Based Access Control  | <https://docs.microsoft.com/azure/active-directory/role-based-access-control-configure> |
 | Manage RBAC with PowerShell | <https://docs.microsoft.com/azure/active-directory/role-based-access-control-manage-access-powershell> |
-
+| Manage Azure Active Directory Graph entities needed for RBAC | <https://docs.microsoft.com/cli/azure/ad?view=azure-cli-latest> |
 
 ### Task 1: Create groups in Azure AD for delegation 
 
-In this task, you will create two groups in Azure AD that you will use for testing delegated access control. You will add the users created in the previous task to the groups.
+In this task, you will create two groups in Azure AD that you will use for testing delegated access control. In the next task, users will be created that will be added to these new security groups.
 
-1.  Open the Azure Active Directory console under the Azure Management portal in your browser (<https://portal.azure.com>).
-
-2.  Select **Groups**, and then select **New group**.
-
-    ![Screenshot of the New group button.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image27.png "New group button")
-
-3.  Specify the **Security** as the Group type and **BU-Electronics-Admin** as the **Name** and **Description**. Change the Membership type to **Assigned**. Click **Create**.
-
-    ![Azure portal screenshot, showing New Azure AD Group blade. THe group type is security, group name and group description are BU-Electronics-Admin. Membership type is \'Assigned\', with no members assigned.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image28.png "New Azure AD Group blade")
-
-4.  Repeat the process, and create another group named **BU-Electronics-Users**.
-
-### Task 2: Create user accounts in Azure AD for delegation 
-
-In this task, you will create two user accounts in Azure AD that you will use for testing delegated access control.
-
-1.  Navigate to **All services -\> Azure Active Directory**, and select **Custom domain names** to find out the name of your Azure AD tenant (this will be needed in the next step).
-
-    ![Azure portal screenshot, showing button \'Custom Domain Names\'](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image29.png "Custom domain names button")
-
-2.  Select **Users**, and then select **+New user**.
-
-    ![Screenshot of the New user button.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image30.png "New user button")
-
-3.  Specify the following configuration for the new user:
-
-    - Name:  **Electronics Admin**
-    - User name:  **[ElectronicsAdmin@\[yourtenant\].onmicrosoft.com](mailto:ElectronicsAdmin@[yourtenant].onmicrosoft.com)**
-    - Groups: **Add the user to the BU-Electronics-Admin group**.
-    - Password: **Check the Show password checkbox and note the password for later**.
-
-    ![In the New User dialog box, the Name, User name, and Groups fields are circled, and set to the previously defined settings. At the bottom, the check box for Show Password is selected and circled.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image31.png "New User dialog box") |
-
-
-4.  Create a second user with the following configuration:
-
-    - Name: **Electronics User** 
-    - User name: **[ElectronicsUser@\[yourtenant\].onmicrosoft.com](mailto:ElectronicsUser@[yourtenant].onmicrosoft.com)**
-    - Groups: **Add the user to the BU-Electronics-User group**.
-    - Password: **Check the Show password checkbox and note the password for later**.
-                                                
-    ![In the New User dialog box, the Name, User name, and Groups fields are circled, and set to the previously defined settings. At the bottom, the check box for Show Password is selected and circled.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image32.png "New User dialog box") |
-
-### Task 3: Enable a business unit administrator for the subscription 
-
-In this task, you will update a script to automatically add a user to the contributor role of the subscription.
-
-1.  Launch the Azure Cloud Shell and select PowerShell. If prompted to create storage, click the **Create storage** button.
+1. Launch the Azure Cloud Shell and select PowerShell. If prompted to create storage, click the **Create storage** button.
 
     ![Azure portal screenshot showing the button to launch the Azure Cloud Shell.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image93.png "Azure Cloud Shell launch button")
 
     ![Azure portal screenshot showing the Azure Cloud Shell first launch experience.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image94.png "Azure Cloud Shell PowerShell")
 
-2.  Create a new script the Cloud Shell using **code** by typing the following:
+    > **Note**: In the following commands, we will use the Azure CLI to provision users and groups in Azure AD. The PowerShell Cloud Shell gives us access to *both* the Azure PowerShell module (Az) and the Azure CLI.
+
+2. In the shell, execute the following script to create two new security groups.
 
     ```powershell
+    az ad group create --display-name "BU-Electronics-Admins" --mail-nickname "BU-Electronics-Admins"
+    az ad group create --display-name "BU-Electronics-Users" --mail-nickname "BU-Electronics-Users"
+    ```
+
+### Task 2: Create user accounts in Azure AD for delegation 
+
+In this task, you will create two user accounts in Azure AD that you will use for testing delegated access control.
+
+1. Execute the following script to find out the name of your Azure AD tenant (this will be needed in the next step) and store it in a variable.
+
+    ```powershell
+    $aadDomain = (az ad signed-in-user show --query userPrincipalName -o tsv).Split("@")[1]
+    echo $aadDomain
+    ```
+
+1. Create the first user, **Electronics Admin** and add the user to the **BU-Electronics-Admins** security group.
+
+    ```powershell
+    az ad user create --display-name "Electronics Admin" --password "demo@pass123" --user-principal-name "ElectronicsAdmin@$aadDomain"
+    $memberId = (az ad user show --upn-or-object-id "ElectronicsAdmin@$aadDomain" --query objectId -o tsv)
+    az ad group member add --group "BU-Electronics-Admins" --member-id $memberId
+    ```
+
+1. Next, create the user **Electronics User** and add the user to the **BU-Electronics-Users** security group.
+
+    ```powershell
+    az ad user create --display-name "Electronics User" --password "demo@pass123" --user-principal-name "ElectronicsUser@$aadDomain"
+    $memberId = (az ad user show --upn-or-object-id "ElectronicsUser@$aadDomain" --query objectId -o tsv)
+    az ad group member add --group "BU-Electronics-Users" --member-id $memberId
+    ```
+
+### Task 3: Enable a business unit administrator for the subscription 
+
+In this task, you will update a script to automatically add a user to the contributor role of the subscription.
+
+1. Launch the Azure Cloud Shell and select PowerShell. If prompted to create storage, click the **Create storage** button.
+
+    ![Azure portal screenshot showing the button to launch the Azure Cloud Shell.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image93.png "Azure Cloud Shell launch button")
+
+    ![Azure portal screenshot showing the Azure Cloud Shell first launch experience.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image94.png "Azure Cloud Shell PowerShell")
+
+2. Create a new script the Cloud Shell using **code** by typing the following:
+
+    ```s
     code 
     ```
 
@@ -675,46 +676,48 @@ In this task, you will update a script to automatically add a user to the contri
     ```powershell
     param([string]$SubscriptionId, [string]$AdGroupName) 
 
-    Select-AzureRmSubscription -SubscriptionId $SubscriptionId
+    Select-AzSubscription -SubscriptionId $SubscriptionId
 
     $scope = "/subscriptions/$SubscriptionId"
 
-    $groupObjectId = (Get-AzureRmADGroup -SearchString $AdGroupName).Id.Guid
+    $groupObjectId = (Get-AzADGroup -SearchString $AdGroupName).Id.Guid
 
     Write-Output "Adding group to contributor role"
 
-    New-AzureRmRoleAssignment -Scope $scope `
+    New-AzRoleAssignment -Scope $scope `
                             -RoleDefinitionName "Contributor" `
                             -ObjectId $groupObjectId 
     ```
 
     This code will add an Azure AD security group to the contributor role at the subscription scope.
 
-1. Save the file as **ConfigureSubscription.ps1**.
+4. Save the file as **ConfigureSubscription.ps1** by clicking **Save** in the menu behind the ellipsis (...).
 
-4.  Create a local variable containing your Subscription ID (you can copy your subscription ID from the Azure portal, or obtain it using Get-AzureRmSubscription):
+    ![Azure portal screenshot showing the Azure Cloud Shell and the Save function in code.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image111.png "Azure Cloud Shell code Save file command")
 
-    Paste this under the param section of the script and save.
+1. Close **code** using the **Close Editor** command by clicking **Close Editor** in the menu behind the ellipsis (...).
 
-    ```powershell
-    $SubscriptionId = "{your subscription id}"
-    ```
-
-5.  Execute the script passing in the *-SubscriptionID* and *-AdGroupName* parameters:
+5. Create a local variable in the **Console** containing your Subscription ID (you can copy your subscription ID from the Azure portal, or obtain it using `Get-AzSubscription`). In this example, we will obtain is using the referenced cmdlet.
 
     ```powershell
-    . $HOME\ConfigureSubscription.ps1 -SubscriptionId $SubscriptionId -AdGroupName "BU-Electronics-Admin"
+    $SubscriptionId = (Get-AzSubscription).SubscriptionId
     ```
 
-6.  Close all instances of your browser (or switch to a different type of browser) and re-launch In-Private or Incognito mode.
+    > **Note**: If your account has access to multiple Azure subscriptions you may need to alter the command to target the proper subscription using the `-SubscriptionId` or `-SubscriptionName` parameter with the `Get-AzSubscription` cmdlet.
 
-7.  Navigate to the Azure management portal in a browser <http://portal.azure.com>, and sign in using the **ElectronicsAdmin** credentials created earlier. When prompted to change your password, specify a strong password you will remember.
+6. Execute the script passing in the `-SubscriptionID` and `-AdGroupName` parameters:
 
-    You may be prompted to configure a method of resetting your account. If you are, you can choose either a phone call or email.
+    ```powershell
+    . $HOME\ConfigureSubscription.ps1 -SubscriptionId $SubscriptionId -AdGroupName "BU-Electronics-Admins"
+    ```
 
-8.  Select **All services**, and then select **Subscriptions**.
+7. In a different type of browser, or in an In-Private or Incognito mode window in your current browser navigate to the Azure management portal in a browser <http://portal.azure.com>, and sign in using the **ElectronicsAdmin** credentials created earlier. 
 
-    ![Azure portal screenshot, showing subscriptions button](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image33.png "Subscriptions button")
+    > **Note**: You may be prompted to configure a method of resetting your account. If you are, you can choose either a phone call or email.
+
+8. Select **All services**, search for **Subscriptions**, and then select **Subscriptions**.
+
+    ![Azure portal screenshot, showing subscriptions button](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image112.png "Subscriptions button")
 
 9.  Select the name of the subscription you have been working on.
 
@@ -722,31 +725,31 @@ In this task, you will update a script to automatically add a user to the contri
 
     ![Azure portal screenshot, showing \'Access Control (IAM)\' button](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image34.png "Access Control button")
 
-11. You should see the BU-Electronics-Admin group assigned to the contributor role.
+11. You should see the **BU-Electronics-Admins** group assigned to the contributor role.
 
-    ![Under User, the BU-Electronics-Admin group is circled. It has the Role of Contributor, and Access as Assigned.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image35.png "BU-Electronics-Admin group")
+    ![Under User, the BU-Electronics-Admin group is circled. It has the Role of Contributor, and Access as Assigned.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image113.png "BU-Electronics-Admin group")
 
-    Users in the contributor role scoped at the subscription have full access to all the resources within the subscription, but cannot grant access to others or change policies on the subscription.
+    > **Note**: Users in the Contributor role scoped at the subscription have full access to all the resources within the subscription, but cannot grant access to others or change policies on the subscription.
 
-### Task 4: Enable project-based delegation and chargeback
+### Task 4: Enable project-based delegation and chargeback with tags
 
 In this task, you will create a script that will create a new resource group, assign 'Owner' rights over the resource group to a given AD group, and then apply a policy to enforce an 'IOCode' and 'CostCenter' tag with a given value.
 
-1.  Login to the Azure portal using your normal credentials (not the ElectronicsAdmin account). 
+1. Login to the Azure portal at <https://portal.azure.com> using your normal credentials (not the ElectronicsAdmin account). 
 
-2.  Launch the Azure Cloud Shell and select PowerShell. If prompted to create storage, click the **Create storage** button.
+2. Launch the Azure Cloud Shell and select PowerShell. If prompted to create storage, click the **Create storage** button.
 
     ![Azure portal screenshot showing the button to launch the Azure Cloud Shell.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image93.png "Azure Cloud Shell launch button")
 
     ![Azure portal screenshot showing the Azure Cloud Shell first launch experience.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image94.png "Azure Cloud Shell PowerShell")
 
-3.  Create a new script called **CreateProjectResourceGroup.ps1** and open in the Cloud Shell using **code** by typing the following:
+3. Create a new script called **CreateProjectResourceGroup.ps1** and open in the Cloud Shell using **code** by typing the following:
 
-    ```powershell
+    ```s
     touch CreateProjectResourceGroup.ps1; code CreateProjectResourceGroup.ps1
     ```
 
-4.  Add the following code to the script, and **Save** the file:
+4. Add the following code to the script, and **Save** the file:
 
     ```powershell
     param(
@@ -758,43 +761,43 @@ In this task, you will create a script that will create a new resource group, as
         [string]$AdGroupName
     ) 
 
-    Select-AzureRmSubscription -SubscriptionId $SubscriptionId
+    Select-AzSubscription -SubscriptionId $SubscriptionId
 
     # Create resource group
-    New-AzureRmResourceGroup -Name $ResourceGroupName -Location $Location 
+    New-AzResourceGroup -Name $ResourceGroupName -Location $Location 
 
     $scope = "/subscriptions/$subscriptionId/resourceGroups/$resourceGroupName"
 
     # Assign Owner role to given group
-    $groupObjectId = (Get-AzureRmADGroup -SearchString $AdGroupName).Id.Guid
+    $groupObjectId = (Get-AzADGroup -SearchString $AdGroupName).Id
 
-    New-AzureRmRoleAssignment -Scope $scope `
+    New-AzRoleAssignment -Scope $scope `
                             -RoleDefinitionName "Owner" `
                             -ObjectId $groupObjectId
 
     # Assign policy to apply IOCode tag
-    $definition = Get-AzureRmPolicyDefinition | where {$_.Properties.displayName -eq "Apply tag and its default value"}
+    $definition = Get-AzPolicyDefinition | where {$_.Properties.displayName -eq "Append tag and its default value"}
 
     $parameters = @{
         tagName = 'IOCode'
         tagValue = $IOCode
         }
 
-    New-AzureRmPolicyAssignment -Name "AppendIOCode" `
+    New-AzPolicyAssignment -Name "AppendIOCode" `
                                 -Scope $scope `
                                 -DisplayName "Append IO Code" `
                                 -PolicyDefinition $definition `
                                 -PolicyParameterObject $parameters
     
     # Assign policy to apply CostCenter tag
-    $definition = Get-AzureRmPolicyDefinition | where {$_.Properties.displayName -eq "Apply tag and its default value"}
+    $definition = Get-AzPolicyDefinition | where {$_.Properties.displayName -eq "Append tag and its default value"}
 
     $parameters = @{
         tagName = 'CostCenter'
         tagValue = $CostCenter
         }
 
-    New-AzureRmPolicyAssignment -Name "AppendCostCenter" `
+    New-AzPolicyAssignment -Name "AppendCostCenter" `
                                 -Scope $scope `
                                 -DisplayName "Append Cost Center" `
                                 -PolicyDefinition $definition `
@@ -803,411 +806,399 @@ In this task, you will create a script that will create a new resource group, as
 
     This code creates a new resource group in the specified region. It then assigns the group to the owner role definition just for the resource group. It will allow users in the group to have full ownership of resources within the resource group only. This code applies a built-in policy to append a tag with name 'IOCode' and another tag for 'CostCenter' and then applies the given tag value to any resource created in the resource group.
 
-5.  In the **Console** pane, create a new variable called **\$location**, and specify a region name to deploy to the resource group to. This location must be one of the supported regions in your previously created policy.
+    > **Note**: The 'Apply tag and its default value' policy applies tags to the resources included in the assignment scope, but it does not apply any tags to the parent resource group for those resources. It is important to understand that in Azure, tags are not automatically inherited from a parent object without additional configuration.
+
+1. Close **code** using the **Close Editor** command by clicking **Close Editor** in the menu behind the ellipsis (...).
+
+5. In the **Console** pane, create a new variable called **\$location**, and specify a region name to deploy to the resource group to. This location must be one of the supported regions in your previously created policy.
 
     ```powershell
     $location = "East US"
     ```
 
-6.  In the **Console** pane, create a new variable called **\$resourceGroupName**, and specify the value as **DelegatedProjectDemo**. Also, make sure you create a **\$SubscriptionId** variable as you did earlier.
+6. In the **Console** pane, create a new variable called **\$resourceGroupName**, and specify the value as **DelegatedProjectDemRG**. Also, make sure you create a **\$SubscriptionId** variable as you did earlier.
 
     ```powershell
-    $resourceGroupName = "DelegatedProjectDemo"
-    $SubscriptionId = "{your subscription id}"
+    $resourceGroupName = "DelegatedProjectDemoRG"
+    $SubscriptionId = (Get-AzSubscription).SubscriptionId
     ```
 
-7.  In the **Console** pane, execute the following command to create a new resource group with delegated permissions and IO Code and Cost Center policies.
+    > **Note**: If your account has access to multiple Azure subscriptions you may need to alter the command to target the proper subscription using the `-SubscriptionId` or `-SubscriptionName` parameter with the `Get-AzSubscription` cmdlet.
+
+    > **Note**: If you receive an error similar to the following `Get-AzSubscription : The access token expiry UTC time '4/24/2019 3:31:22 PM' is earlier than current UTC time '4/24/2019 3:44:34 PM'.` you can re-authenticate to your Azure account using the `Connect-AzAccount` cmdlet.
+
+7. In the **Console** pane, execute the following command to create a new resource group with delegated permissions and IO Code and Cost Center policies scoped to the resource group.
 
     ```powershell
-    . $HOME\CreateProjectResourceGroup.ps1 -SubscriptionId $SubscriptionId -ResourceGroupName $resourceGroupName -Location $location -IOCode "1000150" -CostCenter "Marketing" -AdGroupName "BU-Electronics-Admin"
+    . $HOME\CreateProjectResourceGroup.ps1 -SubscriptionId $SubscriptionId -ResourceGroupName $resourceGroupName -Location $location -IOCode "1000150" -CostCenter "Marketing" -AdGroupName "BU-Electronics-Admins"
     ```
 
-8.  Create a new storage account in the resource group (choose a unique name) to validate the ioCode tag was applied (replace *uniquestorageaccount* with a unique value).
+8. Create a new storage account in the resource group (choose a unique name) to validate the ioCode tag was applied (replace *uniquestorageaccount* with a unique value).
 
     ```powershell
-    New-AzureRmStorageAccount -ResourceGroupName $resourceGroupName `
+    New-AzStorageAccount -ResourceGroupName $resourceGroupName `
         -Name "uniquestorageaccount" `
         -SkuName Standard_LRS `
         -Location $location 
     ```
 
-9.  You can now search for resources with the applied tags to verify the policy has been applied. Execute the following PowerShell to validate.
+9. You can now search for resources with the applied tags to verify the policy has been applied. Execute the following PowerShell to validate that the storage account has been tagged.
    
     ```powershell
-    Get-AzureRmResource -TagName ioCode
-    Get-AzureRmResource -TagName CostCenter
+    Get-AzResource -TagName IOCode
+    Get-AzResource -TagName CostCenter
     ```
+    
     In the output, you should see your storage account returned for each tag.
 
     ![A screen of the output of the command Get-AzureRmResource -TagName CostCenter.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image98.png "PowerShell output")
+
+    > **Note**: It can take several minutes for the policies assignments that were made in the previous step to take effect. If you find that the tags were not automatically applied, delete the storage account and recreate it. After recreating it, you should see the tags applied with the `Get-AzResource` cmdlet.
 
 10. Switch back to the Azure Management portal using the ElectronicsAdmin credentials.
 
 11. Select **Resource Groups**.
 
-12. Select the **DelegatedProjectDemo** resource group.
+12. Select the **DelegatedProjectDemoRG** resource group.
 
-    ![Screenshot of the DelegatedProjectDemo resource group.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image37.png "DelegatedProjectDemo resource group")
+    ![Screenshot of the DelegatedProjectDemo resource group.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image114.png "DelegatedProjectDemo resource group")
 
-13. Select the **Access control (IAM)** icon, then select the **Role assignments** tab.
+13. Select the **Access control (IAM)** icon, then select the **Role assignments** tab. Note that the BU-Electronics-Admins security group is set as an Owner of the resource group.
 
-    ![Screenshot of the Access icon.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image38.png "Access icon")
+    ![Under User, the BU-Electronics-Admin group now has the Role of Owner, Contributor, which is circled.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image115.png "Owner, Contributor permissions")
 
-14. Note that the BU-Electronics-Admin role is set as the owner of the resource group.
+14. Select **+ Add** followed by **Add role assignment**.
 
-    ![Under User, the BU-Electronics-Admin group now has the Role of Owner, Contributor, which is circled.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image39.png "Owner, Contributor permissions")
+    ![Screenshot of the Add role assignments button.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image116.png "Add role assignments button")
 
-15. Select **Add role assignments**.
-
-    ![Screenshot of the Add role assignments button.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/2018-11-29-15-27-00.png "Add role assignments button")
-
-16. Select **Owner** for the Role.
+15. Select **Owner** for the Role.
 
     ![In the Select a role blade, Owner is circled.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image41.png "Select a role blade")
 
-17. Select the **BU-Electronics-Users group** and select **Save** to add the group to the role .
+16. Select the **BU-Electronics-Users group** and select **Save** to add the group to the role.
 
-    ![BU-Electronics-Users is circled.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image42.png "BU-Electronics-Users ")
+    ![BU-Electronics-Users is circled.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image42.png "BU-Electronics-Users")
 
-## Exercise 3: Create the environment for the E-commerce team
+Now both the security groups **BU-Electronics-Admins** and **BU-Electronics-Users** are both Owners of at the **DelegatedProjectDemoRG** scope and members of each security group have full control over the resource group and all of its resources.
 
-Duration: 75 minutes
+## Exercise 3: Use Azure Blueprints to govern your Azure environment
 
-In this exercise, you will configure a new environment for the developers of the e-commerce team. You will configure access to a subnet where other developer resources are available, and provide secure access to the network for the developers.
+Duration: 45 minutes
+
+In this exercise you will create an Azure Blueprint at the Management Group scope to model your Azure environment using Azure Blueprint artifacts such as resource groups, Azure Resource Manager templates, resource locks, Azure Policy, and Azure RBAC.
 
 ### Help references
 
 |    |            |
 |----------|:-------------:|
-| Configuring Point-to-Site Secure VPN  | <https://azure.microsoft.com/en-us/documentation/articles/vpn-gateway-howto-point-to-site-rm-ps/>|
-| Network Security Groups | <https://azure.microsoft.com/en-us/documentation/articles/virtual-networks-nsg/> |
-| Azure DevTest Labs    | <https://azure.microsoft.com/en-us/documentation/services/devtest-lab/> |
-| MakeCert.exe |  <https://cloudworkshop.blob.core.windows.net/enterprise-ready-cloud/makecert.exe> |
+| Overview of the Azure Blueprints service  | <https://docs.microsoft.com/azure/governance/blueprints/overview> |
+| Understand resource locking in Azure Blueprints | https://docs.microsoft.com/azure/governance/blueprints/concepts/resource-locking |
+| Azure Resource Manager overview | https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview |
+| Understand the structure and syntax of Azure Resource Manager templates | https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authoring-templates |
 
-### Task 1: Create a new virtual network
+### Task 1: Create a new Azure Blueprint
 
-In this task, you will create a new virtual network for Trey Research.
+In this task, you will create a new Azure Blueprint and add several artifacts to the blueprint. You will then save a draft of the blueprint.
 
-1.  Sign in to the Azure Management portal using the subscription owner user account.
+1. In the Azure portal at <https://portal.azure.com> navigate to the Azure Blueprints service by selecting **All services**, searching for **Blueprints**, and then selecting **Blueprints**.
 
-2.  Select **Create a resource** **\> Networking \>** **Virtual Network**.
+    ![Blueprints service under the All services menu.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image117.png "Azure Blueprints under All services in the Azure portal")
 
-    ![Azure portal screenshot, showing click sequence to create a virtual network](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image43.png "Create virtual network click path")
+    > **Tip**: You can pin the Blueprints service to the portal navigation by clicking the star next to **Blueprints**.
 
-3.  Specify the following configuration for the virtual network:
+2. In the **Getting started** blade, click **Create** under the *Create a blueprint* heading.
 
-    - Name: **TreyResearch-vnet**   
-    - Address Space: **10.10.0.0/16**
-    - Resource Group: **TreyResearchRG (Create New)**
-    - Location: **Choose one of the supported regions**.
-    - Subnet Name: **Apps**
-    - Subnet Address Range: **10.10.0.0/24**
-    - DDoS Protection: **Basic**
-    - Service endpoints: **Disabled**
-    - Firewall: **Disabled**
+    ![Getting started blade with the Create button under Create a blueprint highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image118.png "Create a blueprint")
 
-    ![Azure portal screenshot, showing Create virtual network blade. The virtual network name is filled in as TreyResearch-vnet](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image44.png "Create virtual network blade")
+3. Select **Start with a blank blueprint**.
 
-4.  Click **Create**.
+    ![Choose a blueprint sample blade with the Blank Blueprint tile highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image119.png "Create a blank blueprint")
 
-5.  After the virtual network has been created, browse to it in the portal and select **Subnets**.
+1. In the **Create blueprint** blade, enter the following to complete the form:
 
-    ![Under General, Subnets is circled.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image46.png "General section")
+    - Blueprint name: **governance-baseline**
+    - Blueprint description: **The governance-baseline blueprint will be applied to all subscriptions within the ERC management group.**
+    - Definition location: **Enterprise Ready Cloud** management group
 
-6.  Select **+Subnet**.
+    ![Create blueprint blade with the form completed.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image120.png "Create blueprint")
 
-    ![Azure portal screenshot, showing add Subnet button](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image47.png "Add Subnet button")
+1. Click **Next : Artifacts >>**.
 
-7.  Name the subnet **ECommerceDev**, and then specify the Address Range as **10.10.1.0/24** and click **OK**.
+1. Click **+ Add artifact...** and then select **Policy assignment** for the **Artifact type** in the **Add artifact** blade.
 
-    ![Azure portal screenshot, showing Add Subnet blade. The subnet name has been filled in \'ECommerceDev\'](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image48.png "Add subnet blade")
+    ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image121.png "Add artifact")
 
-8.  Select **+ Gateway subnet** to add a gateway subnet to the virtual network. Note that VPN gateway and ExpressRoute gateway could be co-existing at Gateway subnet. We recommend that you create a gateway subnet of /27 or larger (/27, /26, /25 etc.).
+1. Select the **Require specified tag on resource groups** policy and click **Add**.
 
-    ![Azure portal screenshot showing the Add Gateway Subnet button from the virtual networks subnets blade](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image49.png "Add Gateway Subnet button")
+    ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected and the Require specified tag on resource groups policy definition highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image132.png "Add artifact policy definition selection")
 
-9.  Select **OK** on the new blade that opens to create the Gateway subnet with the default settings.
+    > **Note**: In Exercise 2, Azure Policy was used to automatically tag resources as they were created in a resource group, but recall that any tags on the resource group itself were not inherited. Through this blueprint, we will ensure that the *IOCode* and *CostCenter* tags are enforced on each resource group that is created *and* that the tags that are set on the resource group are automatically inherited by any child resources.
 
-### Task 2: Configure secure VPN for connectivity
+1. Click **+ Add artifact...** and then select **Policy assignment** for the **Artifact type** in the **Add artifact** blade.
 
-In this task, you will start the provisioning of a VPN gateway that will be used for secure connectivity for Trey Research.
+    ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image121.png "Add artifact")
 
-1.  Select **Create a resource** \> **Networking** **\>** **Virtual network gateway**.
+1. Select the **Require specified tag on resource groups** policy and click **Add**.
 
-    ![Azure portal screenshot, showing click sequence to create a virtual network gateway](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image50.png "Create a virtual network gateway click path")
+    ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected and the Require specified tag on resource groups policy definition highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image132.png "Add artifact policy definition selection")
 
-2.  Name the VPN Gateway **DevVPN**, select the existing **TreyResearchVNET** virtual network, specify the Basic SKU, and specify a new Public IP address named **DevVPN** (again, with the Basic SKU). Note that the Basic SKU is considered a legacy SKU. The Basic SKU has certain feature limitations; it is for Dev-test or proof of concept. You can't resize a gateway that uses a Basic SKU to one of the new gateway SKUs.
+    > **Note**: We need to add two of the same policy definition so we can enforce each tag for *IOCode* and *CostCenter*.
 
-    ![Azure portal screenshot, showing Create virtual network gateway blade. The name is filled in as DevVPN and the SKU is Basic](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image51.png "Create a virtual network gateway blade")
-
-3.  Click **Create** to start provisioning the VPN gateway.
-
-    **>Note:** This step will take up to 45 minutes to complete. Continue to the next task. Gateway configuration will be continued in a later task.
-
-### Task 3: Create an Azure DevTest lab environment 
-
-In this task, you will create and configure a new development environment for Trey Research developers and contingent staff.
-
-1.  Before we create the DevTest lab environment we need to create a resource group for it and modify our existing policies to exclude the resource group. Select **Resource groups** from the Azure portal menu, then click **+Add**.
-
-    ![Azure portal screenshot showing selection of resource groups menu item followed by selection of the Add button](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/2018-12-02-11-15-09.png "Add the ERC resource group")
-
-2.  Specify the following configurations, then click **Create**.
-
-    -  Resource group name: **ERC**
-    -  Subscription: ***Your subscription***
-    -  Resource group location: ***The location you are using for this lab***
-
-        ![Azure portal screenshot with the name set to ERC, the subscription set to your subscription name and the resource group location set to East US](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/2018-12-02-11-17-09.png "Create the ERC resource group")
-
-3.  Navigate to **All services** \> **Policy**, select the **Service catalog** policy.
-
-4.  On the service catalog blade select **Edit assignment**.
-
-    ![Azure screenshot showing selection of the edit assignment button](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/2018-11-30-16-37-58.png "Edit the assignment of existing service catalog policy")
-
-5.  Select the elipses next to **Exclusions**, select your subscription, then select the **ERC** resource group, click **Add to Selected Scope**, then click **Save** on the Exclusions blade, then click **Save** on the service catalog blade.
-
-    ![Screenshot of the service catalog exlusions showing subscription set to the name of your subscription, resource group set to ERC, the add to selected scope button selected, and the save button selected](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/2018-11-30-16-42-50.png "Add exclusion to the scope of the service catalog")
-
-6.  Repeat steps 3-5 for the **Resource Naming Convention** initiative.
-
-    ![Screenshot of the resource naming convention initiative](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/2018-11-30-16-46-46.png "Resource naming initiative")
-
-7.  Select **Create a resource** **\>** **Developer tools \>** **DevTest Labs**.
-
-    ![Azure portal screenshot, showing click sequence to create a DevTest Lab](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image53.png "Create DevTest labs click path")
-
-8.  Name the lab **TreyResearchDev**, use the existing **ERC** resource group, and then specify the same region you deployed the virtual network to.
-
-    ![Azure portal screenshot, showing Create a DevTest Lab blade. The lab name is TreyResearchDev, the ERC resource group is selected, and the location specified as East US.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/2018-11-30-16-49-35.png "Create a DevTest Lab blade")
-
-    When completed, select **Create**.
-
-    It may take several minutes for the DevTest Lab to provision. 
-
-9.  Open the DevTest lab environment **TreyResearchDev** after it has fully provisioned.
-
-    ![Azure portal screenshot, showing the DevTest Lab deployment was successful. The \'Go to resource\' button is highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image55.png "Deployment succeeded message")
-
-10. Open **Settings \> Configuration and policies**.
-
-    ![Azure portal screenshot, showing Configuration and Policies button, under a Settings heading](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image56.png "Configuration and Policies button")
-
-11. Select **Virtual Networks**.
-
-    ![Azure portal screenshot, showing a virtual networks button](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image57.png "Virtual Networks button")
-
-    Right-click the default virtual network created for the DevTest lab environment, and then select **Remove**.
-
-    ![Azure portal screenshot, showing a right-click on the DtlTreyResearchDev virtual network, followed by Remove](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image58.png "Removing default virtual network")
-
-12. Select the **Add** button.
-
-    ![Azure portal screenshot, showing Add virtual network button](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image59.png "Add virtual network button")
-
-13. Select **\[Select virtual network\]**, and then select **TreyResearch-vnet**.
-
-    ![Azure portal screenshot, showing choosing the TreyResearch-vnet virtual network](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image60.png "Select TreyResearch-vnet virtual network")
-
-14. Configure the ECommerceDev subnet to **allow** **USE IN VIRTUAL MACHINE CREATION**, and to **disable** **ENABLE SHARED PUBLIC IP**. Then select **Save**. Wait for the blade to update to **Saved** and then close it.
-
-    ![This table lists three Lab subnets: Apps, ECommerceDev, and GatewaySubnet. For the ECommerceDev Lab Subnet, \"Use in virtual machine creation\" is set to yes, and \"Enable Shared Public IP\" is set to No.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image61.png "Lab subnets")
-
-15. Configure a virtual machine policy for this DevTest lab by clicking **Allowed virtual machine sizes**, select **Standard\_DS2\_v2 (or Standard\_DS2)**, and then select **Save**.
-
-    ![Azure portal screenshot, showing Allowed Virtual Machine sizes being selected, then the DS1\_V2 size, then Save](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image62.png "Allowed machine size")
-
-16. Enable the virtual machines per user policy. Set a maximum number of virtual machines per user to one, and then select **Save**.
-
-    ![Azure portal screenshot, showing virtual machines per user being configured, with a limit of 1](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image63.png "Virtual machines per user")
-
-17. Allow access to the DevTest labs users by selecting the **Access control** icon within Configuration and Policies.
-
-    ![Azure portal screenshot, showing \'Access Control (IAM}\' button](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image64.png "Access control button")
-
-18. Select **+Add**.
-
-    ![Azure portal screenshot, showing \'Access Control (IAM)\' blade with the Add button highlighted](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image65.png "Add button on access control blade")
-
-19. Select **Role** as **Owner**, type 'BU-Electronics-Admin into the search field, and select the **BU-Electronics-Admin** group.
-
-    ![Azure portal screenshot, showing Add Permissions blade, witht he BE Electronics-Admin group selected](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image66.png "Add permissions blade")
-
-    Then select **Save**.
-
-    ![Azure portal screenshot, showing \"Added user - BU-Electronics-Admin was added as Owner for TreyResearchDev\"](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image67.png "User added message")
-
-### Task 4: Test access to the DevTest labs environment 
-
-In this task, you will use the ElectronicsAdmin user account to grant access to the developer environment. Then you will validate as a user whether access was successfully granted.
-
-1.  Sign in to the Azure Management Portal as the **ElectronicsAdmin** user account.
-
-2.  Open the DevTest labs environment by selecting **All services** **\>** **DevTest Labs** **\>** **TreyResearchDev**.
-
-3.  Select **Configuration and policies**.
-
-    ![Azure portal screenshot, showing \'configuration and policies\' button](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image56.png "Configuation and policies button")
-
-4.  Allow access to the DevTest Labs users by selecting the **Access** **control** icon within Configuration and Policies.
-
-    ![Azure portal screenshot, showing \'Access control (IAM)\' button](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image64.png "Access control button")
-
-5. Select **+Add**.
-
-    ![Azure portal screenshot, showing Add button on Access Control blade](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image65.png "Add button on access control blade")
-
-6.  Specify the **Role** as **DevTest Labs User**. Use the search field to find the **ElectronicsUser** account, and select it. Then select **Save**.
-
-    ![Azure portal screenshot, showing Add Permissions blade. The role has been selected as DevTest Labs User. The user ElectronicsUser has been selected.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image68.png "Add permissions blade")
-
-7.  Close your browser and sign in with the **ElectronicsUser** account. You will have to change your password and may need to setup a recovery mechanism with this account.
-
-8.  Open the DevTest labs environment by selecting **All services** **\>** **DevTest Labs** **\>** **TreyResearchDev**.
-
-9.  Select **My virtual machines**, and then select **+Add** to provision a virtual machine for the developer.
-
-    ![Azure portal screenshot, showing the TreyResearchDev DevTest Lab, with My Virtual Machines selected](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image69.png "Add virtual machine")
-
-10. On the **Choose a Base** blade, select the **Visual Studio Community 2017 on Windows Server 2016 (x64)** image.
-
-    ![Azure portal screenshot, showing \'choose a base\'. The search field has been filled in with \'visu\' and the search results show various Visual Studio base images. The Visual Studio Community 2017 image has been selected.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image70.png "Choose a base")
-
-11. Specify the **virtual machine name** as well as a **user name** and **password**. Note that the VM size, IP address configuration, virtual network, and subnet are not changeable by the user.
-
-    ![Azure portal screenshot, showing the virtual machine configuration blade. The VM name and user name hare highlighted, as is the password and advanced settings link. The Advance settings blade is also shown, with the VM size, IP, Vnet and subnet read-only](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image71.png "Virtual machine settings")
-
-12. Select **Artifacts**.
-
-    ![In the Virtual machine (configure settings) blade, under More options, Artifacts is selected.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image72.png " Virtual machine (configure settings) blade")
-
-13. Add **Azure PowerShell** to the artifacts of the VM by selecting their names and selecting **ADD**. Select **OK** at the bottom of the **Add artifacts** blade when complete.
-
-    ![Azure portal screenshot, showing the Add Artifacts blade. The option to install the latest Azure PowerShell has been selected.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image73.png "Add artifacts blade")
-
-14. Select **Create** to provision the virtual machine.
-
-### Task 5: Finish configuring secure connectivity
-
-In this task, you will configure certificates for the VPN gateway for the end users and complete configuration of the VPN gateway. You will then configure and test access to the development environment.
-
-**Subtask 1: Create certificates for point-to-site VPN**
-
-1.  Download makecert.exe from: <https://cloudworkshop.blob.core.windows.net/enterprise-ready-cloud/makecert.exe> and save it to the C:\\Hackathon\\ERC folder.
-
-2.  Launch a PowerShell prompt, and navigate to the **C:\\Hackathon\\ERC** folder by typing in the following command:
-
-    ```
-    CD C:\Hackathon\ERC
+1. Click **+ Add artifact...** and then select **Policy assignment** for the **Artifact type** in the **Add artifact** blade.
+
+    ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image121.png "Add artifact")
+
+1. Select the **Append tag and its value from the resource group** policy and click **Add**.
+
+    ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected and the Append tag and its value from the resource group policy definition highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image123.png "Add artifact policy definition selection")
+
+1. Click **+ Add artifact...** and then select **Policy assignment** for the **Artifact type** in the **Add artifact** blade.
+
+    ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image121.png "Add artifact")
+
+1. Select the **Append tag and its value from the resource group** policy and click **Add**.
+
+    ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected and the Append tag and its value from the resource group policy definition highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image123.png "Add artifact policy definition selection")
+
+    > **Note**: We need to add two of the same policy definition so we can ensure each tag for *IOCode* and *CostCenter* is replicated from the resource group to any child resources.
+
+1. Click **+ Add artifact...** and then select **Azure Resource Manager template (Subscription)** for the **Artifact type** in the **Add artifact** blade.
+
+    ![Add artifact blade in the Azure portal with the Azure Resource Manager template (Subscription) artifact type selected.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image125.png "Add artifact")
+
+1. Complete the form with the following information. This resource group will be used to demonstrate that the policy enacted in our blueprint is working by creating a resource group and then creating a storage account within that resource group.
+
+    - Artifact display name: **BU-RG**
+
+1. In the Template field, paste the following template and click **Add**:
+
+    ```json
+    {
+        "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+        "contentVersion": "1.0.0.1",
+        "parameters": {
+            "rgName": {
+                "type": "string",
+                "metadata": {
+                    "description": "The name of the resource group"
+                }
+            },
+            "rgLocation": {
+                "type": "string",
+                "defaultValue": "eastus",
+                "allowedValues": [
+                    "eastus",
+                    "westus",
+                    "northeurope",
+                    "westeurope",
+                    "japanwest",
+                    "japaneast"
+                ],
+                "metadata": {
+                    "description": "The location of the resource group"
+                }
+            },
+            "storagePrefix": {
+                "type": "string",
+                "maxLength": 11,
+                "metadata": {
+                    "description": "The prefix for the name of the storage account which will have a unique string appended to it"
+                }
+            },
+            "IOCode": { 
+                "type": "string",
+                "metadata": {
+                    "description": "The value of the IOCode tag that will be applied to the resource group"
+                }
+            },
+            "CostCenter": { 
+                "type": "string",
+                "metadata": {
+                    "description": "The value of the CostCenter tag that will be applied to the resource group"
+                }
+            }
+        },
+        "variables": {
+            "storageName": "[concat(parameters('storagePrefix'), uniqueString(subscription().id, parameters('rgName')))]"
+        },
+        "resources": [
+            {
+                "type": "Microsoft.Resources/resourceGroups",
+                "apiVersion": "2018-05-01",
+                "location": "[parameters('rgLocation')]",
+                "name": "[parameters('rgName')]",
+                "tags": {
+                    "IOCode": "[parameters('IOCode')]",
+                    "CostCenter": "[parameters('CostCenter')]"
+                },
+                "properties": {}
+            },
+            {
+                "type": "Microsoft.Resources/deployments",
+                "apiVersion": "2018-05-01",
+                "name": "storageDeployment",
+                "resourceGroup": "[parameters('rgName')]",
+                "dependsOn": [
+                    "[resourceId('Microsoft.Resources/resourceGroups/', parameters('rgName'))]"
+                ],
+                "properties": {
+                    "mode": "Incremental",
+                    "template": {
+                        "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                        "contentVersion": "1.0.0.0",
+                        "parameters": {},
+                        "variables": {},
+                        "resources": [
+                            {
+                                "type": "Microsoft.Storage/storageAccounts",
+                                "apiVersion": "2017-10-01",
+                                "name": "[variables('storageName')]",
+                                "location": "[parameters('rgLocation')]",
+                                "kind": "StorageV2",
+                                "sku": {
+                                    "name": "Standard_LRS"
+                                }
+                            }
+                        ],
+                        "outputs": {}
+                    }
+                }
+            }
+        ],
+        "outputs": {}
+    }
     ```
 
-3.  Execute the following command to generate a root certificate for configuring a point-to-site VPN gateway:
+    ![Add artifact blade in the Azure portal for an Azure Resource Manager template (Subscription) artifact with the Add button highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image126.png "Add artifact")
 
+    > **Note**: The template parameters will be determined at the time the blueprint is assigned. This allows us flexibility if we need to make a blueprint assignment multiple times and have it maintain a dynamic nature.
+
+1. Save the blueprint as a draft by clicking the **Save Draft** button.
+
+    ![Create blueprint blade in the Azure portal for with the Save Draft highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image127.png "Save Draft blueprint")
+
+### Task 2: Publish a draft blueprint and assign it
+
+In this task, you will publish the previously created blueprint and assign the blueprint to your subscription.
+
+1. In the portal, select **Blueprint definitions** and then the **governance-baseline** blueprint created in the previous step.
+
+    ![The Blueprint definitions blade in the Azure portal with the governance-baseline blueprint highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image128.png "Blueprint definitions")
+
+1. Click **Publish blueprint**.
+
+    ![The governance-baseline blueprint with the Publish blueprint button highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image129.png "Publish blueprint")
+
+1. Enter a version number (for example *1.0*) in the **Version** field and click **Publish**.
+
+1. Click **Assign blueprint**.
+
+    ![The governance-baseline blueprint with the Assign blueprint button highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image130.png "Assign blueprint button")
+
+1. In the **Assign blueprint** blade, select your target **Subscription**, location (making sure to select a location your previous policy allows such as East US), and then scroll down to the **Artifact parameters** section of the blade.
+
+    ![The governance-baseline blueprint Assign blueprint form.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image131.png "Assign blueprint")
+
+1. Complete the **Artifact parameters** section of the blade with the following:
+
+    - Append tag and its value from the resource group - Tag Name: **IOCode**
+    - Append tag and its value from the resource group - Tag Name: **CostCenter**
+    - BU-RG
+      - rgName: **EnterpriseITRG**
+      - rgLocation: **eastus**
+      - storagePrefix: **treyrsrch**
+      - IOCode: **1000151**
+      - CostCenter: **Enterprise IT**
+    - Require specified tag on resource groups - Tag Name: **IOCode**
+    - Require specified tag on resource groups - Tag Name: **CostCenter**
+
+    ![The governance-baseline blueprint Assign blueprint form with the Artifact parameters section highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image133.png "Assign blueprint Artifact parameters")
+
+1. Click **Assign**. You will see a notification that the blueprint assignment is being created.
+
+    ![The governance-baseline blueprint assignment being created toast notification.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image134.png "Creating blueprint assignment")
+
+1. You will receive an error that blueprint assignment cannot be made as the blueprint resource is disallowed by the *Service catalog* policy that was created in Exercise 1.
+
+### Task 3: Update the Service catalog policy to allow blueprint assignments
+
+1. In the Azure portal, navigate to the Policy service.
+
+1. Select the **Definitions** blade followed by the **Service catalog** policy.
+
+    ![The Policy definitions blade in the Azure portal with the Service catalog policy highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image135.png "Policy definitions")
+
+1. Click **Edit definition**.
+
+    ![The Service catalog policy with the Edit definition button highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image136.png "Edit definition")
+
+1. Add the following after the `Microsoft.Insights` source and click **Save**.
+
+    ```json
+    {
+        "source": "action",
+        "like": "Microsoft.BluePrint/blueprintAssignments/*"
+    }
     ```
-    .\makecert -sky exchange -r -n "CN=P2SROOT" -pe -a sha1 -len 2048 -ss My .\P2SRoot.cer
-    ```
-    ```powershell
-    $cert = New-SelfSignedCertificate -Type Custom -KeySpec Signature `
-        -Subject "CN=P2SRootCert" -KeyExportPolicy Exportable `
-        -HashAlgorithm sha256 -KeyLength 2048 `
-        -CertStoreLocation "Cert:\CurrentUser\My" `
-        -KeyUsageProperty Sign `
-        -KeyUsage CertSign
-    ```
 
-4.  Execute the following command to generate a client certificate:
+    ![The Service catalog policy in edit mode with a portion of the new policy highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image137.png "Edit definition")
 
-    ```powershell
-    New-SelfSignedCertificate -Type Custom -DnsName P2SChildCert `
-        -KeySpec Signature `
-        -Subject "CN=P2SChildCert" -KeyExportPolicy Exportable `
-        -HashAlgorithm sha256 -KeyLength 2048 `
-        -CertStoreLocation "Cert:\CurrentUser\My" `
-        -Signer $cert `
-        -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.2")
-    ```
+### Task 4: Assign a blueprint
 
-5.  To obtain a .cer file from the certificate, open **Manage user certificates**. Locate the self-signed root certificate, typically in 'Certificates - Current User\Personal\Certificates', and right-click. Click **All Tasks**, and then click **Export**. This opens the **Certificate Export Wizard**.
+1. In the Azure portal, navigate to the Blueprints service.
 
-    ![In Manage user certificates, open the Certificate Export Wizard.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image100.png "Certificate Export Wizard Open")
+1. Select **Blueprint definitions** and then the **governance-baseline** blueprint created in the previous step.
 
-1. In the Wizard, click **Next**.
+    ![The Blueprint definitions blade in the Azure portal with the governance-baseline blueprint highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image128.png "Blueprint definitions")
 
-1. Select **No, do not export the private key**, and then click **Next**.
+2. Click **Assign blueprint**.
 
-2.  Change the encoding type to **Base-64 encoded X.509 (.CER)**, and then select **Next**.
+    ![The governance-baseline blueprint with the Assign blueprint button highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image130.png "Assign blueprint button")
 
-    ![In the Export File Format window, under \"Select the format you want to use,\" Base-64 encoded X.509 (.CER) is circled, and it\'s radio button selected.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image76.png "Export File Format window")
+3. In the **Assign blueprint** blade, select your target **Subscription**, location (making sure to select a location your previous policy allows such as East US), and then scroll down to the **Artifact parameters** section of the blade.
 
-3.  Specify the filename as **C:\\Hackathon\\ERC\\PublicKeyFile**. Select **Next** and then **Finish**.
+    ![The governance-baseline blueprint Assign blueprint form.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image131.png "Assign blueprint")
 
-    ![In the File to Export section, the File name field is set to C:\\Hackathon\\ERC\\PublicKeyFile, and is circled.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image77.png "Public key file path")
+4. Complete the **Artifact parameters** section of the blade with the following:
 
-4.  Open the newly created PublicKeyFile in Notepad, and copy the certificate text to the clipboard. Do NOT copy the first and last lines containing \-\-\-\--BEGIN CERTIFICATE\-\-\-\-- and \-\-\-\--END CERTIFICATE\-\-\-\--.
+    - Append tag and its value from the resource group - Tag Name: **IOCode**
+    - Append tag and its value from the resource group - Tag Name: **CostCenter**
+    - BU-RG
+      - rgName: **EnterpriseITRG**
+      - rgLocation: **eastus**
+      - storagePrefix: **treyrsrch**
+      - IOCode: **1000151**
+      - CostCenter: **Enterprise IT**
+    - Require specified tag on resource groups - Tag Name: **IOCode**
+    - Require specified tag on resource groups - Tag Name: **CostCenter**
 
-**Subtask 2: Configure the VPN gateway**
+    ![The governance-baseline blueprint Assign blueprint form with the Artifact parameters section highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image133.png "Assign blueprint Artifact parameters")
 
-1.  In the Azure Portal, make sure you are logged in as ElectronicsAdmin. Then navigate to **All services** \> **Virtual Network Gateways**, and select the **DevVPN** gateway created earlier.
+5. Click **Assign**. You will see a notification that the blueprint assignment is being created.
 
-2. Select **Point to site configuration**, and then select **Configure Now**.
+    ![The governance-baseline blueprint assignment being created toast notification.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image134.png "Creating blueprint assignment")
 
-    ![Azure portal screenshot, showing the DevVPN point to site VPN configuration blade. Point to site configuration is highlighted, as is \'configure now\'](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image78.png "DevVPN point-to-site VPN configuration")
+1. Now that the *Service catalog* policy has been updated, the blueprint assignment will be successful. 
 
-3.  In the **DevVPN -- Point to site configuration** blade, enter the following details:
+    ![The governance-baseline blueprint assignment success toast notification.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image138.png "Blueprint assignment created")
 
-    - Address pool: **172.16.201.0/24**
-    - Under Root Certificates, enter:
-        - Name: **P2SRootCert**
-        - Public Certificate Data: **Paste the certificate data copied to the clipboard earlier**.
+1. Click the **Blueprint assignment succeeded** link in the notification to view the status of the blueprint. 
 
-    ![Azure portal screenshot, showing the point to site configuration\--the public certificate is filled in, the address pool selected, and the save button clicked](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image79.png "Add public key")
+### Task 5: Verify blueprint policy and resource creation
 
-    Once complete, select **Save**.
-    
-    Note that it may take several minutes for the virtual network gateway configuration to update.
+1. In the Azure portal, select **Resource groups** followed by the **EnterpriseITRG** resource group.
 
-**Subtask 3: Configure and test the client**
+    ![Selecting the EnterpriseITRG resource group in the Azure portal.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image139.png "Resource group selection")
 
-1.  Once the P2S configuration has been saved, select **Download VPN Client**.
+2. Note that both the *IOCode* and *CostCenter* tags have been applied to the resource group. The application of these tags was done through the Azure Resource Manager template that was an artifact within the blueprint assignment.
 
-    ![Azure portal screenshot, showing the DevVPN pont-to-site configuration, with \'Download VPN Client\' highlighted](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image80.png "Download VPN client")
+    ![The EnterpriseITRG in the Azure portal with the IOCode and CostCenter tags highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image140.png "Resource group tags")
 
-2.  Select **Open**.
+1. Next, select the storage account prefixed with *treyrsrch*.
 
-    ![Browser screenshot showing the download file prompt, with \'Open\' highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image81.png "Open downloaded file")
+1. In the **Overview** pane, note the tags for *IOCode* and *CostCenter* have been inherited from the parent resource group. These tags were not a part of the Azure Resource Manager template and are a product of the Azure Policy artifacts in the blueprint.
 
-3.  Windows Explorer should open, showing the contents of the downloaded ZIP file. Open the **WindowsAmd64folder**, and then copy the **VpnClientSetupAmd64.exe** file to the desktop.
-
-    ![WIndows Explorer screenshot showing the path to the WindowsAmd64 version of the VpnClientSetupAmd64.exe installer](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image82.png "VPN client file path")
-
-4.  Run the **VpnClientSetupAmd64.exe** installer from the desktop. Accept any confirmation prompts.
-
-5.  The client computer should now have a new connection option in the same location as the new wireless connections. Select the **TreyResearchVNET** icon to launch the connection.
-
-    ![Screenshot of the TreyResearchVNET icon.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image83.png "TreyResearchVNET icon")
-
-6.  Select **Connect** to initiate connection.
-
-    ![In the TreyResearchVNET connection box, three buttons display: Connect, Advanced options, and Remove.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image84.png "TreyResearchVNET connection box")
-
-    ![On the TreyResearchVNET Connection status page, the Connect button is circled.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image85.png "TreyResearchVNET Connection status page")
-
-7.  Select **Do not show this message again for this Connection**, and then select **Continue**.
-
-    ![A TreyResearchVNET message explains that Connection Manager needs elevated privileges to run the actions. The check box is selected to not show the message again, as is the Continue button.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image86.png "TreyResearchVNET message")
-
-8.  After you are successfully connected, switch back to the Azure Management Portal using the **ElectronicsUser** account.
-
-9.  Browse to **DevTest Labs**, open **TreyResearchLab**, and then select **MyDevVM**.
-
-10. Select **Connect** to initiate a connection with the virtual machine.
-
-    ![On the MyDevVM menu bar, Connect is circled.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image87.png "MyDevVM menu bar")
-
-11. Note the remote computer is connecting over a Private IP address.
-
-    ![The Remote Desktop Connection warning box says the publisher of the remote connection cannot be identified, and asks if you want to connect anyway. Below, the Remote computer IP address of 10.10.1.4 is circled.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image88.png "Remote Desktop Connection warning box")
+    ![The treyrsrch storage account in the Azure portal with the IOCode and CostCenter tags highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image141.png "Resource tags")
 
 ## After the hands-on lab 
 
@@ -1217,24 +1208,28 @@ After completing the hands-on lab, you will remove the policies on your subscrip
 
 ### Task 1: Remove resources and configuration created during this lab
 
-1.  Log in to the Azure portal.
+1. Log in to the Azure portal.
 
-2.  Navigate to the **Policy** blade.
+2. Navigate to the **Policy** blade.
 
-3.  Select **Assignments**, and delete all policy assignments created during this lab.
+3. Select **Assignments**, and delete all policy assignments created during this lab.
 
-4.  Select **Definitions**, and delete any policy definitions or initiative definitions created during this lab.
+4. Select **Definitions**, and delete any policy definitions or initiative definitions created during this lab.
 
-5.  Navigate to the **Management Groups** blade.
+5. Navigate to the **Blueprints** blade. 
 
-6.  Remove any Management Groups crated during this lab.
+6. Remove any blueprint assignments and any blueprints created during this lab.
 
-7.  Navigate to the **Resource Groups** blade.
+7. Navigate to the **Management Groups** blade.
 
-8.  Remove any resource groups created during this lab. This will also delete any resources in those resource groups.
+8. Remove any Management Groups crated during this lab.
 
-9.  Navigate to the **Azure Active Directory** blade.
+8. Navigate to the **Resource Groups** blade.
 
-10. Remove any users and groups created during this lab.
+9.  Remove any resource groups created during this lab. This will also delete any resources in those resource groups.
+
+10. Navigate to the **Azure Active Directory** blade.
+
+11. Remove any users and groups created during this lab.
 
 You should follow all steps provided *after* attending the Hands-on lab.
