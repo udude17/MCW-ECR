@@ -153,7 +153,7 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 **Ask questions** and get them to share to fully involve your group in the learning process.
 
-**Ask first**, whenever possible. Before launching into a topic, learn your audience's opinions about it and experiences with it. Asking first enables you to assess their level of knowledge and experience, and leaves them more open to what you are presenting.
+**Ask first**, whenever possible. Before launching into a topic, learn your audience's opinions about it and experiences with it. Asking first enables you to assess their level of knowledge and experience and leaves them more open to what you are presenting.
 
 **Wait for responses**. If you ask a question such as, "What's your experience with (fill in the blank)?" then wait. Do not be afraid of a little silence. If you leap into the silence, your participants will feel you are not serious about involving them and will become passive. Give participants a chance to think, and if no one answers, patiently ask again. You will usually get a response.
 
@@ -201,13 +201,13 @@ Rather than re-invent the wheel, the Cloud Governance team have decided to adopt
 
 *Cost Management*
 
-Trey Research has three business units: Industrial and Consumer, Electronics, and Life Sciences. Each of the Business Units has the same subunits: Product development, Marketing, and Sales and Support. Sales and Support is further divided into region subunits (US/EU/Asia). This hierarchy is shown in the following diagram:
+Trey Research has three business units: Industrial and Consumer, Electronics, and Life Sciences. Each of the Business Units has the same subunits: Product development, Marketing, and Sales and Support. Sales and Support is further divided into region sub-units (US/EU/Asia). This hierarchy is shown in the following diagram:
 
 ![Trey Research has three business units: Industrial and Consumer, Electronics, and Life Sciences. Each of the Business Units has the same subunits: Product development, Marketing, and Sales and Support. Sales and Support is further divided into region subunits (US/EU/Asia). ](images/org-chart.png "Trey Research organizational flowchart")
 
 Each business unit and subunit is allocated an Azure quota/budget and is responsible for tracking their expenditure within that budget. Within a business unit, each new project should track its consumption using a specific tag for its IO code within the business unit.
 
-In addition, each business unit has a requirement to break down their costs into the following categories. Accurate allocation of costs between this categories is essential, since this data feeds into gross margin and net profit figures collated by the central finance team and published quarterly to investors.
+In addition, each business unit has a requirement to break down their costs into the following categories. Accurate allocation of costs between these categories is essential, since this data feeds into gross margin and net profit figures collated by the central finance team and published quarterly to investors.
 
 -   Development and Test
 -   Production
@@ -241,9 +241,9 @@ To maintain consistency, the Cloud Governance team is developing a set of naming
 
 Trey Research has deployed Office 365 and it is configured with federated access to their ADFS servers. Trey's EA has been created within the same organization.
 
-Providing the ability to delegate permissions to different administrators at the business unit and subunit level is critical. However, for an organization the size of Trey Research, it is not possible for the Cloud Governance team to manage all user permissions centrally. Instead, for each new project, an administrator in the business unit should be able to manage access for his or her team. The business unit administrator must not be able to override or circumnavigate governance rules defined by the Cloud Governance team.  Team members must be provide the access they need, to the resources they need, but no more.  To maintain consistency and to enable Cloud Governance team audit, Azure access should be controlled using built-in roles only, not custom roles.
+Providing the ability to delegate permissions to different administrators at the business unit and subunit level is critical. However, for an organization the size of Trey Research, it is not possible for the Cloud Governance team to manage all user permissions centrally. Instead, for each new project, an administrator in the business unit should be able to manage access for his or her team. The business unit administrator must not be able to override or circumnavigate governance rules defined by the Cloud Governance team.  Team members must be provided the access they need, to the resources they need, but no more.  To maintain consistency and to enable Cloud Governance team audit, Azure access should be controlled using built-in roles only, not custom roles.
 
-The Trey e-commerce team make significant use of contingent staff. At present, these staff are granted identities in the existing Trey directory, and are required to work on-site to gain access to Trey development and test environments. Trey would like to streamline this process and enable remote working. 
+The Trey e-commerce team make significant use of contingent staff. At present, these staff are granted identities in the existing Trey directory and are required to work on-site to gain access to Trey development and test environments. Trey would like to streamline this process and enable remote working. 
 
 *Deployment Acceleration*
 
@@ -281,7 +281,7 @@ The Cloud Governance team has developed best-practice reference implementations 
 
 *Identity Baseline*
 
-10. Delegate access management to business units for each application they own. Business unit administrators should not be able to change or override policies defined by the Cloud Governance team.
+10. Delegate access management to business units for each application they own. Business unit administrators should not be able to change, or override policies defined by the Cloud Governance team.
 
 11. Ensure staff have access to what they need, but no more, while enforcing that only built-in roles are used. 
 
@@ -418,13 +418,13 @@ Directions:
 
 7.  Tables switch roles and repeat Steps 2-6.
 
-##  Wrap-up 
+## Wrap-up 
 
 Timeframe: 15 minutes
 
 Directions: Tables reconvene with the larger group to hear the facilitator/SME share the preferred solution for the case study.
 
-##  Additional references
+## Additional references
 
 |    |            |
 |----------|:-------------:|

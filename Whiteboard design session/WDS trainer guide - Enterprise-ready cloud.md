@@ -162,7 +162,7 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 **Ask questions** and get them to share to fully involve your group in the learning process.
 
-**Ask first**, whenever possible. Before launching into a topic, learn your audience's opinions about it and experiences with it. Asking first enables you to assess their level of knowledge and experience, and leaves them more open to what you are presenting.
+**Ask first**, whenever possible. Before launching into a topic, learn your audience's opinions about it and experiences with it. Asking first enables you to assess their level of knowledge and experience and leaves them more open to what you are presenting.
 
 **Wait for responses**. If you ask a question such as, "What's your experience with (fill in the blank)?" then wait. Do not be afraid of a little silence. If you leap into the silence, your participants will feel you are not serious about involving them and will become passive. Give participants a chance to think, and if no one answers, patiently ask again. You will usually get a response.
 
@@ -216,7 +216,7 @@ Trey Research has three business units: Industrial and Consumer, Electronics, an
 
 Each business unit and subunit is allocated an Azure quota/budget and is responsible for tracking their expenditure within that budget. Within a business unit, each new project should track its consumption using a specific tag for its IO code within the business unit.
 
-In addition, each business unit has a requirement to break down their costs into the following categories. Accurate allocation of costs between this categories is essential, since this data feeds into gross margin and net profit figures collated by the central finance team and published quarterly to investors.
+In addition, each business unit has a requirement to break down their costs into the following categories. Accurate allocation of costs between these categories is essential, since this data feeds into gross margin and net profit figures collated by the central finance team and published quarterly to investors.
 
 -   Development and Test
 -   Production
@@ -250,9 +250,9 @@ To maintain consistency, the Cloud Governance team is developing a set of naming
 
 Trey Research has deployed Office 365 and it is configured with federated access to their ADFS servers. Trey's EA has been created within the same organization.
 
-Providing the ability to delegate permissions to different administrators at the business unit and subunit level is critical. However, for an organization the size of Trey Research, it is not possible for the Cloud Governance team to manage all user permissions centrally. Instead, for each new project, an administrator in the business unit should be able to manage access for his or her team. The business unit administrator must not be able to override or circumnavigate governance rules defined by the Cloud Governance team.  Team members must be provide the access they need, to the resources they need, but no more.  To maintain consistency and to enable Cloud Governance team audit, Azure access should be controlled using built-in roles only, not custom roles.
+Providing the ability to delegate permissions to different administrators at the business unit and subunit level is critical. However, for an organization the size of Trey Research, it is not possible for the Cloud Governance team to manage all user permissions centrally. Instead, for each new project, an administrator in the business unit should be able to manage access for his or her team. The business unit administrator must not be able to override or circumnavigate governance rules defined by the Cloud Governance team.  Team members must be provided the access they need, to the resources they need, but no more.  To maintain consistency and to enable Cloud Governance team audit, Azure access should be controlled using built-in roles only, not custom roles.
 
-The Trey e-commerce team make significant use of contingent staff. At present, these staff are granted identities in the existing Trey directory, and are required to work on-site to gain access to Trey development and test environments. Trey would like to streamline this process and enable remote working. 
+The Trey e-commerce team make significant use of contingent staff. At present, these staff are granted identities in the existing Trey directory and are required to work on-site to gain access to Trey development and test environments. Trey would like to streamline this process and enable remote working. 
 
 *Deployment Acceleration*
 
@@ -290,7 +290,7 @@ The Cloud Governance team has developed best-practice reference implementations 
 
 *Identity Baseline*
 
-10. Delegate access management to business units for each application they own. Business unit administrators should not be able to change or override policies defined by the Cloud Governance team.
+10. Delegate access management to business units for each application they own. Business unit administrators should not be able to change, or override policies defined by the Cloud Governance team.
 
 11. Ensure staff have access to what they need, but no more, while enforcing that only built-in roles are used. 
 
@@ -519,9 +519,9 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     Where multiple cost management tools are used, it will make most sense to mirror the same hierarchy across each tool. We will focus on the management group hierarchy, since this hierarchy is also fundamental to many of the other governance controls Trey will use.
 
-    For Trey Research, the hierarchy will comprise the tenant root management group, followed by a separate management group for each business unit (Electronics, Life Sciences, etc). Under each of these management groups sits another management group for each subunit (Product Development, Marketing, Sales & Support). An additional management group layer is used for the regional subunits within Sales and Support.
+    For Trey Research, the hierarchy will comprise the tenant root management group, followed by a separate management group for each business unit (Electronics, Life Sciences, etc.). Under each of these management groups sits another management group for each subunit (Product Development, Marketing, Sales & Support). An additional management group layer is used for the regional subunits within Sales and Support.
 
-    ![A diagram of the Trey Research management group hierarchy. This mirrors their organizational strucuture, with a tenant root group at the top of the tree representing the organization, branching into separate groups for business units and subunits.](images/management-group-hierarchy.png "Trey Research management group hierarchy")
+    ![A diagram of the Trey Research management group hierarchy. This mirrors their organizational structure, with a tenant root group at the top of the tree representing the organization, branching into separate groups for business units and subunits.](images/management-group-hierarchy.png "Trey Research management group hierarchy")
 
     Under each of these management groups, subscriptions used by each subunit are created, and applications deployed within each subscription. This can be organized in several ways. It is a good idea to group production deployments together, at either the subscription level or by including an additional management group level. Likewise, pre-production deployments and Dev/Test deployments should also be grouped.
 
@@ -537,7 +537,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
         ![A screenshot of a cost analysis report from the Azure portal](images/cost-analysis.png "Cost analysis report")
   
-    -   Budgets and Alerts. You can define a budget, and configure alerts when a %age of that budget is spent (<https://docs.microsoft.com/azure/cost-management/tutorial-acm-create-budgets>). Alerts are integrated with action groups, enabling a variety of alert actions (such as email, SMS, or even triggering custom automation).
+    -   Budgets and Alerts. You can define a budget and configure alerts when a percentage of that budget is spent (<https://docs.microsoft.com/azure/cost-management/tutorial-acm-create-budgets>). Alerts are integrated with action groups, enabling a variety of alert actions (such as email, SMS, or even triggering custom automation).
 
         ![The Create budget blade displays. Fields include Name, Amount, Resets, Start date, and Expiration date. Alert conditions and recipients are also configured through this blade.](images/create-budget.png "Create budget blade")
 
@@ -557,13 +557,13 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     Azure Cost Management by Cloudyn can also be used for cost management reporting and alerting. This offers a richer set of functionality than the Azure portal. However, Cloudyn is gradually being replaced by Azure Cost Management within the Azure portal.
     
-    To use Cloudyn you must register from the Azure Portal. New Cloudyn registrations are limited to Microsoft CSP partner adminstrators (not applicable to Trey Research, who consume Azure via an Enterprise Agreement). Existing Cloudyn customers can continue to using Cloudyn for a limited time.
+    To use Cloudyn you must register from the Azure Portal. New Cloudyn registrations are limited to Microsoft CSP partner administrators (not applicable to Trey Research, who consume Azure via an Enterprise Agreement). Existing Cloudyn customers can continue to use Cloudyn for a limited time.
     
     Once registered, Trey can create a hierarchy of cost entities in Cloudyn representing different business units and the various taxonomy.
 
-       -   Choose appropriate access levels for each subscription in your EA.
-       -   Assign each subscription to the appropriate entity.
-       -   Create users for business units and the finance department.
+       - Choose appropriate access levels for each subscription in your EA.
+       - Assign each subscription to the appropriate entity.
+       - Create users for business units and the finance department.
 
     Trey can then use Cloudyn for reports, forecasts, alerts, interactive investigation of anomalies, and cost-saving recommendations.
 
@@ -618,7 +618,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     These three policy definitions are grouped into a single policy initiative, for ease of management. A single initiative parameter, 'Tag Name', is passed to all three policy definitions.
 
-    ![Screenshot showing the intiative definition containing 3 policy definitions, 'Require specified tag on resource groups', Append tag and its value from the resource groups' and 'Audit tag matches resource group'](images/tag-initiative-defn.png)
+    ![Screenshot showing the initiative definition containing 3 policy definitions, 'Require specified tag on resource groups', Append tag and its value from the resource groups' and 'Audit tag matches resource group'](images/tag-initiative-defn.png)
 
     This initiative will then be assigned at an appropriate management group scope (perhaps even the tenant root management group) so the policies are effective across all subscriptions in the organization.
   
@@ -641,7 +641,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 4.  **Design:** Following an outage, how can you identify and analyze any recent changes which may have contributed? Investigations will require details of which resource was changed, when it was changed, who made the change, and what was changed. How can you track changes to both resource properties (capturing both before and after state) as well as changes inside a virtual machine?
    
-    **Solution:** The Azure activity log provides a full history of changes to the configuration of Azure resources. It shows when changes were made, and which account made the changes. The log can be filtered in many ways (resource type, resource group, time, event severity, etc) and also exported as a CSV for processing off-line.
+    **Solution:** The Azure activity log provides a full history of changes to the configuration of Azure resources. It shows when changes were made, and which account made the changes. The log can be filtered in many ways (resource type, resource group, time, event severity, etc.) and also exported as a CSV for processing off-line.
 
     ![A screenshot of the Azure activity log](images/activity-log.png "Azure activity log")
 
@@ -736,7 +736,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     **Solution:** The Cloud Governance team will use Azure policy to control which Azure resources can be created, and also to grant exceptions.
     
-    The first policy be the built-in policy **Allowed Resource Types**. They will choose each resource type that is permitted for use, and assign the policy at management group scope for the business units or even the entire organization.
+    The first policy be the built-in policy **Allowed Resource Types**. They will choose each resource type that is permitted for use and assign the policy at management group scope for the business units or even the entire organization.
 
     To permit exceptions, two approaches are possible.
     
@@ -758,7 +758,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     Azure resource locks can be assigned at the subscription, resource group, or resource level (they cannot be assigned at management group scope). They apply to all resources within that scope. For example, a 'Do not delete' lock on a resource group prevents any resource in that resource group from being deleted, but does not impact resources in other resource groups.
 
-    Any attempt to delete or modify a resource that is subject to a 'Read Only' lock will fail, as will attempts to delete a resource subject to a 'Do Not Delete' lock. The lock must first be removed, then re-created if necessary once the change has been made.
+    Any attempt to delete or modify a resource that is subject to a 'Read Only' lock will fail, as will attempts to delete a resource subject to a 'Do Not Delete' lock. The lock must first be removed, then re-created if necessary, once the change has been made.
 
     Creating and deleting resource locks requires dedicated RBAC permissions. These are included in the 'Owner' role, but not the 'Contributor' role. They can be assigned using the 'User Access Administrator' role.
 
@@ -851,7 +851,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     Template files can be stored and managed similarly to source code, using a repository. This provides a central archive with version control.
 
-    Each template file can be parameterized. These parameters can be used to control details which vary between each deployment, including the deployment footprint (size and number of VMs, etc). Parameters are specified using parameter files, which are specified together with the template itself at deployment time. These parameter files can also be stored in source control. This allows the same template to be used for different environments, by using a different parameter file to tailor each deployment.
+    Each template file can be parameterized. These parameters can be used to control details which vary between each deployment, including the deployment footprint (size and number of VMs, etc.). Parameters are specified using parameter files, which are specified together with the template itself at deployment time. These parameter files can also be stored in source control. This allows the same template to be used for different environments, by using a different parameter file to tailor each deployment.
 
 14. **Design:** How can the Cloud Governance team track where their best-practices reference implementations are deployed, and manage updates to those deployments?
 
@@ -872,14 +872,14 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 **Objection:** Per-subscription configuration won't scale to an organization the size of Trey Research. How can governance controls be implemented with minimum per-subscription configuration overhead?
 
-**Answer:** Azure subscriptions should be grouped into a management group hierarchy. The root of this hierarchy is the tenant root management group. Under this root, a tree of managemnet groups can be implemented to represent the business units and subunits within the organization. Each Azure subscription is then assigned to a management group node within this tree.
+**Answer:** Azure subscriptions should be grouped into a management group hierarchy. The root of this hierarchy is the tenant root management group. Under this root, a tree of management groups can be implemented to represent the business units and sub-units within the organization. Each Azure subscription is then assigned to a management group node within this tree.
 
 Many Azure governance controls be assigned at the management group scope, which means they apply across all subscriptions under that management group node. This enables a single configuration to apply consistently and reliably across a large number of subscriptions.  Supported controls include Azure policy and Azure role-based access control. In addition, Azure Advisor, Security Center, and Activity Logs all support management group views.
 
 
 **Objection:** As well as implementing our governance rules on how Azure is used, we need a way to audit that no deployments have been made that bypass those rules. This audit needs to scale across the entire organization.
 
-**Answer:** Implement governance rules using Azure Policy, and assign those Policies at the root tenant management group scope. This ensures the policy is applied across all subscriptions within the organization.
+**Answer:** Implement governance rules using Azure Policy and assign those Policies at the root tenant management group scope. This ensures the policy is applied across all subscriptions within the organization.
 
 As well as controlling resource deployments, Azure policy provides compliance reports to identify any out-of-policy resource. Deploying the policy at the tenant root management group scope provides a single reports for all resources in the organization. If more fine-grained reporting is required, this can be achieved by deploying the policy at the appropriate scope.
 
