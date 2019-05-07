@@ -426,7 +426,7 @@ First, we will create a generic policy definition that restricts resources of a 
     - Definition location: **Enterprise Ready Cloud** (The Management Group created earlier.)
     - Name: **Restrict Resource Name Suffix**
     - Description: **Restrict resources of a given type to have a name ending with a given suffix. The resource type and suffix are parameterized.**
-    - Category:  **Create new** > **Naming"**
+    - Category:  **Create new** > **Naming**
     - Policy rule and parameters: **As shown below:**
 
     ```json
