@@ -101,15 +101,13 @@ Business units and the finance department need tools to accurately and reliably 
 
 In addition, the Cloud Governance team's charter includes company-wide monitoring and reporting of all Azure spend, including reviewing usage to identify cost-saving opportunities and identifying and investigating anomalous spending.
 
-
 *Security Baseline*
 
 The IT security team have advised a precautionary approach to cloud adoption. The Cloud Governance team are keen to adopt a strong set of best practices to make sure the IT security and business teams feel comfortable to avoid security becoming an adoption blocker.
 
 If a service has an outage, it is important to know the chain of events that led up to the outage and who (if anyone) caused it.
 
-IT security require that all Azure VMs (Windows and Linux) meet their password complexity requirements. They also require that only approved OS images are used as the baseline for any VM.
-
+IT security require that all Azure VMs (Windows and Linux) meet their password complexity requirements. They also require that only approved OS images be used as the baseline for any VM.
 
 *Resource Consistency*
 
@@ -118,7 +116,6 @@ While the Cloud Governance team is not yet familiar with the full range of Azure
 The IT Security team is particularly concerned about production environments. These require additional controls to ensure that resources cannot be accidentally modified or deleted by administrators getting confused between a test workload versus production.
 
 To maintain consistency, the Cloud Governance team is developing a set of naming conventions. These names will apply to subscriptions, resource groups and resources. Trey require the ability to enforce this naming convention consistently across their Azure subscriptions.
-
 
 *Identity Baseline*
 
@@ -148,37 +145,36 @@ The Cloud Governance team has developed best-practice reference implementations 
 
 *Security Baseline*
 
-4.  Enable investigation of changes leading up to any outage.
+1.  Enable investigation of changes leading up to any outage.
    
-5.  Ensure Windows and Linux VMs meet password complexity requirements.
+2.  Ensure Windows and Linux VMs meet password complexity requirements.
    
-6.  Ensure VMs can only be created using an approved OS image.
+3.  Ensure VMs can only be created using an approved OS image.
 
 *Resource Consistency*
 
-7.  Allow the Cloud Governance team to control which Azure services can be used across the business units, while allowing controlled exceptions.
+1.  Allow the Cloud Governance team to control which Azure services can be used across the business units, while allowing controlled exceptions.
 
-8.  Prevent accidental deletion of resources.
+2.  Prevent accidental deletion of resources.
 
-9.  Implement a common resource naming standard across the organization.
+3.  Implement a common resource naming standard across the organization.
 
 *Identity Baseline*
 
-10. Delegate access management to business units for each application they own. Business unit administrators should not be able to change, or override policies defined by the Cloud Governance team.
+1. Delegate access management to business units for each application they own. Business unit administrators should not be able to change, or override policies defined by the Cloud Governance team.
 
-11. Ensure staff have access to what they need, but no more, while enforcing that only built-in roles are used. 
+2. Ensure staff have access to what they need, but no more, while enforcing that only built-in roles are used. 
 
-12. Identify a solution to streamline identity management and provide remote access for e-commerce team contingent staff.
+3. Identify a solution to streamline identity management and provide remote access for e-commerce team contingent staff.
 
 *Deployment Acceleration*
 
-13.  Implement deployment automation while allowing controlled divergence between environments (e.g. smaller footprint for Dev/Test environments)
+1.  Implement deployment automation while allowing controlled divergence between environments (e.g. smaller footprint for Dev/Test environments)
 
-14.  Provide a means to track and update existing best-practice reference implementation deployments to meet updated best practices.
+2.  Provide a means to track and update existing best-practice reference implementation deployments to meet updated best practices.
 
-15.  Provide a means to prevent best-practice reference implementation deployments being modified outside the control of the Cloud Governance team.
+3.  Provide a means to prevent best-practice reference implementation deployments being modified outside the control of the Cloud Governance team.
     
-
 ### Customer objections 
 
 1. Per-subscription configuration won't scale to an organization the size of Trey Research. How can governance controls be implemented with minimum per-subscription configuration overhead?
@@ -198,7 +194,6 @@ The Cloud Governance team has developed best-practice reference implementations 
 ![This is a screenshot of a slide, titled Management groups. It has the following bulleted list items: Apply governance at scale; Assign RBAC and policy across subscriptions; Aggregate Advisor, Security Center and Cost Management reports from across the organization. On the right, the slide shows a 4-layer management group hierarchy, with subscriptions sitting under various hierarchy nodes.](images/slide-management-groups.png "Common scenarios - management groups")
 
 ![This is a screenshot of a slide, titled Azure blueprints. It has the following bulleted list items: Automated provisioning of entire environments; Deployment tracking and updates; Optional locking against unauthorized changes. There is a diagram showing a blueprint composed of role-based access controls, policy, and templates. Arrows show this blueprint being deployed to multiple subscriptions.](images/slide-blueprints.png "Common scenarios - Azure blueprints")
-
 
 ## Step 2: Design a proof of concept solution
 
@@ -233,35 +228,35 @@ Directions: With all participants at your table, respond to the following questi
 
 *Security Baseline*
 
-4.  Following an outage, how can you identify and analyze any recent changes which may have contributed? Investigations will require details of which resource was changed, when it was changed, who made the change, and what was changed. How can you track changes to both resource properties (capturing both before and after state) as well as changes inside a virtual machine?
+1.  Following an outage, how can you identify and analyze any recent changes which may have contributed? Investigations will require details of which resource was changed, when it was changed, who made the change, and what was changed. How can you track changes to both resource properties (capturing both before and after state) as well as changes inside a virtual machine?
    
-5.  How can you ensure that both Windows and Linux VMs meet password complexity requirements?
+2.  How can you ensure that both Windows and Linux VMs meet password complexity requirements?
    
-6.  How can you ensure that only approved OS images are used when creating new VMs? Your implementation should support a customizable list of built-in images as well as custom images.
+3.  How can you ensure that only approved OS images are used when creating new VMs? Your implementation should support a customizable list of built-in images as well as custom images.
 
 *Resource Consistency*
 
-7.  Identify a solution to restrict which services can be used in each Azure subscription, across the company. How will your solution allow exceptions for specific resource types for approved pilot projects or one-off deployments?
+1.  Identify a solution to restrict which services can be used in each Azure subscription, across the company. How will your solution allow exceptions for specific resource types for approved pilot projects or one-off deployments?
 
-8.  How can you prevent accidental deletion of production resources, by administrators who require access to manage those resources?
+2.  How can you prevent accidental deletion of production resources, by administrators who require access to manage those resources?
 
-9.  How can Enterprise IT enforce a company-wide resource naming convention?
+3.  How can Enterprise IT enforce a company-wide resource naming convention?
 
 *Identity Baseline*
 
-10. How can you delegate access management to business units for each application they own, while protecting other applications and ensuring that controls implemented by the Cloud Governance teams cannot be circumvented?
+1. How can you delegate access management to business units for each application they own, while protecting other applications and ensuring that controls implemented by the Cloud Governance teams cannot be circumvented?
 
-11. How can you ensure staff have access to what they need, but no more, while enforcing that only built-in roles are used. 
+2. How can you ensure staff have access to what they need, but no more, while enforcing that only built-in roles are used? 
 
-12. Identify a solution to streamline identity management and provide remote access for e-commerce team contingent staff.
+3. Identify a solution to streamline identity management and provide remote access for e-commerce team contingent staff.
 
 *Deployment Acceleration*
 
-13. How can Trey implement an 'Infrastructure as Code' approach to deployment automation, while still allowing different footprints in different environments?
+1. How can Trey implement an 'Infrastructure as Code' approach to deployment automation, while still allowing different footprints in different environments?
 
-14. How can the Cloud Governance team track where their best-practices reference implementations are deployed, and manage updates to those deployments?
+2. How can the Cloud Governance team track where their best-practices reference implementations are deployed, and manage updates to those deployments?
 
-15. How can the Cloud Governance team prevent best-practice reference implementation deployments from being modified outside of their control?
+3. How can the Cloud Governance team prevent best-practice reference implementation deployments from being modified outside of their control?
  
 **Prepare**
 
