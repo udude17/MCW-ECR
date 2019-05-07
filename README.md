@@ -26,7 +26,7 @@ At the end of this whiteboard design session, you will be better able to design 
 
 ### Hands-on Lab
 
-In this hands-on lab, you are working with Trey Research to setup some best practices regarding policies, permissions, and management of subscription artifacts such as Policy and Azure Resource Manager templates through Azure Blueprints.  Tasks include creating scripts that Enterprise IT will use to automatically set policy and delegate permissions when a new subscription is created. You will help them build a management solution using Azure Blueprints in combination with Management Groups..
+In this hands-on lab, you are working with Trey Research to setup some best practices regarding policies, permissions, and management of subscription artifacts such as Policy and Azure Resource Manager templates through Azure Blueprints.  Tasks include creating scripts that Enterprise IT will use to automatically set policy and delegate permissions when a new subscription is created. You will help them build a management solution using Azure Blueprints in combination with Management Groups.
 
 At the end of this hands-on lab, you will know how to provide cost tracking by business unit, environment and project with resource tags, provide for a distributed administration model, put a service catalog in place to prevent deployment of unsupported Azure services, and put controls in place to allow deployment of services only in specific regions.
 
