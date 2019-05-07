@@ -227,15 +227,13 @@ Business units and the finance department need tools to accurately and reliably 
 
 In addition, the Cloud Governance team's charter includes company-wide monitoring and reporting of all Azure spend, including reviewing usage to identify cost-saving opportunities and identifying and investigating anomalous spending.
 
-
 *Security Baseline*
 
 The IT security team have advised a precautionary approach to cloud adoption. The Cloud Governance team are keen to adopt a strong set of best practices to make sure the IT security and business teams feel comfortable to avoid security becoming an adoption blocker.
 
 If a service has an outage, it is important to know the chain of events that led up to the outage and who (if anyone) caused it.
 
-IT security require that all Azure VMs (Windows and Linux) meet their password complexity requirements. They also require that only approved OS images are used as the baseline for any VM.
-
+IT security require that all Azure VMs (Windows and Linux) meet their password complexity requirements. They also require that only approved OS images be used as the baseline for any VM.
 
 *Resource Consistency*
 
@@ -244,7 +242,6 @@ While the Cloud Governance team is not yet familiar with the full range of Azure
 The IT Security team is particularly concerned about production environments. These require additional controls to ensure that resources cannot be accidentally modified or deleted by administrators getting confused between a test workload versus production.
 
 To maintain consistency, the Cloud Governance team is developing a set of naming conventions. These names will apply to subscriptions, resource groups and resources. Trey require the ability to enforce this naming convention consistently across their Azure subscriptions.
-
 
 *Identity Baseline*
 
@@ -274,37 +271,36 @@ The Cloud Governance team has developed best-practice reference implementations 
 
 *Security Baseline*
 
-4.  Enable investigation of changes leading up to any outage.
+1.  Enable investigation of changes leading up to any outage.
    
-5.  Ensure Windows and Linux VMs meet password complexity requirements.
+2.  Ensure Windows and Linux VMs meet password complexity requirements.
    
-6.  Ensure VMs can only be created using an approved OS image.
+3.  Ensure VMs can only be created using an approved OS image.
 
 *Resource Consistency*
 
-7.  Allow the Cloud Governance team to control which Azure services can be used across the business units, while allowing controlled exceptions.
+1.  Allow the Cloud Governance team to control which Azure services can be used across the business units, while allowing controlled exceptions.
 
-8.  Prevent accidental deletion of resources.
+2.  Prevent accidental deletion of resources.
 
-9.  Implement a common resource naming standard across the organization.
+3.  Implement a common resource naming standard across the organization.
 
 *Identity Baseline*
 
-10. Delegate access management to business units for each application they own. Business unit administrators should not be able to change, or override policies defined by the Cloud Governance team.
+1. Delegate access management to business units for each application they own. Business unit administrators should not be able to change, or override policies defined by the Cloud Governance team.
 
-11. Ensure staff have access to what they need, but no more, while enforcing that only built-in roles are used. 
+2. Ensure staff have access to what they need, but no more, while enforcing that only built-in roles are used. 
 
-12. Identify a solution to streamline identity management and provide remote access for e-commerce team contingent staff.
+3. Identify a solution to streamline identity management and provide remote access for e-commerce team contingent staff.
 
 *Deployment Acceleration*
 
-13.  Implement deployment automation while allowing controlled divergence between environments (e.g. smaller footprint for Dev/Test environments)
+1.  Implement deployment automation while allowing controlled divergence between environments (e.g. smaller footprint for Dev/Test environments)
 
-14.  Provide a means to track and update existing best-practice reference implementation deployments to meet updated best practices.
+2.  Provide a means to track and update existing best-practice reference implementation deployments to meet updated best practices.
 
-15.  Provide a means to prevent best-practice reference implementation deployments being modified outside the control of the Cloud Governance team.
+3.  Provide a means to prevent best-practice reference implementation deployments being modified outside the control of the Cloud Governance team.
     
-
 ### Customer objections 
 
 1. Per-subscription configuration won't scale to an organization the size of Trey Research. How can governance controls be implemented with minimum per-subscription configuration overhead?
@@ -359,35 +355,35 @@ Directions: With all participants at your table, respond to the following questi
 
 *Security Baseline*
 
-4.  Following an outage, how can you identify and analyze any recent changes which may have contributed? Investigations will require details of which resource was changed, when it was changed, who made the change, and what was changed. How can you track changes to both resource properties (capturing both before and after state) as well as changes inside a virtual machine?
+1.  Following an outage, how can you identify and analyze any recent changes which may have contributed? Investigations will require details of which resource was changed, when it was changed, who made the change, and what was changed. How can you track changes to both resource properties (capturing both before and after state) as well as changes inside a virtual machine?
    
-5.  How can you ensure that both Windows and Linux VMs meet password complexity requirements?
+2.  How can you ensure that both Windows and Linux VMs meet password complexity requirements?
    
-6.  How can you ensure that only approved OS images are used when creating new VMs? Your implementation should support a customizable list of built-in images as well as custom images.
+3.  How can you ensure that only approved OS images are used when creating new VMs? Your implementation should support a customizable list of built-in images as well as custom images.
 
 *Resource Consistency*
 
-7.  Identify a solution to restrict which services can be used in each Azure subscription, across the company. How will your solution allow exceptions for specific resource types for approved pilot projects or one-off deployments?
+1.  Identify a solution to restrict which services can be used in each Azure subscription, across the company. How will your solution allow exceptions for specific resource types for approved pilot projects or one-off deployments?
 
-8.  How can you prevent accidental deletion of production resources, by administrators who require access to manage those resources?
+2.  How can you prevent accidental deletion of production resources, by administrators who require access to manage those resources?
 
-9.  How can Enterprise IT enforce a company-wide resource naming convention?
+3.  How can Enterprise IT enforce a company-wide resource naming convention?
 
 *Identity Baseline*
 
-10. How can you delegate access management to business units for each application they own, while protecting other applications and ensuring that controls implemented by the Cloud Governance teams cannot be circumvented?
+1. How can you delegate access management to business units for each application they own, while protecting other applications and ensuring that controls implemented by the Cloud Governance teams cannot be circumvented?
 
-11. How can you ensure staff have access to what they need, but no more, while enforcing that only built-in roles are used. 
+2. How can you ensure staff have access to what they need, but no more, while enforcing that only built-in roles are used? 
 
-12. Identify a solution to streamline identity management and provide remote access for e-commerce team contingent staff.
+3. Identify a solution to streamline identity management and provide remote access for e-commerce team contingent staff.
 
 *Deployment Acceleration*
 
-13. How can Trey implement an 'Infrastructure as Code' approach to deployment automation, while still allowing different footprints in different environments?
+1. How can Trey implement an 'Infrastructure as Code' approach to deployment automation, while still allowing different footprints in different environments?
 
-14. How can the Cloud Governance team track where their best-practices reference implementations are deployed, and manage updates to those deployments?
+2. How can the Cloud Governance team track where their best-practices reference implementations are deployed, and manage updates to those deployments?
 
-15. How can the Cloud Governance team prevent best-practice reference implementation deployments from being modified outside of their control?
+3. How can the Cloud Governance team prevent best-practice reference implementation deployments from being modified outside of their control?
  
 **Prepare**
 
@@ -639,7 +635,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 ### Security Baseline <!-- omit in toc -->
 
-4.  **Design:** Following an outage, how can you identify and analyze any recent changes which may have contributed? Investigations will require details of which resource was changed, when it was changed, who made the change, and what was changed. How can you track changes to both resource properties (capturing both before and after state) as well as changes inside a virtual machine?
+1.  **Design:** Following an outage, how can you identify and analyze any recent changes which may have contributed? Investigations will require details of which resource was changed, when it was changed, who made the change, and what was changed. How can you track changes to both resource properties (capturing both before and after state) as well as changes inside a virtual machine?
    
     **Solution:** The Azure activity log provides a full history of changes to the configuration of Azure resources. It shows when changes were made, and which account made the changes. The log can be filtered in many ways (resource type, resource group, time, event severity, etc.) and also exported as a CSV for processing off-line.
 
@@ -659,13 +655,13 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     The change history only captures changes to resource properties. It does not capture changes that occur within an Azure VM. To monitor VM changes, the Azure Automation Change Tracking solution should be used. Supporting both Windows and Linux, this solution tracks VM changes including files, registry keys, services/daemons, and software deployments. For more information, see https://docs.microsoft.com/azure/automation/automation-change-tracking.
 
-5.  **Design:** How can you ensure that both Windows and Linux VMs meet password complexity requirements?
+2.  **Design:** How can you ensure that both Windows and Linux VMs meet password complexity requirements?
    
     **Solution:** Azure policy guest configuration allows Azure policy to be used to audit settings with an Azure VM (Windows and Linux). It can be used to audit and deploy application settings and installed software. It can also be used to enforce password age and complexity rules. A variety of built-in policy definitions are available. The built-in policy initiative **\[Preview\]: Audit VMs with insecure password security settings** contains a default collection of password policy definitions for both Windows and Linux VMs.
 
     ![Screenshot showing the policy definitions in the '\[Preview\]: Audit VMs with insecure password security settings' policy initiative](images/password-policy.png "Password policy for guest VMs")
 
-6.  **Design:** How can you ensure that only approved OS images are used when creating new VMs? Your implementation should support a customizable list of built-in images as well as custom images.
+3.  **Design:** How can you ensure that only approved OS images are used when creating new VMs? Your implementation should support a customizable list of built-in images as well as custom images.
 
     **Solution:** Azure policy can be used to control which OS images may be used with any Azure VM. Both built-in and custom images can be supported. The built-in policy **\[Preview\]: Audit Log Analytics Agent Deployment - VM Image (OS) unlisted** provides an example that can be used as a baseline for a custom policy.
 
@@ -732,7 +728,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 ### Resource Consistency <!-- omit in toc -->
 
-7.  **Design:** Identify a solution to restrict which services can be used in each Azure subscription, across the company. How will your solution allow exceptions for specific resource types for approved pilot projects or one-off deployments?
+1.  **Design:** Identify a solution to restrict which services can be used in each Azure subscription, across the company. How will your solution allow exceptions for specific resource types for approved pilot projects or one-off deployments?
 
     **Solution:** The Cloud Governance team will use Azure policy to control which Azure resources can be created, and also to grant exceptions.
     
@@ -750,7 +746,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     Restricting resources on resource type may not suffice. For example, all VMs share the same resource type, but they differ vastly in costs depending on the VM family and size. Likewise, managed disks are all one resource type, but vary hugely in cost based on the storage type and disk size. Additional policies may be required to obtain adequate control over these resource types.
 
-8.  **Design:** How can you prevent accidental deletion of production resources, by administrators who require access to manage those resources?
+2.  **Design:** How can you prevent accidental deletion of production resources, by administrators who require access to manage those resources?
 
     **Solution:** There are two ways to prevent accidental resource deletion: resource locks, and blueprints.
 
@@ -766,7 +762,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     ![A screenshot from the Azure portal showing the lock options when deploying a blueprint. The options are 'Don't lock', 'Do Not Delete', and 'Read Only'.](images/blueprint-lock.png "Blueprint lock options")
 
-9.  **Design:** How can Enterprise IT enforce a company-wide resource naming convention?
+3.  **Design:** How can Enterprise IT enforce a company-wide resource naming convention?
 
     **Solution:** A naming convention can be implementing using Azure Policy to restrict the names of each resource created.
 
@@ -799,13 +795,13 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 ### Identity Baseline <!-- omit in toc -->
 
-10. **Design:** How can you delegate access management to business units for each application they own, while protecting other applications and ensuring that controls implemented by the Cloud Governance teams cannot be circumvented?
+1. **Design:** How can you delegate access management to business units for each application they own, while protecting other applications and ensuring that controls implemented by the Cloud Governance teams cannot be circumvented?
 
     **Solution:** This can be achieved using Azure role-based access control (RBAC). Create a group in Azure AD for that business unit, for example, BU1-Azure-Managers, and add those users to the group. Add the Azure AD group to the contributor role and assign that role to the subscription used by the business unit. A similar approach can be used for sub-units or teams within the business unit, assigning the contributor role to either dedicated subscriptions or individual resource groups.
     
     Contributors do not have permissions to add or remove users or change policies. They are also unable to move a subscription between management groups. Hence, they cannot override controls defined by the Cloud Governance team.
 
-11. **Design:** How can you ensure staff have access to what they need, but no more, while enforcing that only built-in roles are used. 
+2. **Design:** How can you ensure staff have access to what they need, but no more, while enforcing that only built-in roles are used. 
 
     **Solution:** As with the previous question, role-based access control can be used to ensure staff have access to what they need, but no more. Rather than using the general-purpose contributor role, Azure also provides fine-grained roles that grant permission to use specific Azure services. For example, a network engineer may be granted the Network Contributor role, so they can manage network resources only. They might also be granted the Reader role, so they can view, but not modify, the resources using the network.
 
@@ -832,7 +828,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
     ```
 
 
-12. **Design:** Identify a solution to streamline identity management and provide remote access for e-commerce team contingent staff.
+3. **Design:** Identify a solution to streamline identity management and provide remote access for e-commerce team contingent staff.
     
     **Solution:** Using Azure AD, contingent staff can be granted access to Azure resources using their existing Azure AD identity, rather than having to create a new identity in the Trey directory. This simplifies identity management.
 
@@ -845,7 +841,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 ### Deployment Acceleration <!-- omit in toc -->
 
-13. **Design:** How can Trey implement an 'Infrastructure as Code' approach to deployment automation, while still allowing different footprints in different environments?
+1. **Design:** How can Trey implement an 'Infrastructure as Code' approach to deployment automation, while still allowing different footprints in different environments?
 
     **Solution:** Resource manager templates provide a declarative means to deploy Azure resources. Each template file describes all the resources to be deployed, and Azure takes care of the deployment process. This provides a fully-automated way to deploy entire applications, including all networking, storage, compute and other components.
 
@@ -853,7 +849,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
     Each template file can be parameterized. These parameters can be used to control details which vary between each deployment, including the deployment footprint (size and number of VMs, etc.). Parameters are specified using parameter files, which are specified together with the template itself at deployment time. These parameter files can also be stored in source control. This allows the same template to be used for different environments, by using a different parameter file to tailor each deployment.
 
-14. **Design:** How can the Cloud Governance team track where their best-practices reference implementations are deployed, and manage updates to those deployments?
+2. **Design:** How can the Cloud Governance team track where their best-practices reference implementations are deployed, and manage updates to those deployments?
 
     **Solution:** The Cloud Governance team can use Azure blueprints to publish and managed their best-practice reference implementations of common deployments.
     
@@ -861,7 +857,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
     
     Unlike templates, blueprints are stored and managed inside Azure. They are fully versioned, and each deployment is tracked. This allows you to easily identify all deployments of a particular blueprint. The blueprint version for each deployment is also tracked, enabling controlled roll-out of updated versions across deployments.
 
-15. **Design:** How can the Cloud Governance team prevent best-practice reference implementation deployments from being modified outside of their control?
+3. **Design:** How can the Cloud Governance team prevent best-practice reference implementation deployments from being modified outside of their control?
 
     **Solution:** Azure blueprints support locking of deployed resources. There are two types of lock: 'Read Only' and 'Do Not Delete'. These locks prevent the deployed resources from being modified except by deploying an updated version of the blueprint.
     
@@ -870,34 +866,34 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 
 ## Checklist of preferred objection handling
 
-**Objection:** Per-subscription configuration won't scale to an organization the size of Trey Research. How can governance controls be implemented with minimum per-subscription configuration overhead?
+1.  Per-subscription configuration won't scale to an organization the size of Trey Research. How can governance controls be implemented with minimum per-subscription configuration overhead?
 
-**Answer:** Azure subscriptions should be grouped into a management group hierarchy. The root of this hierarchy is the tenant root management group. Under this root, a tree of management groups can be implemented to represent the business units and sub-units within the organization. Each Azure subscription is then assigned to a management group node within this tree.
+Azure subscriptions should be grouped into a management group hierarchy. The root of this hierarchy is the tenant root management group. Under this root, a tree of management groups can be implemented to represent the business units and sub-units within the organization. Each Azure subscription is then assigned to a management group node within this tree.
 
 Many Azure governance controls be assigned at the management group scope, which means they apply across all subscriptions under that management group node. This enables a single configuration to apply consistently and reliably across a large number of subscriptions.  Supported controls include Azure policy and Azure role-based access control. In addition, Azure Advisor, Security Center, and Activity Logs all support management group views.
 
 
-**Objection:** As well as implementing our governance rules on how Azure is used, we need a way to audit that no deployments have been made that bypass those rules. This audit needs to scale across the entire organization.
+2.  As well as implementing our governance rules on how Azure is used, we need a way to audit that no deployments have been made that bypass those rules. This audit needs to scale across the entire organization.
 
-**Answer:** Implement governance rules using Azure Policy and assign those Policies at the root tenant management group scope. This ensures the policy is applied across all subscriptions within the organization.
+Implement governance rules using Azure Policy and assign those Policies at the root tenant management group scope. This ensures the policy is applied across all subscriptions within the organization.
 
 As well as controlling resource deployments, Azure policy provides compliance reports to identify any out-of-policy resource. Deploying the policy at the tenant root management group scope provides a single reports for all resources in the organization. If more fine-grained reporting is required, this can be achieved by deploying the policy at the appropriate scope.
 
 
-**Objection:** How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even if the security perimeter is compromised?
+3.  How can we ensure our deployments meet Azure security best practices, and how can we protect our Production workloads even if the security perimeter is compromised?
 
-**Answer:** Azure Security Center allows you to define your VM security policy, monitor compliance, and receive actionable recommendations on how to implement Azure security best practices. Adaptive Application Controls, available in the Azure Security Center Standard pricing tier, enable you to control whitelists of which executables can run in your Production environments.
+Azure Security Center allows you to define your VM security policy, monitor compliance, and receive actionable recommendations on how to implement Azure security best practices. Adaptive Application Controls, available in the Azure Security Center Standard pricing tier, enable you to control whitelists of which executables can run in your Production environments.
 
 
-**Objection:** How can Azure help control the costs associated with non-Production VMs left running out-of-hours?
+4.  How can Azure help control the costs associated with non-Production VMs left running out-of-hours?
 
-**Answer:** DevTest labs, auto-VM shutdown, and the start-stop VM marketplace solution, all offer the ability to automatically shut down VMs.
+DevTest labs, auto-VM shutdown, and the start-stop VM marketplace solution, all offer the ability to automatically shut down VMs.
 
 Azure Advisor and Azure Cost Management (by Cloudyn) provides additional reports to identify idle VMs and to right-size underutilized VMs.
 
 
 ## Customer quote (to be read back to the attendees at the end)
 
-*"The governance controls Azure provides allows Trey Research to move forward with a modern enterprise cloud environment knowing that IT still is in control but allows flexibility for our business units to do their job without us in the way."*
+"The governance controls Azure provides allows Trey Research to move forward with a modern enterprise cloud environment knowing that IT still is in control but allows flexibility for our business units to do their job without us in the way."
 
 ---Ken Greenwald, CTO
