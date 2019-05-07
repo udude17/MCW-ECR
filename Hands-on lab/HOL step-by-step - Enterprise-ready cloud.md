@@ -9,7 +9,7 @@ Hands-on lab step-on-step
 </div>
 
 <div class="MCWHeader3">
-November 2018
+May 2019
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -18,7 +18,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2018 Microsoft Corporation. All rights reserved.
+© 2019 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners
 
@@ -112,7 +112,7 @@ In this task, you will create a new Management Group and move a subscription int
 
     ![Azure portal screenshot, showing the Start using management groups button that is used to launch the Add management group blade.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image89.png "Start using management groups button")
 
-    or if you already have management groups in place, you can use the **Add management group** button to launch the **Add management group** blade.
+    If you already have management groups in place, you can use the **Add management group** button to launch the **Add management group** blade.
 
     ![Azure portal screenshot, showing the Add management group button that is used to launch the Add management group blade.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image91.png "Add management group button")
 
@@ -196,17 +196,17 @@ In this exercise, you will apply one of the built-in Azure Policies to restrict 
 
 4. Launch the Azure Management portal, and navigate to **Policy** under **All services**:
 
-    ![Azure portal screenshot, showing click sequence All Services, then Policy](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image7.png "Azure Policy click path screenshot")
+    ![Azure portal screenshot, showing click sequence All Services, then Policy.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image7.png "Azure Policy click path screenshot")
 
     > **Hint**: Click the star next to the Policy service to pin it to your Portal navigation. You will visit the Policy service throughout the lab.
 
 5. Select **Definitions**, then **+ Policy definition**. 
 
-    ![Azure portal screenshot, showing click sequence Definitions, then add Policy definition](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image101.png "Add Policy definition") 
+    ![Azure portal screenshot, showing click sequence Definitions, then add Policy definition.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image101.png "Add Policy definition") 
 
 6.  In the Policy definition blade, use the following configurations:
 
-    - Definition location: **Enterprise Ready Cloud** (ERC) management group, as created in Task 1
+    - Definition location: **Enterprise Ready Cloud** (ERC) management group, as created in Task 1.
     - Name: **Service catalog**
     - Description: **Restrict resource types to those permitted by Enterprise IT**
     - Category: **Create new** > **Service catalog**
@@ -344,15 +344,15 @@ In this exercise, you will apply one of the built-in Azure Policies to restrict 
     }
     ```
 
-1. Click **Save**.
+7. Click **Save**.
 
-7. On the ***Policy \- Definitions*** blade, select the **Service catalog** policy definition you just created and then select **Assign** on the *Service catalog* blade.
+8. On the ***Policy \- Definitions*** blade, select the **Service catalog** policy definition you just created and then select **Assign** on the *Service catalog* blade.
 
-    ![Azure portal screenshot showing the service catalog policy definition](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image102.png "Service catalog policy definition")
+    ![Azure portal screenshot showing the service catalog policy definition.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image102.png "Service catalog policy definition")
 
     > **Note**: If you do not see the policy, make sure "Enterprise Ready Cloud" is the selected scope, and not another Management group or an individual subscription.
 
-8. On the ***Service catalog \- Assign policy blade***, specify the following configurations and then click **Assign** to assign your policy definition to your Enterprise Ready Cloud management group:
+9. On the ***Service catalog \- Assign policy blade***, specify the following configurations and then click **Assign** to assign your policy definition to your Enterprise Ready Cloud management group:
 
     - Scope: **Enterprise Ready Cloud**
     - Exclusions: **None**
@@ -373,11 +373,11 @@ In this exercise, you will apply another built-in Azure policy to restrict the c
 
     ![Azure portal screenshot, showing adding a resource group called \'ExpressRoute-group\'](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image104.png "Create resource group click path")
 
-1. Once complete, select **Review + Create** and then **Create**.
+2. Once complete, select **Review + Create** and then **Create**.
 
-2. Return to the **Policy** blade in the Azure portal. Select **Assignments**, then **Assign Policy**. Complete the form as follows:
+3. Return to the **Policy** blade in the Azure portal. Select **Assignments**, then **Assign Policy**. Complete the form as follows:
 
-    - Scope: **Enterprise Ready Cloud** (the management group created earlier)
+    - Scope: **Enterprise Ready Cloud** (The management group created earlier.)
     - Exclusions: **The resource group created in Step 1 above. Select the management group, subscription, and resource group**.    
     - Policy definition: **Not allowed resource types**
     - Assignment name: **Block ExpressRoute circuits**
@@ -389,7 +389,7 @@ In this exercise, you will apply another built-in Azure policy to restrict the c
 
     ![Azure portal screenshot, showing the Assign Policy blade. The policy is \'Not allowed resource types\' and the ExpressRouteCircuits resource type has been selected. The policy is assigned at the Management group scope, with the ExpressRouteGroup resource group as an exclusion path.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image105.png "Assign Policy blade")
 
-3. When complete, select **Assign** to create the policy assignment.
+4. When complete, select **Assign** to create the policy assignment.
 
 ### Task 4: Restrict the creation of resources in regions 
 
@@ -419,11 +419,11 @@ First, we will create a generic policy definition that restricts resources of a 
 
 1. In the Azure portal, open the **Policy** blade, then select **Definitions** and then **+ Policy definition**.
 
-    ![Azure portal screenshot, showing the click sequence Policy then Definitions then Add Policy Definition](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image106.png "Add policy definition click path")
+    ![Azure portal screenshot, showing the click sequence Policy then Definitions then Add Policy Definition.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image106.png "Add policy definition click path")
 
 2. Complete the Policy definition form as follows:
 
-    - Definition location: **Enterprise Ready Cloud** (the Management Group created earlier)
+    - Definition location: **Enterprise Ready Cloud** (The Management Group created earlier.)
     - Name: **Restrict Resource Name Suffix**
     - Description: **Restrict resources of a given type to have a name ending with a given suffix. The resource type and suffix are parameterized.**
     - Category:  **Create new** > **Naming"**
@@ -473,13 +473,13 @@ First, we will create a generic policy definition that restricts resources of a 
     }
     ```
 
-1. Once the policy definition is complete, select **Save**.
+3. Once the policy definition is complete, select **Save**.
 
-3. Next, we shall create a policy initiative comprising multiple instances of our policy definition (one per resource type).
+4. Next, we shall create a policy initiative comprising multiple instances of our policy definition (one per resource type).
 
     From the **Policy** blade, on the **Definitions** panel, select **+ Initiative Definition**.
 
-4. Fill in the **Initiative definition** blade as follows (but **do not** select **Save** yet).
+5. Fill in the **Initiative definition** blade as follows (but **do not** select **Save** yet).
 
     - Definition location: **Enterprise Ready Cloud** (the Management Group created earlier)
     - Name: **Naming Convention**
@@ -488,33 +488,33 @@ First, we will create a generic policy definition that restricts resources of a 
 
     ![Azure portal screenshot showing the \'Basics\' section of the New Policy Initiative Definition blade. The Name has been filled in as \'Naming Convention\'.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image13.png "New Policy Definition - Basics")
 
-5. Under ***Available Definitions***, find the *Restrict Resource Name Suffix* policy definition created in Step 2.
+6. Under ***Available Definitions***, find the *Restrict Resource Name Suffix* policy definition created in Step 2.
 
     ![Azure portal screenshot showing the \'Available Definitions\' section of the New Policy Initiative Definition blade. The filter has been filled in as \'restrict\' and the results show the \'Restrict Resource Name Suffix\' policy definition](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image14.png "Available Definitions screenshot")
 
-6. Select the policy definition, then select **+Add** to add the Policy Definition to the Policy Initiative.
+7. Select the policy definition, then select **+Add** to add the Policy Definition to the Policy Initiative.
 
     ![Azure portal screenshot, showing adding the \'restrict resource name suffix\' custom policy definition to a policy initiative](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image15.png "Adding Policy Definition to Policy Initiative")
 
-7. Select the resource type and name suffix. In this case, we'll choose **Microsoft.Compute/virtualMachines** as the resource type and **vm** as the name suffix. **Do not click Save**.
+8. Select the resource type and name suffix. In this case, we'll choose **Microsoft.Compute/virtualMachines** as the resource type and **vm** as the name suffix. **Do not click Save**.
 
     ![Azure portal screenshot, showing filling in the parameters for the \'Restrict Resource Name Suffix\' policy definition, as part of the policy initiative definition](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image16.png "Policies and Parameters screenshot")
 
-8. Repeat steps 5, 6, and 7 above for each of the following resource types:
+9. Repeat steps 5, 6, and 7 above for each of the following resource types:
 
     - Virtual Networks
         - Resource Type: **Microsoft.Network/virtualNetworks**
         - Resource Name Suffix: **vnet** 
 
-9. Once you've added each resource type, select **Save**.
+10. Once you've added each resource type, select **Save**.
 
-10. Finally, we will apply the policy initiative across all subscriptions in the Management Group by creating an assignment at the Management group scope.
+11. Finally, we will apply the policy initiative across all subscriptions in the Management Group by creating an assignment at the Management group scope.
 
     On the **Policy** blade, select **Assignments** and then **Assign Initiative**.
 
     ![Azure portal screenshot, showing the click sequence policy then Assignments then Assign Initiative.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image108.png "Assign Initiative click path")
 
-11. Complete the Assign Initiative form as follows:
+12. Complete the Assign Initiative form as follows:
 
     - Scope: **Enterprise Ready Cloud** (the Management Group created earlier)
     - Exclusions: **None**
@@ -527,7 +527,7 @@ First, we will create a generic policy definition that restricts resources of a 
 
     ![Azure portal screenshot, showing the Assign Initiative blade. The Naming Convention policy initiative has been selected, and the assignment is at management group scope.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image109.png "Assign Initiative Azure portal blade")
 
-12. When complete, select **Assign** to create the policy initiative assignment.
+13. When complete, select **Assign** to create the policy initiative assignment.
 
 ### Task 6: Test the policies 
 
@@ -565,20 +565,20 @@ In this task, you will use the Azure management portal to validate each of the p
     - SKU: **Standard**
     - Billing model: **Unlimited**
     - Subscription: **Select your Azure subscription**
-    - Resource group: **Any resource groupe *except* ExpressRouteRG OR Create new**
-    - Location: **Any available location in the allowed locations policy**
+    - Resource group: **Any resource group *except* ExpressRouteRG OR Create new**.
+    - Location: **Any available location in the allowed locations policy**.
 
-    ![The Circuit configuration fields are set to the following settings: Circuit name, TestCircuit; Provider, AT&T; Peering location, Silicon Valley; Bandwidth, 50Mbps; SKU, Standard; Billing model, Unlimited; Subscription, Micrsooft Azure; Resource Group, PolicyTestRG, Location, West US;](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image24.png "Circuit configuration fields") 
+    ![The Circuit configuration fields are set to the following settings: Circuit name, TestCircuit; Provider, AT&T; Peering location, Silicon Valley; Bandwidth, 50Mbps; SKU, Standard; Billing model, Unlimited; Subscription, Micrsooft Azure; Resource Group, PolicyTestRG, Location, West US.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image24.png "Circuit configuration fields") 
 
 3. As with the Service Catalog policy, you should see an error in the Create ExpressRoute Circuit blade, which when clicked shows the error details:
 
-    ![Azure portal screenshot, showing error message \"There were policy errors. Click here to view details\"](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image96.png "Validation Error screenshot")
+    ![Azure portal screenshot, showing error message \"There were policy errors. Click here to view details\".](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image96.png "Validation Error screenshot")
 
     ![Azure portal screenshot, showing Errors blade. The error message states the template deployment failed due to a policy violation.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image97.png "Policy Violation error message")
 
     > **Note**: If you created a new resource group in the previous step, you will see that the resource group has been created even though the deployment of the resource failed. This is because the policy that was created to restrict the creation of ExpressRoute circuits specifically targets that Azure resource type and a resource group is another distinct resource type.
 
-#### SubTask 3: Test the resource location policy <!-- omit in toc -->
+#### Subtask 3: Test the resource location policy <!-- omit in toc -->
 
 1. Testing the resource location policy follows a similar pattern. Attempt to create a permitted resource, with a permitted name, but in a not-permitted region. For example, attempt to create a virtual network named 'erc-vnet' in South Central US. This should be rejected by the 'Restrict Azure locations' policy.
 
@@ -588,7 +588,7 @@ In this task, you will use the Azure management portal to validate each of the p
 
     > **Note**: Recall that an initiative assignment was made earlier to deny the creation of resources that do not meet the organizational naming conventions. If you had attempted to create a virtual networking without `-vnet` in its name, the creation of the resource would have been denied by the initiative assignment and its associated configuration.
 
-#### SubTask 4: Test the naming convention policy <!-- omit in toc -->
+#### Subtask 4: Test the naming convention policy <!-- omit in toc -->
 
 1. Attempt to create a permitted resource, in a permitted location, with a not-permitted name. For example, create a virtual network named 'erc-network' in East US. This should be rejected by the 'Resource Naming Convention' policy.
 
@@ -623,7 +623,7 @@ In this task, you will create two groups in Azure AD that you will use for testi
 
     > **Note**: In the following commands, we will use the Azure CLI to provision users and groups in Azure AD. The PowerShell Cloud Shell gives us access to *both* the Azure PowerShell module (Az) and the Azure CLI.
 
-2. In the shell, execute the following script to create two new security groups.
+2. In the shell, execute the following script to create two new security groups:
 
     ```powershell
     az ad group create --display-name "BU-Electronics-Admins" --mail-nickname "BU-Electronics-Admins"
@@ -697,9 +697,9 @@ In this task, you will update a script to automatically add a user to the contri
 
     ![Azure portal screenshot showing the Azure Cloud Shell and the Save function in code.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image111.png "Azure Cloud Shell code Save file command")
 
-1. Close **code** using the **Close Editor** command by clicking **Close Editor** in the menu behind the ellipsis (...).
+5. Close **code** using the **Close Editor** command by clicking **Close Editor** in the menu behind the ellipsis (...).
 
-5. Create a local variable in the **Console** containing your Subscription ID (you can copy your subscription ID from the Azure portal, or obtain it using `Get-AzSubscription`). In this example, we will obtain is using the referenced cmdlet.
+6. Create a local variable in the **Console** containing your Subscription ID (you can copy your subscription ID from the Azure portal, or obtain it using `Get-AzSubscription`). In this example, we will obtain is using the referenced cmdlet.
 
     ```powershell
     $SubscriptionId = (Get-AzSubscription).SubscriptionId
@@ -707,27 +707,27 @@ In this task, you will update a script to automatically add a user to the contri
 
     > **Note**: If your account has access to multiple Azure subscriptions you may need to alter the command to target the proper subscription using the `-SubscriptionId` or `-SubscriptionName` parameter with the `Get-AzSubscription` cmdlet.
 
-6. Execute the script passing in the `-SubscriptionID` and `-AdGroupName` parameters:
+7. Execute the script passing in the `-SubscriptionID` and `-AdGroupName` parameters:
 
     ```powershell
     . $HOME\ConfigureSubscription.ps1 -SubscriptionId $SubscriptionId -AdGroupName "BU-Electronics-Admins"
     ```
 
-7. In a different type of browser, or in an In-Private or Incognito mode window in your current browser navigate to the Azure management portal in a browser <http://portal.azure.com>, and sign in using the **ElectronicsAdmin** credentials created earlier. 
+8. In a different type of browser, or in an In-Private or Incognito mode window in your current browser navigate to the Azure management portal in a browser <http://portal.azure.com>, and sign in using the **ElectronicsAdmin** credentials created earlier. 
 
     > **Note**: You may be prompted to configure a method of resetting your account. If you are, you can choose either a phone call or email.
 
-8. Select **All services**, search for **Subscriptions**, and then select **Subscriptions**.
+9. Select **All services**, search for **Subscriptions**, and then select **Subscriptions**.
 
     ![Azure portal screenshot, showing subscriptions button](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image112.png "Subscriptions button")
 
-9.  Select the name of the subscription you have been working on.
+10.  Select the name of the subscription you have been working on.
 
-10. Select the **Access control (IAM)** tile and click the **Role assignments** tab:
+11. Select the **Access control (IAM)** tile and click the **Role assignments** tab:
 
     ![Azure portal screenshot, showing \'Access Control (IAM)\' button](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image34.png "Access Control button")
 
-11. You should see the **BU-Electronics-Admins** group assigned to the contributor role.
+12. You should see the **BU-Electronics-Admins** group assigned to the contributor role.
 
     ![Under User, the BU-Electronics-Admin group is circled. It has the Role of Contributor, and Access as Assigned.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image113.png "BU-Electronics-Admin group")
 
@@ -810,15 +810,15 @@ In this task, you will create a script that will create a new resource group, as
 
     > **Note**: The 'Apply tag and its default value' policy applies tags to the resources included in the assignment scope, but it does not apply any tags to the parent resource group for those resources. It is important to understand that in Azure, tags are not automatically inherited from a parent object without additional configuration.
 
-1. Close **code** using the **Close Editor** command by clicking **Close Editor** in the menu behind the ellipsis (...).
+5. Close **code** using the **Close Editor** command by clicking **Close Editor** in the menu behind the ellipsis (...).
 
-5. In the **Console** pane, create a new variable called **\$location**, and specify a region name to deploy to the resource group to. This location must be one of the supported regions in your previously created policy.
+6. In the **Console** pane, create a new variable called **\$location**, and specify a region name to deploy to the resource group to. This location must be one of the supported regions in your previously created policy.
 
     ```powershell
     $location = "East US"
     ```
 
-6. In the **Console** pane, create a new variable called **\$resourceGroupName**, and specify the value as **DelegatedProjectDemRG**. Also, make sure you create a **\$SubscriptionId** variable as you did earlier.
+7. In the **Console** pane, create a new variable called **\$resourceGroupName**, and specify the value as **DelegatedProjectDemRG**. Also, make sure you create a **\$SubscriptionId** variable as you did earlier.
 
     ```powershell
     $resourceGroupName = "DelegatedProjectDemoRG"
@@ -829,13 +829,13 @@ In this task, you will create a script that will create a new resource group, as
 
     > **Note**: If you receive an error similar to the following `Get-AzSubscription : The access token expiry UTC time '4/24/2019 3:31:22 PM' is earlier than current UTC time '4/24/2019 3:44:34 PM'.` you can re-authenticate to your Azure account using the `Connect-AzAccount` cmdlet.
 
-7. In the **Console** pane, execute the following command to create a new resource group with delegated permissions and IO Code and Cost Center policies scoped to the resource group.
+8. In the **Console** pane, execute the following command to create a new resource group with delegated permissions and IO Code and Cost Center policies scoped to the resource group.
 
     ```powershell
     . $HOME\CreateProjectResourceGroup.ps1 -SubscriptionId $SubscriptionId -ResourceGroupName $resourceGroupName -Location $location -IOCode "1000150" -CostCenter "Marketing" -AdGroupName "BU-Electronics-Admins"
     ```
 
-8. Create a new storage account in the resource group (choose a unique name) to validate the ioCode tag was applied (replace *uniquestorageaccount* with a unique value).
+9. Create a new storage account in the resource group (choose a unique name) to validate the ioCode tag was applied (replace *uniquestorageaccount* with a unique value).
 
     ```powershell
     New-AzStorageAccount -ResourceGroupName $resourceGroupName `
@@ -844,7 +844,7 @@ In this task, you will create a script that will create a new resource group, as
         -Location $location 
     ```
 
-9. You can now search for resources with the applied tags to verify the policy has been applied. Execute the following PowerShell to validate that the storage account has been tagged.
+10. You can now search for resources with the applied tags to verify the policy has been applied. Execute the following PowerShell to validate that the storage account has been tagged.
    
     ```powershell
     Get-AzResource -TagName IOCode
@@ -857,27 +857,27 @@ In this task, you will create a script that will create a new resource group, as
 
     > **Note**: It can take several minutes for the policies assignments that were made in the previous step to take effect. If you find that the tags were not automatically applied, delete the storage account and recreate it. After recreating it, you should see the tags applied with the `Get-AzResource` cmdlet.
 
-10. Switch back to the Azure Management portal using the ElectronicsAdmin credentials.
+11. Switch back to the Azure Management portal using the ElectronicsAdmin credentials.
 
-11. Select **Resource Groups**.
+12. Select **Resource Groups**.
 
-12. Select the **DelegatedProjectDemoRG** resource group.
+13. Select the **DelegatedProjectDemoRG** resource group.
 
     ![Screenshot of the DelegatedProjectDemo resource group.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image114.png "DelegatedProjectDemo resource group")
 
-13. Select the **Access control (IAM)** icon, then select the **Role assignments** tab. Note that the BU-Electronics-Admins security group is set as an Owner of the resource group.
+14. Select the **Access control (IAM)** icon, then select the **Role assignments** tab. Note that the BU-Electronics-Admins security group is set as an Owner of the resource group.
 
     ![Under User, the BU-Electronics-Admin group now has the Role of Owner, Contributor, which is circled.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image115.png "Owner, Contributor permissions")
 
-14. Select **+ Add** followed by **Add role assignment**.
+15. Select **+ Add** followed by **Add role assignment**.
 
     ![Screenshot of the Add role assignments button.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image116.png "Add role assignments button")
 
-15. Select **Owner** for the Role.
+16. Select **Owner** for the Role.
 
     ![In the Select a role blade, Owner is circled.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image41.png "Select a role blade")
 
-16. Select the **BU-Electronics-Users group** and select **Save** to add the group to the role.
+17. Select the **BU-Electronics-Users group** and select **Save** to add the group to the role.
 
     ![BU-Electronics-Users is circled.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image42.png "BU-Electronics-Users")
 
@@ -1088,21 +1088,21 @@ In this task, you will publish the previously created blueprint and assign the b
 
     ![The Blueprint definitions blade in the Azure portal with the governance-baseline blueprint highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image128.png "Blueprint definitions")
 
-1. Click **Publish blueprint**.
+2. Click **Publish blueprint**.
 
     ![The governance-baseline blueprint with the Publish blueprint button highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image129.png "Publish blueprint")
 
-1. Enter a version number (for example *1.0*) in the **Version** field and click **Publish**.
+3. Enter a version number (for example *1.0*) in the **Version** field and click **Publish**.
 
-1. Click **Assign blueprint**.
+4. Click **Assign blueprint**.
 
     ![The governance-baseline blueprint with the Assign blueprint button highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image130.png "Assign blueprint button")
 
-1. In the **Assign blueprint** blade, select your target **Subscription**, location (making sure to select a location your previous policy allows such as East US), and then scroll down to the **Artifact parameters** section of the blade.
+5. In the **Assign blueprint** blade, select your target **Subscription**, location (making sure to select a location your previous policy allows such as East US), and then scroll down to the **Artifact parameters** section of the blade.
 
     ![The governance-baseline blueprint Assign blueprint form.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image131.png "Assign blueprint")
 
-1. Complete the **Artifact parameters** section of the blade with the following:
+6. Complete the **Artifact parameters** section of the blade with the following:
 
     - Append tag and its value from the resource group - Tag Name: **IOCode**
     - Append tag and its value from the resource group - Tag Name: **CostCenter**
@@ -1117,11 +1117,11 @@ In this task, you will publish the previously created blueprint and assign the b
 
     ![The governance-baseline blueprint Assign blueprint form with the Artifact parameters section highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image133.png "Assign blueprint Artifact parameters")
 
-1. Click **Assign**. You will see a notification that the blueprint assignment is being created.
+7. Click **Assign**. You will see a notification that the blueprint assignment is being created.
 
     ![The governance-baseline blueprint assignment being created toast notification.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image134.png "Creating blueprint assignment")
 
-1. You will receive an error that blueprint assignment cannot be made as the blueprint resource is disallowed by the *Service catalog* policy that was created in Exercise 1.
+8. You will receive an error that blueprint assignment cannot be made as the blueprint resource is disallowed by the *Service catalog* policy that was created in Exercise 1.
 
 ### Task 3: Update the Service catalog policy to allow blueprint assignments
 
@@ -1129,15 +1129,15 @@ In this task, you will update an existing policy that blocks the deployment of B
 
 1. In the Azure portal, navigate to the Policy service.
 
-1. Select the **Definitions** blade followed by the **Service catalog** policy.
+2. Select the **Definitions** blade followed by the **Service catalog** policy.
 
     ![The Policy definitions blade in the Azure portal with the Service catalog policy highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image135.png "Policy definitions")
 
-1. Click **Edit definition**.
+3. Click **Edit definition**.
 
     ![The Service catalog policy with the Edit definition button highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image136.png "Edit definition")
 
-1. Add the following after the `Microsoft.Insights` source and click **Save**.
+4. Add the following after the `Microsoft.Insights` source and click **Save**.
 
     ```json
     {
@@ -1154,19 +1154,19 @@ In this task you will make a blueprint assignment of a published blueprint to an
 
 1. In the Azure portal, navigate to the Blueprints service.
 
-1. Select **Blueprint definitions** and then the **governance-baseline** blueprint created in the previous task.
+2. Select **Blueprint definitions** and then the **governance-baseline** blueprint created in the previous task.
 
     ![The Blueprint definitions blade in the Azure portal with the governance-baseline blueprint highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image128.png "Blueprint definitions")
 
-2. Click **Assign blueprint**.
+3. Click **Assign blueprint**.
 
     ![The governance-baseline blueprint with the Assign blueprint button highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image130.png "Assign blueprint button")
 
-3. In the **Assign blueprint** blade, select your target **Subscription**, location (making sure to select a location your previous policy allows such as East US), and then scroll down to the **Artifact parameters** section of the blade.
+4. In the **Assign blueprint** blade, select your target **Subscription**, location (making sure to select a location your previous policy allows such as East US), and then scroll down to the **Artifact parameters** section of the blade.
 
     ![The governance-baseline blueprint Assign blueprint form.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image131.png "Assign blueprint")
 
-4. Complete the **Artifact parameters** section of the blade with the following:
+5. Complete the **Artifact parameters** section of the blade with the following:
 
     - Append tag and its value from the resource group - Tag Name: **IOCode**
     - Append tag and its value from the resource group - Tag Name: **CostCenter**
@@ -1181,15 +1181,15 @@ In this task you will make a blueprint assignment of a published blueprint to an
 
     ![The governance-baseline blueprint Assign blueprint form with the Artifact parameters section highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image133.png "Assign blueprint Artifact parameters")
 
-5. Click **Assign**. You will see a notification that the blueprint assignment is being created.
+6. Click **Assign**. You will see a notification that the blueprint assignment is being created.
 
     ![The governance-baseline blueprint assignment being created toast notification.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image134.png "Creating blueprint assignment")
 
-1. Now that the *Service catalog* policy has been updated, the blueprint assignment will be successful. 
+7. Now that the *Service catalog* policy has been updated, the blueprint assignment will be successful. 
 
     ![The governance-baseline blueprint assignment success toast notification.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image138.png "Blueprint assignment created")
 
-1. Click the **Blueprint assignment succeeded** link in the notification to view the status of the blueprint. 
+8. Click the **Blueprint assignment succeeded** link in the notification to view the status of the blueprint. 
 
 ### Task 5: Verify blueprint assignment and resource creation
 
@@ -1218,17 +1218,17 @@ The policy required to audit for the match of a given tag name and value is a cu
 
 1. In the Azure portal, navigate to the Policy service.
 
-1. Select **Definitions** and then click **+ Policy definition**.
+2. Select **Definitions** and then click **+ Policy definition**.
 
     ![Policy definitions blade in the Azure portal with the Add policy definition button highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image143.png "Add policy definition")
 
-1. In the **New Policy definition** form, enter the following values:
+3. In the **New Policy definition** form, enter the following values:
 
     - Definition location: **Enterprise Ready Cloud**
-    - Name: **Audit tag and its value from the resource group**
-    - Description: **Audit tag and its value from the resource group**
+    - Name: **Audit tag and its value from the resource group**.
+    - Description: **Audit tag and its value from the resource group**.
     - Category: **(Create new) Tagging**
-    - Policy rule: Use the definition in the following code block
+    - Policy rule: **Use the definition in the following code block**:
 
     ```json
     {
@@ -1258,20 +1258,20 @@ The policy required to audit for the match of a given tag name and value is a cu
 
     ![Adding a new policy definition to audit that a given tag on resource group is the same name and value on child resources.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image144.png "New policy definition")
 
-1. Click **Save**.
+4. Click **Save**.
 
-1. To simplify the management of our blueprint, next we will create a new initiative definition for use in the existing governance-baseline blueprint. Select **Definitions** followed by **+ Initiative definition**.
+5. To simplify the management of our blueprint, next we will create a new initiative definition for use in the existing governance-baseline blueprint. Select **Definitions** followed by **+ Initiative definition**.
 
     ![In the Azure portal, select Definitions followed by Add initiative definition.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image145.png "Add initiative definition")
 
-1. In the **New Initiative definition** form, enter the following values:
+6. In the **New Initiative definition** form, enter the following values:
 
     - Definition location: **Enterprise Ready Cloud**
     - Name: **Governance Baseline Initiative**
-    - Description: **Governance Baseline Initiative for use in the governance-baseline blueprint.**.
+    - Description: **Governance Baseline Initiative for use in the governance-baseline blueprint**.
     - Category: **(Use existing) Tagging**
 
-1. Add the following policies to the initiative and set the parameters to the following:
+7. Add the following policies to the initiative and set the parameters to the following:
 
       - **Audit tag and its value from the resource group**
         - Value(s): **Use Initiative Parameter**
@@ -1296,55 +1296,55 @@ The policy required to audit for the match of a given tag name and value is a cu
 
     ![Creation of a new initiative definition at the ERC scope.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image146.png "New initiative definition")
 
-1. Click **Save**. This new initiative definition allows us to consolidate all of the policy assignments in our existing blueprint to ensure the presence of the *IOCode* and *CostCenter* tags on resource groups and that child resources not only have those tags, but that their values match the parent resource group as well.
+8. Click **Save**. This new initiative definition allows us to consolidate all of the policy assignments in our existing blueprint to ensure the presence of the *IOCode* and *CostCenter* tags on resource groups and that child resources not only have those tags, but that their values match the parent resource group as well.
 
-2. In the Azure portal, navigate to the Blueprints service.
+9. In the Azure portal, navigate to the Blueprints service.
 
-3. Select **Blueprint definitions** and then the **governance-baseline** blueprint created in the previous task.
+10. Select **Blueprint definitions** and then the **governance-baseline** blueprint created in the previous task.
 
     ![The Blueprint definitions blade in the Azure portal with the governance-baseline blueprint highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image128.png "Blueprint definitions")
 
-4. Click **Edit blueprint**.
+11. Click **Edit blueprint**.
 
     ![The Blueprint definitions blade in the Azure portal with the governance-baseline open and the Edit blueprint button highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image142.png "Edit blueprint")
 
-5. Click **Next : Artifacts >>**.
+12. Click **Next : Artifacts >>**.
 
-1. Click **+ Add artifact...** and then select **Policy assignment** for the **Artifact type** in the **Add artifact** blade.
+13. Click **+ Add artifact...** and then select **Policy assignment** for the **Artifact type** in the **Add artifact** blade.
 
     ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image121.png "Add artifact")
 
-1. Select the **Governance Baseline Initiative** and click **Add**.
+14. Select the **Governance Baseline Initiative** and click **Add**.
    
     ![Add artifact blade in the Azure portal with the Policy assignment artifact type selected and the Governance Baseline Initiative highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image147.png "Add artifact")
 
-1. Remove the other remaining policy assignments which are now included in the **Governance Baseline Initiative** by clicking the ellipsis (...) and then **Remove**.
+15. Remove the other remaining policy assignments which are now included in the **Governance Baseline Initiative** by clicking the ellipsis (...) and then **Remove**.
 
     ![Removing the existing policy assignments from the blueprint.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image148.png "Remove artifact")
 
-1. When you are finished removing the policies, you should be left with the *Azure Resource Manager template* artifact and the *Policy assignment* artifact for the selected initiative definition.
+16. When you are finished removing the policies, you should be left with the *Azure Resource Manager template* artifact and the *Policy assignment* artifact for the selected initiative definition.
 
     ![The governance-baseline blueprint with only two artifacts remaining.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image149.png "governance-baseline blueprint")
 
-1. Save the blueprint as a draft by clicking the **Save Draft** button.
+17. Save the blueprint as a draft by clicking the **Save Draft** button.
 
     ![Create blueprint blade in the Azure portal for with the Save Draft highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image127.png "Save Draft blueprint")
 
-1. Click **Publish blueprint**.
+18. Click **Publish blueprint**.
 
     ![The governance-baseline blueprint with the Publish blueprint button highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image150.png "Publish blueprint")
 
-1. Enter a version number (for example *2.0*) in the **Version** field and click **Publish**.
+19. Enter a version number (for example *2.0*) in the **Version** field and click **Publish**.
 
-1. Click **Assign blueprint**.
+20. Click **Assign blueprint**.
 
     ![The governance-baseline blueprint with the Assign blueprint button highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image151.png "Assign blueprint button")
 
-1. In the **Assign blueprint** blade, select your target **Subscription**, enter an updated assignment name such as **Assignment-governance-baseline-2**, select a location (making sure to select a location your previous policy allows such as East US), make sure the latest version of the blueprint is selected, and then scroll down to the **Artifact parameters** section of the blade.
+21. In the **Assign blueprint** blade, select your target **Subscription**, enter an updated assignment name such as **Assignment-governance-baseline-2**, select a location (making sure to select a location your previous policy allows such as East US), make sure the latest version of the blueprint is selected, and then scroll down to the **Artifact parameters** section of the blade.
 
     ![The governance-baseline blueprint Assign blueprint form.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image152.png "Assign blueprint")
 
-1. Complete the **Artifact parameters** section of the blade with the following:
+22. Complete the **Artifact parameters** section of the blade with the following:
 
     - BU-RG
       - rgName: **EnterpriseITRG**
@@ -1358,17 +1358,17 @@ The policy required to audit for the match of a given tag name and value is a cu
 
     ![The governance-baseline blueprint Assign blueprint form with the Artifact parameters section highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image153.png "Assign blueprint Artifact parameters")
 
-2. Click **Assign**. You will see a notification that the blueprint assignment is being created.
+23. Click **Assign**. You will see a notification that the blueprint assignment is being created.
 
     ![The governance-baseline blueprint assignment being created toast notification.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image154.png "Creating blueprint assignment")
 
-1. To view the status of the blueprint deployment, in the Azure portal, navigate to the Blueprints service.
+24. To view the status of the blueprint deployment, in the Azure portal, navigate to the Blueprints service.
 
-1. Click **Assigned blueprints** followed by **Assignment-governance-baseline-2**.
+25. Click **Assigned blueprints** followed by **Assignment-governance-baseline-2**.
 
     ![The blueprint assignments blade in the Azure portal with the Assignment-governance-baseline-2 blueprint assignment highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image155.png "Blueprint assignments")
 
-1. Wait for the deployment to complete. You will see a message of **Assignment succeeded** upon completion.
+26. Wait for the deployment to complete. You will see a message of **Assignment succeeded** upon completion.
 
     ![The blueprint assignment blade in the Azure portal for the governance-baseline blueprint with the Assignment succeeded message highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image156.png "governance-baseline blueprint assignment")
 
@@ -1384,13 +1384,13 @@ In this task you will explore the compliance features of Azure Policy by working
 
     ![Azure portal screenshot showing the Azure Cloud Shell first launch experience.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image94.png "Azure Cloud Shell PowerShell")
 
-1. Execute the following script to create a new resource group.
+2. Execute the following script to create a new resource group.
 
     ```powershell
     az group create -n MarketingRG -l eastus --tags IOCode=1000150 CostCenter=Marketing
     ```
 
-1. Execute the following script to move the existing storage account in *EnterpriseITRG* to the resource group *MarketingRG*. When prompted, select **Yes** to initiate the move.
+3. Execute the following script to move the existing storage account in *EnterpriseITRG* to the resource group *MarketingRG*. When prompted, select **Yes** to initiate the move.
 
     ```powershell
     $resource = Get-AzResource -ResourceGroupName EnterpriseITRG | Where-Object { $_.Name -like "treyrsrch*" -and $_.ResourceType -eq "Microsoft.Storage/storageAccounts" }
@@ -1402,7 +1402,7 @@ In this task you will explore the compliance features of Azure Policy by working
 
     > **Note**: It was take several minutes for the move to complete. Do not proceed to the next step until the script has completed.
 
-1. Execute the following script to view the tags on the *MarketingRG* resource group and the moved storage account. Do the tags match?
+4. Execute the following script to view the tags on the *MarketingRG* resource group and the moved storage account. Do the tags match?
 
     ```powershell
     Invoke-Command -ScriptBlock { 
@@ -1415,25 +1415,25 @@ In this task you will explore the compliance features of Azure Policy by working
 
     > **Note**: In this case the tags to not match. The Azure Policy which appends tags from the resource group to child resources only effects create and update operations and not move operations.
 
-2. In addition to Azure PowerShell and the Azure CLI, Azure Policy can be used to view the compliance of your resources through both the Azure portal and the command line.
+5. In addition to Azure PowerShell and the Azure CLI, Azure Policy can be used to view the compliance of your resources through both the Azure portal and the command line.
 
-1. Navigate to the Policy service in the Azure portal and select **Compliance** followed by **Governance Baseline Initiative**.
+6. Navigate to the Policy service in the Azure portal and select **Compliance** followed by **Governance Baseline Initiative**.
 
     ![Azure Policy compliance in the Azure Portal with the Governance Baseline Initiative highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image158.png "Azure policy compliance")
 
-1. On the **Initiative compliance** blade, select one of the **Audit tag and its value from the resource group** policies.
+7. On the **Initiative compliance** blade, select one of the **Audit tag and its value from the resource group** policies.
 
     ![A screenshot of the Initiative compliance blade in the Azure Portal for the Governance Baseline Initiative with one of the Audit tag and its value from the resource group policies highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image159.png "Initiative compliance")
 
-1. On the **Policy compliance** blade you can view all of the non-compliant resources. 
+8. On the **Policy compliance** blade, you can view all of the non-compliant resources. 
 
     ![A screenshot of the Policy compliance blade in the Azure Portal for the Governance Baseline Initiative with one of the Audit tag and its value from the resource group policies highlighted.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image160.png "Policy compliance")
 
     > **Note**: This is an audit policy, not a deny policy, so it does not prevent the creation of resources, but it can surface resource that do not meet your organizational standards and offer a clear line of sight to remediation.
 
-1. You may (or may not) see the non-compliant state of the storage account that was moved earlier. Azure policy compliance checks do not currently have a published SLA for how long it takes an initial compliance check to occur or how long it takes for ongoing compliance checks to occur. 
+9. You may (or may not) see the non-compliant state of the storage account that was moved earlier. Azure policy compliance checks do not currently have a published SLA for how long it takes an initial compliance check to occur or how long it takes for ongoing compliance checks to occur. 
 
-    It is often on the order of the less than 20-30 minutes for evaluation and when the next check occurs the storage account that was moved earlier will be flagged as non-compliant, because while the tag names for the child resources in the *MarketingRG* for *CostCenter* and *IOCode* are present, their values on the the storage account do not match the parent the values of the tags on the parent resource group.
+    It is often on the order of the less than 20-30 minutes for evaluation and when the next check occurs the storage account that was moved earlier will be flagged as non-compliant, because while the tag names for the child resources in the *MarketingRG* for *CostCenter* and *IOCode* are present, their values on the storage account do not match the parent the values of the tags on the parent resource group.
 
     ![A screenshot of the Resource compliance blade in the Azure Portal for the Governance Baseline Initiative and the Audit tag and its value from the resource group policy.](images/Hands-onlabstep-by-step-Enterprise-readycloudimages/media/image160.png "Resource compliance")
 
@@ -1445,30 +1445,30 @@ After completing the hands-on lab, you will remove the policies on your subscrip
 
 ### Task 1: Remove resources and configuration created during this lab
 
-You should follow all steps provided *after* attending the Hands-on lab.
-
 1. Log in to the Azure portal.
 
-5. Navigate to the **Blueprints** blade. 
+2. Navigate to the **Blueprints** blade. 
 
-6. Remove any blueprint assignments and any blueprints created during this lab.
+3. Remove any blueprint assignments and any blueprints created during this lab.
 
-2. Navigate to the **Policy** blade.
+4. Navigate to the **Policy** blade.
 
-3. Select **Assignments**, and delete all policy assignments created during this lab.
+5. Select **Assignments**, and delete all policy assignments created during this lab.
 
-4. Select **Definitions**, and delete any policy definitions or initiative definitions created during this lab.
+6. Select **Definitions**, and delete any policy definitions or initiative definitions created during this lab.
 
-5. Navigate to the **Management Groups** blade.
+7. Navigate to the **Management Groups** blade.
 
-6. Remove any Management Groups crated during this lab.
+8. Remove any Management Groups crated during this lab.
 
-7. Navigate to the **Resource Groups** blade.
+9. Navigate to the **Resource Groups** blade.
 
-8.  Remove any resource groups created during this lab. 
+10.  Remove any resource groups created during this lab. 
    
    > **Note**: This will also delete any resources in those resource groups.
 
-9.  Navigate to the **Azure Active Directory** blade.
+11.  Navigate to the **Azure Active Directory** blade.
 
-10. Remove any users and groups created during this lab.
+12. Remove any users and groups created during this lab.
+
+You should follow all steps provided *after* attending the Hands-on lab.
