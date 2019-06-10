@@ -682,7 +682,7 @@ In this task, you will update a script to automatically add a user to the contri
 
     $scope = "/subscriptions/$SubscriptionId"
 
-    $groupObjectId = (Get-AzADGroup -SearchString $AdGroupName).Id.Guid
+    $groupObjectId = (Get-AzADGroup -SearchString $AdGroupName).Id
 
     Write-Output "Adding group to contributor role"
 
