@@ -44,6 +44,3 @@ At the end of this hands-on lab, you will know how to provide cost tracking by b
 
 ## Azure solutions
 DC Migration
-
-## Related references
-- [MCW](https://github.com/Microsoft/MCW
